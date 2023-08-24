@@ -8,7 +8,6 @@ const App = () => {
         <HomePage />
       </Container>
     </main>
-    
   );
 };
 
