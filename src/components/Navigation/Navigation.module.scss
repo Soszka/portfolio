@@ -1,0 +1,44 @@
+@import '../../styles/settings.scss';
+
+nav {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 40px 0;
+  display : flex;
+  justify-content: space-between;
+}
+
+.home {
+  a {
+    text-decoration: none;
+    font-size: 36px;
+    color: $text-color;
+    &:hover {
+      color: $text-secondary-color;
+    }
+  }
+}
+
+.list {
+  a {
+    text-decoration: none;
+    font-size: 24px;
+    padding : 0 20px;
+    color: $text-color;
+    &:hover {
+      color: $text-secondary-color;
+    }
+  }
+  .resume {
+    color: $buttons-color;
+    border: 1px solid $buttons-color;
+    padding: 10px 20px;
+    border-radius: $radious;
+    &:hover {
+      color: $text-color;
+      background-color: $text-secondary-color;
+      border: none;
+    }
+  }
+}
+

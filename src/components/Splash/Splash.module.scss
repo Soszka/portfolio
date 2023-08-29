@@ -1,0 +1,72 @@
+@import '../../styles/settings.scss';
+
+.splash {
+  background-image: url('https://i.postimg.cc/xTvcwVKz/splashbackground-two.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px 100px;
+}
+
+.description {
+  font-size: 40px;
+  margin-right: 80px;
+  padding-right: 50px;
+  text-align: left;
+
+  p {
+    margin: 10px 0 10px;
+  }
+
+  p:nth-child(1) {
+    font-size: $content-font-size * 2;
+    margin-bottom: 0px;
+
+    span {
+      letter-spacing: 10px;
+    }
+  }
+
+  p:nth-child(2) {
+    color: $text-secondary-color;
+    font-size: $content-font-size * 3;
+    margin-top: 0px;
+    font-weight: bold;
+  }
+
+  p:nth-child(3) {
+    font-weight: bold;
+    font-size: $content-font-size * 1.75;
+    margin-top: 20px;
+  }
+
+  p:nth-child(4) {
+    font-size: $content-font-size;
+    margin-bottom: 40px;
+  }
+
+  a {
+    color: $buttons-color;
+    text-decoration: none;
+    border: 1px solid $buttons-color;
+    padding: 10px 20px;
+    border-radius: $radious;
+    &:hover {
+      color: $text-color;
+      background-color: $text-secondary-color;
+      border: none;
+    }
+  }
+}
+
+img {
+  height: 700px;
+  margin-left: 70px;
+  padding-left: 40px;
+}
