@@ -10,7 +10,7 @@ const Splash = () => {
           <img alt="#" src="https://i.postimg.cc/9XtBBKrL/splash-photo.png"></img>
         </div>
         <div className={styles.description}>
-          <p><span>Hello World</span> ! My name is</p>
+          <p><span>Hello World</span> ! My name is </p>
           <p>Bartłomiej Socha</p>
           <p>Front end Developer</p>
           <p>I have knowledge about the tools and technologies used in the development of web applications, focusing especially on the front-end area.
