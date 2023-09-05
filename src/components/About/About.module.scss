@@ -1,0 +1,53 @@
+@import '../../styles/settings.scss';
+
+
+.content {
+ display: flex;
+}
+
+.description {
+  flex: 1;
+  font-size: $content-font-size;
+}
+
+.achivments {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30px;
+}
+
+.achivment {
+  max-width: 30%;
+  position: relative;
+  text-align: center;
+  margin: 10px;
+  display: flex;
+ 
+
+  h1 {
+    position: absolute;
+    color: $text-secondary-color;
+    font-size: 1000%;
+    font-weight: bold;
+    top: -20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.45;
+  }  
+}
+
+.button {
+  color: $buttons-color;
+  text-decoration: none;
+  border: 3px solid $buttons-color;
+  padding: 10px 20px;
+  border-radius: $radious;
+  font-size: $content-font-size * 1.75;
+  margin: 15px 30px 0 0;
+  &:hover {
+    color: $text-color;
+    background-color: $text-secondary-color;
+    border: none;
+  }
+}
