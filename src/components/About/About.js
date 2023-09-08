@@ -33,8 +33,8 @@ const About = () => {
             <p>Finished online courses that deepened my knowledge more and more</p>
           </div>
           <div className={styles.achivment}>
-            <h1>17</h1>
-            <p>Completed fields of study where passion for front end development was born</p>
+            <h1>19</h1>
+            <p>The number of technologies and tools that I have met and implemented in projects</p>
           </div>
           <div className={styles.achivment}>
             <h1>1</h1>
