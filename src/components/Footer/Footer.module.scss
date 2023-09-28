@@ -1,0 +1,11 @@
+@import '../../styles/settings.scss';
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: $content-font-size * 1.1;
+
+  span {
+    color: $text-secondary-color;
+  }
+}
