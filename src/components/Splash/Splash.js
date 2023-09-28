@@ -1,5 +1,6 @@
 import styles from './Splash.module.scss';
 import Navigation from '../Navigation/Navigation';
+import Achivments from '../Achivments/Achivments';
 
 const Splash = () => {
   return (
@@ -19,6 +20,7 @@ const Splash = () => {
           <a href="#github.com" className={styles.button}>CONTACT ME</a>
         </div>
       </div>
+      <Achivments />
     </div>
   );
 }

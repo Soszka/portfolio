@@ -5,13 +5,13 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  height: 100vh;
+  background-attachment: fixed;
 }
 
 .content {
   display: flex;
   justify-content: space-around;
-  margin: 40px 100px;
+  margin: 50px 100px 90px;
 }
 
 .description {

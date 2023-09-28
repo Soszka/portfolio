@@ -9,6 +9,7 @@
 .description {
   flex: 1;
   font-size: $content-font-size * 0.95;
+  padding-bottom: 40px;
 }
 
 .image {
@@ -20,7 +21,6 @@
     object-fit: cover;
     margin: 0;
     padding: 0;
-    padding-top: 40px;
   }
 }
 

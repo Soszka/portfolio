@@ -1,0 +1,33 @@
+@import '../../styles/settings.scss';
+
+.achivments {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(5, 157, 228, 0.5);
+  justify-content: space-around;
+  padding: 30px 100px;
+}
+
+.achivment {
+  max-width: 30%;
+  text-align: center;
+  margin: 10px;
+  padding: 30px;
+  margin: 0;
+
+  .achivmentIcon {
+    font-size: 80px;
+  }
+
+  h3 {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 36px;
+    margin: 20px 0 10px;
+  }
+
+  p {
+    margin: 0;
+  }
+}

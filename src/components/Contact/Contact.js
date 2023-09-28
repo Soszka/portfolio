@@ -2,8 +2,7 @@ import styles from './Contact.module.scss';
 import Title from '../Title/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons'; // Poprawna ścieżka
-import { faDiscord} from '@fortawesome/free-brands-svg-icons'; // Poprawna ścieżka
+import { faLinkedin, faDiscord, faGithub, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 
 const Contact = () => {
@@ -40,6 +39,11 @@ const Contact = () => {
           <a href="mailto:bsocha1998@gmail.com" className={`${styles.button} ${styles.contactButton}`}>
             <FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> bsocha1998@gmail.com
           </a>
+          <div className={styles.contactIcons}>
+            <FontAwesomeIcon icon={faEnvelope} className={styles.contactIcon} />
+            <FontAwesomeIcon icon={faGithub} className={styles.contactIcon} />
+            <FontAwesomeIcon icon={faInstagram} className={styles.contactIcon} />
+          </div>
         </div>
       </div>
     </div>
