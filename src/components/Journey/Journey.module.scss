@@ -9,7 +9,7 @@
   text-align: center;
   margin: 20px 20px;
   padding: 20px;
-  background: rgb(0, 0, 22);
+  background-color: rgb(5, 157, 228, 0.05);
   border-radius: 5%;
   
   h2 {
@@ -38,11 +38,12 @@
     padding: 10px 20px;
     border-radius: $radious;
     font-size: $content-font-size * 1.75;
-
+    transition: all 0.25s;
     &:hover {
+      background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
+      border: 3px solid $text-secondary-color;
+      box-shadow: 0px 0px 20px $text-secondary-color;
       color: $text-color;
-      background-color: $text-secondary-color;
-      border: none;
     }
   }
 }

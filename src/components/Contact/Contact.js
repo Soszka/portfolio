@@ -19,13 +19,9 @@ const Contact = () => {
               <input type="text" id="first-name" autoComplete="off" name="first-name" placeholder="John" className={styles.input} />
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="last-name">Last Name</label>
-              <input type="text" id="last-name" autoComplete="off" name="last-name" placeholder="Doe" className={styles.input} />
+              <label htmlFor="email">Email</label>
+              <input type="email" id="email" autoComplete="off" name="email" placeholder="your@email.com" className={styles.input} />
             </div>
-          </div>
-          <div className={styles.formGroup}>
-            <label htmlFor="email">Email</label>
-            <input type="email" id="email" autoComplete="off" name="email" placeholder="your@email.com" className={styles.input} />
           </div>
           <div className={styles.formGroup}>
             <label htmlFor="message">Message</label>
