@@ -5,6 +5,7 @@ import About from './components/About/About';
 import Journey from './components/Journey/Journey';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import Adventages from './components/Adventages/Adventages';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
       <Container>
         <About />
         <Journey />
+        <Adventages />
         <Contact />
         <Footer />
       </Container>
