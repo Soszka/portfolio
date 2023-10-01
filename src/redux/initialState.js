@@ -4,7 +4,7 @@ const initialState = {
     {
       id: 1,
       name: 'JavaScript Blog',
-      code: "js",
+      code: "javascript",
       created: "bootcamp",
       responsivness:"no",
       cardFrontStyle: 'blogPage',
@@ -16,7 +16,7 @@ const initialState = {
     {
       id: 2,
       name: 'Pizzeria',
-      code: "js",
+      code: "javascript",
       created: "bootcamp",
       responsivness:"no",
       cardFrontStyle: 'pizzeriaPage',
@@ -40,7 +40,7 @@ const initialState = {
     {
       id: 4,
       name: 'Rzeszów City',
-      code: "js",
+      code: "javascript",
       created: "by-me",
       responsivness:"yes",
       cardFrontStyle: 'cityPage',
@@ -52,7 +52,7 @@ const initialState = {
     {
       id: 5,
       name: 'Drag&Drop Project',
-      code: "js",
+      code: "javascript",
       created: "course",
       responsivness:"yes",
       cardFrontStyle: 'dragDropPage',
@@ -99,7 +99,7 @@ const initialState = {
     },
     {
       id: 9,
-      name: 'Pizzeria',
+      name: 'Nutrition App',
       code: "angular",
       created: "by-me",
       responsivness:"yes",
