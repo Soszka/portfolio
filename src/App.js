@@ -6,6 +6,7 @@ import Journey from './components/Journey/Journey';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
 import Adventages from './components/Adventages/Adventages';
+import Projects from './components/Projects/Projects';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Journey />
         <Adventages />
         <Contact />
+        <Projects />
         <Footer />
       </Container>
     </main>
