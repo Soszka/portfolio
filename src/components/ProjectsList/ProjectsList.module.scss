@@ -1,0 +1,116 @@
+@import '../../styles/settings.scss';
+
+.blogPage {background:url('https://i.postimg.cc/x8TgP6pR/Js-Blog-Page.png') no-repeat;}
+.blogCode {background: url('https://i.postimg.cc/c4kx4Q1V/Jj-Blog-Code.png') no-repeat;}
+.pizzeriaPage {background: url('https://i.postimg.cc/Dwy9TBkH/Pizzeria-Page.png') no-repeat;}
+.pizzeriaCode {background: url('https://i.postimg.cc/2jnRF17c/pizzeria-Code.png') no-repeat;}
+.ToDoPage {background: url('https://i.postimg.cc/7L5jChLN/To-Do-List-Pagepng.png') no-repeat;}
+.ToDoCode {background: url('https://i.postimg.cc/sDJkqb85/To-Do-List-Code.png') no-repeat;}
+.cityPage {background: url('https://i.postimg.cc/xdBhLQJV/Rzesz-w-City-Page.png') no-repeat;}
+.cityCode {background: url('https://i.postimg.cc/wvmKrM8B/cityCode.png') no-repeat;}
+.dragDropPage {background: url('https://i.postimg.cc/FzXtXvNV/Drag-Drop-Page.png') no-repeat;}
+.dragDropCode {background: url('https://i.postimg.cc/sgGH48pY/drag-And-Drop-Code.png') no-repeat;}
+.receipeBookPage {background: url('https://i.postimg.cc/x8TgP6pR/Js-Blog-Page.png') no-repeat;}
+.receipeBookCode {background: url('https://i.postimg.cc/c4kx4Q1V/Jj-Blog-Code.png') no-repeat;}
+.fitnessAppPage {background: url('https://i.postimg.cc/7L5jChLN/To-Do-List-Pagepng.png') no-repeat;}
+.fitnessAppCode {background: url('https://i.postimg.cc/sDJkqb85/To-Do-List-Code.png') no-repeat;}
+.portfolioPage {background: url('https://i.postimg.cc/6pjD5nB3/Portfolio-Page.png') no-repeat;}
+.portfolioCode {background: url('https://i.postimg.cc/c4ZqDdDs/portfolio-Code.png') no-repeat;}
+.nutritionAppPage {background: url('https://i.postimg.cc/Dwy9TBkH/Pizzeria-Page.png') no-repeat;}
+.nutritionAppCode {background: url('https://i.postimg.cc/2jnRF17c/pizzeria-Code.png') no-repeat;}
+
+
+.projectsList {
+  display : flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  .project {
+    width: 32%;
+    height: 350px;
+    perspective: 800px;
+    -webkit-perspective: 800px;
+    margin: 30px 5px;
+
+    .projectCard {
+      position:relative;
+      width: 100%;
+      height: 100%;
+      transition: all 1s;
+      -webkit-transition:1s;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      border-radius: 10%;
+    }
+  }
+
+  .project:hover > .projectCard {
+    transform:rotateY(180deg);
+    -webkit-transform:rotateY(180deg);
+  }
+
+  .projectCardFront {
+    border-radius: 10%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    h5 {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 62px;
+      font-weight: bold;
+      color: white;
+      padding: 5px;
+    }
+  }
+
+  .projectCardBack {
+    position: absolute;
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    transform:rotateY(180deg);
+    background-size: cover;
+    -webkit-transform:rotateY(180deg);
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+
+    .content {
+      transform: translateY(170px);
+      background-color: black;
+      text-align: center;
+
+      p {
+        margin-bottom: 0;
+        font-size: $content-font-size * 1.2;
+        word-spacing: 10px;
+      }
+
+      .links {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      a {
+        color: $text-secondary-color;
+        font-size: 40px;
+        padding: 0px 40px 5px;
+        transition: 0.5s;
+
+        &:hover {
+          transform: translateY(-25%);
+          color: $buttons-color;
+        }
+      }
+    }
+  }
+}
+

@@ -1,10 +1,9 @@
 import { createStore } from 'redux';
+import initialState from './initialState';
+
+
 const reducer = (state, action) => {
   return state;
-};
-
-const initialState = {
-  projects: []
 };
 
 const store = createStore(
