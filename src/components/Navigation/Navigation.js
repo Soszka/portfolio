@@ -1,10 +1,12 @@
 import styles from './Navigation.module.scss';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 
 const Navigation = () => {
+  const location = useLocation();
+
   return (
-      <nav>
+    <nav className={location.pathname === '/projects' || location.pathname === '/skills' ? styles.activeProjects : ''}>
         <div className={styles.home}>
         <Link to="/">bartlomiejsocha.pl</Link>
         </div>
@@ -18,4 +20,4 @@ const Navigation = () => {
   );
 }
 
-export default Navigation
+export default Navigation;
