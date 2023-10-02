@@ -1,27 +1,25 @@
 import React from 'react';
-import Splash from './components/Splash/Splash';
-import Container from './components/Container/Container'
-import About from './components/About/About';
-import Journey from './components/Journey/Journey';
-import Contact from './components/Contact/Contact';
+import HomePage from './components/HomePage/HomePage'
 import Footer from './components/Footer/Footer';
-import Adventages from './components/Adventages/Adventages';
-import Projects from './components/Projects/Projects';
+import ProjectsForm from './components/ProjectsForm/ProjectsForm';
+import Skills from './components/Skills/Skills';
+import Navigation from './components/Navigation/Navigation';
+import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
     <main>
-      <Splash />
-      <Container>
-        <About />
-        <Journey />
-        <Adventages />
-        <Contact />
-        <Projects />
-        <Footer />
-      </Container>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/projects" element={<ProjectsForm />} />
+        <Route path="/skills" element={<Skills />} />
+      </Routes>
+      <Footer />
     </main>
   );
 };
 
 export default App;
+
+

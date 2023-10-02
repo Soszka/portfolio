@@ -1,11 +1,9 @@
 import styles from './Splash.module.scss';
-import Navigation from '../Navigation/Navigation';
 import Achivments from '../Achivments/Achivments';
 
 const Splash = () => {
   return (
     <div className={styles.splash}>
-      <Navigation />
       <div className={styles.content}>
         <div className={styles.image}>
           <img alt="#" src="https://i.postimg.cc/9XtBBKrL/splash-photo.png"></img>

@@ -5,8 +5,6 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import clsx from 'clsx';
 
 const ProjectsList = ({ filteredProjects}) => {
-
-  console.log(filteredProjects);
   return (
     <div className={styles.projectsList}>
       {filteredProjects.map((project) => (
