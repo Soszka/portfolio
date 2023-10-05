@@ -1,0 +1,67 @@
+@import '../../styles/settings.scss';
+
+.carousel {
+
+  height: 100%;
+  position: relative;
+
+  .leftArrow {
+    position: absolute;
+    top: 36%;
+    transform: translate(0, -50%);
+    left: -30px;
+    font-size: 100px;
+    cursor: pointer;
+
+    &:hover {
+      color: $text-secondary-color;
+    }
+  }
+
+  .rightArrow {
+    position: absolute;
+    top: 35%;
+    transform: translate(0, -50%);
+    right: -30px;
+    font-size: 100px;
+    cursor: pointer;
+
+    &:hover {
+      color: $text-secondary-color;
+    }
+  }
+
+  .carouselSlides {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      width: 90%;
+      object-fit: cover;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  .dotsContainer {
+    display: flex;
+    justify-content: center;
+
+    .dot {
+      margin: 0 5px;
+      cursor: pointer;
+      font-size: 40px;
+    }
+
+    .dotActive {
+      color: $text-secondary-color;
+      margin: 0 5px;
+      cursor: pointer;
+      font-size: 40px;
+    }
+  }
+}
