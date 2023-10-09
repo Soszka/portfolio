@@ -7,7 +7,7 @@
 
   .leftArrow {
     position: absolute;
-    top: 36%;
+    top: 34%;
     transform: translate(0, -50%);
     left: -30px;
     font-size: 100px;
@@ -20,7 +20,7 @@
 
   .rightArrow {
     position: absolute;
-    top: 35%;
+    top: 33%;
     transform: translate(0, -50%);
     right: -30px;
     font-size: 100px;
@@ -45,23 +45,10 @@
       margin: 0;
       padding: 0;
     }
-  }
 
-  .dotsContainer {
-    display: flex;
-    justify-content: center;
-
-    .dot {
-      margin: 0 5px;
-      cursor: pointer;
+    h2 {
       font-size: 40px;
-    }
-
-    .dotActive {
-      color: $text-secondary-color;
-      margin: 0 5px;
-      cursor: pointer;
-      font-size: 40px;
+      letter-spacing: 5px;
     }
   }
 }
