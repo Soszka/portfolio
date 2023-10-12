@@ -135,14 +135,14 @@ const initialState = {
       They encompass the knowledge, expertise, and proficiency required to solve complex problems,
       and contribute effectively within one's chosen industry.`,
       slides : [
-        {url: 'https://i.postimg.cc/59sPCs11/HTML-logo.png', title: 'HTML'},
-        {url: 'https://i.postimg.cc/vmHn8kMJ/CSS-SASS.png', title: 'CSS & SASS'},
-        {url: 'https://i.postimg.cc/xqrhGLt2/Java-Script-Type-Script.png', title: 'JavaScript & TypScript'},
-        {url: 'https://i.postimg.cc/L581Sk03/React-Redux.png', title: 'React & Redux'},
-        {url: 'https://i.postimg.cc/sxWRvq8j/Angular-Ng-Rx.png', title: 'Angular & NgRx'},
-        {url: 'https://i.postimg.cc/tCXhJsXZ/Webpack-Npm.png', title: 'NPM & Webpack'},
-        {url: 'https://i.postimg.cc/BQyMhtXV/Visual-logo.png', title: 'Visual Studio Code'},
-        {url: 'https://i.postimg.cc/4d5Ww596/Jira-logo.png', title: 'Basic Projects Management'}
+        {url: 'https://i.postimg.cc/ry13W2nq/HTML-logo.png', title: 'HTML'},
+        {url: 'https://i.postimg.cc/bYbFh90d/CSS-SASS.png', title: 'CSS & SASS'},
+        {url: 'https://i.postimg.cc/T3kt97xN/Java-Script-Type-Script.png', title: 'JavaScript & TypScript'},
+        {url: 'https://i.postimg.cc/HkWSbGq7/React-Redux.png', title: 'React & Redux'},
+        {url: 'https://i.postimg.cc/W4JVMJZK/Angular-Ng-Rx.png', title: 'Angular & NgRx'},
+        {url: 'https://i.postimg.cc/SNfTXQvh/Webpack-Npm.png', title: 'NPM & Webpack'},
+        {url: 'https://i.postimg.cc/ZKjQ7Fzg/Visual-logo.png', title: 'Visual Studio Code'},
+        {url: 'https://i.postimg.cc/7P2YrdQ7/Jira-logo.png', title: 'Basic Projects Management'}
       ]
     },
     {
