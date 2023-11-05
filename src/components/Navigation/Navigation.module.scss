@@ -2,12 +2,21 @@
 
 nav {
   margin: 0 auto;
-  padding: 20px 0 15px;
+  padding: 20px 0 20px;
   display : flex;
   justify-content: space-between;
   border-bottom: 2px solid $text-secondary-color;
   background-image: url('https://i.postimg.cc/xTvcwVKz/splashbackground-two.jpg');
   background-size: cover;
+  &.closed {
+    border-bottom: none;
+  }
+  @include extra-large-screens {
+    background-color: black;
+    background-image: none;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .activeProjects {
@@ -16,29 +25,154 @@ nav {
 }
 
 .home {
-  margin-left: 100px;
+  margin-left: 5%;
+  @include extra-large-screens {
+    margin-left: 80px;
+  }
+  @include medium-screens {
+    margin-left: 40px;
+  }
+
   a {
     text-decoration: none;
-    font-size: 36px;
+    font-size: 25px;
     color: $text-color;
     &:hover {
       color: $text-secondary-color;
+    }
+  }
+  
+  a:nth-child(1) {
+    display: block;
+    @include extra-large-screens {
+      display: none;
+    }
+  }
+
+  a:nth-child(2) {
+    display: none;
+    font-size: 30px;
+    @include extra-large-screens {
+      display: block;
+      position: absolute;
+      top: 25px;
+      left: 80px;
+    }
+    @include medium-screens {
+      left: 30px;
     }
   }
 }
 
-.list {
-  margin-right: 100px;
-  padding-top: 5px;
-  a {
-    text-decoration: none;
-    font-size: 26px;
-    padding : 0 20px;
-    color: $text-color;
-    &:hover {
-      color: $text-secondary-color;
+.menu {
+  position: absolute;
+  display: none;
+  top: 35px;
+  right: 80px;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 40px;
+  height: 30px;
+  &:hover span { 
+    background-color: $text-secondary-color;
+  }
+  @include extra-large-screens {
+    display: flex;
+  }
+  @include medium-screens {
+    right: 40px;
+  }
+
+  span {
+    height: 6px;
+    width: 100%;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  .closeIcon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    &:hover span { 
+      background-color: $text-secondary-color;
+    }
+  
+    span {
+      width: 100%;
+      height: 6px;
+      background-color: white;
+      position: absolute;
+      top: 17px;
+    }
+  
+    span:nth-child(1) {
+      transform: rotate(45deg);
+    }
+  
+    span:nth-child(2) {
+      transform: rotate(-45deg);
     }
   }
+}
+
+ul {
+  margin-right: 5%;
+  margin-top:0;
+  margin-bottom: 0;
+  display: flex;
+  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  max-height: 300px;
+  opacity: 1;
+  visibility: visible;
+  &.closed {
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  @include extra-large-screens {
+    text-align: center;
+    margin-top: 100px;
+  }
+  @include large-screens {
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+    margin-top: 100px;
+    padding: 0;
+    margin-right: 0;
+  }
+
+  li {
+    list-style: none;
+    @include extra-large-screens {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    @include large-screens {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+    
+    a {
+      text-decoration: none;
+      font-size: 20px;
+      padding : 0 20px;
+      color: $text-color;
+      @include extra-large-screens {
+        text-align: center;
+        margin: 20px;
+      }
+      &:hover {
+        color: $text-secondary-color;
+      }
+    }
+  }
+
   .resume {
     color: $buttons-color;
     border: 3px solid $buttons-color;

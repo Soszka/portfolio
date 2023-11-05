@@ -6,6 +6,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+  @include extra-large-screens {
+    background-color: black;
+    background-image: none;
+  }
 }
 
 .content {

@@ -1,22 +1,57 @@
 import styles from './Navigation.module.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse} from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useState, useEffect} from 'react';
 
 
 const Navigation = () => {
   const location = useLocation();
+  const [menuClosed, setMenuClosed] = useState(true)
+  const handleResize = () => {
+    if (window.innerWidth > 1200) {
+      setMenuClosed(false);
+    } else {
+      setMenuClosed(true); // 
+    }
+  };
+
+  useEffect(() => {
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
 
   return (
-    <nav className={location.pathname === '/projects' || location.pathname === '/skills' ? styles.activeProjects : ''}>
-        <div className={styles.home}>
+    <nav className={`${location.pathname === '/projects' || location.pathname === '/skills' ? styles.activeProjects : ''} ${menuClosed ? styles.closed : styles.open}`}>
+      <div className={styles.home}>
         <Link to="/">bartlomiejsocha.pl</Link>
-        </div>
-        <div className={styles.list}>
-          <NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/skills">SKILLS</NavLink>
-          <NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/projects">PROJECTS</NavLink>
-          <a href="https://github.com/Soszka" rel="noreferrer" target="_blank">GITHUB</a>
-          <a className={styles.resume} href="https://github.com/Soszka">RESUME</a>
-        </div>
-      </nav>
+        <Link to="/"><FontAwesomeIcon icon={faHouse} /></Link>
+      </div>
+      <div className={styles.menu} onClick={() => setMenuClosed(!menuClosed)}>
+        {menuClosed ? (
+          <>
+            <span></span>
+            <span></span>
+            <span></span>
+          </>
+        ) : (
+          <div className={styles.closeIcon}>
+            <span></span>
+            <span></span>
+          </div>
+        )}
+      </div>
+      <ul className={menuClosed ? styles.closed : ""}>
+        <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/skills">SKILLS</NavLink></li>
+        <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/projects">PROJECTS</NavLink></li>
+        <li><a href="https://github.com/Soszka" rel="noreferrer" target="_blank">GITHUB</a></li>
+        <li><a className={styles.resume} href="https://github.com/Soszka">RESUME</a></li>
+      </ul>
+    </nav>
   );
 }
 
