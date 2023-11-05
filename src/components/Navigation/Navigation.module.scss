@@ -2,7 +2,7 @@
 
 nav {
   margin: 0 auto;
-  padding: 20px 0 20px;
+  padding: 20px 0;
   display : flex;
   justify-content: space-between;
   border-bottom: 2px solid $text-secondary-color;
@@ -16,6 +16,7 @@ nav {
     background-image: none;
     flex-direction: column;
     align-items: center;
+    padding: 0;
   }
 }
 
@@ -136,13 +137,12 @@ ul {
 
   @include extra-large-screens {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
   }
   @include large-screens {
     overflow: hidden;
     display: inline-block;
     text-align: center;
-    margin-top: 100px;
     padding: 0;
     margin-right: 0;
   }

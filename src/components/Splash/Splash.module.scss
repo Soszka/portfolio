@@ -15,44 +15,82 @@
 .content {
   display: flex;
   justify-content: space-around;
-  padding: 70px 100px 90px;;
+  padding: 50px;
+  @include extra-large-screens {
+    padding: 10px 20px;
+  }
+  @include large-screens {
+    display: block;
+    text-align: center;
+    padding: 0px;
+  }
 }
 
 .description {
   font-size: 40px;
-  margin-right: 80px;
   padding-right: 50px;
   text-align: left;
+  @include extra-large-screens {
+    margin-top: 30px;
+    padding-right: 20px;
+  }
+  @include large-screens {
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+  @include small-screens {
+    padding: 0 10px;
+  }
 
   p {
-    margin: 10px 0 10px;
+    margin: 10px 0;
   }
 
   p:nth-child(1) {
-    font-size: $content-font-size * 2;
+    font-size: $content-font-size * 1.5;
     margin-bottom: 0px;
+    @include large-screens {
+      margin-top: 0
+    }
+    @include small-screens {
+      font-size: $content-font-size * 1.25;
+    }
 
     span {
       letter-spacing: 10px;
+      @include small-screens {
+        letter-spacing: 6px;
+      }
     }
   }
 
   p:nth-child(2) {
     color: $text-secondary-color;
-    font-size: $content-font-size * 3;
+    font-size: $content-font-size * 2;
     margin-top: 0px;
     font-weight: bold;
+    @include small-screens {
+      font-size: $content-font-size * 1.6;
+    }
   }
 
   p:nth-child(3) {
     font-weight: bold;
-    font-size: $content-font-size * 1.75;
-    margin-top: 40px;
+    font-size: $content-font-size * 1.4;
+    margin-top: 20px;
+    @include small-screens {
+      font-size: $content-font-size * 1.2;
+    }
   }
 
   p:nth-child(4) {
-    font-size: $content-font-size;
-    margin-bottom: 40px;
+    font-size: $content-font-size * 0.8;
+    margin-bottom: 20px;
+    @include extra-large-screens {
+      display: none;
+    }
   }
 
   a {
@@ -62,6 +100,7 @@
     padding: 10px 20px;
     border-radius: $radious;
     transition: all 0.25s;
+    font-size: $content-font-size * 1.2;
     &:hover {
       background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
       border: 3px solid $text-secondary-color;
@@ -72,7 +111,19 @@
 }
 
 img {
-  height: 700px;
-  margin-left: 70px;
-  padding-left: 40px;
+  height: 500px;
+  margin-top: 10px;
+  margin-left: 50px;
+  padding-left: 30px;
+  @include large-screens {
+    height: 400px;
+    margin: 10px 0 0;
+    padding: 0;
+  }
+  @include small-screens {
+    height: 330px;
+  }
+  @include tiny-screens {
+    height: 300px;
+  }
 }
