@@ -6,7 +6,7 @@ const About = () => {
     <div className={styles.about}>
       <Title>About Me</Title>
       <div className={styles.content}>
-        <div className={styles.description}>
+        <div className={styles.description} data-aos="slide-up">
           <p>I graduated from two different faculties, earning the title of Energy Engineer and Project Manager. My interest in programming and front-end technologies appeared in this period,
              when I created my first website during my studies at the Faculty of Computer Science. In addition, I participated in an intensive programming bootcamp, which further strengthened my programming skills.
              Over the next months, I explored this knowledge by implementing many online courses and creating my own concepts, which you can find in the - projects tab.
@@ -19,7 +19,7 @@ const About = () => {
             <a href="#github.com" className={styles.button}>LINKEDIN</a>
           </div> 
         </div>
-        <div className={styles.image}>
+        <div className={styles.image} data-aos="slide-down">
           <img src="https://i.postimg.cc/1RCRxjqK/Screenshot-20210125-151129.png" alt="Myphoto"></img>
         </div>
       </div>

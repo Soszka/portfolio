@@ -2,12 +2,14 @@
 
 .journeyItems {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .journeyItem {
-  flex: 1;
+  width: 20%;
   text-align: center;
-  margin: 20px 20px;
+  margin: 20px 25px;
   padding: 20px;
   background-color: rgb(5, 157, 228, 0.05);
   border-radius: 3%;
@@ -15,6 +17,8 @@
   
   h2 {
     color: $buttons-color;
+    font-size: $content-font-size * 1.5;
+    margin: 10px 0;
   }
 
   p {
@@ -22,8 +26,8 @@
   }
 
   img {
-    width: 300px;
-    height: 300px;
+    width: 225px;
+    height: 225px;
     object-fit: cover;
     margin: 10px;
     padding: 0;

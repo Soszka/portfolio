@@ -3,24 +3,51 @@
 
 .content {
  display: flex;
- align-items: center;
+ @include extra-large-screens {
+   display: block;
+ }
 }
 
 .description {
   flex: 1;
   font-size: $content-font-size * 0.95;
-  padding-bottom: 40px;
+  margin: 0 20px 0 60px;
+  padding: 20px;
+  @include extra-large-screens {
+    text-align: center;
+    margin: 0 20px;
+  }
+  @include small-screens {
+    font-size: $content-font-size * 0.85;
+    margin: 0 10px;
+    padding: 5px;
+  }
+
+  p {
+    margin: 0 0 20px;
+  }
 }
 
 .image {
   flex: 1;
-  object-fit: cover;
-  margin-left: 70px;
+  text-align: center;
+  @include extra-large-screens {
+    display: none;
+  }
 
   img {
-    object-fit: cover;
-    margin: 0;
     padding: 0;
+    margin: 0 60px 0 10px;
+  }
+}
+
+.buttonsContainer {
+  @include extra-large-screens {
+    display: flex;
+    justify-content: space-between;
+  }
+  @include small-screens {
+    display: block;
   }
 }
 
@@ -33,6 +60,19 @@
   font-size: $content-font-size * 1.75;
   margin: 15px 30px 0 0;
   transition: all 0.25s;
+  @include extra-large-screens {
+    margin: 20px;
+    width: 30%;
+  }
+  @include large-screens {
+    width: 40%;
+    font-size: $content-font-size * 1.4;
+  }
+  @include small-screens {
+    display: block;
+    width: 80%;
+    margin: 20px auto;
+  }
   &:hover {
     background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
     border: 3px solid $text-secondary-color;
