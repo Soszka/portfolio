@@ -26,7 +26,7 @@ const Navigation = () => {
   
 
   return (
-    <nav className={`${location.pathname === '/projects' || location.pathname === '/skills' ? styles.activeProjects : ''} ${menuClosed ? styles.closed : styles.open}`}>
+    <nav className={`${location.pathname === '/projects' || location.pathname === '/skills' ? styles.activeProjects : ''}${menuClosed ? styles.closed : styles.open}`}>
       <div className={styles.home}>
         <Link to="/">bartlomiejsocha.pl</Link>
         <Link to="/"><FontAwesomeIcon icon={faHouse} /></Link>

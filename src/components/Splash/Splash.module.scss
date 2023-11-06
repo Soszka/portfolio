@@ -27,7 +27,6 @@
 }
 
 .description {
-  font-size: 40px;
   padding-right: 50px;
   text-align: left;
   @include extra-large-screens {
@@ -49,13 +48,13 @@
   }
 
   p:nth-child(1) {
-    font-size: $content-font-size * 1.5;
+    font-size: $content-font-size * 2;
     margin-bottom: 0px;
     @include large-screens {
       margin-top: 0
     }
     @include small-screens {
-      font-size: $content-font-size * 1.25;
+      font-size: $content-font-size * 1.5;
     }
 
     span {
@@ -68,25 +67,26 @@
 
   p:nth-child(2) {
     color: $text-secondary-color;
-    font-size: $content-font-size * 2;
+    font-size: $content-font-size * 2.5;
     margin-top: 0px;
     font-weight: bold;
     @include small-screens {
-      font-size: $content-font-size * 1.6;
+      font-size: $content-font-size * 1.9;
     }
   }
 
   p:nth-child(3) {
     font-weight: bold;
-    font-size: $content-font-size * 1.4;
+    font-size: $content-font-size * 1.75;
     margin-top: 20px;
     @include small-screens {
-      font-size: $content-font-size * 1.2;
+      font-size: $content-font-size * 1.5;
+      margin: 0 0 20px;
+
     }
   }
 
   p:nth-child(4) {
-    font-size: $content-font-size * 0.8;
     margin-bottom: 20px;
     @include extra-large-screens {
       display: none;
@@ -100,7 +100,7 @@
     padding: 10px 20px;
     border-radius: $radious;
     transition: all 0.25s;
-    font-size: $content-font-size * 1.2;
+    font-size: $content-font-size * 1.5;
     &:hover {
       background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
       border: 3px solid $text-secondary-color;
