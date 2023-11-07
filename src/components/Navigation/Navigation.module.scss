@@ -20,11 +20,6 @@ nav {
   }
 }
 
-.activeProjects {
-  background-color: black;
-  background-image: none;
-}
-
 .home {
   margin-left: 5%;
   @include extra-large-screens {
@@ -189,6 +184,11 @@ ul {
     .linkActive {
       color: $buttons-color;
     }
+  }
+
+  .activeProjects {
+    background-color: black;
+    background-image: none;
   }
 }
 

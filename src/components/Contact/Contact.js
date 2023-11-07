@@ -10,7 +10,7 @@ const Contact = () => {
     <div>
       <Title>Contact Me</Title>
       <div className={styles.contact}>
-        <div className={styles.contactForm}>
+        <div className={styles.contactForm}  data-aos="slide-right">
           <h4>Fill in the<span> Form</span></h4>
           <div className={styles.row}>
             <div className={styles.formGroup}>
@@ -28,7 +28,7 @@ const Contact = () => {
           </div>
           <a href="#linkedin.com" className={`${styles.button} ${styles.sendButton}`}>SEND MESSAGE</a>
         </div>
-        <div className={styles.contactOptions}>
+        <div className={styles.contactOptions}  data-aos="slide-left">
           <h4>Other Contact<span> Options</span></h4>
           <a href="#linkedin.com" className={`${styles.button} ${styles.contactButton}`}>
             <FontAwesomeIcon icon={faLinkedin} className={styles.icon} /> LinkedIn
