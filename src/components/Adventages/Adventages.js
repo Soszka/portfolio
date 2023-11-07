@@ -6,7 +6,7 @@ const Adventages = () => {
     <div>
       <Title>Why Me</Title>
       <div className={styles.adventages}>
-        <div className={styles.adventage}>
+        <div className={styles.adventage} data-aos="zoom-in">
           <img alt="adventage" src="https://i.postimg.cc/sDQH0Cbq/Zrzut-ekranu-2023-09-28-211542.png"></img>
           <div className={styles.adventageContent}>
             <h3>Responsivness</h3>
@@ -14,7 +14,7 @@ const Adventages = () => {
             <a href="https://github.com/Soszka">See more</a>
           </div>
         </div>
-        <div className={styles.adventage}>
+        <div className={styles.adventage} data-aos="zoom-in" data-aos-delay="250">
           <img alt="adventage" src="https://i.postimg.cc/R03KVN0S/pexels-negative-space-160107.jpg"></img>
           <div className={styles.adventageContent}>
             <h3>UX/UI</h3>
@@ -22,7 +22,7 @@ const Adventages = () => {
             <a href="https://github.com/Soszka">See more</a>
           </div>
         </div>
-        <div className={styles.adventage}>
+        <div className={styles.adventage} data-aos="zoom-in" data-aos-delay="500">
           <img alt="adventage" src="https://i.postimg.cc/KYYQ7Gvw/Zrzut-ekranu-2023-09-29-093138.png"></img>
           <div className={styles.adventageContent}>
             <h3>Libraries</h3>
@@ -30,7 +30,7 @@ const Adventages = () => {
             <a href="https://github.com/Soszka">See more</a>
           </div>
         </div>
-        <div className={styles.adventage}>
+        <div className={styles.adventage} data-aos="zoom-in">
           <img alt="adventage" src="https://i.postimg.cc/KYYQ7Gvw/Zrzut-ekranu-2023-09-29-093138.png"></img>
           <div className={styles.adventageContent}>
             <h3>Frameworks</h3>
@@ -38,7 +38,7 @@ const Adventages = () => {
             <a href="https://github.com/Soszka">See more</a>
           </div>
         </div>
-        <div className={styles.adventage}>
+        <div className={styles.adventage} data-aos="zoom-in" data-aos-delay="250">
           <img alt="adventage" src="https://i.postimg.cc/sgmwZQy5/Computer-programmer-jpeg.jpg"></img>
           <div className={styles.adventageContent}>
             <h3>Optimization</h3>
@@ -46,7 +46,7 @@ const Adventages = () => {
             <a href="https://github.com/Soszka">See more</a>
           </div>
         </div>
-        <div className={styles.adventage}>
+        <div className={styles.adventage} data-aos="zoom-in" data-aos-delay="500">
           <img alt="adventage" src="https://i.postimg.cc/8zXLShNX/pexels-kevin-ku-577585.jpg"></img>
           <div className={styles.adventageContent}>
             <h3>Creativity</h3>
