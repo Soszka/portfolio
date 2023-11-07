@@ -4,6 +4,10 @@
   margin-top: 40px;
   text-align: center;
   font-size: $content-font-size * 1.1;
+  @include small-screens {
+    margin-top: 10px;
+    font-size: $content-font-size * 0.9;
+  }
 
   span {
     color: $text-secondary-color;
