@@ -3,13 +3,17 @@
 .journeyItems {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
+  @include medium-screens {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .journeyItem {
   width: 20%;
   text-align: center;
-  margin: 10px 15px;
   padding: 20px;
   background-color: rgb(5, 157, 228, 0.05);
   border-radius: 3%;
@@ -19,7 +23,7 @@
     margin: 20px 30px;
   }
   @include medium-screens {
-    width: 70%;
+    width: 80%;
   }
   
   h2 {

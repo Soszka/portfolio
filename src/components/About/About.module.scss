@@ -11,7 +11,7 @@
 .description {
   flex: 1;
   font-size: $content-font-size * 0.95;
-  margin: 0 20px 0 60px;
+  margin: 0 20px 0 0px;
   padding: 20px;
   @include extra-large-screens {
     text-align: center;
@@ -37,7 +37,7 @@
 
   img {
     padding: 0;
-    margin: 0 60px 0 10px;
+    margin: 0 0 0 10px;
   }
 }
 

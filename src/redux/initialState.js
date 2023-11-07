@@ -138,8 +138,8 @@ const initialState = {
         {url: 'https://i.postimg.cc/ry13W2nq/HTML-logo.png', title: 'HTML'},
         {url: 'https://i.postimg.cc/bYbFh90d/CSS-SASS.png', title: 'CSS & SASS'},
         {url: 'https://i.postimg.cc/T3kt97xN/Java-Script-Type-Script.png', title: 'JavaScript & TypScript'},
-        {url: 'https://i.postimg.cc/HkWSbGq7/React-Redux.png', title: 'React & Redux'},
-        {url: 'https://i.postimg.cc/W4JVMJZK/Angular-Ng-Rx.png', title: 'Angular & NgRx'},
+        {url: 'https://i.postimg.cc/J4X6yy0P/React-Redux.png', title: 'React & Redux'},
+        {url: 'https://i.postimg.cc/ydWJ5H9b/Angular-Ng-Rx.png', title: 'Angular & NgRx'},
         {url: 'https://i.postimg.cc/SNfTXQvh/Webpack-Npm.png', title: 'NPM & Webpack'},
         {url: 'https://i.postimg.cc/ZKjQ7Fzg/Visual-logo.png', title: 'Visual Studio Code'},
         {url: 'https://i.postimg.cc/7P2YrdQ7/Jira-logo.png', title: 'Basic Projects Management'}
