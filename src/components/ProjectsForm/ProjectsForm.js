@@ -38,7 +38,7 @@ const ProjectsForm = () => {
     <div>
       <Title>My Projects</Title>
       <Container>
-        <div className={styles.projectsForm}>
+        <div className={styles.projectsForm} data-aos="zoom-out">
           <div className={styles.code}>
             Code:
             <label><input type="radio" name="code" onChange={handleCodeChange} value="javascript" />JS / TS</label>

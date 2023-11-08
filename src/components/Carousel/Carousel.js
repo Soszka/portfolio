@@ -19,6 +19,10 @@ const Carousel = ({ carouselSlides }) => {
     setCurrentIndex(newIndex);
   }
 
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  }
+
   return (
     <div className={styles.carousel}>
       <div className={styles.leftArrow} onClick={goToPrevious}><FontAwesomeIcon icon={faChevronLeft} /></div>
@@ -26,6 +30,16 @@ const Carousel = ({ carouselSlides }) => {
       <div className={styles.carouselSlides}>
         <img alt={carouselSlides[currentIndex].title} src={carouselSlides[currentIndex].url}></img>
         <h2>{carouselSlides[currentIndex].title}</h2>
+        <div className={styles.dots}>
+          {carouselSlides.map((slide, slideIndex) => (
+            <div 
+              key={slideIndex}
+              className={`${styles.dot} ${slideIndex === currentIndex ? styles.activeDot : ''}`}
+              onClick={() => goToSlide(slideIndex)}>
+              •
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

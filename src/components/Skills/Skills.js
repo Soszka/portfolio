@@ -13,7 +13,7 @@ const Skills = () => {
       <Title>My Skills</Title>
       <div className={styles.skills}>
         {skills.map((skill) => (
-          <AccordionCarousel key={skill.id} skill={skill} />
+          <AccordionCarousel key={skill.id} skill={skill}/>
         ))}
       </div>
     </div>

@@ -24,13 +24,26 @@
   display : flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  @include medium-screens {
+    flex-direction: column;
+    align-items: center;
+  }
 
   .project {
     width: 32%;
-    height: 350px;
+    height: 300px;
     perspective: 800px;
     -webkit-perspective: 800px;
     margin: 30px 5px;
+    @include extra-large-screens {
+      width: 45%;
+    }
+    @include medium-screens {
+      width: 70%;
+    }
+    @include small-screens {
+      width: 95%;
+    }
 
     .projectCard {
       position:relative;
@@ -65,10 +78,16 @@
     h5 {
       letter-spacing: 1px;
       text-transform: uppercase;
-      font-size: 62px;
+      font-size: 52px;
       font-weight: bold;
       color: white;
       padding: 5px;
+      @include small-screens {
+        font-size: 42px;
+      }
+      @include tiny-screens {
+        font-size: 36px;
+      }
     }
   }
 
@@ -84,13 +103,13 @@
     -webkit-backface-visibility:hidden;
 
     .content {
-      transform: translateY(170px);
+      transform: translateY(150px);
       background-color: black;
       text-align: center;
 
       p {
         margin-bottom: 0;
-        font-size: $content-font-size * 1.2;
+        font-size: $content-font-size * 1.1;
         word-spacing: 10px;
       }
 
@@ -101,7 +120,7 @@
 
       a {
         color: $text-secondary-color;
-        font-size: 40px;
+        font-size: 32px;
         padding: 0px 40px 5px;
         transition: 0.5s;
 

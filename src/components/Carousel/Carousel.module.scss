@@ -9,9 +9,12 @@
     position: absolute;
     top: 34%;
     transform: translate(0, -50%);
-    left: -30px;
-    font-size: 80px;
+    left: -20px;
+    font-size: 65px;
     cursor: pointer;
+    @include medium-screens {
+      display: none;
+    }
 
     &:hover {
       color: $text-secondary-color;
@@ -22,9 +25,12 @@
     position: absolute;
     top: 33%;
     transform: translate(0, -50%);
-    right: -30px;
-    font-size: 80px;
+    right: -20px;
+    font-size: 65px;
     cursor: pointer;
+    @include medium-screens {
+      display: none;
+    }
 
     &:hover {
       color: $text-secondary-color;
@@ -47,8 +53,35 @@
     }
 
     h2 {
-      font-size: 40px;
+      font-size: 30px;
       letter-spacing: 5px;
+      margin-bottom: 0;
+      @include medium-screens {
+        font-size: 26px;
+        margin: 15px 30px 0;
+      }
+    }
+
+    .dots {
+      
+      display: none;
+      @include medium-screens {
+        display: flex;
+        justify-content: center;
+      }
+
+      .dot {
+        margin: 0 3px;
+        cursor: pointer;
+        font-size: 40px;
+        @include small-screens {
+          font-size: 30px;
+        }
+      }
+
+      .activeDot {
+        color: $text-secondary-color;
+      }
     }
   }
 }

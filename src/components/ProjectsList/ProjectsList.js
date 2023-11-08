@@ -8,7 +8,7 @@ const ProjectsList = ({ filteredProjects}) => {
   return (
     <div className={styles.projectsList}>
       {filteredProjects.map((project) => (
-        <div key={project.id} className={styles.project} code={project.code} created={project.created} responsivness={project.responsivness}>
+        <div key={project.id} className={styles.project} code={project.code} created={project.created} data-aos="zoom-in" responsivness={project.responsivness}>
           <div className={styles.projectCard}>
             <div className={clsx(styles.projectCardFront, styles[project.cardFrontStyle])}>
               <h5>{project.name}</h5>

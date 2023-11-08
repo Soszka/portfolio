@@ -11,7 +11,7 @@ const AccordionCarousel = ({ skill }) => {
 
   return (
     <div>
-      <div className={styles.accordion}>
+      <div className={styles.accordion} data-aos="slide-up">
         <div className={styles.accordionSection}  onClick={() => setIsActive(!isActive)} >
           <div className={styles.accordionTitle}>
             <h3>{skill.name}</h3>
