@@ -3,11 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse} from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect} from 'react';
+import clsx from 'clsx';
 
 
 const Navigation = () => {
   const location = useLocation();
-  const [menuClosed, setMenuClosed] = useState(true)
+  const [menuClosed, setMenuClosed] = useState(true);
+
+  useEffect(() => {setMenuClosed(true)}, [location.pathname]); 
+  
   const handleResize = () => {
     if (window.innerWidth > 1200) {
       setMenuClosed(false);
@@ -24,9 +28,11 @@ const Navigation = () => {
     };
   }, []);
   
-
   return (
-    <nav className={`${location.pathname === '/projects' || location.pathname === '/skills' ? styles.activeProjects : ''}${menuClosed ? styles.closed : styles.open}`}>
+    <nav className={clsx(
+      menuClosed ? styles.closed : styles.open,
+      (location.pathname === '/projects' || location.pathname === '/skills') && styles.activeProjects
+    )}>      
       <div className={styles.home}>
         <Link to="/">bartlomiejsocha.pl</Link>
         <Link to="/"><FontAwesomeIcon icon={faHouse} /></Link>

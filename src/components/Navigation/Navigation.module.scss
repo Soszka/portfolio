@@ -11,6 +11,10 @@ nav {
   &.closed {
     border-bottom: none;
   }
+  &.activeProjects {
+    background-color: black;
+    background-image: none;
+  }
   @include extra-large-screens {
     background-color: black;
     background-image: none;
@@ -117,7 +121,7 @@ nav {
 
 ul {
   margin-right: 5%;
-  margin-top:0;
+  margin-top: 4px;
   margin-bottom: 0;
   display: flex;
   transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
@@ -184,11 +188,6 @@ ul {
     .linkActive {
       color: $buttons-color;
     }
-  }
-
-  .activeProjects {
-    background-color: black;
-    background-image: none;
   }
 }
 

@@ -15,8 +15,8 @@ const About = () => {
             I believe that efficiently managed time and consistency is the key to continuous self-development.
           </p>
           <div className={styles.buttonsContainer}>
-            <a href="#github.com" className={styles.button}>GITHUB</a>
-            <a href="#github.com" className={styles.button}>LINKEDIN</a>
+            <a href="https://github.com/Soszka" rel="noreferrer" target="_blank"className={styles.button}>GITHUB</a>
+            <a href="https://www.linkedin.com/in/bart%C5%82omiej-socha-95ba1b29a/" rel="noreferrer" target="_blank" className={styles.button}>LINKEDIN</a>
           </div> 
         </div>
         <div className={styles.image} data-aos="slide-left">

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 const Skills = () => {
 
-  const skills = useSelector (state => state.skills);
+  const skills = useSelector(state => state.skills);
 
   return (
     <div>
