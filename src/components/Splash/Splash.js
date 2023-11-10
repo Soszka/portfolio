@@ -4,11 +4,11 @@ import Achivments from '../Achivments/Achivments';
 const Splash = () => {
   return (
     <div className={styles.splash}>
-      <div className={styles.content}>
-        <div className={styles.image} data-aos="fade-right">
+      <div className={styles.content} data-aos="zoom-in">
+        <div className={styles.image}>
           <img alt="#" src="https://i.postimg.cc/9XtBBKrL/splash-photo.png"></img>
         </div>
-        <div className={styles.description} data-aos="fade-left">
+        <div className={styles.description}>
           <p><span>Hello World</span> ! My name is </p>
           <p>Bartłomiej Socha</p>
           <p>Front end Developer</p>

@@ -11,7 +11,7 @@ const Journey = () => {
       <Title>My Journey</Title>
       <div className={styles.journeyItems}>
         {journeyItems.map((journeyItem) => (
-          <div className={styles.journeyItem} key={journeyItem.id} data-aos="slide-up" data-aos-delay={journeyItem.aosDelay}>
+          <div className={styles.journeyItem} key={journeyItem.id} data-aos="zoom-out" data-aos-delay={journeyItem.aosDelay}>
             <img src ={journeyItem.image} alt={journeyItem.title}/>
             <h2>{journeyItem.title}</h2>
             <p>{journeyItem.description}</p>

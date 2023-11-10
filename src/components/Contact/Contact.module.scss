@@ -216,6 +216,12 @@
     width: 30%;
     transition: opacity 0.75s, transform 0.75s, visibility 0.75s linear 0.3s;
     transform: scale(0);
+    @include large-screens {
+      width: 50%;
+    }
+    @include small-screens {
+      display: none;
+    }
     &.visible {
       visibility: visible;
       opacity: 1;
@@ -230,6 +236,11 @@
     margin-top: 120px;
     @include extra-large-screens {
       margin: 40px auto;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     .contactIcon {
@@ -287,10 +298,19 @@
   border-radius: $radious;
   z-index: 999;
   width: 60%;
+  @include large-screens {
+    width: 80%;
+  }
 
   p {
     font-size: $content-font-size * 1.1;
     margin-bottom: 20px;
+    @include medium-screens {
+      font-size: $content-font-size;
+    }
+    @include small-screens {
+      font-size: $content-font-size * 0.9;
+    }
   }
 
   button {
@@ -298,12 +318,24 @@
     border: 3px solid $text-secondary-color;
     padding: 5px 10px;
     margin-bottom: 10px;
-    width: 13%;
+    width: 15%;
     background-color: black;
     border-radius: $radious;
     font-size: $content-font-size * 1.25;
     transition: all 0.2s;
     cursor: pointer;
+    @include extra-large-screens {
+      width: 20%;
+    }
+    @include large-screens {
+      width: 25%;
+    }
+    @include small-screens {
+      width: 40%;
+    }
+    @include tiny-screens {
+      width: 60%;
+    }
     &:hover {
       background: linear-gradient(to bottom right, rgb(0, 216, 0), rgb(0, 54, 0));
       border: 3px solid rgb(0, 216, 0);

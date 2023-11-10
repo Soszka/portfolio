@@ -39,14 +39,14 @@ const Contact = () => {
     setShowCopiedMessage(true);
     setTimeout(() => {
       setShowCopiedMessage(false);
-    }, 3000);
+    }, 2000);
   };
   
   return (
     <div>
       <Title>Contact Me</Title>
       <div className={styles.contact} id="contact">
-        <div className={styles.contactForm}  data-aos="slide-right">
+        <div className={styles.contactForm}  data-aos="zoom-in">
           <h4>Fill in the<span> Form</span></h4>
           <div className={styles.row}>
             <div className={styles.formGroup}>
@@ -64,7 +64,7 @@ const Contact = () => {
           </div>
           <a href="#linkedin.com" className={`${styles.button} ${styles.sendButton}`} onClick={handleSendMessage}>SEND MESSAGE</a>
         </div>
-        <div className={styles.contactOptions} data-aos="slide-left">
+        <div className={styles.contactOptions} data-aos="zoom-in" data-aos-delay="500">
           <h4>Other Contact<span> Options</span></h4>
           <a href="https://www.linkedin.com/in/bart%C5%82omiej-socha-95ba1b29a/" rel="noreferrer" target="_blank" className={`${styles.button} ${styles.contactButton}`}>
             <FontAwesomeIcon icon={faLinkedin} className={styles.icon} /> LinkedIn
@@ -72,7 +72,7 @@ const Contact = () => {
           <a href="https://discord.gg/ZPP728gUqz" rel="noreferrer" target="_blank" className={`${styles.button} ${styles.contactButton}`}>
             <FontAwesomeIcon icon={faDiscord} className={styles.icon} /> Discord
           </a>
-          <a href=" " onClick={handleCopyClick} className={`${styles.button} ${styles.contactButton}`}>
+          <a href="  " onClick={handleCopyClick} className={`${styles.button} ${styles.contactButton}`}>
             <FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> bsocha1998@gmail.com
           </a>
           <div className={clsx(styles.copiedMessage, { [styles.visible] : showCopiedMessage, [styles.hidden]: !showCopiedMessage })}>
