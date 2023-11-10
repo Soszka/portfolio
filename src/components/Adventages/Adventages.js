@@ -16,7 +16,7 @@ const Adventages = () => {
             <div className={styles.adventageContent}>
               <h3>{adventage.title}</h3>
               <p>{adventage.description}</p>
-              <a href="https://github.com/Soszka">see github</a>
+              <a href="https://github.com/Soszka" rel="noreferrer" target="_blank">see github</a>
             </div>
           </div>
         ))}

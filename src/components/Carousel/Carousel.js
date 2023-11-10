@@ -28,8 +28,8 @@ const Carousel = ({ carouselSlides }) => {
       <div className={styles.leftArrow} onClick={goToPrevious}><FontAwesomeIcon icon={faChevronLeft} /></div>
       <div className={styles.rightArrow} onClick={goToNext}><FontAwesomeIcon icon={faChevronRight} /></div>
       <div className={styles.carouselSlides}>
-        <img alt={carouselSlides[currentIndex].title} src={carouselSlides[currentIndex].url}></img>
-        <h2>{carouselSlides[currentIndex].title}</h2>
+        <img alt={carouselSlides[currentIndex].title}  data-aos="zoom-in" src={carouselSlides[currentIndex].url}></img>
+        <h2  data-aos="slide-up">{carouselSlides[currentIndex].title}</h2>
         <div className={styles.dots}>
           {carouselSlides.map((slide, slideIndex) => (
             <div 

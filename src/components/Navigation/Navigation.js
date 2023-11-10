@@ -10,23 +10,21 @@ const Navigation = () => {
   const location = useLocation();
   const [menuClosed, setMenuClosed] = useState(true);
 
-  useEffect(() => {setMenuClosed(true)}, [location.pathname]); 
-  
-  const handleResize = () => {
-    if (window.innerWidth > 1200) {
-      setMenuClosed(false);
-    } else {
-      setMenuClosed(true); // 
-    }
-  };
-
   useEffect(() => {
+    const handleResize = () => {
+      const currentWidth = window.innerWidth;
+      if (currentWidth <= 1200) {
+        setMenuClosed(true);
+      } else {
+        setMenuClosed(false);
+      }
+    };
     handleResize(); 
     window.addEventListener('resize', handleResize);
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [location.pathname]);
   
   return (
     <nav className={clsx(

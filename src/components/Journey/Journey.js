@@ -15,7 +15,7 @@ const Journey = () => {
             <img src ={journeyItem.image} alt={journeyItem.title}/>
             <h2>{journeyItem.title}</h2>
             <p>{journeyItem.description}</p>
-            <a href="https://github.com/Soszka">SEE GITHUB</a>
+            <a href="https://github.com/Soszka" rel="noreferrer" target="_blank">SEE GITHUB</a>
           </div>
         ))}
       </div>
