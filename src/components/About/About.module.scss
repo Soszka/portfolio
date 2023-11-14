@@ -4,40 +4,27 @@
 .content {
  display: flex;
  @include extra-large-screens {
-   display: block;
+   flex-direction: column-reverse;
  }
 }
 
 .description {
-  flex: 1;
   font-size: $content-font-size * 0.95;
-  margin: 0 20px 0 0px;
-  padding: 20px;
+  padding: 20px 0 20px 20px;
+  width: 45%;
   @include extra-large-screens {
     text-align: center;
     margin: 0 20px;
+    width: auto;
   }
   @include small-screens {
-    font-size: $content-font-size * 0.85;
+    font-size: $content-font-size * 0.9;
     margin: 0 10px;
     padding: 5px;
   }
 
   p {
     margin: 0 0 20px;
-  }
-}
-
-.image {
-  flex: 1;
-  text-align: center;
-  @include extra-large-screens {
-    display: none;
-  }
-
-  img {
-    padding: 0;
-    margin: 0 0 0 10px;
   }
 }
 

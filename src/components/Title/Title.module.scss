@@ -11,14 +11,17 @@
   @include large-screens {
     margin: 20px 0;
     padding: 7px 0;
-    font-size: $header-font-size * 0.9;
+    font-size: $header-font-size * 0.95;
     letter-spacing: 5px;
   }
   @include small-screens {
     margin: 10px 0;
     padding: 5px 0;
-    font-size: $header-font-size * 0.8;
+    font-size: $header-font-size * 0.9;
     letter-spacing: 3px;
+  }
+  @include tiny-screens {
+    font-size: $header-font-size * 0.8;
   }
 }
 

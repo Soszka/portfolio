@@ -1,5 +1,6 @@
 import styles from './About.module.scss';
 import Title from '../Title/Title';
+import Animation from '../Animation/Animation';
 
 const About = () => {
   return (
@@ -19,9 +20,7 @@ const About = () => {
             <a href="https://www.linkedin.com/in/bart%C5%82omiej-socha-95ba1b29a/" rel="noreferrer" target="_blank" className={styles.button}>LINKEDIN</a>
           </div> 
         </div>
-        <div className={styles.image} data-aos="zoom-in" data-aos-delay="500">
-          <img src="https://i.postimg.cc/1RCRxjqK/Screenshot-20210125-151129.png" alt="Myphoto"></img>
-        </div>
+        <Animation />
       </div>
     </div>
   );
