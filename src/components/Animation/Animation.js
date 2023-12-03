@@ -5,8 +5,8 @@ const Animation = () => {
   const canvasRef = useRef(null);
   const minWidth = window.innerWidth < 1200 ? 5 : 10;
   const maxWidth = window.innerWidth < 1200 ? 1 : 3;
-  const minHeight = 300;
-  const maxHeight = window.innerWidth < 1200 ? 750 : 650;
+  const minHeight = 360;
+  const maxHeight = 750;
   const minTTL = 200;
   const maxTTL =  window.innerWidth < 768 ? 20 : 40
   const backgroundColor = "#000000";
@@ -113,7 +113,7 @@ const Animation = () => {
 
   return (
     <div className={styles.animationContainer} data-aos="zoom-in">
-      <img className={styles.image} src="https://i.postimg.cc/1RCRxjqK/Screenshot-20210125-151129.png" alt="Myphoto" />
+      <img className={styles.image} src="https://i.postimg.cc/gc4q8sT3/about-Image2.png" alt="Myphoto" />
       <canvas ref={canvasRef} id="canvas" className={styles.animationCanvas}></canvas>
     </div>
   );
