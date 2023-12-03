@@ -17,8 +17,8 @@ const ProjectsList = ({ filteredProjects}) => {
               <div className={styles.content}>
                 <p>{project.tools}</p>
                 <div className={styles.links}>
-                  <a href={project.pageLink} rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
-                  <a href={project.githubLink} rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faPaperclip} /></a>
+                  <a href={project.githubLink} rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub} /></a>
+                  <a href={project.pageLink} rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faPaperclip} /></a>
                 </div>
               </div>
             </div>

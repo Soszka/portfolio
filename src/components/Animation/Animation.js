@@ -113,7 +113,7 @@ const Animation = () => {
 
   return (
     <div className={styles.animationContainer} data-aos="zoom-in">
-      <img className={styles.image} src="https://i.postimg.cc/gc4q8sT3/about-Image2.png" alt="Myphoto" />
+      <img className={styles.image} src="https://i.postimg.cc/tgBzJvhS/about-Image8.png" alt="Myphoto" />
       <canvas ref={canvasRef} id="canvas" className={styles.animationCanvas}></canvas>
     </div>
   );
