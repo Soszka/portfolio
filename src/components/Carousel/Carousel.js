@@ -28,7 +28,11 @@ const Carousel = ({ carouselSlides }) => {
       <div className={styles.leftArrow} onClick={goToPrevious}><FontAwesomeIcon icon={faChevronLeft} /></div>
       <div className={styles.rightArrow} onClick={goToNext}><FontAwesomeIcon icon={faChevronRight} /></div>
       <div className={styles.carouselSlides} data-aos="zoom-in" >
-        <img alt={carouselSlides[currentIndex].title}src={carouselSlides[currentIndex].url}></img>
+        <img 
+          alt={carouselSlides[currentIndex].title} 
+          src={carouselSlides[currentIndex].url}
+          style={{ userSelect: 'none' }}
+        />
         <h2>{carouselSlides[currentIndex].title}</h2>
         <div className={styles.dots}>
           {carouselSlides.map((slide, slideIndex) => (

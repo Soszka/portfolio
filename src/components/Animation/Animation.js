@@ -1,5 +1,6 @@
 import React, { useEffect, useRef,  } from 'react';
 import styles from './Animation.module.scss';
+import aboutPhoto from '../../assets/HomePhotos/aboutPhoto1.png';
 
 const Animation = () => {
   const canvasRef = useRef(null);
@@ -113,7 +114,7 @@ const Animation = () => {
 
   return (
     <div className={styles.animationContainer} data-aos="zoom-in">
-      <img className={styles.image} src="https://i.postimg.cc/tgBzJvhS/about-Image8.png" alt="Myphoto" />
+      <img className={styles.image} src={aboutPhoto} alt="Myphoto" />
       <canvas ref={canvasRef} id="canvas" className={styles.animationCanvas}></canvas>
     </div>
   );

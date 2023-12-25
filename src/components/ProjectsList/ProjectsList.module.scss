@@ -1,23 +1,23 @@
 @import '../../styles/settings.scss';
 
-.blogPage {background:url('https://i.postimg.cc/x8TgP6pR/Js-Blog-Page.png') no-repeat;}
-.blogCode {background: url('https://i.postimg.cc/c4kx4Q1V/Jj-Blog-Code.png') no-repeat;}
-.pizzeriaPage {background: url('https://i.postimg.cc/Dwy9TBkH/Pizzeria-Page.png') no-repeat;}
-.pizzeriaCode {background: url('https://i.postimg.cc/2jnRF17c/pizzeria-Code.png') no-repeat;}
-.ToDoPage {background: url('https://i.postimg.cc/7L5jChLN/To-Do-List-Pagepng.png') no-repeat;}
-.ToDoCode {background: url('https://i.postimg.cc/sDJkqb85/To-Do-List-Code.png') no-repeat;}
-.cityPage {background: url('https://i.postimg.cc/h4VhDz86/City-Layout-Page.png') no-repeat;}
-.cityCode {background: url('https://i.postimg.cc/wvmKrM8B/cityCode.png') no-repeat;}
-.dragDropPage {background: url('https://i.postimg.cc/FzXtXvNV/Drag-Drop-Page.png') no-repeat;}
-.dragDropCode {background: url('https://i.postimg.cc/sgGH48pY/drag-And-Drop-Code.png') no-repeat;}
-.receipeBookPage {background: url('https://i.postimg.cc/HLgNXN8T/receipe-Book-Page.png') no-repeat;}
-.receipeBookCode {background: url('https://i.postimg.cc/Hk5KJmxS/receipe-Book-Code.png') no-repeat;}
-.fitnessAppPage {background: url('https://i.postimg.cc/7L5jChLN/To-Do-List-Pagepng.png') no-repeat;}
-.fitnessAppCode {background: url('https://i.postimg.cc/sDJkqb85/To-Do-List-Code.png') no-repeat;}
-.portfolioPage {background: url('https://i.postimg.cc/6pjD5nB3/Portfolio-Page.png') no-repeat;}
-.portfolioCode {background: url('https://i.postimg.cc/c4ZqDdDs/portfolio-Code.png') no-repeat;}
-.nutritionAppPage {background: url('https://i.postimg.cc/Dwy9TBkH/Pizzeria-Page.png') no-repeat;}
-.nutritionAppCode {background: url('https://i.postimg.cc/2jnRF17c/pizzeria-Code.png') no-repeat;}
+.blogPage {background:url('../../assets/ProjectsPhotos/JsBlogPage.png') no-repeat;}
+.blogCode {background: url('../../assets/ProjectsPhotos/JjBlogCode.png') no-repeat;}
+.pizzeriaPage {background: url('../../assets/ProjectsPhotos/PizzeriaPage.png') no-repeat;}
+.pizzeriaCode {background: url('../../assets/ProjectsPhotos/pizzeriaCode.png') no-repeat;}
+.ToDoPage {background: url('../../assets/ProjectsPhotos/ToDoListPagepng.png') no-repeat;}
+.ToDoCode {background: url('../../assets/ProjectsPhotos/ToDoListCode.png') no-repeat;}
+.cityPage {background: url('../../assets/ProjectsPhotos/CityLayoutPage.png') no-repeat;}
+.cityCode {background: url('../../assets/ProjectsPhotos/cityCode.png') no-repeat;}
+.dragDropPage {background: url('../../assets/ProjectsPhotos/Drag&DropPage.png') no-repeat;}
+.dragDropCode {background: url('../../assets/ProjectsPhotos/dragAndDropCode.png') no-repeat;}
+.receipeBookPage {background: url('../../assets/ProjectsPhotos/receipeBookPage.png') no-repeat;}
+.receipeBookCode {background: url('../../assets/ProjectsPhotos/receipeBookCode.png') no-repeat;}
+.fitnessAppPage {background: url('../../assets/ProjectsPhotos/FitnessAppPage.png') no-repeat;}
+.fitnessAppCode {background: url('../../assets/ProjectsPhotos/fitnessAppCode.png') no-repeat;}
+.portfolioPage {background: url('../../assets/ProjectsPhotos/PortfolioPage.png') no-repeat;}
+.portfolioCode {background: url('../../assets/ProjectsPhotos/portfolioCode.png') no-repeat;}
+.zamorskiFinansePage {background: url('../../assets/ProjectsPhotos/zamorskiFinansePage.png') no-repeat;}
+.zamorskiFinanseCode {background: url('../../assets/ProjectsPhotos/zamorskiFinanseCode.png') no-repeat;}
 
 
 .projectsList {
@@ -68,6 +68,7 @@
     width: 100%;
     height: 100%;
     background-size: cover;
+    background-position: center;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     display: flex;

@@ -1,7 +1,7 @@
 @import '../../styles/settings.scss';
 
 .splash {
-  background-image: url('https://i.postimg.cc/xTvcwVKz/splashbackground-two.jpg');
+  background-image: url('../../assets/HomePhotos/splashPhoto1.jpeg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -14,10 +14,14 @@
 
 .content {
   display: flex;
-  justify-content: space-around;
-  padding: 50px;
+  justify-content: space-between;
+  padding: 50px 0;
+  max-width: 1200px;
+  margin: 0 auto;
   @include extra-large-screens {
-    padding: 10px 20px;
+    justify-content: space-around;
+    padding: 40px 60px;
+    max-width: 1000px;
   }
   @include large-screens {
     display: block;
@@ -27,17 +31,17 @@
 }
 
 .description {
-  padding-right: 50px;
   text-align: left;
-  @include extra-large-screens {
-    margin-top: 30px;
-    padding-right: 20px;
-  }
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @include large-screens {
+    display: block;
     text-align: center;
     padding: 0;
-    margin-top: 0;
-    margin-bottom: 30px;
+    margin: 0 0 30px;
+    height: auto;
   }
   @include small-screens {
     padding: 0 10px;
@@ -50,9 +54,8 @@
   p:nth-child(1) {
     font-size: $content-font-size * 2;
     margin-bottom: 0px;
-    @include large-screens {
-      margin-top: 0
-    }
+    margin-top: 0;
+
     @include small-screens {
       font-size: $content-font-size * 1.5;
     }
@@ -69,6 +72,7 @@
     color: $text-secondary-color;
     font-size: $content-font-size * 2.5;
     margin-top: 0px;
+    margin-bottom: 0;
     font-weight: bold;
     @include small-screens {
       font-size: $content-font-size * 1.9;
@@ -78,7 +82,9 @@
   p:nth-child(3) {
     font-weight: bold;
     font-size: $content-font-size * 1.75;
-    margin-top: 20px;
+    @include extra-large-screens {
+      margin-bottom: 20px;
+    }
     @include small-screens {
       font-size: $content-font-size * 1.5;
       margin: 0 0 20px;
@@ -97,10 +103,16 @@
     color: $buttons-color;
     text-decoration: none;
     border: 3px solid $buttons-color;
-    padding: 10px 20px;
+    padding: 10px;
     border-radius: $radious;
     transition: all 0.25s;
     font-size: $content-font-size * 1.5;
+    display: inline;
+    text-align: center;
+    width: 35%;
+    @include extra-large-screens {
+      width: 70%;
+    }
     &:hover {
       background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
       border: 3px solid $text-secondary-color;
@@ -112,9 +124,7 @@
 
 img {
   height: 500px;
-  margin-top: 10px;
-  margin-left: 50px;
-  padding-left: 30px;
+  margin-right: 50px;
   @include large-screens {
     height: 400px;
     margin: 10px 0 0;

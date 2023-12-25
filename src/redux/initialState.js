@@ -1,4 +1,30 @@
 import {  faCode, faGears, faGraduationCap, faLaptopFile, faScrewdriverWrench, faChalkboard, faCalendarDays, faDiagramProject } from '@fortawesome/free-solid-svg-icons';
+import JourneyPhoto1 from '../../src/assets/HomePhotos/JourneyPhoto1.jpg';
+import JourneyPhoto2 from '../../src/assets/HomePhotos/JourneyPhoto2.jpg';
+import JourneyPhoto3 from '../../src/assets/HomePhotos/JourneyPhoto3.jpg';
+import JourneyPhoto4 from '../../src/assets/HomePhotos/JourneyPhoto4.jpg';
+import AdventagesPhoto1 from '../../src/assets/HomePhotos/adventagesPhoto1.png';
+import AdventagesPhoto2 from '../../src/assets/HomePhotos/adventagesPhoto2.jpg';
+import AdventagesPhoto3 from '../../src/assets/HomePhotos/advenatgesPhoto3.png'
+import AdventagesPhoto4 from '../../src/assets/HomePhotos/advenatgesPhoto4.png';
+import AdventagesPhoto5 from '../../src/assets/HomePhotos/adventagesPhoto5.jpg';
+import AdventagesPhoto6 from '../../src/assets/HomePhotos/adventagesPhoto6.jpg';
+import HardSkillsPhoto1 from '../../src/assets/SkillsPhotos/hardSkillsPhoto1.png';
+import HardSkillsPhoto2 from '../../src/assets/SkillsPhotos/hardSkillsPhoto2.png';
+import HardSkillsPhoto3 from '../../src/assets/SkillsPhotos/hardSkillsPhoto3.png';
+import HardSkillsPhoto4 from '../../src/assets/SkillsPhotos/hardSkillsPhoto4.png';
+import HardSkillsPhoto5 from '../../src/assets/SkillsPhotos/hardSkillsPhoto5.png';
+import HardSkillsPhoto6 from '../../src/assets/SkillsPhotos/hardSkillsPhoto6.png';
+import HardSkillsPhoto7 from '../../src/assets/SkillsPhotos/hardSkillsPhoto7.png';
+import HardSkillsPhoto8 from '../../src/assets/SkillsPhotos/hardSkillsPhoto8.png';
+import SoftSkillsPhoto1 from '../../src/assets/SkillsPhotos/softSkillsPhoto1.jpg';
+import SoftSkillsPhoto2 from '../../src/assets/SkillsPhotos/softSkillsPhoto2.jpg';
+import SoftSkillsPhoto3 from '../../src/assets/SkillsPhotos/softSkillsPhoto3.jpg';
+import SoftSkillsPhoto4 from '../../src/assets/SkillsPhotos/softSkillsPhoto4.jpg';
+import SoftSkillsPhoto5 from '../../src/assets/SkillsPhotos/softSkillsPhoto5.jpg';
+import EducationPhoto1 from  '../../src/assets/SkillsPhotos/educationPhoto1.jpg';
+import EducationPhoto2 from  '../../src/assets/SkillsPhotos/educationPhoto2.jpg';
+
 
 
 const initialState = {
@@ -45,28 +71,28 @@ const initialState = {
   journeyItems: [
     {
       id: 1,
-      image: 'https://i.postimg.cc/ZKMbpXCZ/IMG-20220625-133555.jpg',
+      image: JourneyPhoto1,
       title: 'Studies',
       description: 'Throughout my academic journey in the IT department, I had to create my first own website',
       aosDelay: '0'
     },
     {
       id: 2,
-      image: 'https://i.postimg.cc/VL0DhGtK/pexels-sora-shimazaki-5935794.jpg',
+      image: JourneyPhoto2,
       title: 'Bootcamp',
       description: 'While attending the bootcamp program, I had the opportunity to create complex applications',
       aosDelay: '250'
     },
     {
       id: 3,
-      image: 'https://i.postimg.cc/NjHG5cHR/pexels-sora-shimazaki-5926389.jpg',
+      image: JourneyPhoto3,
       title: 'Courses',
       description: 'The courses helped me expand my knowledge by learning new technologies and languages',
       aosDelay: '500'
     },
     {
       id: 4,
-      image: 'https://i.postimg.cc/sxHhFdh3/Computer-programmer-jpeg.jpg',
+      image: JourneyPhoto4,
       title: 'Job',
       description: 'Currently, I am looking for a job where I want to take my first steps in Front End Development',
       aosDelay: '750'
@@ -76,48 +102,48 @@ const initialState = {
   adventages: [
     {
       id: 1,
-      image: 'https://i.postimg.cc/sDQH0Cbq/Zrzut-ekranu-2023-09-28-211542.png',
+      image: AdventagesPhoto1,
       title: 'Responsivness',
       description: 'Pages that adapt perfectly to different devices and screen sizes',
       aosDelay: '0'
     },
     {
       id: 2,
-      image: 'https://i.postimg.cc/13Z2rhdG/pexels-negative-space-97077.jpg',
+      image: AdventagesPhoto2,
       title: 'UX/UI',
       description: 'Design with an emphasis on the user, ensuring intuitive and aesthetic user interfaces',
       aosDelay: '250'
     },
     {
       id: 3,
-      image: 'https://i.postimg.cc/6qxKk8Qq/React-Redux2.png"',
+      image: AdventagesPhoto3,
       title: 'Libraries',
       description: 'Effective use of popular libraries for optimized project work',
       aosDelay: '500'
     },
     {
       id: 4,
-      image: 'https://i.postimg.cc/85DrTzcK/Angular-Ng-Rx2.png',
+      image: AdventagesPhoto4,
       title: 'Frameworks',
       description: 'Ability to create dynamic applications using advanced frameworks',
       aosDelay: '0'
     },
     {
       id: 5,
-      image: 'https://i.postimg.cc/sgmwZQy5/Computer-programmer-jpeg.jpg',
+      image: AdventagesPhoto5,
       title: 'Optimization',
       description: 'Page optimization for better performance and loading speed',
       aosDelay: '250'
     },
     {
       id: 6,
-      image: 'https://i.postimg.cc/8zXLShNX/pexels-kevin-ku-577585.jpg',
+      image: AdventagesPhoto6,
       title: 'Creativity',
       description: 'A creative approach to solving problems and designing unique solutions',
       aosDelay: '500'
     },
   ],
-
+  
   projects: [
     {
       id: 1,
@@ -133,30 +159,6 @@ const initialState = {
     },
     {
       id: 2,
-      name: 'Pizzeria',
-      code: "javascript",
-      created: "bootcamp",
-      responsivness:"no",
-      cardFrontStyle: 'pizzeriaPage',
-      cardBackStyle: 'pizzeriaCode',
-      tools: 'Javascript, HTML, SCSS',
-      pageLink: 'https://project-pizzeria.soszka1.repl.co/',
-      githubLink: 'https://github.com/Soszka/Javascript-pizzeriaApp',
-    },
-    {
-      id: 3,
-      name: 'To-Do List',
-      code: "react",
-      created: "bootcamp",
-      responsivness:"no",
-      cardFrontStyle: 'ToDoPage',
-      cardBackStyle: 'ToDoCode',
-      tools: 'React, Redux, SCSS',
-      pageLink: 'https://react-app-soszka.vercel.app',
-      githubLink: 'https://github.com/Soszka/React-app',
-    },
-    {
-      id: 4,
       name: 'City Layout',
       code: "javascript",
       created: "by-me",
@@ -168,43 +170,31 @@ const initialState = {
       githubLink: 'https://github.com/Soszka/SCSS-cityLayout',
     },
     {
-      id: 5,
-      name: 'Drag&Drop Project',
-      code: "javascript",
-      created: "course",
+      id: 3,
+      name: 'Zamorski Finanse',
+      code: "angular",
+      created: "by-me",
       responsivness:"yes",
-      cardFrontStyle: 'dragDropPage',
-      cardBackStyle: 'dragDropCode',
-      tools: 'Typescript, HTML, CSS',
-      pageLink: 'https://soszka.github.io/Typescript-dragAndDropProject/',
-      githubLink: 'https://github.com/Soszka/Typescript-dragAndDropProject',
+      cardFrontStyle: 'zamorskiFinansePage',
+      cardBackStyle: 'zamorskiFinanseCode',
+      tools: 'Angular, NgRx, SCSS',
+      pageLink: 'https://zamorskifinanse.vercel.app',
+      githubLink: 'https://github.com/Soszka/Angular-zamorskiFinanse',
     },
     {
-      id: 6,
+      id: 4,
       name: 'Receipe Book',
       code: "angular",
       created: "course",
       responsivness:"yes",
       cardFrontStyle: 'receipeBookPage',
       cardBackStyle: 'receipeBookCode',
-      tools: 'Angular, NgRx, SCSS',
+      tools: 'Angular, Typescript, CSS',
       pageLink: 'https://receipebookapp.vercel.app/recipes',
       githubLink: 'https://github.com/Soszka/Angular-receipeBookApp',
     },
     {
-      id: 7,
-      name: 'Fitness App',
-      code: "angular",
-      created: "course",
-      responsivness:"yes",
-      cardFrontStyle: 'fitnessAppPage',
-      cardBackStyle: 'fitnessAppCode',
-      tools: 'Angular, NgRx, SCSS',
-      pageLink: 'https://github.com/Soszka/Javascript-blog',
-      githubLink: 'https://soszka.github.io/Javascript-blog',
-    },
-    {
-      id: 8,
+      id: 5,
       name: 'Portfolio',
       code: "react",
       created: "by-me",
@@ -216,17 +206,53 @@ const initialState = {
       githubLink: 'https://github.com/Soszka/portfolio',
     },
     {
-      id: 9,
-      name: 'Nutrition App',
-      code: "angular",
-      created: "by-me",
+      id: 6,
+      name: 'To-Do List',
+      code: "react",
+      created: "bootcamp",
+      responsivness:"no",
+      cardFrontStyle: 'ToDoPage',
+      cardBackStyle: 'ToDoCode',
+      tools: 'React, Redux, SCSS',
+      pageLink: 'https://react-app-soszka.vercel.app',
+      githubLink: 'https://github.com/Soszka/React-app',
+    },
+    {
+      id: 7,
+      name: 'Drag&Drop Project',
+      code: "javascript",
+      created: "course",
       responsivness:"yes",
-      cardFrontStyle: 'nutritionAppPage',
-      cardBackStyle: 'nutritionAppCode',
+      cardFrontStyle: 'dragDropPage',
+      cardBackStyle: 'dragDropCode',
+      tools: 'Typescript, HTML, CSS',
+      pageLink: 'https://soszka.github.io/Typescript-dragAndDropProject/',
+      githubLink: 'https://github.com/Soszka/Typescript-dragAndDropProject',
+    },
+    {
+      id: 8,
+      name: 'Pizzeria',
+      code: "javascript",
+      created: "bootcamp",
+      responsivness:"no",
+      cardFrontStyle: 'pizzeriaPage',
+      cardBackStyle: 'pizzeriaCode',
       tools: 'Javascript, HTML, SCSS',
-      pageLink: 'https://github.com/Soszka/Javascript-blog',
-      githubLink: 'https://soszka.github.io/Javascript-blog',
-    }
+      pageLink: 'https://project-pizzeria.soszka1.repl.co/',
+      githubLink: 'https://github.com/Soszka/Javascript-pizzeriaApp',
+    },
+    {
+      id: 9,
+      name: 'Fitness App',
+      code: "angular",
+      created: "course",
+      responsivness:"yes",
+      cardFrontStyle: 'fitnessAppPage',
+      cardBackStyle: 'fitnessAppCode',
+      tools: 'Angular, Typescript, CSS',
+      pageLink: 'https://angular-fitness-app.vercel.app/',
+      githubLink: 'https://github.com/Soszka/Angular-fitnessApp',
+    },
   ],
 
   skills: [
@@ -238,8 +264,8 @@ const initialState = {
       it not only provides the necessary technical skills, but also develops creativity,
       logical thinking and the ability to solve problems.`,
       slides : [
-        {url: 'https://i.postimg.cc/05GSNWd5/IMG-20220625-133541.jpg', title: 'Power Engineer'},
-        {url: 'https://i.postimg.cc/hPSdQLpL/IMG-20220625-133555-1.jpg', title: 'Project Manager'}
+        {url: EducationPhoto1, title: 'Power Engineer'},
+        {url: EducationPhoto2, title: 'Project Manager'}
       ]
     },
     {
@@ -250,14 +276,14 @@ const initialState = {
       They encompass the knowledge, expertise, and proficiency required to solve complex problems,
       and contribute effectively within one's chosen industry.`,
       slides : [
-        {url: 'https://i.postimg.cc/MZNyh4cc/HTML-logo.png', title: 'HTML'},
-        {url: 'https://i.postimg.cc/Dz6rHwsF/CSS-SASS.png', title: 'CSS & SASS'},
-        {url: 'https://i.postimg.cc/T1LnKjsY/Java-Script-Type-Script.png', title: 'JavaScript & TypScript'},
-        {url: 'https://i.postimg.cc/J4X6yy0P/React-Redux.png', title: 'React & Redux'},
-        {url: 'https://i.postimg.cc/ydWJ5H9b/Angular-Ng-Rx.png', title: 'Angular & NgRx'},
-        {url: 'https://i.postimg.cc/W3fMpYXH/Webpack-Npm.png', title: 'NPM & Webpack'},
-        {url: 'https://i.postimg.cc/rsBxx06G/Visual-logo.png', title: 'Visual Studio Code'},
-        {url: 'https://i.postimg.cc/85CRSgBv/nowajira.png', title: 'Basic Projects Management'}
+        {url:  HardSkillsPhoto1, title: 'HTML'},
+        {url:  HardSkillsPhoto2, title: 'CSS & SASS'},
+        {url:  HardSkillsPhoto3, title: 'JavaScript & TypScript'},
+        {url:  HardSkillsPhoto4, title: 'React & Redux'},
+        {url:  HardSkillsPhoto5, title: 'Angular & NgRx'},
+        {url:  HardSkillsPhoto6, title: 'NPM & Webpack'},
+        {url:  HardSkillsPhoto7, title: 'Visual Studio Code'},
+        {url:  HardSkillsPhoto8, title: 'Basic Projects Management'}
       ]
     },
     {
@@ -268,11 +294,11 @@ const initialState = {
       They not only enhance effective communication and interpersonal relationships but also foster adaptability,
       leadership, and emotional intelligence.`,
       slides: [
-        {url: 'https://i.postimg.cc/QtNhXhtj/pexels-fauxels-3183150.jpg', title: 'Team Work'},
-        {url: 'https://i.postimg.cc/R03KVN0S/pexels-negative-space-160107.jpg', title: 'Problem Solving'},
-        {url: 'https://i.postimg.cc/sgmwZQy5/Computer-programmer-jpeg.jpg"', title: 'Analytical Thinking'},
-        {url: 'https://i.postimg.cc/8zXLShNX/pexels-kevin-ku-577585.jpg', title: 'Creativity'},
-        {url: 'https://i.postimg.cc/Kz9FjwkB/portfolio-Page-Punctuality.jpg', title: 'Punctuality'}
+        {url: SoftSkillsPhoto1, title: 'Team Work'},
+        {url: SoftSkillsPhoto2,  title: 'Problem Solving'},
+        {url: SoftSkillsPhoto3,  title: 'Analytical Thinking'},
+        {url: SoftSkillsPhoto4,  title: 'Creativity'},
+        {url: SoftSkillsPhoto5,  title: 'Punctuality'}
       ]
     }
   ],

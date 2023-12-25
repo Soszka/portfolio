@@ -1,12 +1,13 @@
 import styles from './Splash.module.scss';
 import Achivments from '../Achivments/Achivments';
+import splashPhoto from '../../assets/HomePhotos/splashPhoto2.png';
 
 const Splash = () => {
   return (
     <div className={styles.splash}>
       <div className={styles.content} data-aos="zoom-in">
         <div className={styles.image}>
-          <img alt="#" src="https://i.postimg.cc/9XtBBKrL/splash-photo.png"></img>
+          <img alt="#" src={splashPhoto}></img>
         </div>
         <div className={styles.description}>
           <p><span>Hello World</span> ! My name is </p>
