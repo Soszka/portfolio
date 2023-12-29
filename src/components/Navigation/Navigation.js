@@ -53,7 +53,7 @@ const Navigation = () => {
         <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/skills">SKILLS</NavLink></li>
         <li><NavLink className={({ isActive }) => isActive ? styles.linkActive : undefined} to="/projects">PROJECTS</NavLink></li>
         <li><a href="https://github.com/Soszka" rel="noreferrer" target="_blank">GITHUB</a></li>
-        <li><a className={styles.resume} href="https://github.com/Soszka">RESUME</a></li>
+        <li><a className={styles.resume} href="/CV_BS_PORTFOLIO.pdf" download>RESUME</a></li>
       </ul>
     </nav>
   );

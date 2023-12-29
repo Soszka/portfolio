@@ -34,7 +34,7 @@ const Contact = () => {
 
   const handleCopyClick = (event) => {
     event.preventDefault();
-    const textToCopy = 'bsocha1998@gmail.com';
+    const textToCopy = 'example@email.com';
     navigator.clipboard.writeText(textToCopy);
     setShowCopiedMessage(true);
     setTimeout(() => {
@@ -62,7 +62,7 @@ const Contact = () => {
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message" placeholder="Hello!" className={styles.textarea} value={message} onChange={(e) => setMessage(e.target.value)} />
           </div>
-          <a href="#linkedin.com" className={`${styles.button} ${styles.sendButton}`} onClick={handleSendMessage}>SEND MESSAGE</a>
+          <a href="#contact" className={`${styles.button} ${styles.sendButton}`} onClick={handleSendMessage}>SEND MESSAGE</a>
         </div>
         <div className={styles.contactOptions} data-aos="zoom-in" data-aos-delay="500">
           <h4>Other Contact<span> Options</span></h4>
@@ -73,13 +73,13 @@ const Contact = () => {
             <FontAwesomeIcon icon={faDiscord} className={styles.icon} /> Discord
           </a>
           <a href="  " onClick={handleCopyClick} className={`${styles.button} ${styles.contactButton}`}>
-            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> bsocha1998@gmail.com
+            <FontAwesomeIcon icon={faEnvelope} className={styles.icon} /> example@email.com
           </a>
           <div className={clsx(styles.copiedMessage, { [styles.visible] : showCopiedMessage, [styles.hidden]: !showCopiedMessage })}>
             Copied!
           </div>
           <div className={styles.contactIcons}>
-            <a href="mailto:bsocha1998@gmail.com"><FontAwesomeIcon icon={faEnvelope} className={styles.contactIcon} /></a>
+            <a href="#contact" onClick={handleSendMessage}><FontAwesomeIcon icon={faEnvelope} className={styles.contactIcon} /></a>
             <a href="https://github.com/Soszka" rel="noreferrer" target="_blank"><FontAwesomeIcon icon={faGithub} className={styles.contactIcon} /></a>
             <a href="https://www.instagram.com/sochaczewek/" rel="noreferrer" target="_blank"> <FontAwesomeIcon icon={faInstagram} className={styles.contactIcon} /></a>
           </div>

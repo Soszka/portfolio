@@ -1,8 +1,15 @@
 import styles from './About.module.scss';
+import { Link } from 'react-router-dom';
 import Title from '../Title/Title';
 import Animation from '../Animation/Animation';
+import { useEffect } from 'react';
 
 const About = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0); 
+  }, []);
+
   return (
     <div className={styles.about}>
       <Title>About Me</Title>

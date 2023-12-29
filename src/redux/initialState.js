@@ -6,7 +6,7 @@ import JourneyPhoto4 from '../../src/assets/HomePhotos/JourneyPhoto4.jpg';
 import AdventagesPhoto1 from '../../src/assets/HomePhotos/adventagesPhoto1.png';
 import AdventagesPhoto2 from '../../src/assets/HomePhotos/adventagesPhoto2.jpg';
 import AdventagesPhoto3 from '../../src/assets/HomePhotos/advenatgesPhoto3.png'
-import AdventagesPhoto4 from '../../src/assets/HomePhotos/advenatgesPhoto4.png';
+import AdventagesPhoto4 from '../../src/assets/HomePhotos/advenatgesPhoto4.jpg';
 import AdventagesPhoto5 from '../../src/assets/HomePhotos/adventagesPhoto5.jpg';
 import AdventagesPhoto6 from '../../src/assets/HomePhotos/adventagesPhoto6.jpg';
 import HardSkillsPhoto1 from '../../src/assets/SkillsPhotos/hardSkillsPhoto1.png';
@@ -283,7 +283,7 @@ const initialState = {
         {url:  HardSkillsPhoto5, title: 'Angular & NgRx'},
         {url:  HardSkillsPhoto6, title: 'NPM & Webpack'},
         {url:  HardSkillsPhoto7, title: 'Visual Studio Code'},
-        {url:  HardSkillsPhoto8, title: 'Basic Projects Management'}
+        {url:  HardSkillsPhoto8, title: 'Projects Management'}
       ]
     },
     {
