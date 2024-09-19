@@ -1,14 +1,13 @@
 @import '../../styles/settings.scss';
 
-
 .achivments {
   flex: 1;
   display: flex;
   flex-wrap: wrap;
-  background-color: rgb(5, 157, 228, 0.5);
   justify-content: space-around;
   padding: 30px 100px;
   width: 100%;
+  position: relative;
   @include extra-large-screens {
     padding: 15px 50px;
   }
@@ -16,6 +15,17 @@
     display: inline-block;
     padding: 10px;
   }
+}
+
+.achivments:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $text-secondary-color;
+  opacity: 0.5;
 }
 
 .achivment {

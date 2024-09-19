@@ -1,5 +1,4 @@
 import styles from './About.module.scss';
-import { Link } from 'react-router-dom';
 import Title from '../Title/Title';
 import Animation from '../Animation/Animation';
 import { useEffect } from 'react';
@@ -22,10 +21,6 @@ const About = () => {
              In my private life, I put great emphasis on self-development and skilful time management.
             I believe that efficiently managed time and consistency is the key to continuous self-development.
           </p>
-          <div className={styles.buttonsContainer}>
-            <a href="https://github.com/Soszka" rel="noreferrer" target="_blank"className={styles.button}>GITHUB</a>
-            <a href="https://www.linkedin.com/in/bart%C5%82omiej-socha-95ba1b29a/" rel="noreferrer" target="_blank" className={styles.button}>LINKEDIN</a>
-          </div> 
         </div>
         <Animation />
       </div>
@@ -34,3 +29,4 @@ const About = () => {
 }
 
 export default About;
+

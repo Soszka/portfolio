@@ -4,7 +4,7 @@
 
 $dark-color: rgb(0, 0, 0);
 $text-color: rgb(255, 255, 255);
-$text-secondary-color: rgb(5, 157, 228);
+$text-secondary-color: rgb(0, 120, 201);
 $third-color: rgb(199, 199, 199);
 $buttons-color: rgb(1, 190, 134);
 
@@ -18,6 +18,28 @@ $header-font-size: 52px;
 
 
 // MIXINS
+
+@mixin button($width, $height, $font-size) {
+  width: $width;
+  height: $height;
+  font-size: $font-size;
+  background: linear-gradient(to bottom right, $text-secondary-color, darken($text-secondary-color, 25%));
+  background-color: darken($text-secondary-color, 10%);
+  border-radius: $radious;
+  font-family: $header-font;
+  color: white;
+  font-weight: 500;
+
+  @include large-screens {
+    width: $width * 0.9;
+    height: $height * 0.9;
+    font-size: $font-size * 0.9;
+  }
+
+  &:hover {
+    background: linear-gradient(to bottom right, darken($text-secondary-color, 5%), darken($text-secondary-color, 30%));
+  }
+}
 
 @mixin tiny-screens () {
   @media only screen and (max-width: 320px) {
@@ -58,4 +80,4 @@ $header-font-size: 52px;
 
 // OTHERS 
 
-$radious: 20px;
+$radious: 70px;

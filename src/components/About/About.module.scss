@@ -2,6 +2,7 @@
 
 
 .content {
+
  display: flex;
  @include extra-large-screens {
    flex-direction: column-reverse;
@@ -10,7 +11,7 @@
 
 .description {
   font-size: $content-font-size * 0.95;
-  padding: 20px 0 20px 20px;
+  padding: 20px;
   width: 45%;
   @include extra-large-screens {
     text-align: center;
@@ -25,45 +26,5 @@
 
   p {
     margin: 0 0 20px;
-  }
-}
-
-.buttonsContainer {
-  @include extra-large-screens {
-    display: flex;
-    justify-content: space-between;
-  }
-  @include small-screens {
-    display: block;
-  }
-}
-
-.button {
-  color: $buttons-color;
-  text-decoration: none;
-  border: 3px solid $buttons-color;
-  padding: 10px 20px;
-  border-radius: $radious;
-  font-size: $content-font-size * 1.75;
-  margin: 15px 30px 0 0;
-  transition: all 0.25s;
-  @include extra-large-screens {
-    margin: 20px;
-    width: 30%;
-  }
-  @include large-screens {
-    width: 40%;
-    font-size: $content-font-size * 1.4;
-  }
-  @include small-screens {
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-  }
-  &:hover {
-    background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
-    border: 3px solid $text-secondary-color;
-    box-shadow: 0px 0px 20px $text-secondary-color;
-    color: $text-color;
   }
 }

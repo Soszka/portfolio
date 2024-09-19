@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import Title from '../Title/Title';
 import Container from '../Container/Container';
 import { useEffect } from 'react';
+import Navigation from '../Navigation/Navigation';
 
 const ProjectsForm = () => {
   const [selectedCode, setSelectedCode] = useState('');
@@ -37,6 +38,7 @@ const ProjectsForm = () => {
 
   return (
     <div>
+      <Navigation />
       <Title>My Projects</Title>
       <Container>
         <div className={styles.projectsForm} data-aos="zoom-in">
