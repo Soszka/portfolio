@@ -1,17 +1,16 @@
 import styles from './ProjectsForm.module.scss';
-import { useState, } from 'react';
+import { useState } from 'react';
 import ProjectsList from '../ProjectsList/ProjectsList';
 import { useSelector } from 'react-redux';
 import Title from '../Title/Title';
 import Container from '../Container/Container';
-import { useEffect } from 'react';
 import Navigation from '../Navigation/Navigation';
 
 const ProjectsForm = () => {
   const [selectedCode, setSelectedCode] = useState('');
   const [selectedDesign, setSelectedDesign] = useState('');
   const [selectedResponsiveness, setSelectedResponsiveness] = useState('');
-  const projects = useSelector(state => state.projects)
+  const projects = useSelector((state) => state.projects);
 
   const handleCodeChange = (event) => {
     setSelectedCode(event.target.value);
@@ -34,7 +33,12 @@ const ProjectsForm = () => {
       );
     });
   };
-  const filteredProjects = filterProjects(projects, selectedCode, selectedDesign, selectedResponsiveness);
+  const filteredProjects = filterProjects(
+    projects,
+    selectedCode,
+    selectedDesign,
+    selectedResponsiveness
+  );
 
   return (
     <div>
@@ -44,27 +48,90 @@ const ProjectsForm = () => {
         <div className={styles.projectsForm} data-aos="zoom-in">
           <div className={styles.code}>
             Code:
-            <label><input type="radio" name="code" onChange={handleCodeChange} value="javascript" />JS / TS</label>
-            <label><input type="radio" name="code" onChange={handleCodeChange} value="angular" />Angular</label>
-            <label><input type="radio" name="code" onChange={handleCodeChange} value="react" />React</label>
+            <label>
+              <input
+                type="radio"
+                name="code"
+                onChange={handleCodeChange}
+                value="javascript"
+              />
+              JS / TS
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="code"
+                onChange={handleCodeChange}
+                value="angular"
+              />
+              Angular
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="code"
+                onChange={handleCodeChange}
+                value="react"
+              />
+              React
+            </label>
           </div>
           <div className={styles.design}>
             Created By:
-            <label><input type="radio" name="design" onChange={handleDesignChange} value="bootcamp" />Bootcamp</label>
-            <label><input type="radio" name="design" onChange={handleDesignChange} value="course" />Courses</label>
-            <label><input type="radio" name="design" onChange={handleDesignChange} value="by-me" />By Me</label>
+            <label>
+              <input
+                type="radio"
+                name="design"
+                onChange={handleDesignChange}
+                value="bootcamp"
+              />
+              Bootcamp
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="design"
+                onChange={handleDesignChange}
+                value="course"
+              />
+              Courses
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="design"
+                onChange={handleDesignChange}
+                value="by-me"
+              />
+              By Me
+            </label>
           </div>
           <div className={styles.responsivness}>
             Responsiveness:
-            <label><input type="radio" name="responsiveness" onChange={handleResponsivenessChange} value="yes" />Yes</label>
-            <label><input type="radio" name="responsiveness" onChange={handleResponsivenessChange} value="no" />No</label>
+            <label>
+              <input
+                type="radio"
+                name="responsiveness"
+                onChange={handleResponsivenessChange}
+                value="yes"
+              />
+              Yes
+            </label>
+            <label>
+              <input
+                type="radio"
+                name="responsiveness"
+                onChange={handleResponsivenessChange}
+                value="no"
+              />
+              No
+            </label>
           </div>
         </div>
-      <ProjectsList filteredProjects={filteredProjects} />
+        <ProjectsList filteredProjects={filteredProjects} />
       </Container>
     </div>
   );
-}
+};
 
 export default ProjectsForm;
-

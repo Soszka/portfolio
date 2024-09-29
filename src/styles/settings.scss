@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Roboto&display=swap');
 
-// COLORS 
+// COLORS
 
 $dark-color: rgb(0, 0, 0);
 $text-color: rgb(255, 255, 255);
@@ -8,76 +8,82 @@ $text-secondary-color: rgb(0, 120, 201);
 $third-color: rgb(199, 199, 199);
 $buttons-color: rgb(1, 190, 134);
 
-
-// FONTS 
+// FONTS
 
 $content-font: 'Lato', sans-serif;
 $header-font: 'Roboto', sans-serif;
 $content-font-size: 20px;
 $header-font-size: 52px;
 
-
 // MIXINS
 
-@mixin button($width, $height, $font-size) {
-  width: $width;
+@mixin button($height, $font-size) {
   height: $height;
   font-size: $font-size;
-  background: linear-gradient(to bottom right, $text-secondary-color, darken($text-secondary-color, 25%));
+  background: linear-gradient(
+    to bottom right,
+    $text-secondary-color,
+    darken($text-secondary-color, 25%)
+  );
   background-color: darken($text-secondary-color, 10%);
   border-radius: $radious;
   font-family: $header-font;
   color: white;
   font-weight: 500;
+  padding: 0 20px;
+  width: fit-content;
+  line-height: 1.6;
 
   @include large-screens {
-    width: $width * 0.9;
     height: $height * 0.9;
     font-size: $font-size * 0.9;
   }
 
   &:hover {
-    background: linear-gradient(to bottom right, darken($text-secondary-color, 5%), darken($text-secondary-color, 30%));
+    background: linear-gradient(
+      to bottom right,
+      darken($text-secondary-color, 5%),
+      darken($text-secondary-color, 30%)
+    );
   }
 }
 
-@mixin tiny-screens () {
+@mixin tiny-screens() {
   @media only screen and (max-width: 320px) {
     @content;
   }
 }
 
-@mixin small-screens () {
+@mixin small-screens() {
   @media only screen and (max-width: 576px) {
     @content;
   }
 }
 
-@mixin medium-screens () {
+@mixin medium-screens() {
   @media only screen and (max-width: 768px) {
     @content;
   }
 }
 
-@mixin large-screens () {
+@mixin large-screens() {
   @media only screen and (max-width: 1024px) {
     @content;
   }
 }
 
-@mixin extra-large-screens () {
+@mixin extra-large-screens() {
   @media only screen and (max-width: 1200px) {
     @content;
   }
 }
 
-@mixin mega-large-screens () {
+@mixin mega-large-screens() {
   @media only screen and (max-width: 1400px) {
     @content;
   }
 }
 
-
-// OTHERS 
+// OTHERS
 
 $radious: 70px;

@@ -1,0 +1,113 @@
+{
+  "navigation.link.skills": "UMIĘJĘTNOŚCI",
+  "navigation.link.projects": "PROJEKTY",
+  "navigation.link.github": "GITHUB",
+  "navigation.link.resume": "CV",
+  "navigation.link.home": "STRONA GŁÓWNA",
+  "navigation.switch.language": "Switch to english",
+  "navigation.download.resume": "Pobierz CV",
+
+  "splash.hello.world": "Hello World",
+  "splash.my.name": "Nazywam się",
+  "splash.socha": "Bartłomiej Socha",
+  "splash.frontend.developer": "Frontend Developer",
+  "splash.description": "Posiadam wiedzę na temat narzędzi i technologii używanych w tworzeniu aplikacji internetowych, skupiając się szczególnie na obszarze front-endu. Moje umiejętności obejmują projektowanie interfejsów i rozwijanie aplikacji w środowiskach React i Angular. Dzięki zdobytej wiedzy i umiejętnościom jestem w stanie tworzyć atrakcyjne, interaktywne interfejsy dostosowane do unikalnych potrzeb użytkowników.",
+  "splash.btn.contact": "KONTAKT",
+
+  "achivements.studies.title": "Studia",
+  "achivements.studies.description": "Dwa ukończone kierunki studiów, gdzie narodziła się moja pasja do front-endu.",
+  "achivements.projects.title": "Projekty",
+  "achivements.projects.description": "Liczne projekty od małych stron po bardziej rozbudowane aplikacje.",
+  "achivements.courses.title": "Kursy",
+  "achivements.courses.description": "Kilka kursów online, które znacząco pogłębiły moją wiedzę w zakresie web developmentu.",
+  "achivements.technologies.title": "Technologie",
+  "achivements.technologies.description": "Ponad dwadzieścia technologii i narzędzi, które poznałem, ciągle doskonaląc swoje umiejętności.",
+  "achivements.internship.title": "Staż",
+  "achivements.internship.description": "Roczny staż i doświadczenie komercyjne, które pomogły mi rozwinąć się w kierunku web developmentu.",
+  "achivements.experience.title": "Doświadczenie",
+  "achivements.experience.description": "Minęły trzy lata od opublikowania mojej pierwszej aplikacji, nadal doskonalę swoją wiedzę w tej dziedzinie.",
+
+  "about.title": "O mnie",
+  "about.description": "Ukończyłem dwa różne kierunki studiów, zdobywając tytuł Inżyniera Energetyka i Kierownika Projektów. Moje zainteresowanie programowaniem i technologiami front-end pojawiło się w tym okresie, kiedy stworzyłem swoją pierwszą stronę internetową podczas studiów na Wydziale Informatyki. Dodatkowo uczestniczyłem w intensywnym bootcampie programistycznym, który dodatkowo wzmocnił moje umiejętności programistyczne. W kolejnych miesiącach zgłębiałem tę wiedzę, realizując wiele kursów online i tworząc własne koncepcje, które możesz znaleźć w zakładce projekty. Dzięki temu poznałem różnorodne technologie front-end i zdobyłem umiejętności potrzebne do tworzenia nowoczesnych interfejsów użytkownika. W życiu prywatnym kładę duży nacisk na samorozwój i umiejętne zarządzanie czasem. Uważam, że efektywnie zarządzany czas i konsekwencja są kluczem do ciągłego samorozwoju.",
+
+  "journey": {
+    "title": "Moja Podróż",
+    "items": {
+      "studies": {
+        "title": "Studia",
+        "description": "Podczas studiów na kierunku informatycznym stworzyłem swoją pierwszą stronę internetową, co rozbudziło moją pasję do programowania."
+      },
+      "courses": {
+        "title": "Kursy",
+        "description": "Dzięki intensywnym kursom bootcamp stworzyłem zaawansowane aplikacje i pogłębiłem wiedzę o nowoczesnych technologiach webowych."
+      },
+      "projects": {
+        "title": "Projekty",
+        "description": "Praca nad różnymi projektami pozwoliła mi poszerzyć wiedzę i zastosować nowe technologie oraz języki programowania w praktyce."
+      },
+      "internship": {
+        "title": "Staż",
+        "description": "Podczas rocznego stażu, zdobyłem swoje pierwsze doświadczenie komercyjne, które wprowadziło mnie do pracy zespołowej nad apliakcjami"
+      }
+    },
+    "button": {
+      "github": "GITHUB",
+      "seeSkills": "Umiejętności",
+      "seeProjects": "Projekty",
+      "linkedin": "LinkedIn"
+    }
+  },
+
+  "adventages": {
+    "title": "Moje Zalety",
+    "items": {
+      "responsiveness": {
+        "title": "Responsywność",
+        "description": "Strony, które doskonale dostosowują się do różnych urządzeń i rozmiarów ekranów."
+      },
+      "uxUi": {
+        "title": "UX/UI",
+        "description": "Projektowanie z naciskiem na użytkownika, zapewniając intuicyjne interfejsy ."
+      },
+      "libraries": {
+        "title": "Biblioteki",
+        "description": "Efektywne wykorzystanie  bibliotek dla zoptymalizowanej pracy."
+      },
+      "frameworks": {
+        "title": "Frameworki",
+        "description": "Umiejętność tworzenia dynamicznych aplikacji przy użyciu zaawansowanych frameworków."
+      },
+      "optimization": {
+        "title": "Optymalizacja",
+        "description": "Optymalizacja stron dla lepszej wydajności i szybkości ładowania."
+      },
+      "creativity": {
+        "title": "Kreatywność",
+        "description": "Kreatywne podejście do rozwiązywania złożonych problemów"
+      }
+    },
+    "button": {
+      "github": "GitHub"
+    }
+  },
+
+  "contact": {
+    "title": "Kontakt",
+    "header1": "Wybierz",
+    "header2": "rodzaj kontaktu",
+    "items": {
+      "instagram": {
+        "name": "Instagram"
+      },
+      "linkedin": {
+        "name": "LinkedIn"
+      },
+      "facebook": {
+        "name": "Facebook"
+      },
+      "email": {
+        "name": "Email"
+      }
+    }
+  }
+}

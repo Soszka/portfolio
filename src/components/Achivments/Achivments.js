@@ -1,8 +1,10 @@
 import styles from './Achivments.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 const Achivments = () => {
+  const { t } = useTranslation();
   const achivments = useSelector((state) => state.achivments);
 
   return (
@@ -13,8 +15,8 @@ const Achivments = () => {
             className={styles.achivmentIcon}
             icon={achivment.icon}
           />
-          <h3>{achivment.title}</h3>
-          <p>{achivment.description}</p>
+          <h3>{t(achivment.titleKey)}</h3>
+          <p>{t(achivment.descriptionKey)}</p>
         </div>
       ))}
     </div>

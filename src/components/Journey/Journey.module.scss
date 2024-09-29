@@ -1,106 +1,135 @@
 @import '../../styles/settings.scss';
 
+.studiesImg {
+  background: url('../../assets/HomePhotos/JourneyPhoto1.jpg') no-repeat;
+}
+.coursesImg {
+  background: url('../../assets/HomePhotos/JourneyPhoto2.jpg') no-repeat;
+}
+.projectsImg {
+  background: url('../../assets/HomePhotos/JourneyPhoto3.jpg') no-repeat;
+}
+.internshipImg {
+  background: url('../../assets/HomePhotos/JourneyPhoto4.jpg') no-repeat;
+}
+
 .journeyItems {
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: space-between;
-  @include mega-large-screens {
-    justify-content: space-around;
-  }
   @include medium-screens {
     flex-direction: column;
     align-items: center;
   }
-}
 
-.journeyItem {
-  width: 20%;
-  text-align: center;
-  padding: 20px;
-  background-color: rgb(5, 157, 228, 0.05);
-  border-radius: 3%;
-  transition: all 1s;
-  @include mega-large-screens {
-    width: 40%;
-    margin: 20px 30px;
-  }
-  @include medium-screens {
-    width: 80%;
-    padding: 20px 5px;
-  }
-  
-  h2 {
-    color: $buttons-color;
-    font-size: $content-font-size * 1.5;
-    margin: 10px 0;
-    @include small-screens {
-      font-size: $content-font-size * 1.3;
-    }
-  }
-
-  p {
-    margin: 20px 0 30px 0;
-    height: 130px;
-    @include mega-large-screens {
-      height: 115px;
+  .journeyItem {
+    width: 22%;
+    height: 400px;
+    perspective: 800px;
+    -webkit-perspective: 800px;
+    margin: 30px 5px;
+    @include extra-large-screens {
+      width: 45%;
     }
     @include medium-screens {
-      height: auto;
+      width: 70%;
+      height: 350px;
     }
     @include small-screens {
-      font-size: 18px;
+      width: 90%;
     }
-  }
 
-  img {
-    width: 240px;
-    height: 215px;
-    object-fit: cover;
-    margin: 10px auto;
-    padding: 0;
-    border-radius: 15%;
-    background-color: black;
-    box-shadow:  0px 0px 10px $text-color;
-    @include mega-large-screens {
+    .journeyItemCard {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: all 1s;
+      -webkit-transition: 1s;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
       border-radius: 10%;
-      width: 300px;
-      height: 180px;
-    }
-    @include medium-screens {
-      border-radius: 5%;
-      width: 290px;
-      height: 200px;
-    }
-    @include small-screens {
-      width: 230px;
-      height: 200px;
     }
   }
 
-  a {
-    color: $buttons-color;
-    text-decoration: none;
-    border: 3px solid $buttons-color;
-    padding: 10px 20px;
-    border-radius: $radious;
-    font-size: $content-font-size * 1.32;
-    transition: all 0.25s;
-    @include small-screens {
-      font-size: $content-font-size * 1.15;
-    }
-    @include tiny-screens {
-      font-size: $content-font-size * 0.9;
-    }
-    &:hover {
-      background: linear-gradient(to bottom right, $text-secondary-color, rgb(0, 33, 63));
-      border: 3px solid $text-secondary-color;
-      box-shadow: 0px 0px 20px $text-secondary-color;
-      color: $text-color;
+  .journeyItem:hover > .journeyItemCard {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+  }
+
+  .journeyItemCardFront {
+    border-radius: 10%;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+    .journeyItemTitle {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-size: 42px;
+      font-weight: bold;
+      color: white;
+      padding: 5px;
+      z-index: 1;
+
+      @include tiny-screens {
+        font-size: 36px;
+      }
     }
   }
 
-  &:hover {
-    transform: scale(1.1);
-    background-color: rgb(5, 157, 228, 0.15);
+  .journeyItemCardFront:before {
+    content: '';
+    position: absolute;
+    border-radius: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8),
+      rgba(0, 92, 153, 0.8)
+    );
+    z-index: 0;
+  }
+
+  .journeyItemCardBack {
+    border-radius: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    box-shadow: 0 0 15px $text-secondary-color;
+
+    .journeyItemCardBackContainer {
+      margin: 0 10px;
+      background-color: black;
+      text-align: center;
+    }
+
+    .journeyItemCardBackContent {
+      margin: 0;
+    }
+
+    .journeyItemCardBackBtn {
+      @include button(45px, 22px);
+      margin-top: 20px;
+    }
   }
 }

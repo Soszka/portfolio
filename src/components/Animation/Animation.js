@@ -1,4 +1,4 @@
-import React, { useEffect, useRef,  } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './Animation.module.scss';
 import aboutPhoto from '../../assets/HomePhotos/aboutPhoto1.png';
 
@@ -9,15 +9,15 @@ const Animation = () => {
   const minHeight = 360;
   const maxHeight = 750;
   const minTTL = 200;
-  const maxTTL =  window.innerWidth < 768 ? 20 : 40
-  const backgroundColor = "#000000";
+  const maxTTL = window.innerWidth < 768 ? 20 : 40;
+  const backgroundColor = '#000000';
 
   useEffect(() => {
     let canvas, ctx, lines, lineCount;
 
     const fadeInOut = (t, m) => {
       let hm = 0.5 * m;
-      return Math.abs((t + hm) % m - hm) / hm;
+      return Math.abs(((t + hm) % m) - hm) / hm;
     };
 
     const setCanvas = () => {
@@ -50,8 +50,8 @@ const Animation = () => {
       }
 
       ctx.save();
-      ctx.filter = "blur(13px)";
-      ctx.globalCompositeOperation = "lighter";
+      ctx.filter = 'blur(13px)';
+      ctx.globalCompositeOperation = 'lighter';
       ctx.drawImage(canvas, 0, 0);
       ctx.restore();
 
@@ -64,16 +64,24 @@ const Animation = () => {
         this.y = canvas.height / 2 + minHeight;
         this.width = getRandomInt(minWidth, maxWidth);
         this.height = getRandomInt(minHeight, maxHeight);
-        this.hue = getRandomInt(200, 230); 
+        this.hue = getRandomInt(200, 230);
         this.ttl = getRandomInt(minTTL, maxTTL);
         this.life = 0;
       }
 
       draw() {
         let gradient;
-        gradient = ctx.createLinearGradient(this.x, this.y - this.height, this.x, this.y);
+        gradient = ctx.createLinearGradient(
+          this.x,
+          this.y - this.height,
+          this.x,
+          this.y
+        );
         gradient.addColorStop(0, `hsla(${this.hue}, 100%, 65%, 0)`);
-        gradient.addColorStop(0.5, `hsla(${this.hue}, 100%, 65%, ${fadeInOut(this.life, this.ttl)})`);
+        gradient.addColorStop(
+          0.5,
+          `hsla(${this.hue}, 100%, 65%, ${fadeInOut(this.life, this.ttl)})`
+        );
         gradient.addColorStop(1, `hsla(${this.hue}, 100%, 65%, 0)`);
 
         ctx.save();
@@ -111,11 +119,14 @@ const Animation = () => {
     };
   }, []);
 
-
   return (
-    <div className={styles.animationContainer} data-aos="zoom-in">
+    <div className={styles.animationContainer} data-aos="slide-left">
       <img className={styles.image} src={aboutPhoto} alt="Myphoto" />
-      <canvas ref={canvasRef} id="canvas" className={styles.animationCanvas}></canvas>
+      <canvas
+        ref={canvasRef}
+        id="canvas"
+        className={styles.animationCanvas}
+      ></canvas>
     </div>
   );
 };

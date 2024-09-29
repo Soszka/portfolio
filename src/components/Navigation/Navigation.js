@@ -7,6 +7,7 @@ import PolishFlag from '../../assets/HomePhotos/polishFlagPhoto.png';
 import EnglishFlag from '../../assets/HomePhotos/englishFlagPhoto.png';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
+import { useTranslation } from 'react-i18next';
 
 const HtmlTooltip = withStyles(() => ({
   tooltip: {
@@ -20,8 +21,8 @@ const HtmlTooltip = withStyles(() => ({
 const Navigation = () => {
   const location = useLocation();
   const [menuClosed, setMenuClosed] = useState(true);
-  const [currentFlag, setCurrentFlag] = useState('pl');
   const [isHovered, setIsHovered] = useState(false);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,33 +41,34 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const toggleFlag = () => {
-    setCurrentFlag((prevFlag) => (prevFlag === 'pl' ? 'en' : 'pl'));
+    const newLang = i18n.language === 'pl' ? 'en' : 'pl';
+    i18n.changeLanguage(newLang);
   };
 
   const navItems = [
     {
-      name: 'HOME',
+      translationKey: 'navigation.link.home',
       to: '/',
       isNavLink: true,
     },
     {
-      name: 'SKILLS',
+      translationKey: 'navigation.link.skills',
       to: '/skills',
       isNavLink: true,
     },
     {
-      name: 'PROJECTS',
+      translationKey: 'navigation.link.projects',
       to: '/projects',
       isNavLink: true,
     },
     {
-      name: 'GITHUB',
+      translationKey: 'navigation.link.github',
       href: 'https://github.com/Soszka',
       isNavLink: false,
       external: true,
     },
     {
-      name: 'RESUME',
+      translationKey: 'navigation.link.resume',
       isButton: true,
     },
   ];
@@ -98,51 +100,17 @@ const Navigation = () => {
         )}
       </div>
       <ul className={menuClosed ? styles.closed : ''}>
-        <li className={styles.flagIconButton}>
-          <HtmlTooltip
-            title={
-              currentFlag === 'pl' ? 'Switch to English' : 'Przełącz na polski'
-            }
-          >
-            <IconButton
-              aria-label="toggle language"
-              onClick={toggleFlag}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={{
-                backgroundColor: isHovered
-                  ? 'rgba(250, 250, 250, 0.288'
-                  : 'transparent',
-                marginRight: '10px',
-              }}
-            >
-              {currentFlag === 'pl' ? (
-                <img
-                  src={PolishFlag}
-                  alt="Polish Flag"
-                  className={styles.flagIcon}
-                />
-              ) : (
-                <img
-                  src={EnglishFlag}
-                  alt="English Flag"
-                  className={styles.flagIcon}
-                />
-              )}
-            </IconButton>
-          </HtmlTooltip>
-        </li>
         {navItems.map((item, index) => {
           if (item.isButton) {
             return (
               <li key={index}>
-                <HtmlTooltip title="Download resume">
+                <HtmlTooltip title={t('navigation.download.resume')}>
                   <Button
                     className={styles.resume}
                     href="/CV_BartlomiejSocha.pdf"
                     download
                   >
-                    {item.name}
+                    {t(item.translationKey)}
                   </Button>
                 </HtmlTooltip>
               </li>
@@ -156,7 +124,7 @@ const Navigation = () => {
                   }
                   to={item.to}
                 >
-                  {item.name}
+                  {t(item.translationKey)}
                 </NavLink>
               </li>
             );
@@ -168,25 +136,54 @@ const Navigation = () => {
                   rel="noreferrer"
                   target={item.external ? '_blank' : '_self'}
                 >
-                  {item.name}
+                  {t(item.translationKey)}
                 </a>
               </li>
             );
           }
         })}
+        <li className={styles.flagIconButton}>
+          <HtmlTooltip title={t('navigation.switch.language')}>
+            <IconButton
+              aria-label="toggle language"
+              onClick={toggleFlag}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              style={{
+                backgroundColor: isHovered
+                  ? 'rgba(250, 250, 250, 0.288)'
+                  : 'transparent',
+              }}
+            >
+              {i18n.language === 'pl' ? (
+                <img
+                  src={EnglishFlag}
+                  alt="English Flag"
+                  className={styles.flagIcon}
+                />
+              ) : (
+                <img
+                  src={PolishFlag}
+                  alt="Polish Flag"
+                  className={styles.flagIcon}
+                />
+              )}
+            </IconButton>
+          </HtmlTooltip>
+        </li>
       </ul>
       <div className={styles.flagIconContainer}>
         <IconButton aria-label="toggle language" onClick={toggleFlag}>
-          {currentFlag === 'pl' ? (
+          {i18n.language === 'pl' ? (
             <img
-              src={PolishFlag}
-              alt="Polish Flag"
+              src={EnglishFlag}
+              alt="English Flag"
               className={styles.flagIconSm}
             />
           ) : (
             <img
-              src={EnglishFlag}
-              alt="English Flag"
+              src={PolishFlag}
+              alt="Polish Flag"
               className={styles.flagIconSm}
             />
           )}

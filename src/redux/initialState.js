@@ -7,11 +7,8 @@ import {
   faChalkboard,
   faCalendarDays,
   faDiagramProject,
+  faEnvelope,
 } from '@fortawesome/free-solid-svg-icons';
-import JourneyPhoto1 from '../../src/assets/HomePhotos/JourneyPhoto1.jpg';
-import JourneyPhoto2 from '../../src/assets/HomePhotos/JourneyPhoto2.jpg';
-import JourneyPhoto3 from '../../src/assets/HomePhotos/JourneyPhoto3.jpg';
-import JourneyPhoto4 from '../../src/assets/HomePhotos/JourneyPhoto4.jpg';
 import AdventagesPhoto1 from '../../src/assets/HomePhotos/adventagesPhoto1.png';
 import AdventagesPhoto2 from '../../src/assets/HomePhotos/adventagesPhoto2.jpg';
 import AdventagesPhoto3 from '../../src/assets/HomePhotos/advenatgesPhoto3.png';
@@ -33,85 +30,88 @@ import SoftSkillsPhoto4 from '../../src/assets/SkillsPhotos/softSkillsPhoto4.jpg
 import SoftSkillsPhoto5 from '../../src/assets/SkillsPhotos/softSkillsPhoto5.jpg';
 import EducationPhoto1 from '../../src/assets/SkillsPhotos/educationPhoto1.jpg';
 import EducationPhoto2 from '../../src/assets/SkillsPhotos/educationPhoto2.jpg';
+import {
+  faInstagram,
+  faLinkedin,
+  faFacebook,
+} from '@fortawesome/free-brands-svg-icons';
 
 const initialState = {
   achivments: [
     {
       id: 1,
       icon: faGraduationCap,
-      title: 'Studies',
-      description:
-        'Two completed fields of study where my passion for front-end development was born.',
+      titleKey: 'achivements.studies.title',
+      descriptionKey: 'achivements.studies.description',
     },
     {
       id: 2,
       icon: faDiagramProject,
-      title: 'Projects',
-      description:
-        'Numerous projects ranging from small websites to more comprehensive applications.',
+      titleKey: 'achivements.projects.title',
+      descriptionKey: 'achivements.projects.description',
     },
     {
       id: 3,
       icon: faLaptopFile,
-      title: 'Courses',
-      description:
-        'Several online courses that significantly deepened my knowledge in web development.',
+      titleKey: 'achivements.courses.title',
+      descriptionKey: 'achivements.courses.description',
     },
     {
       id: 4,
       icon: faScrewdriverWrench,
-      title: 'Technologies',
-      description:
-        'Over twenty technologies and tools that I have learned, continuously improving my skills.',
+      titleKey: 'achivements.technologies.title',
+      descriptionKey: 'achivements.technologies.description',
     },
     {
       id: 5,
       icon: faChalkboard,
-      title: 'Internship',
-      description:
-        'One year of internship and commercial experience that helped me grow into web development.',
+      titleKey: 'achivements.internship.title',
+      descriptionKey: 'achivements.internship.description',
     },
     {
       id: 6,
       icon: faCalendarDays,
-      title: 'Experience',
-      description:
-        'It has been three years since I published my first application, continuing to refine my expertise in the field.',
+      titleKey: 'achivements.experience.title',
+      descriptionKey: 'achivements.experience.description',
     },
   ],
 
   journeyItems: [
     {
       id: 1,
-      image: JourneyPhoto1,
-      title: 'Studies',
-      description:
-        'Throughout my academic journey in the IT department, I had to create my first own website',
+      image: 'studiesImg',
+      key: 'studies',
       aosDelay: '0',
+      buttonKey: 'github',
+      buttonHref: 'https://github.com',
+      isExternal: true,
     },
     {
       id: 2,
-      image: JourneyPhoto2,
-      title: 'Bootcamp',
-      description:
-        'While attending the bootcamp program, I had the opportunity to create complex applications',
+      image: 'coursesImg',
+      key: 'courses',
       aosDelay: '250',
+      buttonKey: 'seeSkills',
+      buttonHref: '/skills',
+      isExternal: false,
     },
     {
       id: 3,
-      image: JourneyPhoto3,
-      title: 'Courses',
-      description:
-        'The courses helped me expand my knowledge by learning new technologies and languages',
+      image: 'projectsImg',
+      key: 'projects',
       aosDelay: '500',
+      buttonKey: 'seeProjects',
+      buttonHref: '/projects',
+      isExternal: false,
     },
     {
       id: 4,
-      image: JourneyPhoto4,
-      title: 'Job',
-      description:
-        'Currently, I am looking for a job where I want to take my first steps in Front End Development',
+      image: 'internshipImg',
+      key: 'internship',
       aosDelay: '750',
+      buttonKey: 'linkedin',
+      buttonHref: 'https://www.linkedin.com',
+      isExternal: true,
     },
   ],
 
@@ -119,49 +119,69 @@ const initialState = {
     {
       id: 1,
       image: AdventagesPhoto1,
-      title: 'Responsivness',
-      description:
-        'Pages that adapt perfectly to different devices and screen sizes',
+      key: 'responsiveness',
       aosDelay: '0',
     },
     {
       id: 2,
       image: AdventagesPhoto2,
-      title: 'UX/UI',
-      description:
-        'Design with an emphasis on the user, ensuring intuitive and aesthetic user interfaces',
-      aosDelay: '250',
+      key: 'uxUi',
+      aosDelay: '500',
     },
     {
       id: 3,
       image: AdventagesPhoto3,
-      title: 'Libraries',
-      description:
-        'Effective use of popular libraries for optimized project work',
-      aosDelay: '500',
+      key: 'libraries',
+      aosDelay: '1000',
     },
     {
       id: 4,
       image: AdventagesPhoto4,
-      title: 'Frameworks',
-      description:
-        'Ability to create dynamic applications using advanced frameworks',
+      key: 'frameworks',
       aosDelay: '0',
     },
     {
       id: 5,
       image: AdventagesPhoto5,
-      title: 'Optimization',
-      description: 'Page optimization for better performance and loading speed',
-      aosDelay: '250',
+      key: 'optimization',
+      aosDelay: '500',
     },
     {
       id: 6,
       image: AdventagesPhoto6,
-      title: 'Creativity',
-      description:
-        'A creative approach to solving problems and designing unique solutions',
-      aosDelay: '500',
+      key: 'creativity',
+      aosDelay: '1000',
+    },
+  ],
+
+  contactItems: [
+    {
+      id: 1,
+      link: 'https://www.instagram.com/yourusername',
+      aosDelay: 0,
+      icon: faInstagram,
+      key: 'instagram',
+    },
+    {
+      id: 2,
+      link: 'https://www.linkedin.com/in/yourusername',
+      aosDelay: 250,
+      icon: faLinkedin,
+      key: 'linkedin',
+    },
+    {
+      id: 3,
+      link: 'https://www.facebook.com/yourusername',
+      aosDelay: 500,
+      icon: faFacebook,
+      key: 'facebook',
+    },
+    {
+      id: 4,
+      link: 'mailto:your.email@example.com',
+      aosDelay: 750,
+      icon: faEnvelope,
+      key: 'email',
     },
   ],
 

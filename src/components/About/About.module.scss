@@ -1,12 +1,10 @@
 @import '../../styles/settings.scss';
 
-
 .content {
-
- display: flex;
- @include extra-large-screens {
-   flex-direction: column-reverse;
- }
+  display: flex;
+  @include extra-large-screens {
+    flex-direction: column-reverse;
+  }
 }
 
 .description {
@@ -19,9 +17,10 @@
     width: auto;
   }
   @include small-screens {
+    text-align: left;
     font-size: $content-font-size * 0.9;
     margin: 0 10px;
-    padding: 5px;
+    padding: 5px 10px;
   }
 
   p {

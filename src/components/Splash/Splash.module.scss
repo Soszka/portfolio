@@ -46,8 +46,9 @@
   flex-direction: column;
   justify-content: center;
   @include large-screens {
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 0;
     margin: 0 0 30px;
     height: auto;
@@ -67,6 +68,7 @@
 
     @include small-screens {
       font-size: $content-font-size * 1.5;
+      text-align: center;
     }
 
     span {
@@ -106,14 +108,14 @@
   }
 
   a {
-    @include button(230px, 55px, 28px);
+    @include button(55px, 28px);
     margin-top: 15px;
   }
 }
 
 img {
   height: 500px;
-  margin-right: 50px;
+  margin: 0 50px 0 20px;
   @include large-screens {
     height: 400px;
     margin: 10px 0 0;

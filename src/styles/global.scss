@@ -1,6 +1,8 @@
 @import './settings.scss';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -12,4 +14,8 @@ body {
   font-family: $content-font;
   line-height: 1.6;
   background: $dark-color;
+}
+
+html {
+  overflow-x: hidden;
 }

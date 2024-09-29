@@ -1,26 +1,70 @@
 import styles from './Journey.module.scss';
 import Title from '../Title/Title';
 import { useSelector } from 'react-redux';
+import clsx from 'clsx';
+import Button from '@material-ui/core/Button';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { useMediaQuery } from '@material-ui/core';
 
 const Journey = () => {
+  const journeyItems = useSelector((state) => state.journeyItems);
+  const { t } = useTranslation();
 
-  const journeyItems = useSelector(state => state.journeyItems);
+  const isLargeScreen = useMediaQuery('(min-width:968px)');
 
   return (
     <div className={styles.journey}>
-      <Title>My Journey</Title>
+      <Title>{t('journey.title')}</Title>
       <div className={styles.journeyItems}>
         {journeyItems.map((journeyItem) => (
-          <div className={styles.journeyItem} key={journeyItem.id} data-aos="zoom-out" data-aos-delay={journeyItem.aosDelay}>
-            <img src ={journeyItem.image} alt={journeyItem.title}/>
-            <h2>{journeyItem.title}</h2>
-            <p>{journeyItem.description}</p>
-            <a href="https://github.com/Soszka" rel="noreferrer" target="_blank">SEE GITHUB</a>
+          <div
+            key={journeyItem.id}
+            className={styles.journeyItem}
+            data-aos="zoom-in"
+            data-aos-delay={isLargeScreen ? journeyItem.aosDelay : '0'}
+          >
+            <div className={styles.journeyItemCard}>
+              <div
+                className={clsx(
+                  styles.journeyItemCardFront,
+                  styles[journeyItem.image]
+                )}
+              >
+                <h5 className={styles.journeyItemTitle}>
+                  {t(`journey.items.${journeyItem.key}.title`)}
+                </h5>
+              </div>
+              <div className={styles.journeyItemCardBack}>
+                <div className={styles.journeyItemCardBackContainer}>
+                  <p className={styles.journeyItemCardBackContainer}>
+                    {t(`journey.items.${journeyItem.key}.description`)}
+                  </p>
+                  <Button
+                    component={journeyItem.isExternal ? 'a' : Link}
+                    href={
+                      journeyItem.isExternal
+                        ? journeyItem.buttonHref
+                        : undefined
+                    }
+                    to={
+                      journeyItem.isExternal
+                        ? undefined
+                        : journeyItem.buttonHref
+                    }
+                    target={journeyItem.isExternal ? '_blank' : undefined}
+                    className={styles.journeyItemCardBackBtn}
+                  >
+                    {t(`journey.button.${journeyItem.buttonKey}`)}
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Journey;
