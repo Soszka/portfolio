@@ -83,7 +83,7 @@ const initialState = {
       key: 'studies',
       aosDelay: '0',
       buttonKey: 'github',
-      buttonHref: 'https://github.com',
+      buttonHref: 'https://github.com/Soszka',
       isExternal: true,
     },
     {

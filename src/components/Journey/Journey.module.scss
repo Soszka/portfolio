@@ -57,6 +57,7 @@
   }
 
   .journeyItemCardFront {
+    position: absolute;
     border-radius: 10%;
     width: 100%;
     height: 100%;
@@ -68,6 +69,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    z-index: 0;
 
     .journeyItemTitle {
       letter-spacing: 1px;
@@ -109,6 +111,7 @@
     width: 100%;
     height: 100%;
     top: 0;
+    background-color: black;
     left: 0;
     border-radius: 30px;
     transform: rotateY(180deg);
@@ -116,10 +119,10 @@
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     box-shadow: 0 0 15px $text-secondary-color;
+    z-index: 2;
 
     .journeyItemCardBackContainer {
       margin: 0 10px;
-      background-color: black;
       text-align: center;
     }
 

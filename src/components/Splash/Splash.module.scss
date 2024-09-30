@@ -7,6 +7,11 @@
   background-position: center;
   background-attachment: fixed;
   position: relative;
+
+  @include medium-screens {
+    background-attachment: scroll;
+    background-image: url('../../assets/HomePhotos/splashPhoto3.jpg');
+  }
 }
 
 .splash:before {
@@ -19,6 +24,10 @@
   background-color: black;
   opacity: 0.85;
   z-index: 0;
+
+  @include medium-screens {
+    opacity: 0.875;
+  }
 }
 
 .content {
