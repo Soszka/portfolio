@@ -4,6 +4,7 @@ import aboutPhoto from '../../assets/HomePhotos/aboutPhoto1.png';
 
 const Animation = () => {
   const canvasRef = useRef(null);
+  const animationFrameId = useRef(null); // Add this line
   const minWidth = window.innerWidth < 1200 ? 5 : 10;
   const maxWidth = window.innerWidth < 1200 ? 1 : 3;
   const minHeight = 360;
@@ -55,7 +56,8 @@ const Animation = () => {
       ctx.drawImage(canvas, 0, 0);
       ctx.restore();
 
-      requestAnimationFrame(animationLoop);
+      // Store the animation frame ID
+      animationFrameId.current = requestAnimationFrame(animationLoop);
     };
 
     class Line {
@@ -116,6 +118,8 @@ const Animation = () => {
 
     return () => {
       window.removeEventListener('resize', resizeReset);
+      // Cancel the animation frame on cleanup
+      cancelAnimationFrame(animationFrameId.current);
     };
   }, []);
 

@@ -29,14 +29,12 @@ const AccordionCarousel = ({ skill }) => {
           </div>
           <FontAwesomeIcon className={styles.accordionIcon} icon={skill.icon} />
         </div>
-        <div className={styles.accordionDescription}>
-          <p>{isActive ? ' ' : skill.description}</p>
+        <div>
+          <p className={styles.accordionDescription}>
+            {isActive ? ' ' : skill.description}
+          </p>
         </div>
-        {isActive && (
-          <div className={styles.carouselItem}>
-            <Carousel carouselSlides={skill.slides} />
-          </div>
-        )}
+        {isActive && <Carousel carouselSlides={skill.slides} />}
       </div>
     </div>
   );

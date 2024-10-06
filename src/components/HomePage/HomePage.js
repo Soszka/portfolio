@@ -4,6 +4,7 @@ import Journey from '../Journey/Journey';
 import Contact from '../Contact/Contact';
 import Adventages from '../Adventages/Adventages';
 import Container from '../Container/Container';
+import Footer from '../Footer/Footer';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
         <Adventages />
         <Contact />
       </Container>
+      <Footer />
     </div>
   );
 };

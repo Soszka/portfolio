@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import HomePage from './components/HomePage/HomePage';
-import Footer from './components/Footer/Footer';
 import ProjectsForm from './components/ProjectsForm/ProjectsForm';
 import Skills from './components/Skills/Skills';
 import { Routes, Route } from 'react-router-dom';
@@ -23,7 +22,6 @@ const App = () => {
         <Route path="/projects" element={<ProjectsForm />} />
         <Route path="/skills" element={<Skills />} />
       </Routes>
-      <Footer />
     </main>
   );
 };

@@ -1,12 +1,17 @@
 @import '../../styles/settings.scss';
 
 .footer {
-  margin-top: 40px;
+  padding: 40px 0 20px;
   text-align: center;
   font-size: $content-font-size * 1.1;
+  position: relative;
   @include small-screens {
     margin-top: 10px;
     font-size: $content-font-size * 0.9;
+  }
+
+  p {
+    margin: 0;
   }
 
   span {

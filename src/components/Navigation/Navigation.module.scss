@@ -2,17 +2,13 @@
 
 nav {
   margin: 0 auto;
-  padding: 15px 0 20px;
+  padding: 15px 0 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: relative;
   &.closed {
     border-bottom: none;
-  }
-  &.activeProjects {
-    background-color: black;
-    background-image: none;
   }
   @include extra-large-screens {
     flex-direction: column;

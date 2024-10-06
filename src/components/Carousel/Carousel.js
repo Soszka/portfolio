@@ -5,6 +5,7 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const Carousel = ({ carouselSlides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -35,12 +36,30 @@ const Carousel = ({ carouselSlides }) => {
       <div className={styles.rightArrow} onClick={goToNext}>
         <FontAwesomeIcon icon={faChevronRight} />
       </div>
-      <div className={styles.carouselSlides} data-aos="zoom-in">
-        <img
-          alt={carouselSlides[currentIndex].title}
-          src={carouselSlides[currentIndex].url}
-          style={{ userSelect: 'none' }}
-        />
+      <div className={styles.carouselSlides}>
+        {/* New image container */}
+        <div className={styles.imageContainer}>
+          <TransitionGroup>
+            <CSSTransition
+              key={currentIndex}
+              timeout={500} // Match this with your CSS transition duration
+              classNames={{
+                enter: styles.fadeEnter,
+                enterActive: styles.fadeEnterActive,
+                exit: styles.fadeExit,
+                exitActive: styles.fadeExitActive,
+              }}
+            >
+              <img
+                alt={carouselSlides[currentIndex].title}
+                src={carouselSlides[currentIndex].url}
+                className={styles.carouselImage}
+                style={{ userSelect: 'none' }}
+              />
+            </CSSTransition>
+          </TransitionGroup>
+        </div>
+        {/* Title and dots outside the image container */}
         <h2>{carouselSlides[currentIndex].title}</h2>
         <div className={styles.dots}>
           {carouselSlides.map((slide, slideIndex) => (

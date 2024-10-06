@@ -3,12 +3,13 @@ import Title from '../Title/Title';
 import AccordionCarousel from '../AccordionCarousel/AccordionCarousel';
 import { useSelector } from 'react-redux';
 import Navigation from '../Navigation/Navigation';
+import Footer from '../Footer/Footer';
 
 const Skills = () => {
   const skills = useSelector((state) => state.skills);
 
   return (
-    <div>
+    <div className={styles.skills}>
       <Navigation />
       <Title>My Skills</Title>
       <div className={styles.skills}>
@@ -16,6 +17,7 @@ const Skills = () => {
           <AccordionCarousel key={skill.id} skill={skill} />
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

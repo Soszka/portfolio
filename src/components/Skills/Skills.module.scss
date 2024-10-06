@@ -1,0 +1,22 @@
+@import '../../styles/settings.scss';
+
+.skills {
+  background-image: url('../../assets/SkillsPhotos//skillsBackground.png');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+.skills:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.1;
+  z-index: 0;
+}
