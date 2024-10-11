@@ -6,9 +6,11 @@ import {
   faCircleChevronDown,
   faCircleChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const AccordionCarousel = ({ skill }) => {
   const [isActive, setIsActive] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -18,7 +20,7 @@ const AccordionCarousel = ({ skill }) => {
           onClick={() => setIsActive(!isActive)}
         >
           <div className={styles.accordionTitle}>
-            <h3>{skill.name}</h3>
+            <h3>{t(skill.nameKey)}</h3>
             <p>
               {isActive ? (
                 <FontAwesomeIcon icon={faCircleChevronUp} />
@@ -30,8 +32,11 @@ const AccordionCarousel = ({ skill }) => {
           <FontAwesomeIcon className={styles.accordionIcon} icon={skill.icon} />
         </div>
         <div>
-          <p className={styles.accordionDescription}>
-            {isActive ? ' ' : skill.description}
+          <p
+            style={{ display: isActive ? 'none' : 'block' }}
+            className={styles.accordionDescription}
+          >
+            {t(skill.descriptionKey)}
           </p>
         </div>
         {isActive && <Carousel carouselSlides={skill.slides} />}

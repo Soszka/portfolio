@@ -6,6 +6,7 @@ import {
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { useSwipeable } from 'react-swipeable'; // Import useSwipeable
 
 const Carousel = ({ carouselSlides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -28,8 +29,14 @@ const Carousel = ({ carouselSlides }) => {
     setCurrentIndex(slideIndex);
   };
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => goToNext(),
+    onSwipedRight: () => goToPrevious(),
+    preventDefaultTouchmoveEvent: true,
+  });
+
   return (
-    <div className={styles.carousel}>
+    <div className={styles.carousel} {...handlers}>
       <div className={styles.leftArrow} onClick={goToPrevious}>
         <FontAwesomeIcon icon={faChevronLeft} />
       </div>
@@ -37,12 +44,11 @@ const Carousel = ({ carouselSlides }) => {
         <FontAwesomeIcon icon={faChevronRight} />
       </div>
       <div className={styles.carouselSlides}>
-        {/* New image container */}
         <div className={styles.imageContainer}>
           <TransitionGroup>
             <CSSTransition
               key={currentIndex}
-              timeout={500} // Match this with your CSS transition duration
+              timeout={500}
               classNames={{
                 enter: styles.fadeEnter,
                 enterActive: styles.fadeEnterActive,
@@ -59,7 +65,6 @@ const Carousel = ({ carouselSlides }) => {
             </CSSTransition>
           </TransitionGroup>
         </div>
-        {/* Title and dots outside the image container */}
         <h2>{carouselSlides[currentIndex].title}</h2>
         <div className={styles.dots}>
           {carouselSlides.map((slide, slideIndex) => (

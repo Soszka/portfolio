@@ -8,28 +8,25 @@ import {
   faCalendarDays,
   faDiagramProject,
   faEnvelope,
+  faLayerGroup,
 } from '@fortawesome/free-solid-svg-icons';
 import AdventagesPhoto1 from '../../src/assets/HomePhotos/adventagesPhoto1.png';
 import AdventagesPhoto2 from '../../src/assets/HomePhotos/adventagesPhoto2.jpg';
 import AdventagesPhoto3 from '../../src/assets/HomePhotos/advenatgesPhoto3.png';
-import AdventagesPhoto4 from '../../src/assets/HomePhotos/advenatgesPhoto4.jpg';
+import AdventagesPhoto4 from '../../src/assets/HomePhotos/adventagesPhoto4.jpg';
 import AdventagesPhoto5 from '../../src/assets/HomePhotos/adventagesPhoto5.jpg';
 import AdventagesPhoto6 from '../../src/assets/HomePhotos/adventagesPhoto6.jpg';
-import HardSkillsPhoto1 from '../../src/assets/SkillsPhotos/hardSkillsPhoto1.png';
-import HardSkillsPhoto2 from '../../src/assets/SkillsPhotos/hardSkillsPhoto2.png';
-import HardSkillsPhoto3 from '../../src/assets/SkillsPhotos/hardSkillsPhoto3.png';
-import HardSkillsPhoto4 from '../../src/assets/SkillsPhotos/hardSkillsPhoto4.png';
-import HardSkillsPhoto5 from '../../src/assets/SkillsPhotos/hardSkillsPhoto5.png';
-import HardSkillsPhoto6 from '../../src/assets/SkillsPhotos/hardSkillsPhoto6.png';
-import HardSkillsPhoto7 from '../../src/assets/SkillsPhotos/hardSkillsPhoto7.png';
-import HardSkillsPhoto8 from '../../src/assets/SkillsPhotos/hardSkillsPhoto8.png';
-import SoftSkillsPhoto1 from '../../src/assets/SkillsPhotos/softSkillsPhoto1.jpg';
-import SoftSkillsPhoto2 from '../../src/assets/SkillsPhotos/softSkillsPhoto2.jpg';
-import SoftSkillsPhoto3 from '../../src/assets/SkillsPhotos/softSkillsPhoto3.jpg';
-import SoftSkillsPhoto4 from '../../src/assets/SkillsPhotos/softSkillsPhoto4.jpg';
-import SoftSkillsPhoto5 from '../../src/assets/SkillsPhotos/softSkillsPhoto5.jpg';
-import EducationPhoto1 from '../../src/assets/SkillsPhotos/educationPhoto1.jpg';
-import EducationPhoto2 from '../../src/assets/SkillsPhotos/educationPhoto2.jpg';
+import CoreWebPhoto1 from '../../src/assets/SkillsPhotos/CoreWebPhoto1.png';
+import CoreWebPhoto2 from '../../src/assets/SkillsPhotos/CoreWebPhoto2.png';
+import CoreWebPhoto3 from '../../src/assets/SkillsPhotos/CoreWebPhoto3.png';
+import CoreWebPhoto4 from '../../src/assets/SkillsPhotos/CoreWebPhoto4.png';
+import LibPhoto1 from '../../src/assets/SkillsPhotos/LibPhoto1.png';
+import LibPhoto2 from '../../src/assets/SkillsPhotos/LibPhoto2.png';
+import LibPhoto3 from '../../src/assets/SkillsPhotos/LibPhoto3.png';
+import LibPhoto4 from '../../src/assets/SkillsPhotos/LibPhoto4.png';
+import ToolsPhoto1 from '../../src/assets/SkillsPhotos/ToolsPhoto1.png';
+import ToolsPhoto2 from '../../src/assets/SkillsPhotos/ToolsPhoto2.png';
+import ToolsPhoto3 from '../../src/assets/SkillsPhotos/ToolsPhoto3.png';
 import {
   faInstagram,
   faLinkedin,
@@ -299,47 +296,37 @@ const initialState = {
   skills: [
     {
       id: 1,
-      name: 'education',
-      icon: faGraduationCap,
-      description: ` Education is an essential element of success in the IT industry.
-      it not only provides the necessary technical skills, but also develops creativity,
-      logical thinking and the ability to solve problems.`,
+      nameKey: 'skills.skillsList.0.name',
+      icon: faCode,
+      descriptionKey: 'skills.skillsList.0.description',
       slides: [
-        { url: EducationPhoto1, title: 'Power Engineer' },
-        { url: EducationPhoto2, title: 'Project Manager' },
+        { url: CoreWebPhoto1, title: 'HTML' },
+        { url: CoreWebPhoto2, title: 'CSS & SASS' },
+        { url: CoreWebPhoto3, title: 'JavaScript & TypeScript' },
+        { url: CoreWebPhoto4, title: 'NPM & Webpack' },
       ],
     },
     {
       id: 2,
-      name: 'hard skilss',
-      icon: faCode,
-      description: ` Hard skills, play a pivotal role in achieving excellence in specific technical domains.
-      They encompass the knowledge, expertise, and proficiency required to solve complex problems,
-      and contribute effectively within one's chosen industry.`,
+      nameKey: 'skills.skillsList.1.name',
+      icon: faLayerGroup,
+      descriptionKey: 'skills.skillsList.1.description',
       slides: [
-        { url: HardSkillsPhoto1, title: 'HTML' },
-        { url: HardSkillsPhoto2, title: 'CSS & SASS' },
-        { url: HardSkillsPhoto3, title: 'JavaScript & TypScript' },
-        { url: HardSkillsPhoto4, title: 'React & Redux' },
-        { url: HardSkillsPhoto5, title: 'Angular & NgRx' },
-        { url: HardSkillsPhoto6, title: 'NPM & Webpack' },
-        { url: HardSkillsPhoto7, title: 'Visual Studio Code' },
-        { url: HardSkillsPhoto8, title: 'Projects Management' },
+        { url: LibPhoto2, title: 'Angular, RxJs & NgRx' },
+        { url: LibPhoto1, title: 'React & Redux' },
+        { url: LibPhoto3, title: 'Material ( UI & Angular )' },
+        { url: LibPhoto4, title: 'Bootsrtap & Tailwind' },
       ],
     },
     {
       id: 3,
-      name: 'soft skills',
+      nameKey: 'skills.skillsList.2.name',
       icon: faGears,
-      description: ` Soft skills are a fundamental component of success in any professional field.
-      They not only enhance effective communication and interpersonal relationships but also foster adaptability,
-      leadership, and emotional intelligence.`,
+      descriptionKey: 'skills.skillsList.2.description',
       slides: [
-        { url: SoftSkillsPhoto1, title: 'Team Work' },
-        { url: SoftSkillsPhoto2, title: 'Problem Solving' },
-        { url: SoftSkillsPhoto3, title: 'Analytical Thinking' },
-        { url: SoftSkillsPhoto4, title: 'Creativity' },
-        { url: SoftSkillsPhoto5, title: 'Punctuality' },
+        { url: ToolsPhoto2, title: 'Git' },
+        { url: ToolsPhoto1, title: 'Visual Studio Code' },
+        { url: ToolsPhoto3, title: 'Github & Bitbucket' },
       ],
     },
   ],

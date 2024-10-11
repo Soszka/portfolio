@@ -3,6 +3,7 @@
 .carousel {
   height: 100%;
   position: relative;
+  touch-action: pan-y;
 
   .leftArrow {
     position: absolute;
@@ -72,6 +73,9 @@
       margin: 0;
       padding: 0;
       border-radius: 20px;
+      user-select: none;
+      -webkit-user-drag: none;
+      touch-action: manipulation;
       @include medium-screens {
         bottom: 10%;
         height: 200px;
@@ -105,7 +109,7 @@
       text-transform: uppercase;
       text-align: center;
 
-      @include medium-screens {
+      @include small-screens {
         font-size: 24px;
         margin-top: 15px;
         height: 70px;

@@ -109,5 +109,25 @@
         "name": "Email"
       }
     }
+  },
+
+  "skills": {
+    "skillsList": [
+      {
+        "id": 1,
+        "name": "Tworzenie apliakcji",
+        "description": "Podstawowe umiejętności z zakresu tworzenia apliacji są kluczowe dla tworzenia nowoczesnych i wydajnych aplikacji internetowych. Opanowanie tych technologii umożliwia budowanie responsywnych, szybkich i przyjaznych dla użytkownika apliacji."
+      },
+      {
+        "id": 2,
+        "name": "Biblioteki i Frameworki",
+        "description": "Biblioteki i frameworki oferują potężne narzędzia i komponenty wielokrotnego użytku, które przyspieszają rozwój. Pomagają efektywnie tworzyć skalowalne i łatwe w utrzymaniu aplikacje internetowe."
+      },
+      {
+        "id": 3,
+        "name": "Narzędzia i Technologie",
+        "description": "Wykorzystanie odpowiednich narzędzi zwiększa produktywność i współpracę podczas tworzenia. Pomagają w pisaniu, testowaniu i wdrażaniu kodu efektywnie, jednocześnie utrzymując wysoką jakość."
+      }
+    ]
   }
 }
