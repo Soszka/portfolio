@@ -95,6 +95,7 @@
     "title": "Skontaktuj się",
     "header1": "Wybierz",
     "header2": "rodzaj kontaktu",
+    "snackbarMessage": "Proszę użyć LinkedIn, aby się skontaktować.",
     "items": {
       "instagram": {
         "name": "Instagram"
@@ -127,6 +128,25 @@
         "id": 3,
         "name": "Narzędzia i Technologie",
         "description": "Wykorzystanie odpowiednich narzędzi zwiększa produktywność i współpracę podczas tworzenia. Pomagają w pisaniu, testowaniu i wdrażaniu kodu efektywnie, jednocześnie utrzymując wysoką jakość."
+      }
+    ]
+  },
+
+  "projects": {
+    "title": "Moje Projekty",
+    "hoverMessage": "Najedź kursorem na projekt, aby zobaczyć jego opis",
+    "list": [
+      {
+        "title": "Licznik Kalorii",
+        "description": "Apliakcja ta ma za zadanie ułatwić Ci wyliczenie zapotrzebowania kalorycznego, a także pozwala śledzić dzienne spożycie kalorii. Do stworzenia aplikacji użyto angulara v17, a także mniej nowoczesnego podejścia modułowego, opartego na zarządzaniu stanem głównie za pomocą serwisów i biblioteki RxJS. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platforeme Firebase."
+      },
+      {
+        "title": "Licznik Progresu",
+        "description": "Dzięki tej aplikacji masz możliwość analizy swojego progresu siłowego.Pozwala ona na ustawianie indywidyalnych treningów, dodawanie ćwiczeń, a także analizę wykresów, dotyczących twoichosiągnięć. Do stworzenia aplikacji użyto angulara v17, z nowoczesnym podejściemopartym na komponentach standalone i sygnałach. Do zarządzania stanem użyto NgRx Signal Stora. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platforeme Firebase."
+      },
+      {
+        "title": "Portfolio",
+        "description": "Strona portfolio, zawierające najważniejsze informacje, które mają wyróżnić moją osobę jako Front End Developera i zachęcić innych do współpracy ze mną. Zaprogramowana przy użyciu biblioteki React. Dane są przechowywane w storze i wykorzystywane dzięki bibliotecve Redux. Do szybkiej budowy niektórych komponentó wykorzystano bibliotekę Material UI. Aplikacja nie komunikuje się z backendem."
       }
     ]
   }

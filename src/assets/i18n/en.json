@@ -94,6 +94,7 @@
     "title": "Contact Me",
     "header1": "Choose",
     "header2": "contact method",
+    "snackbarMessage": "Please use LinkedIn to contact.",
     "items": {
       "instagram": {
         "name": "Instagram"
@@ -126,6 +127,25 @@
         "id": 3,
         "name": "Tools and Technologies",
         "description": "Utilizing the right tools enhances productivity and collaboration during development. They assist in writing, testing, and deploying code efficiently while maintaining high quality."
+      }
+    ]
+  },
+
+  "projects": {
+    "title": "My Projects",
+    "hoverMessage": "Hover over a project to see its description",
+    "list": [
+      {
+        "title": "Calories Counter",
+        "description": "This application is designed to help you calculate your caloric needs and track daily calorie intake. The app was built using Angular v17 with a less modern modular approach, mainly managing state via services and the RxJS library. Data is stored and retrieved in the cloud using Firebase's API."
+      },
+      {
+        "title": "Progress Counter",
+        "description": "This app allows you to analyze your strength progress. It lets you set up individual workouts, add exercises, and analyze charts related to your achievements. The app was built using Angular v17 with a modern approach, utilizing standalone components and signals. State management is handled by NgRx Signal Store, and data is stored and retrieved in the cloud using Firebase's API."
+      },
+      {
+        "title": "Portfolio",
+        "description": "A portfolio website containing the key information that highlights me as a Front-End Developer and encourages others to collaborate with me. The site is built using React, with Redux used for state management. Material UI was used for faster development of certain components. The app does not interact with a backend."
       }
     ]
   }

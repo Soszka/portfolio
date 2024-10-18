@@ -32,6 +32,22 @@ import {
   faLinkedin,
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons';
+import CaloriesPage from '../assets/ProjectsPhotos/CaloriesCounterPage.png';
+import Portfolio from '../assets/ProjectsPhotos/PortfolioPage.png';
+import ProgressPage from '../assets/ProjectsPhotos/ProgressCounterPage.png';
+
+import angularIcon from '../assets/ProjectsPhotos/angularIcon.png';
+import firebaseIcon from '../assets/ProjectsPhotos/firebaseIcon.png';
+import angularMaterialIcon from '../assets/ProjectsPhotos/angularMaterialIcon.png';
+import rxjsIcon from '../assets/ProjectsPhotos/rxjsIcon.png';
+import sassIcon from '../assets/ProjectsPhotos/sassIcon.png';
+import typeScriptIcon from '../assets/ProjectsPhotos/typeScriptIcon.png';
+import ngrxIcon from '../assets/ProjectsPhotos/ngrxIcon.png';
+import htmlIcon from '../assets/ProjectsPhotos/htmlIcon.png';
+import reactIcon from '../assets/ProjectsPhotos/reactIcon.png';
+import reduxIcon from '../assets/ProjectsPhotos/reduxIcon.png';
+import javascriptIcon from '../assets/ProjectsPhotos/javaScriptIcon.png';
+import materialUiIcon from '../assets/ProjectsPhotos/materialUi.png';
 
 const initialState = {
   achivments: [
@@ -182,117 +198,6 @@ const initialState = {
     },
   ],
 
-  projects: [
-    {
-      id: 1,
-      name: 'JavaScript Blog',
-      code: 'javascript',
-      created: 'bootcamp',
-      responsivness: 'no',
-      cardFrontStyle: 'blogPage',
-      cardBackStyle: 'blogCode',
-      tools: 'Javascript, HTML, CSS',
-      pageLink: 'https://soszka.github.io/Javascript-blog',
-      githubLink: 'https://github.com/Soszka/Javascript-blog',
-    },
-    {
-      id: 2,
-      name: 'City Layout',
-      code: 'javascript',
-      created: 'by-me',
-      responsivness: 'yes',
-      cardFrontStyle: 'cityPage',
-      cardBackStyle: 'cityCode',
-      tools: 'Javascript, HTML, SCSS',
-      pageLink: 'https://soszka.github.io/SCSS-cityLayout/',
-      githubLink: 'https://github.com/Soszka/SCSS-cityLayout',
-    },
-    {
-      id: 3,
-      name: 'Zamorski Finanse',
-      code: 'angular',
-      created: 'by-me',
-      responsivness: 'yes',
-      cardFrontStyle: 'zamorskiFinansePage',
-      cardBackStyle: 'zamorskiFinanseCode',
-      tools: 'Angular, NgRx, SCSS',
-      pageLink: 'https://zamorskifinanse.vercel.app',
-      githubLink: 'https://github.com/Soszka/Angular-zamorskiFinanse',
-    },
-    {
-      id: 4,
-      name: 'Receipe Book',
-      code: 'angular',
-      created: 'course',
-      responsivness: 'yes',
-      cardFrontStyle: 'receipeBookPage',
-      cardBackStyle: 'receipeBookCode',
-      tools: 'Angular, Typescript, CSS',
-      pageLink: 'https://receipebookapp.vercel.app/recipes',
-      githubLink: 'https://github.com/Soszka/Angular-receipeBookApp',
-    },
-    {
-      id: 5,
-      name: 'Portfolio',
-      code: 'react',
-      created: 'by-me',
-      responsivness: 'yes',
-      cardFrontStyle: 'portfolioPage',
-      cardBackStyle: 'portfolioCode',
-      tools: 'React, Redux, SCSS',
-      pageLink: 'https://bartlomiejsocha.vercel.app',
-      githubLink: 'https://github.com/Soszka/portfolio',
-    },
-    {
-      id: 6,
-      name: 'To-Do List',
-      code: 'react',
-      created: 'bootcamp',
-      responsivness: 'no',
-      cardFrontStyle: 'ToDoPage',
-      cardBackStyle: 'ToDoCode',
-      tools: 'React, Redux, SCSS',
-      pageLink: 'https://react-app-soszka.vercel.app',
-      githubLink: 'https://github.com/Soszka/React-app',
-    },
-    {
-      id: 7,
-      name: 'Drag&Drop Project',
-      code: 'javascript',
-      created: 'course',
-      responsivness: 'yes',
-      cardFrontStyle: 'dragDropPage',
-      cardBackStyle: 'dragDropCode',
-      tools: 'Typescript, HTML, CSS',
-      pageLink: 'https://soszka.github.io/Typescript-dragAndDropProject/',
-      githubLink: 'https://github.com/Soszka/Typescript-dragAndDropProject',
-    },
-    {
-      id: 8,
-      name: 'Pizzeria',
-      code: 'javascript',
-      created: 'bootcamp',
-      responsivness: 'no',
-      cardFrontStyle: 'pizzeriaPage',
-      cardBackStyle: 'pizzeriaCode',
-      tools: 'Javascript, HTML, SCSS',
-      pageLink: 'https://project-pizzeria.soszka1.repl.co/',
-      githubLink: 'https://github.com/Soszka/Javascript-pizzeriaApp',
-    },
-    {
-      id: 9,
-      name: 'Fitness App',
-      code: 'angular',
-      created: 'course',
-      responsivness: 'yes',
-      cardFrontStyle: 'fitnessAppPage',
-      cardBackStyle: 'fitnessAppCode',
-      tools: 'Angular, Typescript, CSS',
-      pageLink: 'https://angular-fitness-app.vercel.app/',
-      githubLink: 'https://github.com/Soszka/Angular-fitnessApp',
-    },
-  ],
-
   skills: [
     {
       id: 1,
@@ -328,6 +233,57 @@ const initialState = {
         { url: ToolsPhoto1, title: 'Visual Studio Code' },
         { url: ToolsPhoto3, title: 'Github & Bitbucket' },
       ],
+    },
+  ],
+
+  projects: [
+    {
+      id: 1,
+      image: CaloriesPage,
+      titleKey: 'projects.list.0.title',
+      code: 'angular',
+      page: 'https://licznikkalorii.vercel.app/',
+      icons: [
+        typeScriptIcon,
+        rxjsIcon,
+        firebaseIcon,
+        sassIcon,
+        angularMaterialIcon,
+        angularIcon,
+      ],
+      descriptionKey: 'projects.list.0.description',
+    },
+    {
+      id: 2,
+      image: ProgressPage,
+      titleKey: 'projects.list.1.title',
+      code: 'angular',
+      page: 'https://licznikprogresu.vercel.app/',
+      icons: [
+        angularIcon,
+        ngrxIcon,
+        firebaseIcon,
+        rxjsIcon,
+        sassIcon,
+        angularMaterialIcon,
+      ],
+      descriptionKey: 'projects.list.1.description',
+    },
+    {
+      id: 3,
+      image: Portfolio,
+      titleKey: 'projects.list.2.title',
+      code: 'react',
+      page: 'https://bartlomiejsocha.pl/',
+      icons: [
+        reactIcon,
+        reduxIcon,
+        htmlIcon,
+        materialUiIcon,
+        javascriptIcon,
+        sassIcon,
+      ],
+      descriptionKey: 'projects.list.2.description',
     },
   ],
 };
