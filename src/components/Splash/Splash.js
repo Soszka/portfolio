@@ -1,6 +1,6 @@
 import styles from './Splash.module.scss';
 import Achivments from '../Achivments/Achivments';
-import splashPhoto from '../../assets/HomePhotos/splashPhoto2.png';
+import splashPhoto from '../../assets/HomePhotos/splashPhoto4.png';
 import Navigation from '../Navigation/Navigation';
 import Button from '@material-ui/core/Button';
 import { useTranslation } from 'react-i18next';
