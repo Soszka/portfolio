@@ -25,7 +25,6 @@ $header-font-size: 52px;
     $text-secondary-color,
     darken($text-secondary-color, 25%)
   );
-  background-color: darken($text-secondary-color, 10%);
   border-radius: $radious;
   font-family: $header-font;
   color: white;

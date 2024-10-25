@@ -1,18 +1,69 @@
 @import '../../styles/settings.scss';
 
 .projects {
-  margin-top: 30px;
+  background-image: url('../../assets/SkillsPhotos/skillsBackground.png');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  min-height: 100vh;
   display: flex;
-  align-items: center;
-  height: 70vh;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &Lg {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    height: 70vh;
+
+    @include extra-large-screens {
+      display: none;
+    }
+  }
+
+  &Sm {
+    display: none;
+
+    @include extra-large-screens {
+      display: block;
+      margin: 0 auto;
+      padding: 0 40px;
+
+      &Cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+      }
+    }
+
+    @include medium-screens {
+      padding: 0 20px;
+    }
+  }
+}
+
+.projects:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  opacity: 0.3;
+  z-index: 0;
 }
 
 .leftColumn {
   flex: 40%;
-  overflow-y: scroll; // Allow overflow to be visible
+  overflow-y: scroll;
   height: 100%;
+  z-index: 2;
+  text-align: center;
 
-  /* Stylizacja paska przewijania */
   &::-webkit-scrollbar {
     width: 12px;
   }

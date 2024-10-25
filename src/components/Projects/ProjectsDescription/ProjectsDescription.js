@@ -10,16 +10,21 @@ const ProjectsDescription = ({ selectedProject }) => {
   useEffect(() => {
     if (selectedProject !== displayedProject) {
       setFadeState('fadeOut');
-      const timeout = setTimeout(() => {
-        setDisplayedProject(selectedProject);
-        setFadeState('fadeIn');
-      }, 500);
-      return () => clearTimeout(timeout);
     }
   }, [selectedProject, displayedProject]);
 
+  const handleTransitionEnd = () => {
+    if (fadeState === 'fadeOut') {
+      setDisplayedProject(selectedProject);
+      setFadeState('fadeIn');
+    }
+  };
+
   return (
-    <div className={`${styles.container} ${styles[fadeState]}`}>
+    <div
+      className={`${styles.container} ${styles[fadeState]}`}
+      onTransitionEnd={handleTransitionEnd}
+    >
       {displayedProject ? (
         <>
           <div className={styles.project}>

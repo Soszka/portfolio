@@ -35,6 +35,9 @@ import {
 import CaloriesPage from '../assets/ProjectsPhotos/CaloriesCounterPage.png';
 import Portfolio from '../assets/ProjectsPhotos/PortfolioPage.png';
 import ProgressPage from '../assets/ProjectsPhotos/ProgressCounterPage.png';
+import CaloriesPageSm from '../assets/ProjectsPhotos/caloriesCounterPageSm.png';
+import PortfolioSm from '../assets/ProjectsPhotos/PortfolioPageSm.png';
+import ProgressPageSm from '../assets/ProjectsPhotos/ProgressCounterPageSm.png';
 
 import angularIcon from '../assets/ProjectsPhotos/angularIcon.png';
 import firebaseIcon from '../assets/ProjectsPhotos/firebaseIcon.png';
@@ -240,6 +243,7 @@ const initialState = {
     {
       id: 1,
       image: CaloriesPage,
+      imageSm: CaloriesPageSm,
       titleKey: 'projects.list.0.title',
       code: 'angular',
       page: 'https://licznikkalorii.vercel.app/',
@@ -256,6 +260,7 @@ const initialState = {
     {
       id: 2,
       image: ProgressPage,
+      imageSm: ProgressPageSm,
       titleKey: 'projects.list.1.title',
       code: 'angular',
       page: 'https://licznikprogresu.vercel.app/',
@@ -272,6 +277,7 @@ const initialState = {
     {
       id: 3,
       image: Portfolio,
+      imageSm: PortfolioSm,
       titleKey: 'projects.list.2.title',
       code: 'react',
       page: 'https://bartlomiejsocha.pl/',

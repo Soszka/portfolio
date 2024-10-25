@@ -1,0 +1,77 @@
+@import '../../../styles/settings.scss';
+
+.project {
+  position: relative;
+  margin: 20px;
+  width: 320px;
+  height: 370px;
+  border-radius: 10%;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0px 10px rgba(255, 255, 255, 0.7);
+  @include small-screens {
+    margin: 20px 0;
+    width: 300px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+  }
+
+  &Name {
+    text-transform: uppercase;
+    font-size: 28px;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0 5px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0 5px 10px;
+    z-index: 1;
+    @include small-screens {
+      font-size: 24px;
+    }
+  }
+
+  &Button {
+    height: 45px;
+    margin: 10px 0 20px !important;
+    font-size: 22px !important;
+    border-radius: 70px !important;
+    color: white !important;
+    font-weight: 500 !important;
+    padding: 0 20px !important;
+    width: fit-content;
+
+    background: linear-gradient(
+      to bottom right,
+      darken(white, 40%),
+      darken(white, 70%)
+    ) !important;
+
+    &:hover {
+      background: linear-gradient(
+        to bottom right,
+        darken(white, 50%),
+        darken(white, 80%)
+      ) !important;
+    }
+
+    @include small-screens {
+      font-size: 20px;
+      height: 40px;
+    }
+  }
+}

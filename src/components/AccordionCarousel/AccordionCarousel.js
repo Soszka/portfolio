@@ -14,7 +14,7 @@ const AccordionCarousel = ({ skill }) => {
 
   return (
     <div>
-      <div className={styles.accordion} data-aos="zoom-in">
+      <div className={styles.accordion} data-aos="zoom-out">
         <div
           className={styles.accordionSection}
           onClick={() => setIsActive(!isActive)}
