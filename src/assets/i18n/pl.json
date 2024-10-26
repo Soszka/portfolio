@@ -135,6 +135,7 @@
   "projects": {
     "title": "Moje Projekty",
     "hoverMessage": "Najedź kursorem na projekt, aby zobaczyć jego opis",
+    "see": "Szczegóły",
     "list": [
       {
         "title": "Licznik Kalorii",
@@ -142,11 +143,11 @@
       },
       {
         "title": "Licznik Progresu",
-        "description": "Dzięki tej aplikacji masz możliwość analizy swojego progresu siłowego.Pozwala ona na ustawianie indywidyalnych treningów, dodawanie ćwiczeń, a także analizę wykresów, dotyczących twoichosiągnięć. Do stworzenia aplikacji użyto angulara v17, z nowoczesnym podejściemopartym na komponentach standalone i sygnałach. Do zarządzania stanem użyto NgRx Signal Stora. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platforeme Firebase."
+        "description": "Dzięki tej aplikacji masz możliwość analizy swojego progresu siłowego. Pozwala ona na ustawianie indywidyalnych treningów, dodawanie ćwiczeń, a także analizę wykresów, dotyczących twoich osiągnięć. Do stworzenia aplikacji użyto angulara v17, z nowoczesnym podejściem opartym na komponentach standalone i sygnałach. Do zarządzania stanem użyto NgRx Signal Stora. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platforeme Firebase."
       },
       {
         "title": "Portfolio",
-        "description": "Strona portfolio, zawierające najważniejsze informacje, które mają wyróżnić moją osobę jako Front End Developera i zachęcić innych do współpracy ze mną. Zaprogramowana przy użyciu biblioteki React. Dane są przechowywane w storze i wykorzystywane dzięki bibliotecve Redux. Do szybkiej budowy niektórych komponentó wykorzystano bibliotekę Material UI. Aplikacja nie komunikuje się z backendem."
+        "description": "Strona portfolio, zawierające najważniejsze informacje, które mają wyróżnić moją osobę jako Front End Developera i zachęcić innych do współpracy ze mną. Zaprogramowana przy użyciu biblioteki React. Dane są przechowywane w storze i wykorzystywane dzięki bibliotecve Redux. Do szybkiej budowy komponentów wykorzystano bibliotekę Material UI. Aplikacja nie komunikuje się z backendem."
       }
     ]
   }

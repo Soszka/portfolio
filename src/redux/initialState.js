@@ -51,6 +51,8 @@ import reactIcon from '../assets/ProjectsPhotos/reactIcon.png';
 import reduxIcon from '../assets/ProjectsPhotos/reduxIcon.png';
 import javascriptIcon from '../assets/ProjectsPhotos/javaScriptIcon.png';
 import materialUiIcon from '../assets/ProjectsPhotos/materialUi.png';
+import gitIcon from '../assets/ProjectsPhotos/gitIcon.png';
+import webpackIcon from '../assets/ProjectsPhotos/webpackIcon.png';
 
 const initialState = {
   achivments: [
@@ -255,6 +257,7 @@ const initialState = {
         angularMaterialIcon,
         angularIcon,
       ],
+      iconsSm: [gitIcon, htmlIcon],
       descriptionKey: 'projects.list.0.description',
     },
     {
@@ -272,6 +275,7 @@ const initialState = {
         sassIcon,
         angularMaterialIcon,
       ],
+      iconsSm: [gitIcon, htmlIcon],
       descriptionKey: 'projects.list.1.description',
     },
     {
@@ -289,6 +293,7 @@ const initialState = {
         javascriptIcon,
         sassIcon,
       ],
+      iconsSm: [gitIcon, webpackIcon],
       descriptionKey: 'projects.list.2.description',
     },
   ],

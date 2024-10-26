@@ -11,6 +11,7 @@ import { useTranslation } from 'react-i18next';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import { makeStyles } from '@material-ui/core/styles';
+import Fade from '@material-ui/core/Fade';
 import initialState from '../../redux/initialState';
 
 const useStyles = makeStyles((theme) => ({
@@ -62,6 +63,7 @@ const Projects = () => {
               variant="fullWidth"
               classes={{ indicator: classes.indicator }}
               aria-label="Projects Tabs"
+              data-aos="flip-up"
             >
               <Tab
                 label="Angular"
@@ -79,24 +81,34 @@ const Projects = () => {
               />
             </Tabs>
 
-            {tabValue === 0 && (
-              <div className={styles.projectsSmCards}>
-                {projects
-                  .filter((project) => project.code === 'angular')
-                  .map((project) => (
-                    <ProjectsCardSm key={project.id} project={project} />
-                  ))}
-              </div>
-            )}
-            {tabValue === 1 && (
-              <div className={styles.projectsSmCards}>
-                {projects
-                  .filter((project) => project.code === 'react')
-                  .map((project) => (
-                    <ProjectsCardSm key={project.id} project={project} />
-                  ))}
-              </div>
-            )}
+            <div className={classes.fadeContainer}>
+              <Fade in={tabValue === 0} timeout={1000} unmountOnExit>
+                <div className={classes.fadeContent}>
+                  {tabValue === 0 && (
+                    <div className={styles.projectsSmCards}>
+                      {projects
+                        .filter((project) => project.code === 'angular')
+                        .map((project) => (
+                          <ProjectsCardSm key={project.id} project={project} />
+                        ))}
+                    </div>
+                  )}
+                </div>
+              </Fade>
+              <Fade in={tabValue === 1} timeout={1000} unmountOnExit>
+                <div className={classes.fadeContent}>
+                  {tabValue === 1 && (
+                    <div className={styles.projectsSmCards}>
+                      {projects
+                        .filter((project) => project.code === 'react')
+                        .map((project) => (
+                          <ProjectsCardSm key={project.id} project={project} />
+                        ))}
+                    </div>
+                  )}
+                </div>
+              </Fade>
+            </div>
           </div>
         </Container>
       </div>

@@ -134,7 +134,7 @@
   "projects": {
     "title": "My Projects",
     "hoverMessage": "Hover over a project to see its description",
-    "see": "Szczegóły",
+    "see": "Details",
     "list": [
       {
         "title": "Calories Counter",

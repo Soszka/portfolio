@@ -5,7 +5,7 @@
   padding: 10px 30px;
   display: flex;
   opacity: 1;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.3s ease;
   position: relative;
   @include mega-large-screens {
     padding: 10px 20px;
@@ -58,4 +58,22 @@
   font-style: italic;
   font-weight: 400;
   font-size: 26px;
+}
+
+.fadeEnter {
+  opacity: 0;
+}
+
+.fadeEnterActive {
+  opacity: 1;
+  transition: opacity 300ms ease-in-out;
+}
+
+.fadeExit {
+  opacity: 1;
+}
+
+.fadeExitActive {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
 }
