@@ -107,7 +107,7 @@ const Navigation = () => {
                 <HtmlTooltip title={t('navigation.download.resume')}>
                   <Button
                     className={styles.resume}
-                    href="/CV_BartlomiejSocha.pdf"
+                    href={`/CV_BartlomiejSocha_${i18n.language.toUpperCase()}.pdf`}
                     download
                   >
                     {t(item.translationKey)}

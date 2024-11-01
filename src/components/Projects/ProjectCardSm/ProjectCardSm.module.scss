@@ -133,21 +133,21 @@
 }
 
 .iconImage {
-  max-height: 35px;
-  max-width: 50px;
+  max-height: 40px;
+  max-width: 100px;
 }
 
 .linkContainer {
   text-align: center;
 
   &Icon {
-    max-width: 65px;
     background: linear-gradient(
       to bottom right,
       $text-secondary-color,
       darken($text-secondary-color, 25%)
     );
-    font-size: 40px;
+    height: 65px;
+    width: 65px;
     margin: 12.5px auto 0 !important;
     display: block;
     margin-left: auto;

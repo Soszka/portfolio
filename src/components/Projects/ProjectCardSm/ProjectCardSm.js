@@ -10,7 +10,7 @@ import React from 'react';
 import Fade from '@material-ui/core/Fade';
 
 const Transition = forwardRef(function Transition(props, ref) {
-  return <Fade ref={ref} {...props} timeout={800} />;
+  return <Fade ref={ref} {...props} timeout={750} />;
 });
 
 const ProjectsCardSm = ({ project }) => {
