@@ -47,7 +47,7 @@
       },
       "internship": {
         "title": "Staż",
-        "description": "Podczas rocznego stażu, zdobyłem swoje pierwsze doświadczenie komercyjne, które wprowadziło mnie do pracy zespołowej nad apliakcjami"
+        "description": "Podczas rocznego stażu, zdobyłem swoje pierwsze doświadczenie komercyjne, które wprowadziło mnie do pracy zespołowej nad aplikacjami"
       }
     },
     "button": {
@@ -67,7 +67,7 @@
       },
       "uxUi": {
         "title": "UX/UI",
-        "description": "Projektowanie z naciskiem na użytkownika, zapewniając intuicyjne interfejsy ."
+        "description": "Projektowanie z naciskiem na użytkownika, zapewniając intuicyjne interfejsy."
       },
       "libraries": {
         "title": "Biblioteki",
@@ -116,8 +116,8 @@
     "skillsList": [
       {
         "id": 1,
-        "name": "Tworzenie apliakcji",
-        "description": "Podstawowe umiejętności z zakresu tworzenia apliacji są kluczowe dla tworzenia nowoczesnych i wydajnych aplikacji internetowych. Opanowanie tych technologii umożliwia budowanie responsywnych, szybkich i przyjaznych dla użytkownika aplikacji."
+        "name": "Tworzenie aplikacji",
+        "description": "Podstawowe umiejętności z zakresu tworzenia aplikacji są kluczowe dla tworzenia nowoczesnych i wydajnych aplikacji internetowych. Opanowanie tych technologii umożliwia budowanie responsywnych, szybkich i przyjaznych dla użytkownika aplikacji."
       },
       {
         "id": 2,
@@ -139,7 +139,7 @@
     "list": [
       {
         "title": "Licznik Kalorii",
-        "description": "Apliakcja ta ma za zadanie ułatwić Ci wyliczenie zapotrzebowania kalorycznego, a także pozwala śledzić dzienne spożycie kalorii. Do stworzenia aplikacji użyto angulara v17, a także mniej nowoczesnego podejścia modułowego, opartego na zarządzaniu stanem głównie za pomocą serwisów i biblioteki RxJS. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platforeme Firebase."
+        "description": "Aplikacja ta ma za zadanie ułatwić Ci wyliczenie zapotrzebowania kalorycznego, a także pozwala śledzić dzienne spożycie kalorii. Do stworzenia aplikacji użyto angulara v17, a także mniej nowoczesnego podejścia modułowego, opartego na zarządzaniu stanem głównie za pomocą serwisów i biblioteki RxJS. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platformę Firebase."
       },
       {
         "title": "Licznik Progresu",
