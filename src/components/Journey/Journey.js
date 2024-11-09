@@ -37,9 +37,7 @@ const Journey = () => {
               </div>
               <div className={styles.journeyItemCardBack}>
                 <div className={styles.journeyItemCardBackContainer}>
-                  <p className={styles.journeyItemCardBackContainer}>
-                    {t(`journey.items.${journeyItem.key}.description`)}
-                  </p>
+                  <p>{t(`journey.items.${journeyItem.key}.description`)}</p>
                   <Button
                     component={journeyItem.isExternal ? 'a' : Link}
                     href={

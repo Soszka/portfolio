@@ -89,8 +89,7 @@
     font-size: 18px;
   }
   @include small-screens {
-    padding: 10px 10px;
-    text-align: center;
+    padding: 10px 15px 10px 30px;
     margin-top: 0;
   }
 }
