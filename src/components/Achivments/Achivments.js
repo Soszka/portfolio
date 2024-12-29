@@ -9,16 +9,22 @@ const Achivments = () => {
 
   return (
     <div className={styles.achivments}>
-      {achivments.map((achivment) => (
-        <div className={styles.achivment} key={achivment.id} data-aos="zoom-in">
-          <FontAwesomeIcon
-            className={styles.achivmentIcon}
-            icon={achivment.icon}
-          />
-          <h3>{t(achivment.titleKey)}</h3>
-          <p>{t(achivment.descriptionKey)}</p>
-        </div>
-      ))}
+      <div className={styles.container}>
+        {achivments.map((achivment) => (
+          <div
+            className={styles.achivment}
+            key={achivment.id}
+            data-aos="zoom-in"
+          >
+            <FontAwesomeIcon
+              className={styles.achivmentIcon}
+              icon={achivment.icon}
+            />
+            <h3>{t(achivment.titleKey)}</h3>
+            <p>{t(achivment.descriptionKey)}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

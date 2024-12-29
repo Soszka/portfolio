@@ -1,13 +1,9 @@
 @import '../../styles/settings.scss';
 
 .achivments {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  padding: 30px 100px;
   width: 100%;
   position: relative;
+  padding: 30px 100px;
   @include extra-large-screens {
     padding: 15px 50px;
   }
@@ -15,6 +11,14 @@
     display: inline-block;
     padding: 10px;
   }
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .achivments:before {
