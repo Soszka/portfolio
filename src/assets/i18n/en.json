@@ -1,44 +1,45 @@
-{
+﻿{
   "navigation.link.skills": "SKILLS",
   "navigation.link.projects": "PROJECTS",
   "navigation.link.github": "GITHUB",
   "navigation.link.resume": "RESUME",
   "navigation.link.home": "HOME",
-  "navigation.switch.language": "Przełącz na polski",
+  "navigation.switch.language": "Switch to Polish",
   "navigation.download.resume": "Download resume",
 
   "splash.hello.world": "Hello World",
   "splash.my.name": "My name is",
-  "splash.socha": "Bartłomiej Socha",
+  "splash.socha": "Bartlomiej Socha",
   "splash.frontend.developer": "Frontend Developer",
-  "splash.description": "I have knowledge about the tools and technologies used in the development of web applications, focusing especially on the front-end area. My skills include designing interfaces and developing applications in React and Angular environments. Thanks to the acquired knowledge and skills, I am able to create attractive, interactive interfaces tailored to the unique needs of users.",
-  "splash.btn.contact": "CONTACT ME",
+  "splash.description": "I have solid knowledge of tools and technologies used to build web applications, with a strong focus on frontend development. My skills include interface design and building applications in React and Angular environments. Thanks to the knowledge and experience I have gained, I can create attractive and interactive interfaces tailored to unique user needs.",
+  "splash.btn.contact": "CONTACT",
 
   "achivements.studies.title": "Studies",
-  "achivements.studies.description": "Two completed fields of study where my passion for front-end development was born.",
+  "achivements.studies.description": "Two completed fields of study where my passion for front-end development began.",
   "achivements.projects.title": "Projects",
-  "achivements.projects.description": "Numerous projects ranging from small websites to more comprehensive applications.",
+  "achivements.projects.description": "Many projects, from small websites to more advanced applications.",
   "achivements.courses.title": "Courses",
-  "achivements.courses.description": "Several online courses that significantly deepened my knowledge in web development.",
+  "achivements.courses.description": "Online courses that significantly deepened my web development knowledge.",
   "achivements.technologies.title": "Technologies",
-  "achivements.technologies.description": "Over twenty technologies and tools that I have learned, continuously improving my skills.",
+  "achivements.technologies.description": "Over twenty technologies and tools I have learned, while continuously improving my skills.",
   "achivements.internship.title": "Internship",
-  "achivements.internship.description": "One year of internship and commercial experience that helped me grow into web development.",
+  "achivements.internship.description": "A one-year internship and commercial experience that helped me grow in web development.",
   "achivements.experience.title": "Experience",
-  "achivements.experience.description": "It has been over two years since I published my first application",
+  "achivements.experience.description": "More than two years have passed since I published my first application.",
 
-  "about.title": "About Me",
-  "about.description": "I completed two different fields of study, earning qualifications as an Engineer and a Project Manager. My interest in programming and front-end technologies emerged during this time. After graduation, I deepened my knowledge in web development by taking numerous online courses and creating my own projects, which you can find in the projects section. Through this, I became familiar with various front-end technologies and gained the skills needed to create modern user interfaces. In my personal life, I place a strong emphasis on self-development and effective time management. I believe that efficiently managed time and consistency are the keys to continuous self-improvement.",
+  "about.title": "About me",
+  "about.description": "I completed two different fields of study and earned the titles of Engineer and Project Manager. My interest in programming and frontend technologies started during that period. After graduation, I expanded my web development knowledge through many online courses and by creating my own concepts, which you can find in the projects section. This allowed me to learn a variety of frontend technologies and gain the skills required to build modern user interfaces. In private life, I strongly focus on self-development and effective time management. I believe that disciplined time management and consistency are the keys to continuous growth.",
+
   "journey": {
     "title": "My Journey",
     "items": {
       "studies": {
         "title": "Studies",
-        "description": "During my studies in the IT department, I created my first website, which sparked my passion for programming."
+        "description": "During my computer science studies, I created my first website, which sparked my passion for programming."
       },
       "courses": {
         "title": "Courses",
-        "description": "Through intensive courses, I developed more advanced applications and deepened my knowledge of modern web technologies."
+        "description": "Through intensive courses, I built more advanced applications and deepened my knowledge of modern web technologies."
       },
       "projects": {
         "title": "Projects",
@@ -46,7 +47,7 @@
       },
       "internship": {
         "title": "Internship",
-        "description": "During a one-year internship, I gained my first commercial experience, which introduced me to teamwork on applications."
+        "description": "During a one-year internship, I gained my first commercial experience and learned teamwork on real applications."
       }
     },
     "button": {
@@ -56,20 +57,21 @@
       "linkedin": "LinkedIn"
     }
   },
+
   "adventages": {
-    "title": "Why Me",
+    "title": "My Strengths",
     "items": {
       "responsiveness": {
         "title": "Responsiveness",
-        "description": "Pages that adapt perfectly to different devices and screen sizes."
+        "description": "Websites that adapt perfectly to different devices and screen sizes."
       },
       "uxUi": {
         "title": "UX/UI",
-        "description": "Design with an emphasis on the user, ensuring intuitive and aesthetic user interfaces."
+        "description": "User-focused design that delivers intuitive interfaces."
       },
       "libraries": {
         "title": "Libraries",
-        "description": "Effective use of popular libraries for optimized project work."
+        "description": "Effective use of libraries for optimized development."
       },
       "frameworks": {
         "title": "Frameworks",
@@ -77,11 +79,11 @@
       },
       "optimization": {
         "title": "Optimization",
-        "description": "Page optimization for better performance and loading speed."
+        "description": "Website optimization for better performance and faster loading times."
       },
       "creativity": {
         "title": "Creativity",
-        "description": "A creative approach to solving problems and designing unique solutions."
+        "description": "Creative approach to solving complex problems."
       }
     },
     "button": {
@@ -90,10 +92,10 @@
   },
 
   "contact": {
-    "title": "Contact Me",
+    "title": "Contact me",
     "header1": "Choose",
-    "header2": "contact method",
-    "snackbarMessage": "Please use LinkedIn to contact.",
+    "header2": "contact type",
+    "snackbarMessage": "Please use LinkedIn to get in touch.",
     "items": {
       "instagram": {
         "name": "Instagram"
@@ -114,18 +116,18 @@
     "skillsList": [
       {
         "id": 1,
-        "name": "Core Web Development",
-        "description": "Core Web Development skills are essential for creating modern and efficient web applications. Mastering these technologies enables building responsive, fast, and user-friendly websites."
+        "name": "Application Development",
+        "description": "Core application development skills are essential for building modern and efficient web applications. Mastering these technologies enables creating responsive, fast, and user-friendly solutions."
       },
       {
         "id": 2,
         "name": "Libraries and Frameworks",
-        "description": "Libraries and frameworks offer powerful tools and reusable components that accelerate development. They help create scalable and maintainable web applications efficiently."
+        "description": "Libraries and frameworks offer powerful reusable tools and components that accelerate development. They help build scalable and maintainable web applications efficiently."
       },
       {
         "id": 3,
         "name": "Tools and Technologies",
-        "description": "Utilizing the right tools enhances productivity and collaboration during development. They assist in writing, testing, and deploying code efficiently while maintaining high quality."
+        "description": "Using the right tools increases productivity and collaboration during development. They help write, test, and deploy code effectively while maintaining high quality."
       }
     ]
   },
@@ -137,15 +139,15 @@
     "list": [
       {
         "title": "Calories Counter",
-        "description": "This application is designed to help you calculate your caloric needs and track daily calorie intake. The app was built using Angular v17 with a less modern modular approach, mainly managing state via services and the RxJS library. Data is stored and retrieved in the cloud using Firebase's API."
+        "description": "This application helps you calculate your calorie needs and track your daily calorie intake. It was built with Angular v17 and a more traditional modular architecture based mainly on services and RxJS for state management. Data is stored in the cloud using the Firebase API."
       },
       {
         "title": "Progress Counter",
-        "description": "This app allows you to analyze your strength progress. It lets you set up individual workouts, add exercises, and analyze charts related to your achievements. The app was built using Angular v17 with a modern approach, utilizing standalone components and signals. State management is handled by NgRx Signal Store, and data is stored and retrieved in the cloud using Firebase's API."
+        "description": "This application lets you analyze your strength progress. It allows setting individual workouts, adding exercises, and analyzing charts related to your achievements. It was built with Angular v17 using a modern approach based on standalone components and signals. NgRx Signal Store is used for state management. Data is stored in the cloud using the Firebase API."
       },
       {
         "title": "Portfolio",
-        "description": "A portfolio website containing the key information that highlights me as a Front-End Developer and encourages others to collaborate with me. The site is built using React, with Redux used for state management. Material UI was used for faster development of certain components. The app does not interact with a backend."
+        "description": "A portfolio website containing key information intended to present me as a Front End Developer and encourage collaboration. It was built with React. Data is stored in Redux store and used across the app. Material UI was used to speed up component development. The application does not communicate with a backend."
       }
     ]
   }

@@ -1,29 +1,97 @@
-@import '../../styles/settings.scss';
+﻿@import '../../styles/settings.scss';
+
+.about {
+  position: relative;
+}
 
 .content {
   display: flex;
+  align-items: stretch;
+  gap: 18px;
+
   @include extra-large-screens {
     flex-direction: column-reverse;
+    gap: 8px;
   }
 }
 
 .description {
-  font-size: $content-font-size * 0.95;
-  padding: 20px;
-  width: 45%;
+  width: 48%;
+  padding: 10px 12px 10px 0;
+  display: flex;
+  align-items: center;
+
   @include extra-large-screens {
-    text-align: center;
-    margin: 0 20px;
     width: auto;
-  }
-  @include small-screens {
-    text-align: left;
-    font-size: $content-font-size * 0.9;
-    margin: 0 10px;
-    padding: 5px 10px;
+    margin: 0 14px;
+    padding: 6px 0 0;
   }
 
+  @include small-screens {
+    margin: 0 10px;
+  }
+}
+
+.descriptionCard {
+  width: 100%;
+  position: relative;
+  border-radius: 28px;
+  padding: 24px 26px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    radial-gradient(circle at 92% 10%, rgba(0, 120, 201, 0.17), transparent 46%),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  backdrop-filter: blur(7px);
+  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.27);
+  overflow: hidden;
+  transition: border-color 0.35s ease, transform 0.35s ease,
+    box-shadow 0.35s ease;
+
+  @include small-screens {
+    padding: 20px 18px 16px;
+    border-radius: 24px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: 27px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+
+    @include small-screens {
+      border-radius: 23px;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba(255, 255, 255, 0.24);
+    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.34);
+  }
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
   p {
-    margin: 0 0 20px;
+    margin: 0;
+    font-size: $content-font-size * 0.95;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.58;
+
+    @include small-screens {
+      font-size: $content-font-size * 0.88;
+      line-height: 1.6;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .descriptionCard {
+    transition: none;
   }
 }

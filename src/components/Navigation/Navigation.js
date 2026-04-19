@@ -1,4 +1,4 @@
-import styles from './Navigation.module.scss';
+﻿import styles from './Navigation.module.scss';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
@@ -23,6 +23,9 @@ const Navigation = () => {
   const [menuClosed, setMenuClosed] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const { t, i18n } = useTranslation();
+  const currentLang = (i18n.resolvedLanguage || i18n.language || 'pl')
+    .slice(0, 2)
+    .toLowerCase();
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,7 +44,7 @@ const Navigation = () => {
   }, [location.pathname]);
 
   const toggleFlag = () => {
-    const newLang = i18n.language === 'pl' ? 'en' : 'pl';
+    const newLang = currentLang === 'pl' ? 'en' : 'pl';
     i18n.changeLanguage(newLang);
   };
 
@@ -107,7 +110,7 @@ const Navigation = () => {
                 <HtmlTooltip title={t('navigation.download.resume')}>
                   <Button
                     className={styles.resume}
-                    href={`/CV_BartlomiejSocha_${i18n.language.toUpperCase()}.pdf`}
+                    href={`/CV_BartlomiejSocha_${currentLang.toUpperCase()}.pdf`}
                     download
                   >
                     {t(item.translationKey)}
@@ -155,7 +158,7 @@ const Navigation = () => {
                   : 'transparent',
               }}
             >
-              {i18n.language === 'pl' ? (
+              {currentLang === 'pl' ? (
                 <img
                   src={EnglishFlag}
                   alt="English Flag"
@@ -174,7 +177,7 @@ const Navigation = () => {
       </ul>
       <div className={styles.flagIconContainer}>
         <IconButton aria-label="toggle language" onClick={toggleFlag}>
-          {i18n.language === 'pl' ? (
+          {currentLang === 'pl' ? (
             <img
               src={EnglishFlag}
               alt="English Flag"

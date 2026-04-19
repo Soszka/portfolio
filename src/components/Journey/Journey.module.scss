@@ -51,7 +51,8 @@
     }
   }
 
-  .journeyItem:hover > .journeyItemCard {
+  .journeyItem:hover > .journeyItemCard,
+  .journeyItem:focus-within > .journeyItemCard {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
   }
@@ -111,13 +112,14 @@
     width: 100%;
     height: 100%;
     top: 0;
-    background-color: black;
     left: 0;
-    border-radius: 30px;
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
+    background:
+      radial-gradient(circle at 16% 18%, rgba(0, 120, 201, 0.18), transparent 30%),
+      linear-gradient(160deg, rgba(4, 10, 19, 0.98), rgba(0, 44, 85, 0.94));
     box-shadow: 0 0 15px $text-secondary-color;
     z-index: 2;
 
@@ -126,8 +128,24 @@
       text-align: center;
     }
 
+    .journeyItemCardBackAccent {
+      display: block;
+      width: 74px;
+      height: 4px;
+      margin: 0 auto 18px;
+      border-radius: 999px;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(0, 120, 201, 0.96),
+        rgba(255, 255, 255, 0.12)
+      );
+    }
+
     .journeyItemCardBackContent {
       margin: 0;
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.55;
     }
 
     .journeyItemCardBackBtn {

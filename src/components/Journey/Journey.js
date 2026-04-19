@@ -1,4 +1,4 @@
-import styles from './Journey.module.scss';
+﻿import styles from './Journey.module.scss';
 import Title from '../Title/Title';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';
@@ -37,7 +37,13 @@ const Journey = () => {
               </div>
               <div className={styles.journeyItemCardBack}>
                 <div className={styles.journeyItemCardBackContainer}>
-                  <p>{t(`journey.items.${journeyItem.key}.description`)}</p>
+                  <span
+                    className={styles.journeyItemCardBackAccent}
+                    aria-hidden="true"
+                  />
+                  <p className={styles.journeyItemCardBackContent}>
+                    {t(`journey.items.${journeyItem.key}.description`)}
+                  </p>
                   <Button
                     component={journeyItem.isExternal ? 'a' : Link}
                     href={

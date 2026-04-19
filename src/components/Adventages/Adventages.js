@@ -15,18 +15,21 @@ const Adventages = () => {
     <div>
       <Title>{t('adventages.title')}</Title>
       <div className={styles.adventages}>
-        {adventages.map((adventage) => (
+        {adventages.map((adventage, index) => (
           <div
             className={styles.adventage}
             key={adventage.id}
+            style={{ '--card-index': index }}
             data-aos="fade-left"
             data-aos-delay={isLargeScreen ? adventage.aosDelay : '0'}
           >
-            <img
-              alt="adventage"
-              src={adventage.image}
-              className={styles.adventageImage}
-            />
+            <div className={styles.adventageImageWrap}>
+              <img
+                alt="adventage"
+                src={adventage.image}
+                className={styles.adventageImage}
+              />
+            </div>
             <div className={styles.adventageContent}>
               <h3 className={styles.adventageContentTitle}>
                 {t(`adventages.items.${adventage.key}.title`)}
@@ -38,6 +41,7 @@ const Adventages = () => {
                 className={styles.adventageContentLink}
                 href="https://github.com/Soszka"
                 target="_blank"
+                rel="noreferrer"
               >
                 {t('adventages.button.github')}
               </Button>

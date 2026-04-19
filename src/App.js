@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import HomePage from './components/HomePage/HomePage';
 import Skills from './components/Skills/Skills';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import './i18n';
 import Projects from './components/Projects/Projects';
 
 const App = () => {
