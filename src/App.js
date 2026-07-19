@@ -1,4 +1,4 @@
-﻿import React, { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import HomePage from './components/HomePage/HomePage';
 import Skills from './components/Skills/Skills';
 import { Routes, Route, useLocation } from 'react-router-dom';

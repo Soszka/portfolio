@@ -121,7 +121,7 @@ const Animation = () => {
       // Cancel the animation frame on cleanup
       cancelAnimationFrame(animationFrameId.current);
     };
-  }, []);
+  }, [maxTTL, maxWidth, minWidth]);
 
   return (
     <div className={styles.animationContainer} data-aos="slide-left">

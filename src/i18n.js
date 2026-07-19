@@ -1,4 +1,4 @@
-﻿import i18n from 'i18next';
+import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import translationEN from './assets/i18n/en.json';
 import translationPL from './assets/i18n/pl.json';

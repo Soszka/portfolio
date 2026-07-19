@@ -1,4 +1,4 @@
-﻿import styles from './Journey.module.scss';
+import styles from './Journey.module.scss';
 import Title from '../Title/Title';
 import { useSelector } from 'react-redux';
 import clsx from 'clsx';

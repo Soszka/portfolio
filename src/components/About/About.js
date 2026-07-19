@@ -1,4 +1,4 @@
-﻿import styles from './About.module.scss';
+import styles from './About.module.scss';
 import Title from '../Title/Title';
 import Animation from '../Animation/Animation';
 import { useEffect } from 'react';
