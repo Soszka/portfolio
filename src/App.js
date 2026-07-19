@@ -5,6 +5,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Projects from './components/Projects/Projects';
+import CursorEffect from './components/CursorEffect/CursorEffect';
 
 const App = () => {
   const location = useLocation();
@@ -22,6 +23,7 @@ const App = () => {
 
   return (
     <main>
+      <CursorEffect />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<Projects />} />
