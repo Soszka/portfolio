@@ -43,6 +43,25 @@ const Navigation = () => {
     };
   }, [location.pathname]);
 
+  useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent('portfolio:navigation-toggle', {
+        detail: { open: !menuClosed },
+      })
+    );
+  }, [menuClosed]);
+
+  useEffect(
+    () => () => {
+      window.dispatchEvent(
+        new CustomEvent('portfolio:navigation-toggle', {
+          detail: { open: false },
+        })
+      );
+    },
+    []
+  );
+
   const toggleFlag = () => {
     const newLang = currentLang === 'pl' ? 'en' : 'pl';
     i18n.changeLanguage(newLang);
@@ -78,6 +97,7 @@ const Navigation = () => {
 
   return (
     <nav
+      data-menu-open={!menuClosed}
       className={clsx(
         menuClosed ? styles.closed : styles.open,
         (location.pathname === '/projects' ||
@@ -88,7 +108,13 @@ const Navigation = () => {
       <div className={styles.home}>
         <Link to="/">bartlomiejsocha.pl</Link>
       </div>
-      <div className={styles.menu} onClick={() => setMenuClosed(!menuClosed)}>
+      <button
+        type="button"
+        className={styles.menu}
+        aria-label="Menu"
+        aria-expanded={!menuClosed}
+        onClick={() => setMenuClosed(!menuClosed)}
+      >
         {menuClosed ? (
           <>
             <span></span>
@@ -101,8 +127,8 @@ const Navigation = () => {
             <span></span>
           </div>
         )}
-      </div>
-      <ul className={menuClosed ? styles.closed : ''}>
+      </button>
+      <ul className={clsx(styles.links, menuClosed && styles.closed)}>
         {navItems.map((item, index) => {
           if (item.isButton) {
             return (

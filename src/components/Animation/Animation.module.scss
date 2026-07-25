@@ -4,6 +4,23 @@
   position: relative;
   flex: 1;
   margin: 0 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 8% 3%;
+    z-index: 0;
+    border-radius: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(0, 142, 227, 0.2),
+      rgba(0, 88, 157, 0.075) 48%,
+      transparent 74%
+    );
+    filter: blur(24px) saturate(1.14);
+    pointer-events: none;
+  }
+
   @include extra-large-screens {
     height: 400px;
     flex: none;
@@ -45,6 +62,19 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 1;
+    -webkit-mask-image: radial-gradient(
+      ellipse 86% 82% at center,
+      #000 48%,
+      rgba(0, 0, 0, 0.84) 66%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      ellipse 86% 82% at center,
+      #000 48%,
+      rgba(0, 0, 0, 0.84) 66%,
+      transparent 100%
+    );
+
     @include extra-large-screens {
       height: 100%; 
     }

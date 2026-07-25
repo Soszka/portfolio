@@ -1,156 +1,527 @@
 @import '../../styles/settings.scss';
 
+@property --journey-border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 .studiesImg {
-  background: url('../../assets/HomePhotos/JourneyPhoto1.jpg') no-repeat;
+  background-image: url('../../assets/HomePhotos/JourneyStudyReal.jpg');
 }
+
 .coursesImg {
-  background: url('../../assets/HomePhotos/JourneyPhoto2.jpg') no-repeat;
+  background-image: url('../../assets/HomePhotos/JourneyCoursesReal.jpg');
 }
+
 .projectsImg {
-  background: url('../../assets/HomePhotos/JourneyPhoto3.jpg') no-repeat;
+  background-image: url('../../assets/HomePhotos/JourneyProjectsReal.jpg');
 }
+
 .internshipImg {
-  background: url('../../assets/HomePhotos/JourneyPhoto4.jpg') no-repeat;
+  background-image: url('../../assets/HomePhotos/JourneyInternshipReal.jpg');
+}
+
+.journey {
+  position: relative;
+  isolation: isolate;
+  margin-top: -8px;
+  padding: 44px 22px 112px;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -96px;
+    right: 50%;
+    bottom: -72px;
+    left: 50%;
+    width: 100vw;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    pointer-events: none;
+  }
+
+  &::before {
+    z-index: -2;
+    background:
+      radial-gradient(
+        ellipse 42% 50% at 16% 44%,
+        rgba(0, 102, 174, 0.16),
+        rgba(0, 58, 104, 0.06) 48%,
+        transparent 74%
+      ),
+      radial-gradient(
+        ellipse 38% 48% at 84% 54%,
+        rgba(0, 121, 201, 0.2),
+        rgba(0, 73, 129, 0.06) 50%,
+        transparent 76%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0,
+        rgba(3, 8, 15, 0.84) 14%,
+        rgba(3, 8, 15, 0.98) 48%,
+        #000 100%
+      );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 15%,
+      #000 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 15%,
+      #000 92%,
+      transparent 100%
+    );
+  }
+
+  &::after {
+    z-index: -1;
+    opacity: 0.74;
+    background:
+      radial-gradient(
+        ellipse 58% 28% at -8% 43%,
+        transparent 61%,
+        rgba(39, 154, 222, 0.18) 63%,
+        rgba(19, 99, 159, 0.05) 66%,
+        transparent 70%
+      ),
+      radial-gradient(
+        ellipse 56% 25% at 108% 62%,
+        transparent 60%,
+        rgba(0, 122, 201, 0.2) 63%,
+        rgba(0, 80, 145, 0.045) 67%,
+        transparent 71%
+      ),
+      linear-gradient(
+        112deg,
+        transparent 0 22%,
+        rgba(35, 137, 203, 0.045) 31%,
+        transparent 40% 62%,
+        rgba(0, 111, 183, 0.05) 72%,
+        transparent 82%
+      );
+    filter: blur(0.5px);
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 18%,
+      #000 84%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      #000 18%,
+      #000 84%,
+      transparent
+    );
+    animation: journeyBackdropDrift 16s ease-in-out infinite alternate;
+  }
+
+  @include medium-screens {
+    padding: 28px 10px 78px;
+  }
 }
 
 .journeyItems {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  @include medium-screens {
-    flex-direction: column;
-    align-items: center;
-  }
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
 
-  .journeyItem {
-    width: 22%;
-    height: 400px;
-    perspective: 800px;
-    -webkit-perspective: 800px;
-    margin: 30px 5px;
-    @include extra-large-screens {
-      width: 45%;
-    }
-    @include medium-screens {
-      width: 70%;
-      height: 350px;
-    }
-    @include small-screens {
-      width: 90%;
-    }
-
-    .journeyItemCard {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transition: all 1s;
-      -webkit-transition: 1s;
-      transform-style: preserve-3d;
-      -webkit-transform-style: preserve-3d;
-      border-radius: 10%;
-    }
-  }
-
-  .journeyItem:hover > .journeyItemCard,
-  .journeyItem:focus-within > .journeyItemCard {
-    transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-  }
-
-  .journeyItemCardFront {
-    position: absolute;
-    border-radius: 10%;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    z-index: 0;
-
-    .journeyItemTitle {
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-size: 42px;
-      font-weight: bold;
-      color: white;
-      padding: 5px;
-      z-index: 1;
-
-      @include tiny-screens {
-        font-size: 36px;
-      }
-    }
-  }
-
-  .journeyItemCardFront:before {
+  &::before {
     content: '';
     position: absolute;
-    border-radius: 10%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.8),
-      rgba(0, 92, 153, 0.8)
-    );
+    top: 27px;
+    right: 8%;
+    left: 8%;
+    height: 1px;
     z-index: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(33, 137, 204, 0.2) 8%,
+      rgba(61, 171, 236, 0.68) 50%,
+      rgba(24, 112, 177, 0.28) 92%,
+      transparent
+    );
+    box-shadow:
+      0 0 12px rgba(49, 156, 222, 0.25),
+      0 0 30px rgba(0, 120, 201, 0.13);
   }
 
-  .journeyItemCardBack {
-    border-radius: 10%;
-    display: flex;
-    align-items: center;
+  @include extra-large-screens {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 22px;
+    max-width: 920px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  @include medium-screens {
+    grid-template-columns: minmax(0, 430px);
     justify-content: center;
+    gap: 22px;
+  }
+}
+
+.journeyItem {
+  position: relative;
+  min-width: 0;
+  height: 500px;
+  perspective: 1300px;
+  -webkit-perspective: 1300px;
+  outline: none;
+
+  &::after {
+    content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    top: 28px;
+    left: 50%;
+    width: 1px;
+    height: 26px;
+    z-index: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(72, 176, 235, 0.72),
+      rgba(0, 120, 201, 0.1)
+    );
+  }
+
+  &:hover,
+  &:focus-visible,
+  &:focus-within,
+  &.isFlipped {
+    .journeyNode {
+      border-color: rgba(151, 218, 255, 0.9);
+      background: #3ca8e8;
+      box-shadow:
+        0 0 0 7px rgba(41, 143, 205, 0.1),
+        0 0 22px rgba(55, 174, 242, 0.76);
+      transform: translateX(-50%) scale(1.12);
+    }
+  }
+
+  &:hover > .journeyItemCard,
+  &:focus-within > .journeyItemCard,
+  &.isFlipped > .journeyItemCard {
     transform: rotateY(180deg);
-    -webkit-transform: rotateY(180deg);
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
+  }
+
+  @include extra-large-screens {
+    height: 478px;
+  }
+
+  @include small-screens {
+    height: 462px;
+  }
+}
+
+.journeyNode {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  z-index: 2;
+  border: 2px solid rgba(93, 176, 226, 0.54);
+  border-radius: 50%;
+  background: #0a2435;
+  box-shadow:
+    0 0 0 5px rgba(35, 123, 181, 0.08),
+    0 0 14px rgba(39, 144, 210, 0.32);
+  transform: translateX(-50%);
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+  animation: journeyNodePulse 4.6s ease-in-out infinite;
+  animation-delay: var(--journey-delay);
+}
+
+.journeyItemCard {
+  position: absolute;
+  top: 54px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 30px;
+  background: conic-gradient(
+    from var(--journey-border-angle),
+    rgba(15, 91, 150, 0.62) 0deg 210deg,
+    rgba(30, 132, 204, 0.78) 240deg,
+    rgba(72, 193, 255, 1) 274deg,
+    #dcf5ff 294deg,
+    rgba(72, 193, 255, 0.86) 316deg,
+    rgba(15, 91, 150, 0.62) 360deg
+  );
+  box-shadow:
+    0 0 18px rgba(0, 119, 194, 0.2),
+    0 0 34px rgba(0, 93, 162, 0.09);
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+  animation: journeyBorderOrbit 3.8s linear infinite;
+}
+
+.journeyItemCardFront,
+.journeyItemCardBack {
+  position: absolute;
+  inset: 3px;
+  overflow: hidden;
+  border: 0;
+  border-radius: 27px;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  box-shadow:
+    0 24px 48px rgba(0, 0, 0, 0.34),
+    0 0 18px rgba(0, 111, 183, 0.08),
+    inset 0 1px rgba(255, 255, 255, 0.055);
+}
+
+.journeyItemCardFront {
+  z-index: 1;
+  background-color: #03111f;
+  background-blend-mode: luminosity;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     background:
-      radial-gradient(circle at 16% 18%, rgba(0, 120, 201, 0.18), transparent 30%),
-      linear-gradient(160deg, rgba(4, 10, 19, 0.98), rgba(0, 44, 85, 0.94));
-    box-shadow: 0 0 15px $text-secondary-color;
-    z-index: 2;
-
-    .journeyItemCardBackContainer {
-      margin: 0 10px;
-      text-align: center;
-    }
-
-    .journeyItemCardBackAccent {
-      display: block;
-      width: 74px;
-      height: 4px;
-      margin: 0 auto 18px;
-      border-radius: 999px;
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.12),
-        rgba(0, 120, 201, 0.96),
-        rgba(255, 255, 255, 0.12)
+      radial-gradient(
+        circle at 50% 43%,
+        rgba(0, 97, 170, 0.3),
+        rgba(0, 42, 78, 0.18) 44%,
+        transparent 70%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(0, 5, 10, 0.74) 0,
+        rgba(0, 8, 16, 0.67) 38%,
+        rgba(0, 7, 14, 0.84) 76%,
+        rgba(0, 4, 9, 0.97) 100%
+      ),
+      linear-gradient(
+        145deg,
+        rgba(0, 91, 164, 0.43),
+        transparent 48%,
+        rgba(0, 52, 101, 0.52)
       );
-    }
+  }
 
-    .journeyItemCardBackContent {
-      margin: 0;
-      color: rgba(255, 255, 255, 0.92);
-      line-height: 1.55;
-    }
+}
 
-    .journeyItemCardBackBtn {
-      @include button(45px, 22px);
-      margin-top: 20px;
-    }
+.journeyItemTitleWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26px;
+  text-align: center;
+}
+
+.journeyItemAccent {
+  display: block;
+  width: 52px;
+  height: 3px;
+  margin-bottom: 14px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2e9edc, #74c9f7, transparent);
+  box-shadow: 0 0 15px rgba(46, 158, 220, 0.5);
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.journeyItemTitle {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(36px, 3vw, 48px);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: 2.8px;
+  text-transform: uppercase;
+  text-shadow:
+    0 6px 22px rgba(0, 0, 0, 0.78),
+    0 0 18px rgba(0, 72, 121, 0.32);
+}
+
+.journeyItem:hover {
+  .journeyItemAccent {
+    width: 88px;
+  }
+}
+
+.journeyItemCardBack {
+  z-index: 2;
+  transform: rotateY(180deg);
+  background:
+    radial-gradient(
+      circle at 14% 12%,
+      rgba(0, 124, 201, 0.2),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at 88% 88%,
+      rgba(0, 120, 201, 0.17),
+      transparent 38%
+    ),
+    linear-gradient(155deg, rgba(5, 18, 24, 0.99), rgba(2, 30, 45, 0.98));
+  box-shadow:
+    0 28px 58px rgba(0, 0, 0, 0.42),
+    0 0 34px rgba(0, 120, 201, 0.1),
+    inset 0 1px rgba(255, 255, 255, 0.07);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -22%;
+    right: -46%;
+    width: 115%;
+    height: 72%;
+    border: 1px solid rgba(72, 176, 235, 0.12);
+    border-radius: 50%;
+    box-shadow:
+      0 0 42px rgba(0, 120, 201, 0.08),
+      inset 0 0 36px rgba(0, 104, 176, 0.055);
+    transform: rotate(-16deg);
+    pointer-events: none;
+  }
+
+}
+
+.journeyItemCardBackContainer {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 52px 26px 28px;
+  text-align: left;
+}
+
+.journeyItemCardBackTitle {
+  margin: 0 0 17px;
+  color: rgba(255, 255, 255, 0.97);
+  font-size: clamp(29px, 2.25vw, 36px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: 2.2px;
+  text-transform: uppercase;
+  text-shadow: 0 6px 22px rgba(0, 0, 0, 0.4);
+}
+
+.journeyItemCardBackAccent {
+  display: block;
+  width: 82px;
+  height: 3px;
+  margin: 0 0 23px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(31, 146, 214, 0.96),
+    rgba(111, 202, 250, 0.88),
+    transparent
+  );
+  box-shadow: 0 0 16px rgba(44, 158, 222, 0.34);
+}
+
+.journeyItemCardBackContent {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(15px, 1.03vw, 17px);
+  line-height: 1.62;
+}
+
+.journeyItemCardBackBtn {
+  @include button(45px, 18px);
+  position: relative;
+  margin-top: 24px !important;
+  overflow: hidden;
+  border: 1px solid rgba(101, 190, 241, 0.28) !important;
+  background: linear-gradient(110deg, #075f96, #06456f) !important;
+  box-shadow:
+    0 12px 25px rgba(0, 65, 107, 0.3),
+    inset 0 1px rgba(255, 255, 255, 0.13);
+  text-transform: none !important;
+  transition:
+    transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.32s ease !important;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 17px 32px rgba(0, 83, 135, 0.4),
+      0 0 20px rgba(52, 162, 226, 0.2),
+      inset 0 1px rgba(255, 255, 255, 0.18);
+  }
+}
+
+@keyframes journeyBackdropDrift {
+  from {
+    transform: translate3d(-12px, 0, 0) scale(0.99);
+  }
+
+  to {
+    transform: translate3d(14px, -8px, 0) scale(1.02);
+  }
+}
+
+@keyframes journeyBorderOrbit {
+  to {
+    --journey-border-angle: 360deg;
+  }
+}
+
+@keyframes journeyNodePulse {
+  0%,
+  100% {
+    opacity: 0.72;
+  }
+
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 0 6px rgba(35, 123, 181, 0.09),
+      0 0 20px rgba(39, 144, 210, 0.46);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journeyNode {
+    animation: none;
+  }
+
+  .journeyItemCard,
+  .journeyNode,
+  .journeyItemAccent {
+    transition: none;
+  }
+
+  .journey::after {
+    animation: none;
+  }
+
+  .journeyItemCard {
+    --journey-border-angle: 285deg;
+    animation: none;
   }
 }

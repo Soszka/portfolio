@@ -7,6 +7,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   position: relative;
+  z-index: 20;
   &.closed {
     border-bottom: none;
   }
@@ -67,6 +68,10 @@ nav {
   justify-content: space-between;
   width: 40px;
   height: 30px;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
   &:hover span {
     background-color: $text-secondary-color;
   }
@@ -112,13 +117,13 @@ nav {
   }
 }
 
-ul {
+.links {
   margin-right: 50px;
   margin-top: 4px;
   margin-bottom: 0;
   display: flex;
-  transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out,
-    visibility 0.5s ease-in-out;
+  transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.22s ease, visibility 0.22s ease;
   max-height: 300px;
   align-items: center;
   opacity: 1;
@@ -130,8 +135,17 @@ ul {
   }
 
   @include extra-large-screens {
+    max-height: 520px;
     text-align: center;
     margin-top: 80px;
+    will-change: max-height, opacity;
+
+    &.closed {
+      max-height: 0;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
   }
   @include large-screens {
     overflow: hidden;

@@ -65,6 +65,20 @@
   place-items: center;
   isolation: isolate;
   overflow: hidden;
+  -webkit-mask-image: radial-gradient(
+    ellipse 64% 62% at 50% 50%,
+    #000 0 72%,
+    rgba(0, 0, 0, 0.94) 82%,
+    rgba(0, 0, 0, 0.48) 92%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 64% 62% at 50% 50%,
+    #000 0 72%,
+    rgba(0, 0, 0, 0.94) 82%,
+    rgba(0, 0, 0, 0.48) 92%,
+    transparent 100%
+  );
 
   &::before {
     content: '';
@@ -201,8 +215,8 @@
 .portraitHalo {
   position: absolute;
   z-index: 1;
-  width: 55%;
-  height: 78%;
+  width: 49%;
+  height: 69%;
   border-radius: 50%;
   background: linear-gradient(
     160deg,
@@ -210,7 +224,7 @@
     rgba(0, 120, 201, 0.08) 48%,
     rgba(118, 75, 255, 0.2)
   );
-  filter: blur(34px);
+  filter: blur(29px);
   animation: haloBreathe 4.2s ease-in-out infinite;
 }
 
@@ -266,6 +280,17 @@
     width: 100%;
     height: 100%;
   }
+
+  @include medium-screens {
+    animation: none;
+    filter:
+      saturate(1.06)
+      drop-shadow(0 4px 6px rgba(0, 0, 0, 0.48));
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .photoGlow,
@@ -277,7 +302,7 @@
 
 .photoGlow {
   z-index: 0;
-  width: 78%;
+  width: 70%;
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(
@@ -287,8 +312,8 @@
     rgba(101, 54, 232, 0.055) 58%,
     transparent 72%
   );
-  opacity: 0.66;
-  filter: blur(43px);
+  opacity: 0.56;
+  filter: blur(38px);
   transition: opacity 0.35s ease;
   animation: photoGlowPulse 4.8s ease-in-out infinite;
 }
@@ -322,6 +347,14 @@
   opacity: 0.56;
   transition: opacity 0.5s ease;
   animation: cosmicDrift 12s ease-in-out infinite alternate;
+}
+
+@include medium-screens {
+  .magneticMist,
+  .cosmicCloud,
+  .photoGlow {
+    animation: none;
+  }
 }
 
 .description {

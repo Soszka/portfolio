@@ -2,16 +2,144 @@
 
 .about {
   position: relative;
+  isolation: isolate;
+  margin-top: 0;
+  padding: 38px 0 82px;
+
+  @include extra-large-screens {
+    padding: 30px 0 68px;
+  }
+
+  @include medium-screens {
+    padding: 24px 0 52px;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -84px;
+    bottom: -32px;
+    left: 50%;
+    width: 100vw;
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  &::before {
+    z-index: -2;
+    background:
+      radial-gradient(
+        ellipse 43% 58% at 76% 49%,
+        rgba(0, 128, 216, 0.24),
+        rgba(0, 87, 158, 0.085) 47%,
+        transparent 72%
+      ),
+      radial-gradient(
+        ellipse 42% 58% at 15% 53%,
+        rgba(31, 145, 137, 0.17),
+        rgba(47, 91, 100, 0.08) 46%,
+        transparent 72%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0,
+        rgba(4, 7, 14, 0.76) 14%,
+        rgba(6, 9, 18, 0.98) 29%,
+        rgba(4, 7, 15, 0.99) 74%,
+        #000 100%
+      );
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 24%,
+      #000 92%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 24%,
+      #000 92%,
+      transparent 100%
+    );
+  }
+
+  &::after {
+    z-index: -1;
+    opacity: 0.9;
+    background-image:
+      radial-gradient(
+        circle at 1px 1px,
+        rgba(126, 226, 211, 0.48) 1.2px,
+        transparent 2px
+      ),
+      linear-gradient(rgba(126, 174, 178, 0.19) 1px, transparent 1px),
+      linear-gradient(
+        90deg,
+        rgba(139, 163, 170, 0.18) 1px,
+        transparent 1px
+      );
+    background-size:
+      136px 136px,
+      68px 68px,
+      68px 68px;
+    -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 17%,
+      #000 84%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to bottom,
+      transparent 0,
+      #000 17%,
+      #000 84%,
+      transparent 100%
+    );
+    filter: drop-shadow(0 0 7px rgba(63, 180, 165, 0.18));
+    mix-blend-mode: screen;
+    animation: backgroundGridDrift 28s linear infinite;
+  }
 }
 
 .content {
+  position: relative;
   display: flex;
   align-items: stretch;
   gap: 18px;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 9%;
+    bottom: 9%;
+    left: calc(48% + 8px);
+    width: 1px;
+    z-index: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(67, 143, 151, 0.14) 22%,
+      rgba(83, 222, 203, 0.72) 50%,
+      rgba(55, 146, 164, 0.16) 78%,
+      transparent
+    );
+    background-size: 100% 180%;
+    filter: drop-shadow(0 0 10px rgba(51, 180, 164, 0.5));
+    opacity: 0.78;
+    animation: energyLineFlow 6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
   @include extra-large-screens {
     flex-direction: column-reverse;
     gap: 8px;
+
+    &::before {
+      display: none;
+    }
   }
 }
 
@@ -39,7 +167,8 @@
   padding: 24px 26px 20px;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background:
-    radial-gradient(circle at 92% 10%, rgba(0, 120, 201, 0.17), transparent 46%),
+    radial-gradient(circle at 8% 6%, rgba(35, 151, 139, 0.17), transparent 43%),
+    radial-gradient(circle at 94% 12%, rgba(0, 120, 201, 0.11), transparent 42%),
     linear-gradient(155deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
   backdrop-filter: blur(7px);
   box-shadow: 0 20px 42px rgba(0, 0, 0, 0.27);
@@ -50,6 +179,21 @@
   @include small-screens {
     padding: 20px 18px 16px;
     border-radius: 24px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -130px;
+    right: -90px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: rgba(35, 158, 145, 0.23);
+    filter: blur(52px);
+    opacity: 0.58;
+    pointer-events: none;
+    animation: aboutCardGlow 8s ease-in-out infinite;
   }
 
   &::after {
@@ -73,6 +217,8 @@
 }
 
 .paragraphs {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -90,7 +236,48 @@
   }
 }
 
+@keyframes backgroundGridDrift {
+  to {
+    background-position:
+      68px 68px,
+      68px 68px,
+      68px 68px;
+  }
+}
+
+@keyframes energyLineFlow {
+  0%,
+  100% {
+    background-position: 0 0;
+    opacity: 0.42;
+  }
+
+  50% {
+    background-position: 0 100%;
+    opacity: 0.82;
+  }
+}
+
+@keyframes aboutCardGlow {
+  0%,
+  100% {
+    transform: scale(0.92);
+    opacity: 0.35;
+  }
+
+  50% {
+    transform: scale(1.08);
+    opacity: 0.62;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .about::after,
+  .content::before,
+  .descriptionCard::before {
+    animation: none;
+  }
+
   .descriptionCard {
     transition: none;
   }

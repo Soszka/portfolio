@@ -11,7 +11,6 @@ const Animation = () => {
   const maxHeight = 750;
   const minTTL = 200;
   const maxTTL = window.innerWidth < 768 ? 20 : 40;
-  const backgroundColor = '#000000';
 
   useEffect(() => {
     let canvas, ctx, lines, lineCount;
@@ -42,8 +41,6 @@ const Animation = () => {
 
     const animationLoop = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = backgroundColor;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       for (let i = 0; i < lines.length; i++) {
         lines[i].update();

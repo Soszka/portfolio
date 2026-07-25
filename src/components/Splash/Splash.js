@@ -2,17 +2,13 @@ import styles from './Splash.module.scss';
 import Achivments from '../Achivments/Achivments';
 import splashPhoto from '../../assets/HomePhotos/heroPortraitExact.png';
 import angularIcon from '../../assets/ProjectsPhotos/angularIcon.png';
-import angularMaterialIcon from '../../assets/ProjectsPhotos/angularMaterialIcon.png';
 import cssIcon from '../../assets/ProjectsPhotos/cssIcon.png';
 import firebaseIcon from '../../assets/ProjectsPhotos/firebaseIcon.png';
 import gitIcon from '../../assets/ProjectsPhotos/gitIcon.png';
 import htmlIcon from '../../assets/ProjectsPhotos/htmlIcon.png';
 import javaScriptIcon from '../../assets/ProjectsPhotos/javaScriptIcon.png';
-import materialUiIcon from '../../assets/ProjectsPhotos/materialUi.png';
 import ngrxIcon from '../../assets/ProjectsPhotos/ngrxIcon.png';
-import npmIcon from '../../assets/ProjectsPhotos/npmIcon.png';
 import reactIcon from '../../assets/ProjectsPhotos/reactIcon.png';
-import reduxIcon from '../../assets/ProjectsPhotos/reduxIcon.png';
 import rxjsIcon from '../../assets/ProjectsPhotos/rxjsIcon.png';
 import sassIcon from '../../assets/ProjectsPhotos/sassIcon.png';
 import typeScriptIcon from '../../assets/ProjectsPhotos/typeScriptIcon.png';
@@ -36,15 +32,6 @@ const VscodeIcon = () => (
       d="M72 6 31 42 12 27 3 36l22 18L3 73l10 10 19-16 40 27 25-11V17L72 6Zm2 24v43L43 51l31-21Z"
     />
     <path fill="#0877bd" d="M74 30 43 51l31 22V30Zm0 0 12-8v57l-12-6V30Z" />
-  </svg>
-);
-
-const TailwindIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path
-      fill="#38bdf8"
-      d="M49 25c-13 0-21 7-25 21 6-7 13-10 20-8 4 1 7 4 11 7 6 5 13 11 27 11 13 0 21-7 25-21-6 7-13 10-20 8-4-1-7-4-11-7-6-5-13-11-27-11ZM24 50C11 50 3 57-1 71c6-7 13-10 20-8 4 1 7 4 11 7 6 5 13 11 27 11 13 0 21-7 25-21-6 7-13 10-20 8-4-1-7-4-11-7-6-5-13-11-27-11Z"
-    />
   </svg>
 );
 
@@ -156,20 +143,10 @@ const technologyIcons = [
   { name: 'Angular', src: angularIcon, color: '#f628a8', size: 51 },
   { name: 'NgRx', src: ngrxIcon, color: '#9a28c8', size: 49 },
   { name: 'VS Code', component: VscodeIcon, color: '#21a5ef', size: 51 },
-  { name: 'Material UI', src: materialUiIcon, color: '#2196f3', size: 50 },
   { name: 'React', src: reactIcon, color: '#61dafb', size: 64 },
   { name: 'Webpack', src: webpackIcon, color: '#72c7ff', size: 49 },
-  { name: 'Redux', src: reduxIcon, color: '#9a72ff', size: 49 },
   { name: 'JavaScript', src: javaScriptIcon, color: '#ffe43b', size: 48 },
-  {
-    name: 'Angular Material',
-    src: angularMaterialIcon,
-    color: '#ff9d28',
-    size: 48,
-  },
-  { name: 'npm', src: npmIcon, color: '#ff4d4d', size: 48 },
   { name: 'Git', src: gitIcon, color: '#ff6544', size: 46 },
-  { name: 'Tailwind CSS', component: TailwindIcon, color: '#38bdf8', size: 48 },
   { name: 'GitHub', brandIcon: faGithub, color: '#ffffff', size: 47 },
   { name: 'Java', src: javaIcon, color: '#ff6b2d', size: 53 },
   { name: 'Spring', src: springIcon, color: '#78dc42', size: 51 },
@@ -207,7 +184,58 @@ const Splash = () => {
     let stageWidth = 0;
     let stageHeight = 0;
     let frameId;
-    let previousTime = 0;
+    let lastRenderedTime = 0;
+    let renderedFrames = 0;
+    let compactMotion = window.innerWidth <= 768;
+    let navigationOpen = false;
+    let stageVisible = true;
+    let visibilityObserver;
+    let navigationObserver;
+    const navigation = document.querySelector('nav[data-menu-open]');
+    let portraitMetrics = {
+      left: 0,
+      top: 0,
+      width: 0,
+      height: 0,
+      centerX: 0,
+      centerY: 0,
+    };
+
+    const refreshPortraitMetrics = () => {
+      const stageRect = stage.getBoundingClientRect();
+      const portraitRect = portrait.getBoundingClientRect();
+      const scaleX = stage.clientWidth ? stageRect.width / stage.clientWidth : 1;
+      const scaleY = stage.clientHeight
+        ? stageRect.height / stage.clientHeight
+        : 1;
+
+      portraitMetrics = {
+        left: (portraitRect.left - stageRect.left) / scaleX,
+        top: (portraitRect.top - stageRect.top) / scaleY,
+        width: portraitRect.width / scaleX,
+        height: portraitRect.height / scaleY,
+        centerX:
+          (portraitRect.left - stageRect.left + portraitRect.width / 2) /
+          scaleX,
+        centerY:
+          (portraitRect.top - stageRect.top + portraitRect.height / 2) /
+          scaleY,
+      };
+    };
+
+    const refreshStageVisibility = () => {
+      const stageRect = stage.getBoundingClientRect();
+      stageVisible =
+        stageRect.bottom > -100 && stageRect.top < window.innerHeight + 100;
+    };
+
+    const syncNavigationState = () => {
+      navigationOpen = Boolean(
+        window.innerWidth <= 1200 && navigation?.dataset.menuOpen === 'true'
+      );
+      if (!navigationOpen) refreshStageVisibility();
+      lastRenderedTime = 0;
+    };
 
     const preparePortraitMask = () => {
       if (!portrait.complete || !portrait.naturalWidth) return;
@@ -225,14 +253,16 @@ const Splash = () => {
       ).data;
       alphaMask.width = canvas.width;
       alphaMask.height = canvas.height;
+      refreshPortraitMetrics();
     };
 
     const setStageSize = () => {
       const nextWidth = stage.clientWidth;
       const nextHeight = stage.clientHeight;
+      compactMotion = window.innerWidth <= 768;
       const scale = Math.min(
-        1.08,
-        Math.max(0.55, (nextWidth / 720) * 1.05)
+        1.14,
+        Math.max(0.58, (nextWidth / 720) * 1.11)
       );
 
       if (!particles.length) {
@@ -264,6 +294,14 @@ const Splash = () => {
 
       stageWidth = nextWidth;
       stageHeight = nextHeight;
+
+      iconNodes.forEach((node, index) => {
+        const diameter = particles[index].radius * 2;
+        node.style.width = `${diameter}px`;
+        node.style.height = `${diameter}px`;
+      });
+
+      refreshPortraitMetrics();
     };
 
     const samplePortraitAlpha = (x, y, metrics) => {
@@ -357,21 +395,27 @@ const Splash = () => {
     };
 
     const animateField = (time) => {
-      const deltaTime = previousTime
-        ? Math.min((time - previousTime) / 1000, 0.034)
-        : 0;
-      previousTime = time;
+      if (navigationOpen || !stageVisible) {
+        lastRenderedTime = time;
+        frameId = window.requestAnimationFrame(animateField);
+        return;
+      }
 
-      const stageRect = stage.getBoundingClientRect();
-      const portraitRect = portrait.getBoundingClientRect();
-      const portraitMetrics = {
-        left: portraitRect.left - stageRect.left,
-        top: portraitRect.top - stageRect.top,
-        width: portraitRect.width,
-        height: portraitRect.height,
-        centerX: portraitRect.left - stageRect.left + portraitRect.width / 2,
-        centerY: portraitRect.top - stageRect.top + portraitRect.height / 2,
-      };
+      const minimumFrameTime = compactMotion ? 1000 / 30 : 0;
+      if (
+        minimumFrameTime &&
+        lastRenderedTime &&
+        time - lastRenderedTime < minimumFrameTime
+      ) {
+        frameId = window.requestAnimationFrame(animateField);
+        return;
+      }
+
+      const deltaTime = lastRenderedTime
+        ? Math.min((time - lastRenderedTime) / 1000, 0.04)
+        : 0;
+      lastRenderedTime = time;
+      renderedFrames += 1;
 
       particles.forEach((particle, index) => {
         if (!reducedMotion) {
@@ -431,7 +475,7 @@ const Splash = () => {
           particle.rotation += particle.spin * deltaTime;
         }
 
-        const edge = 7;
+        const edge = Math.max(22, stageWidth * 0.042);
         if (particle.x - particle.radius < edge) {
           particle.x = particle.radius + edge;
           particle.vx = Math.abs(particle.vx);
@@ -481,29 +525,67 @@ const Splash = () => {
         }
 
         const node = iconNodes[index];
-        const diameter = particle.radius * 2;
-        node.style.width = `${diameter}px`;
-        node.style.height = `${diameter}px`;
         node.style.transform = `translate3d(${particle.x - particle.radius}px, ${
           particle.y - particle.radius
         }px, 0) rotate(${particle.rotation}deg)`;
       });
 
-      if (!reducedMotion) resolveParticleCollisions();
+      if (!reducedMotion && (!compactMotion || renderedFrames % 2 === 0)) {
+        resolveParticleCollisions();
+      }
 
       if (!reducedMotion) {
         frameId = window.requestAnimationFrame(animateField);
       }
     };
 
+    const handleNavigationToggle = (event) => {
+      navigationOpen = Boolean(
+        window.innerWidth <= 1200 && event.detail?.open
+      );
+      if (!navigationOpen) refreshStageVisibility();
+      lastRenderedTime = 0;
+    };
+
+    syncNavigationState();
     setStageSize();
     preparePortraitMask();
+    window.addEventListener(
+      'portfolio:navigation-toggle',
+      handleNavigationToggle
+    );
     portrait.addEventListener('load', preparePortraitMask);
     window.addEventListener('resize', setStageSize);
+
+    if (navigation && 'MutationObserver' in window) {
+      navigationObserver = new MutationObserver(syncNavigationState);
+      navigationObserver.observe(navigation, {
+        attributes: true,
+        attributeFilter: ['data-menu-open'],
+      });
+    }
+
+    if ('IntersectionObserver' in window) {
+      visibilityObserver = new IntersectionObserver(
+        ([entry]) => {
+          stageVisible = entry.isIntersecting;
+          lastRenderedTime = 0;
+        },
+        { rootMargin: '100px' }
+      );
+      visibilityObserver.observe(stage);
+    }
+
     frameId = window.requestAnimationFrame(animateField);
 
     return () => {
       window.cancelAnimationFrame(frameId);
+      visibilityObserver?.disconnect();
+      navigationObserver?.disconnect();
+      window.removeEventListener(
+        'portfolio:navigation-toggle',
+        handleNavigationToggle
+      );
       portrait.removeEventListener('load', preparePortraitMask);
       window.removeEventListener('resize', setStageSize);
     };
