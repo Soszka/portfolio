@@ -1,13 +1,14 @@
+import LanguageButton from './LanguageButton';
 import styles from './Navigation.module.scss';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-import { Button, IconButton } from '@material-ui/core';
-import PolishFlag from '../../assets/HomePhotos/polishFlagPhoto.png';
-import EnglishFlag from '../../assets/HomePhotos/englishFlagPhoto.png';
+import { Button } from '@material-ui/core';
 import Tooltip from '@material-ui/core/Tooltip';
 import { withStyles } from '@material-ui/core/styles';
 import { useTranslation } from 'react-i18next';
+import usePortalNavigation from '../Skills/usePortalNavigation';
+import { warmSkills } from '../Skills/preloadSkills';
 
 const HtmlTooltip = withStyles(() => ({
   tooltip: {
@@ -18,10 +19,10 @@ const HtmlTooltip = withStyles(() => ({
   },
 }))(Tooltip);
 
-const Navigation = () => {
+const Navigation = ({ cinematic = false }) => {
+  const enterPortal = usePortalNavigation();
   const location = useLocation();
   const [menuClosed, setMenuClosed] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
   const { t, i18n } = useTranslation();
   const currentLang = (i18n.resolvedLanguage || i18n.language || 'pl')
     .slice(0, 2)
@@ -62,11 +63,6 @@ const Navigation = () => {
     []
   );
 
-  const toggleFlag = () => {
-    const newLang = currentLang === 'pl' ? 'en' : 'pl';
-    i18n.changeLanguage(newLang);
-  };
-
   const navItems = [
     {
       translationKey: 'navigation.link.home',
@@ -76,11 +72,6 @@ const Navigation = () => {
     {
       translationKey: 'navigation.link.skills',
       to: '/skills',
-      isNavLink: true,
-    },
-    {
-      translationKey: 'navigation.link.projects',
-      to: '/projects',
       isNavLink: true,
     },
     {
@@ -152,6 +143,9 @@ const Navigation = () => {
                     isActive ? styles.linkActive : undefined
                   }
                   to={item.to}
+                  onClick={item.to === '/skills' ? enterPortal : undefined}
+                  onPointerEnter={item.to === '/skills' ? warmSkills : undefined}
+                  onFocus={item.to === '/skills' ? warmSkills : undefined}
                 >
                   {t(item.translationKey)}
                 </NavLink>
@@ -171,52 +165,16 @@ const Navigation = () => {
             );
           }
         })}
-        <li className={styles.flagIconButton}>
-          <HtmlTooltip title={t('navigation.switch.language')}>
-            <IconButton
-              aria-label="toggle language"
-              onClick={toggleFlag}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-              style={{
-                backgroundColor: isHovered
-                  ? 'rgba(250, 250, 250, 0.288)'
-                  : 'transparent',
-              }}
-            >
-              {currentLang === 'pl' ? (
-                <img
-                  src={EnglishFlag}
-                  alt="English Flag"
-                  className={styles.flagIcon}
-                />
-              ) : (
-                <img
-                  src={PolishFlag}
-                  alt="Polish Flag"
-                  className={styles.flagIcon}
-                />
-              )}
-            </IconButton>
-          </HtmlTooltip>
-        </li>
+        {cinematic ? <li className={styles.languageText}>
+          <button type="button" aria-pressed={currentLang === 'pl'} onClick={() => i18n.changeLanguage('pl')}>PL</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" aria-pressed={currentLang === 'en'} onClick={() => i18n.changeLanguage('en')}>EN</button>
+        </li> : <li className={styles.flagIconButton}>
+          <LanguageButton />
+        </li>}
       </ul>
       <div className={styles.flagIconContainer}>
-        <IconButton aria-label="toggle language" onClick={toggleFlag}>
-          {currentLang === 'pl' ? (
-            <img
-              src={EnglishFlag}
-              alt="English Flag"
-              className={styles.flagIconSm}
-            />
-          ) : (
-            <img
-              src={PolishFlag}
-              alt="Polish Flag"
-              className={styles.flagIconSm}
-            />
-          )}
-        </IconButton>
+        <LanguageButton />
       </div>
     </nav>
   );

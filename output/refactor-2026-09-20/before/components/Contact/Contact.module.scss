@@ -1,0 +1,22 @@
+@import '../../styles/sections.scss';
+.contact { @include section-shell; overflow: hidden; padding-bottom: clamp(110px, 10vw, 230px); background: #020910;
+  &::before { content: ''; position: absolute; inset: 0; z-index: -2; background: radial-gradient(ellipse at 50% 48%, #010810d9, #0108108c 70%, #01081050), url('../../assets/HomePhotos/galaxy.webp') center / cover; }
+  &::after { content: ''; position: absolute; z-index: -1; left: -10%; bottom: -64vw; width: 120%; height: 70vw; border-radius: 50%; border-top: 2px solid #39baff; background: radial-gradient(ellipse at 50% 0, #007cfb25, transparent 30%); box-shadow: 0 -5px 22px #007fff77, 0 -18px 65px #0088ff33; }
+}
+.cards { width: min(74%, 1400px); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(22px, 2vw, 46px); }
+.card { display: flex; flex-direction: column; align-items: flex-start; padding: clamp(26px, 2.4vw, 56px); color: #edf4fd; text-decoration: none; border: 1px solid #4872898c; border-radius: clamp(16px, 1.1vw, 26px); background: linear-gradient(125deg, #0e2434ed, #07141ef2); box-shadow: 0 20px 55px #0005; transition: transform .4s, border-color .4s, box-shadow .4s;
+  h3 { font-size: clamp(25px, 2vw, 43px); margin: 16px 0 8px; font-weight: 700; }
+  p { font-size: clamp(16px, 1.2vw, 25px); margin: 0 0 clamp(24px, 2vw, 44px); max-width: 95%; color: #c2d5e4; line-height: 1.55; white-space: pre-line; }
+  &:focus-visible { outline: 3px solid #90eaff; outline-offset: 6px; }
+}
+.linkedin { border-color: #009dfbe0; background: radial-gradient(ellipse at 0 0, #007add4a, transparent 65%), linear-gradient(125deg, #002b49e8, #001020f2); box-shadow: 0 0 32px #007aff33, inset 0 0 24px #008fff10; }
+.icon { display: grid; place-items: center; width: clamp(52px, 4vw, 88px); height: clamp(52px, 4vw, 88px); border: 1px solid #67879c80; border-radius: 13px; font-size: clamp(30px, 2.5vw, 53px); background: #264255; transition: transform .45s; }
+.linkedin .icon { background: linear-gradient(135deg, #00c1ff, #0062f5); border-color: #00caff; box-shadow: 0 0 22px #0095ff50; }
+.action { width: 100%; margin-top: auto; padding: clamp(12px, 1vw, 22px) clamp(15px, 1.3vw, 28px); display: flex; align-items: center; justify-content: space-between; gap: 14px; border: 1px solid #3a576a8c; border-radius: 8px; font-size: clamp(12px, .9vw, 19px); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; background: linear-gradient(100deg, #152d3c, #071823);
+  svg { transition: transform .4s; }
+}
+.linkedin .action { border-color: #009dff; background: linear-gradient(105deg, #009fff, #0047d9); }
+@media (hover: hover) and (pointer: fine) { .card:hover { color: #fff; transform: translateY(-7px); border-color: #58d5ff; box-shadow: 0 12px 48px #008bff35; .icon { transform: rotate(-6deg) scale(1.07); } .action svg { transform: translateX(5px); } } }
+@media (max-width: 1000px) { .cards { width: 90%; } }
+@media (max-width: 600px) { .cards { grid-template-columns: 1fr; width: calc(100% - 36px); } }
+@media (prefers-reduced-motion: reduce) { .card, .icon, .action svg { transition: none; } .card:hover, .card:hover .icon, .card:hover .action svg { transform: none; } }

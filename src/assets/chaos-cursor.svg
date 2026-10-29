@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <defs>
+    <radialGradient id="halo">
+      <stop stop-color="#e5f8ff" stop-opacity=".12"/>
+      <stop offset=".62" stop-color="#72d9ff" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#72d9ff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="30" fill="url(#halo)"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#8bdeff" stroke-width="3" opacity=".65" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#f4fcff" stroke-width="1.3"/>
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#8bdeff" stroke-width="1.5" stroke-dasharray="26 56" transform="rotate(-45 32 32)"/>
+  <path d="M32 6v9m0 34v9M6 32h9m34 0h9" stroke="#fff" stroke-width="1.2"/>
+  <circle cx="32" cy="32" r="3" fill="#67d5ff" filter="url(#glow)"/>
+  <circle cx="32" cy="32" r="2" fill="#fff"/>
+</svg>

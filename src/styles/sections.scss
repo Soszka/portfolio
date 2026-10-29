@@ -1,0 +1,22 @@
+// Rem-based type and spacing preserve user font preferences and text zoom.
+@mixin section-shell {
+  position: relative;
+  isolation: isolate;
+  padding-block: clamp(3.5rem, 2.5rem + 2vw, 6rem);
+}
+@mixin section-width {
+  width: min(calc(100% - 2 * var(--page-gutter, 1.25rem)), 112rem);
+  margin-inline: auto;
+}
+@mixin stars {
+  background-image: radial-gradient(circle at 18% 24%, #5bcaff 0 1px, transparent 1.8px), radial-gradient(circle at 73% 64%, #258dcc 0 1px, transparent 1.7px), radial-gradient(circle at 44% 87%, #2374a9 0 .7px, transparent 1.5px);
+  background-size: 317px 229px, 463px 337px, 193px 281px;
+}
+@mixin section-caption {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; margin: 2.5rem auto 0;
+  color: #96b4cd; font-size: .75rem; letter-spacing: .22em;
+  text-align: center; text-transform: uppercase;
+  &::before, &::after { content: ''; width: 4rem; height: 1px; background: linear-gradient(90deg, transparent, #239dcc); }
+  &::after { transform: rotate(180deg); }
+}

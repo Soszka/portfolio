@@ -1,4 +1,4 @@
-﻿{
+{
   "navigation.link.skills": "SKILLS",
   "navigation.link.projects": "PROJECTS",
   "navigation.link.github": "GITHUB",
@@ -6,40 +6,46 @@
   "navigation.link.home": "HOME",
   "navigation.switch.language": "Switch to Polish",
   "navigation.download.resume": "Download resume",
-
   "splash.hello.world": "Hello World",
+  "splash.availability": "OPEN TO COLLABORATION",
   "splash.my.name": "My name is",
   "splash.socha": "Bartlomiej Socha",
   "splash.frontend.developer": "Software Engineer",
   "splash.description": "I build scalable web applications, specializing primarily in Angular and Java. I combine polished interfaces with robust backend systems, with a strong focus on code quality, performance, and reliability.",
   "splash.btn.contact": "CONTACT",
-
+  "app.loading": "Loading page…",
   "achivements.studies.title": "Studies",
+  "achivements.studies.statLabel": "fields",
   "achivements.studies.description": "Two completed fields of study where my passion for front-end development began.",
   "achivements.projects.title": "Projects",
+  "achivements.projects.statLabel": "projects",
   "achivements.projects.description": "Many projects, from small websites to more advanced applications.",
   "achivements.courses.title": "Courses",
+  "achivements.courses.statLabel": "courses",
   "achivements.courses.description": "Online courses that significantly deepened my web development knowledge.",
   "achivements.technologies.title": "Technologies",
-  "achivements.technologies.description": "Over twenty technologies and tools I have learned, while continuously improving my skills.",
+  "achivements.technologies.statLabel": "technologies",
+  "achivements.technologies.description": "Nineteen technologies and tools I have learned, while continuously improving my skills.",
   "achivements.internship.title": "Internship",
-  "achivements.internship.description": "A one-year internship and commercial experience that helped me grow in web development.",
+  "achivements.internship.statLabel": "months",
+  "achivements.internship.description": "An 11-month internship and commercial experience that helped me grow in web development.",
   "achivements.experience.title": "Experience",
-  "achivements.experience.description": "More than two years have passed since I published my first application.",
-
+  "achivements.experience.statLabel": "years",
+  "achivements.experience.description": "More than two years have passed since I published my first application, helping me gain valuable experience.",
   "about.title": "About me",
   "about.description": "I completed two different fields of study and earned the titles of Engineer and Project Manager. My interest in programming and frontend technologies started during that period. After graduation, I expanded my web development knowledge through many online courses and by creating my own concepts, which you can find in the projects section. This allowed me to learn a variety of frontend technologies and gain the skills required to build modern user interfaces. In private life, I strongly focus on self-development and effective time management. I believe that disciplined time management and consistency are the keys to continuous growth.",
-
   "journey": {
     "title": "My Journey",
     "items": {
       "studies": {
         "title": "Studies",
-        "description": "During my computer science studies, I created my first website, which sparked my passion for programming."
+        "date": "until 2021",
+        "description": "Two completed degrees gave me a solid technical foundation and a broader perspective on building applications."
       },
       "courses": {
         "title": "Courses",
-        "description": "Through intensive courses, I built more advanced applications and deepened my knowledge of modern web technologies."
+        "date": "since 2022",
+        "description": "A bootcamp and online courses developed my web skills. I put each new concept into practice by building my own apps."
       },
       "projects": {
         "title": "Projects",
@@ -47,7 +53,13 @@
       },
       "internship": {
         "title": "Internship",
-        "description": "During a one-year internship, I gained my first commercial experience and learned teamwork on real applications."
+        "date": "2024",
+        "description": "An 11-month internship gave me my first commercial experience, developing applications and collaborating with a team."
+      },
+      "work": {
+        "title": "Work",
+        "date": "2025 – present",
+        "description": "As a Software Engineer, I build real products, connecting polished interfaces with application logic and integrations."
       }
     },
     "button": {
@@ -57,7 +69,6 @@
       "linkedin": "LinkedIn"
     }
   },
-
   "adventages": {
     "title": "My Strengths",
     "items": {
@@ -90,28 +101,24 @@
       "github": "GitHub"
     }
   },
-
   "contact": {
     "title": "Contact me",
     "header1": "Choose",
     "header2": "contact type",
     "snackbarMessage": "Please use LinkedIn to get in touch.",
     "items": {
-      "instagram": {
-        "name": "Instagram"
-      },
       "linkedin": {
-        "name": "LinkedIn"
+        "name": "LinkedIn",
+        "description": "The easiest way to reach me is on LinkedIn.\nIt is my main contact channel.",
+        "action": "Visit LinkedIn"
       },
-      "facebook": {
-        "name": "Facebook"
-      },
-      "email": {
-        "name": "Email"
+      "github": {
+        "name": "GitHub",
+        "description": "Want to see how I work first?\nExplore my repositories and projects.",
+        "action": "Open GitHub"
       }
     }
   },
-
   "skills": {
     "skillsList": [
       {
@@ -131,7 +138,6 @@
       }
     ]
   },
-
   "projects": {
     "title": "My Projects",
     "hoverMessage": "Hover over a project to see its description",
@@ -150,5 +156,49 @@
         "description": "A portfolio website containing key information intended to present me as a Front End Developer and encourage collaboration. It was built with React. Data is stored in Redux store and used across the app. Material UI was used to speed up component development. The application does not communicate with a backend."
       }
     ]
-  }
+  },
+  "about.intro": "I completed two fields of study — engineering and project management. Since 2022, I have been consistently developing my web development skills. I combine frontend and backend, working mainly with",
+  "about.and": "and",
+  "about.approach": "I see an application as a whole — from the user interface and business logic to integrations and the flow of data.",
+  "about.stats.programming.title": "Programming",
+  "about.stats.programming.detail": "since 2022",
+  "about.stats.frontend.title": "Frontend Developer",
+  "about.stats.frontend.detail": "professionally since 2024",
+  "about.stats.backend.title": "Backend Developer",
+  "about.stats.backend.detail": "professionally since 2028",
+  "expertise": {
+    "title": "From interface to system",
+    "subtitle": "I design solutions from the user experience to logic, data and integrations.",
+    "caption": "Better code. More possibilities.",
+    "items": {
+      "interfaces": {
+        "title": "Interfaces",
+        "description": "Clear, responsive and carefully crafted user experiences."
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Angular, TypeScript and component architecture in practice."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Java, Spring and application logic supporting the UI."
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Automated tests that bring confidence and stability to development."
+      },
+      "delivery": {
+        "title": "CI/CD",
+        "description": "Automating processes to deliver value faster and more safely."
+      },
+      "architecture": {
+        "title": "Architecture",
+        "description": "Scalable structures, clear organization and systems thinking."
+      }
+    }
+  },
+  "achivements.label": "Experience and growth",
+  "about.angular": "Angular",
+  "about.spring": "Spring",
+  "footer.rights": "All rights reserved."
 }

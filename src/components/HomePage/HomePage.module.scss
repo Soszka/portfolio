@@ -1,0 +1,24 @@
+.home {
+  --page-gutter: clamp(20px, 4vw, 96px);
+  --body-size: clamp(1rem, .95rem + .15vw, 1.125rem);
+  --lead-size: clamp(1.0625rem, 1rem + .2vw, 1.25rem);
+  --card-title-size: clamp(1.125rem, 1rem + .4vw, 1.5rem);
+  --section-title-size: clamp(1.75rem, 1.15rem + 1.8vw, 3.25rem);
+  --card-gap: clamp(1rem, .75rem + .6vw, 1.75rem);
+  --card-padding: clamp(20px, 1rem + .65vw, 32px);
+  background: #020b16;
+  font-size: var(--body-size);
+  overflow-wrap: anywhere;
+}
+.galaxySections {
+  position: relative;
+  isolation: isolate;
+  background: #020b16;
+  &::before {
+    content: '';
+    position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background: linear-gradient(180deg, #020b1640, #020b16aa 45%, #020b1655),
+      url('../../assets/HomePhotos/galaxy.webp') center / cover;
+    mask-image: linear-gradient(transparent, #000 8rem, #000);
+  }
+}

@@ -1,284 +1,213 @@
-﻿@import '../../styles/settings.scss';
+@import '../../styles/sections.scss';
+
+@property --about-stat-orbit { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 
 .about {
-  position: relative;
-  isolation: isolate;
-  margin-top: 0;
-  padding: 38px 0 82px;
+  @include section-shell;
+  background: transparent;
+}
 
-  @include extra-large-screens {
-    padding: 30px 0 68px;
-  }
+.titleReveal { opacity: 0; transform: translateY(26px); }
+.titleReveal[data-revealed='true'] { opacity: 1; transform: none; animation: aboutTitleReveal 1.1s ease-out var(--reveal-delay, 0ms) backwards; }
+.portraitReveal { min-width: 0; opacity: 0; transform: translateX(64px); }
+.portraitReveal[data-revealed='true'] { opacity: 1; transform: none; animation: aboutPortraitReveal 1.85s cubic-bezier(.22,.45,.35,1) var(--reveal-delay, 0ms) backwards; }
+.statReveal { min-width: 0; opacity: 0; transform: translateY(32px) scale(.88); }
+.statReveal[data-revealed='true'] { opacity: 1; transform: none; animation: aboutStatReveal 1.3s cubic-bezier(.22,.45,.35,1) var(--reveal-delay, 0ms) backwards; }
 
-  @include medium-screens {
-    padding: 24px 0 52px;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -84px;
-    bottom: -32px;
-    left: 50%;
-    width: 100vw;
-    transform: translateX(-50%);
-    pointer-events: none;
-  }
-
-  &::before {
-    z-index: -2;
-    background:
-      radial-gradient(
-        ellipse 43% 58% at 76% 49%,
-        rgba(0, 128, 216, 0.24),
-        rgba(0, 87, 158, 0.085) 47%,
-        transparent 72%
-      ),
-      radial-gradient(
-        ellipse 42% 58% at 15% 53%,
-        rgba(31, 145, 137, 0.17),
-        rgba(47, 91, 100, 0.08) 46%,
-        transparent 72%
-      ),
-      linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0,
-        rgba(4, 7, 14, 0.76) 14%,
-        rgba(6, 9, 18, 0.98) 29%,
-        rgba(4, 7, 15, 0.99) 74%,
-        #000 100%
-      );
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      #000 24%,
-      #000 92%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      #000 24%,
-      #000 92%,
-      transparent 100%
-    );
-  }
-
-  &::after {
-    z-index: -1;
-    opacity: 0.9;
-    background-image:
-      radial-gradient(
-        circle at 1px 1px,
-        rgba(126, 226, 211, 0.48) 1.2px,
-        transparent 2px
-      ),
-      linear-gradient(rgba(126, 174, 178, 0.19) 1px, transparent 1px),
-      linear-gradient(
-        90deg,
-        rgba(139, 163, 170, 0.18) 1px,
-        transparent 1px
-      );
-    background-size:
-      136px 136px,
-      68px 68px,
-      68px 68px;
-    -webkit-mask-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      #000 17%,
-      #000 84%,
-      transparent 100%
-    );
-    mask-image: linear-gradient(
-      to bottom,
-      transparent 0,
-      #000 17%,
-      #000 84%,
-      transparent 100%
-    );
-    filter: drop-shadow(0 0 7px rgba(63, 180, 165, 0.18));
-    mix-blend-mode: screen;
-    animation: backgroundGridDrift 28s linear infinite;
-  }
+@keyframes aboutTitleReveal {
+  from { opacity: 0; transform: translateY(26px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes aboutCardReveal {
+  from { opacity: 0; transform: translateX(-72px) scale(.94); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes aboutPortraitReveal {
+  from { opacity: 0; transform: translateX(64px); clip-path: inset(0 49% 0 49%); }
+  to { opacity: 1; transform: none; clip-path: inset(0); }
+}
+@keyframes aboutStatReveal {
+  0% { opacity: 0; transform: translateY(32px) scale(.88); }
+  80% { opacity: 1; transform: translateY(-4px) scale(1.025); }
+  100% { opacity: 1; transform: none; }
 }
 
 .content {
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  gap: 18px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 9%;
-    bottom: 9%;
-    left: calc(48% + 8px);
-    width: 1px;
-    z-index: 0;
-    background: linear-gradient(
-      to bottom,
-      transparent,
-      rgba(67, 143, 151, 0.14) 22%,
-      rgba(83, 222, 203, 0.72) 50%,
-      rgba(55, 146, 164, 0.16) 78%,
-      transparent
-    );
-    background-size: 100% 180%;
-    filter: drop-shadow(0 0 10px rgba(51, 180, 164, 0.5));
-    opacity: 0.78;
-    animation: energyLineFlow 6s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  @include extra-large-screens {
-    flex-direction: column-reverse;
-    gap: 8px;
-
-    &::before {
-      display: none;
-    }
-  }
-}
-
-.description {
-  width: 48%;
-  padding: 10px 12px 10px 0;
-  display: flex;
+  @include section-width;
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
   align-items: center;
-
-  @include extra-large-screens {
-    width: auto;
-    margin: 0 14px;
-    padding: 6px 0 0;
-  }
-
-  @include small-screens {
-    margin: 0 10px;
-  }
+  gap: clamp(1.5rem, 2.5vw, 3.5rem);
 }
 
 .descriptionCard {
-  width: 100%;
   position: relative;
-  border-radius: 28px;
-  padding: 24px 26px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background:
-    radial-gradient(circle at 8% 6%, rgba(35, 151, 139, 0.17), transparent 43%),
-    radial-gradient(circle at 94% 12%, rgba(0, 120, 201, 0.11), transparent 42%),
-    linear-gradient(155deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
-  backdrop-filter: blur(7px);
-  box-shadow: 0 20px 42px rgba(0, 0, 0, 0.27);
+  isolation: isolate;
+  min-width: 0;
   overflow: hidden;
-  transition: border-color 0.35s ease, transform 0.35s ease,
-    box-shadow 0.35s ease;
-
-  @include small-screens {
-    padding: 20px 18px 16px;
-    border-radius: 24px;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -130px;
-    right: -90px;
-    width: 260px;
-    height: 260px;
-    border-radius: 50%;
-    background: rgba(35, 158, 145, 0.23);
-    filter: blur(52px);
-    opacity: 0.58;
-    pointer-events: none;
-    animation: aboutCardGlow 8s ease-in-out infinite;
-  }
+  opacity: 0;
+  transform: translateX(-72px) scale(.94);
+  padding: clamp(1.5rem, 1rem + 1.15vw, 3rem);
+  border: 1px solid #4ca7d08c;
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at 8% 17%, #8bdfff80 0 1px, transparent 2px),
+    radial-gradient(circle at 31% 66%, #33a8f777 0 .8px, transparent 2px),
+    radial-gradient(circle at 73% 28%, #8bdfff70 0 1px, transparent 2px),
+    radial-gradient(circle at 92% 73%, #33a8f766 0 .8px, transparent 2px),
+    radial-gradient(circle at 54% 13%, #a4e8ff50 0 .7px, transparent 1.7px),
+    radial-gradient(ellipse 70% 55% at 84% -10%, #0e73b72b, transparent),
+    radial-gradient(ellipse 65% 45% at 12% 110%, #0064aa27, transparent),
+    linear-gradient(135deg, #041c38ec, #020e22ee 60%, #04152cea);
+  box-shadow: inset 0 1px 1px #c9f1ff27, inset 0 0 35px #0476d00c,
+    0 25px 65px #0008, 0 0 34px #017fff13;
 
   &::after {
     content: '';
     position: absolute;
-    inset: 1px;
-    border-radius: 27px;
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    bottom: 0;
+    left: 12%;
+    width: 76%;
+    height: 2px;
     pointer-events: none;
-
-    @include small-screens {
-      border-radius: 23px;
-    }
+    background: linear-gradient(90deg, transparent, #149fff7a 25%, #e0f8ff, #149fff7a 75%, transparent);
+    box-shadow: 0 -4px 24px 3px #007fff66;
   }
+}
 
-  &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.24);
-    box-shadow: 0 24px 46px rgba(0, 0, 0, 0.34);
+.descriptionCard[data-revealed='true'] {
+  opacity: 1;
+  transform: none;
+  animation: aboutCardReveal 1.6s cubic-bezier(.22,.45,.35,1) var(--reveal-delay, 0ms) backwards;
+}
+
+.cardOrbit {
+  position: absolute; inset: -1px; z-index: 2; padding: 2px;
+  border-radius: inherit; pointer-events: none;
+  contain: strict;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  &::before {
+    content: ''; position: absolute; top: 50%; left: 50%; width: 200%; aspect-ratio: 1;
+    background: conic-gradient(transparent 0deg 220deg, #0873d400 260deg, #169cffb3 302deg,
+      #c8f5ff 320deg, #4abfffcc 330deg, transparent 355deg);
+    transform: translate(-50%, -50%) rotate(0deg);
+    will-change: transform;
+    animation: aboutCardOrbit 8s linear infinite;
+  }
+}
+@keyframes aboutCardOrbit { to { transform: translate(-50%, -50%) rotate(360deg); } }
+
+.about[data-motion-paused='true'] .cardOrbit::before { animation-play-state: paused; }
+
+.cardCorners {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+
+  &::before, &::after {
+    content: '';
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: drop-shadow(0 0 7px #20b6ff99);
+  }
+  &::before {
+    top: .6rem; left: .6rem;
+    border-top: 2px solid #79d8ff;
+    border-left: 2px solid #79d8ff;
+    border-top-left-radius: .75rem;
+  }
+  &::after {
+    right: .6rem; bottom: .6rem;
+    border-right: 2px solid #79d8ff;
+    border-bottom: 2px solid #79d8ff;
+    border-bottom-right-radius: .75rem;
   }
 }
 
 .paragraphs {
   position: relative;
-  z-index: 1;
+  display: grid;
+  gap: 1.25em;
+  max-width: 66ch;
+  p { margin: 0; color: #e1eaf2; font-size: var(--lead-size); line-height: 1.65; }
+  p > span { font-weight: 700; }
+}
+
+.stats {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11.5rem), 1fr));
+  gap: .75rem;
+  margin-top: 1.75rem;
+}
+
+.stat {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  align-items: center;
+  gap: .625rem;
+  min-width: 0;
+  padding: 1rem .875rem;
+  height: 100%;
+  border: 1px solid #2c8fc0a6;
+  border-radius: .875rem;
+  background: radial-gradient(ellipse at 10% 0, #07578a50, transparent 75%), #031a33d9;
+  box-shadow: inset 0 1px 6px #78daff20, 0 8px 18px #0003;
+  transition: transform .4s cubic-bezier(.2,.8,.2,1), border-color .3s, box-shadow .3s;
+  &::before {
+    content: ''; position: absolute; inset: -1px; z-index: 2; padding: 2px;
+    border-radius: inherit; opacity: 0; pointer-events: none;
+    background: conic-gradient(from var(--about-stat-orbit), transparent 0deg 235deg, #168aff80 290deg, #bff3ff 320deg, #22bdff 336deg, transparent 354deg);
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    transition: opacity .2s;
+  }
+  &::after {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(115deg, transparent 20%, #9ce6ff38 50%, transparent 75%);
+    transform: translateX(-130%);
+  }
+  > svg { color: #35b8e3; font-size: 1.5rem; flex-shrink: 0; transition: transform .45s cubic-bezier(.2,.8,.2,1), filter .3s; }
+  > div { flex: 1; min-width: 0; }
+  h3 { margin: 0 0 .375rem; font-size: 1rem; font-weight: 700; line-height: 1.35; overflow-wrap: normal; }
+  p { margin: 0; font-size: .875rem; color: #b6ccdc; line-height: 1.5; }
+}
 
-  p {
-    margin: 0;
-    font-size: $content-font-size * 0.95;
-    color: rgba(255, 255, 255, 0.9);
-    line-height: 1.58;
-
-    @include small-screens {
-      font-size: $content-font-size * 0.88;
-      line-height: 1.6;
-    }
+@media (hover: hover) and (pointer: fine) {
+  .stat:hover {
+    transform: translateY(-6px) scale(1.025);
+    border-color: #b5eaff;
+    box-shadow: inset 0 -12px 28px #047fe833, inset 0 1px 8px #b2ebff3b, 0 10px 28px #008ae052;
+    &::before { opacity: 1; animation: aboutStatOrbit 2.4s linear infinite; }
+    &::after { animation: aboutStatFlash .85s ease-out; }
+    > svg { transform: translateY(-2px) rotate(-8deg) scale(1.2); filter: drop-shadow(0 0 7px #29beff); }
   }
 }
 
-@keyframes backgroundGridDrift {
-  to {
-    background-position:
-      68px 68px,
-      68px 68px,
-      68px 68px;
-  }
+@keyframes aboutStatOrbit { to { --about-stat-orbit: 360deg; } }
+@keyframes aboutStatFlash { to { transform: translateX(130%); } }
+
+@media (max-width: 72rem) {
+  .content { grid-template-columns: minmax(0, 1fr); max-width: 52rem; }
 }
 
-@keyframes energyLineFlow {
-  0%,
-  100% {
-    background-position: 0 0;
-    opacity: 0.42;
-  }
-
-  50% {
-    background-position: 0 100%;
-    opacity: 0.82;
-  }
-}
-
-@keyframes aboutCardGlow {
-  0%,
-  100% {
-    transform: scale(0.92);
-    opacity: 0.35;
-  }
-
-  50% {
-    transform: scale(1.08);
-    opacity: 0.62;
-  }
+@media (max-width: 38rem) {
+  .stats { grid-template-columns: minmax(0, 1fr); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about::after,
-  .content::before,
-  .descriptionCard::before {
-    animation: none;
+  .titleReveal, .portraitReveal, .descriptionCard, .statReveal,
+  .titleReveal[data-revealed='true'], .portraitReveal[data-revealed='true'], .descriptionCard[data-revealed='true'], .statReveal[data-revealed='true'] {
+    opacity: 1; transform: none; animation: none; clip-path: none;
   }
-
-  .descriptionCard {
-    transition: none;
-  }
+  .cardOrbit::before { animation: none; transform: translate(-50%, -50%) rotate(40deg); }
+  .stat, .stat > svg, .stat::before { transition: none; }
+  .stat:hover, .stat:hover > svg { transform: none; }
+  .stat:hover::before { animation: none; --about-stat-orbit: 40deg; }
+  .stat:hover::after { animation: none; }
 }

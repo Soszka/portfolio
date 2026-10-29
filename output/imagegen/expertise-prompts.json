@@ -1,0 +1,26 @@
+[
+  {
+    "name": "interfaces",
+    "prompt": "Use case: stylized-concept. Asset type: landscape illustration for a software engineer portfolio card, aspect ratio 3:2. A desktop monitor and smartphone displaying a sophisticated blue mountain landscape website, photorealistic rendered devices, mountain silhouette behind. Composition: keep the LEFT 42% very dark nearly empty navy negative space for HTML heading and paragraph; place all main objects in the RIGHT 58%, reaching the right and bottom edges. Rich near-black navy #020b16, cobalt blue and cyan, restrained star specks and deep space atmosphere. High-end cinematic 3D render, crisp details, luminous edges, elegant contrast. Full bleed image, no card frame, no heading, no body text, no watermark. Match a unified dark galactic website series."
+  },
+  {
+    "name": "frontend",
+    "prompt": "Use case: stylized-concept. Asset type: landscape illustration for a software engineer portfolio card, aspect ratio 3:2. An angled floating dark code editor glass panel with luminous cyan, blue and violet syntax lines and a prominent magenta Angular shield symbol, premium software development illustration. Composition: keep the LEFT 42% very dark nearly empty navy negative space for HTML heading and paragraph; place all main objects in the RIGHT 58%, reaching the right and bottom edges. Rich near-black navy #020b16, cobalt blue and cyan, restrained star specks and deep space atmosphere. High-end cinematic 3D render, crisp details, luminous edges, elegant contrast. Full bleed image, no card frame, no heading, no body text, no watermark. Match a unified dark galactic website series."
+  },
+  {
+    "name": "backend",
+    "prompt": "Use case: stylized-concept. Asset type: landscape illustration for a software engineer portfolio card, aspect ratio 3:2. A cluster of realistic black server racks with electric blue status lights, small glass badges with a glowing cyan Java coffee symbol and green Spring leaf connected by fine illuminated lines. Composition: keep the LEFT 42% very dark nearly empty navy negative space for HTML heading and paragraph; place all main objects in the RIGHT 58%, reaching the right and bottom edges. Rich near-black navy #020b16, cobalt blue and cyan, restrained star specks and deep space atmosphere. High-end cinematic 3D render, crisp details, luminous edges, elegant contrast. Full bleed image, no card frame, no heading, no body text, no watermark. Match a unified dark galactic website series."
+  },
+  {
+    "name": "testing",
+    "prompt": "Use case: stylized-concept. Asset type: landscape illustration for a software engineer portfolio card, aspect ratio 3:2. A floating dark glass automated testing dashboard in perspective, teal check marks, ordered rows of test results and a complete luminous teal progress bar, subtle cyan light. Composition: keep the LEFT 42% very dark nearly empty navy negative space for HTML heading and paragraph; place all main objects in the RIGHT 58%, reaching the right and bottom edges. Rich near-black navy #020b16, cobalt blue and cyan, restrained star specks and deep space atmosphere. High-end cinematic 3D render, crisp details, luminous edges, elegant contrast. Full bleed image, no card frame, no heading, no body text, no watermark. Match a unified dark galactic website series."
+  },
+  {
+    "name": "delivery",
+    "prompt": "Use case: stylized-concept. Asset type: landscape illustration for a software engineer portfolio card, aspect ratio 3:2. An ascending sequence of four elegant dark translucent glass blocks connected by cyan light: source control symbol, build gear, test checkmark, and a tall deployment block with a bright blue rocket. Composition: keep the LEFT 42% very dark nearly empty navy negative space for HTML heading and paragraph; place all main objects in the RIGHT 58%, reaching the right and bottom edges. Rich near-black navy #020b16, cobalt blue and cyan, restrained star specks and deep space atmosphere. High-end cinematic 3D render, crisp details, luminous edges, elegant contrast. Full bleed image, no card frame, no heading, no body text, no watermark. Match a unified dark galactic website series."
+  },
+  {
+    "name": "architecture",
+    "prompt": "Use case: stylized-concept. Asset type: landscape illustration for a software engineer portfolio card, aspect ratio 3:2. Four dark blue glass cubes in a clean isometric layered software architecture, connected with cyan dotted lines; small clean labels UI, API, Services, Database, black pedestal. Composition: keep the LEFT 42% very dark nearly empty navy negative space for HTML heading and paragraph; place all main objects in the RIGHT 58%, reaching the right and bottom edges. Rich near-black navy #020b16, cobalt blue and cyan, restrained star specks and deep space atmosphere. High-end cinematic 3D render, crisp details, luminous edges, elegant contrast. Full bleed image, no card frame, no heading, no body text, no watermark. Match a unified dark galactic website series."
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "navigation.link.skills": "UMIĘJĘTNOŚCI",
+  "navigation.link.projects": "PROJEKTY",
+  "navigation.link.github": "GITHUB",
+  "navigation.link.resume": "CV",
+  "navigation.link.home": "STRONA GŁÓWNA",
+  "navigation.switch.language": "Switch to english",
+  "navigation.download.resume": "Pobierz CV",
+  "splash.hello.world": "Hello World",
+  "splash.availability": "OTWARTY NA WSPÓŁPRACĘ",
+  "splash.my.name": "Nazywam się",
+  "splash.socha": "Bartłomiej Socha",
+  "splash.frontend.developer": "Software Engineer",
+  "splash.description": "Tworzę skalowalne aplikacje webowe, specjalizując się głównie w Angularze i Javie. Łączę dopracowane interfejsy z solidnym backendem, dbając o jakość kodu, wydajność i niezawodność rozwiązań.",
+  "splash.btn.contact": "KONTAKT",
+  "app.loading": "Ładowanie strony…",
+  "achivements.studies.title": "Studia",
+  "achivements.studies.description": "Dwa ukończone kierunki studiów, gdzie narodziła się moja pasja do front-endu.",
+  "achivements.projects.title": "Projekty",
+  "achivements.projects.description": "Liczne projekty od małych stron po bardziej rozbudowane aplikacje.",
+  "achivements.courses.title": "Kursy",
+  "achivements.courses.description": "Kursy online, które znacząco pogłębiły moją wiedzę w zakresie web developmentu.",
+  "achivements.technologies.title": "Technologie",
+  "achivements.technologies.description": "Ponad dwadzieścia technologii i narzędzi, które poznałem, ciągle doskonaląc swoje umiejętności.",
+  "achivements.internship.title": "Staż",
+  "achivements.internship.description": "Roczny staż i doświadczenie komercyjne, które pomogły mi rozwinąć się w kierunku web developmentu.",
+  "achivements.experience.title": "Doświadczenie",
+  "achivements.experience.description": "Minęły ponad dwa lata od opublikowania mojej pierwszej aplikacji, co pozwoliło mi zdobyć cenne doświadczenie.",
+  "about.title": "O mnie",
+  "about.description": "Ukończyłem dwa różne kierunki studiów, zdobywając tytuł Inżyniera i Kierownika Projektów. Moje zainteresowanie programowaniem i technologiami frontendowymi pojawiło się właśnie w tym okresie. Po ukończeniu studiów zgłębiałem wiedzę z obszaru web developmentu, realizując wiele kursów online i tworząc własne koncepcje, które możesz znaleźć w zakładce projekty. Dzięki temu poznałem różnorodne technologie frontendowe i zdobyłem umiejętności potrzebne do tworzenia nowoczesnych interfejsów użytkownika. W życiu prywatnym kładę duży nacisk na samorozwój i umiejętne zarządzanie czasem. Uważam, że efektywnie zarządzany czas i konsekwencja są kluczem do ciągłego samorozwoju.",
+  "journey": {
+    "title": "Moja Podróż",
+    "items": {
+      "studies": {
+        "title": "Studia",
+        "date": "do 2021",
+        "description": "Solidne podstawy techniczne i początek mojej drogi."
+      },
+      "courses": {
+        "title": "Kursy",
+        "date": "od 2022",
+        "description": "Bootcamp, kursy online i praktyczne umiejętności."
+      },
+      "projects": {
+        "title": "Projekty",
+        "description": "Praca nad różnymi projektami pozwoliła mi poszerzyć wiedzę i zastosować nowe technologie oraz języki programowania w praktyce."
+      },
+      "internship": {
+        "title": "Staż",
+        "date": "2024",
+        "description": "Pierwsze komercyjne doświadczenie i praca w zespole."
+      },
+      "work": {
+        "title": "Praca",
+        "date": "2025 – obecnie",
+        "description": "Obecnie Software Engineer. Tworzę realne produkty i rozwijam się zawodowo."
+      }
+    },
+    "button": {
+      "github": "GITHUB",
+      "seeSkills": "Umiejętności",
+      "seeProjects": "Projekty",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "adventages": {
+    "title": "Moje Zalety",
+    "items": {
+      "responsiveness": {
+        "title": "Responsywność",
+        "description": "Strony, które doskonale dostosowują się do różnych urządzeń i rozmiarów ekranów."
+      },
+      "uxUi": {
+        "title": "UX/UI",
+        "description": "Projektowanie z naciskiem na użytkownika, zapewniając intuicyjne interfejsy."
+      },
+      "libraries": {
+        "title": "Biblioteki",
+        "description": "Efektywne wykorzystanie  bibliotek dla zoptymalizowanej pracy."
+      },
+      "frameworks": {
+        "title": "Frameworki",
+        "description": "Umiejętność tworzenia dynamicznych aplikacji przy użyciu zaawansowanych frameworków."
+      },
+      "optimization": {
+        "title": "Optymalizacja",
+        "description": "Optymalizacja stron dla lepszej wydajności i szybkości ładowania."
+      },
+      "creativity": {
+        "title": "Kreatywność",
+        "description": "Kreatywne podejście do rozwiązywania złożonych problemów"
+      }
+    },
+    "button": {
+      "github": "GitHub"
+    }
+  },
+  "contact": {
+    "title": "Skontaktuj się",
+    "header1": "Wybierz",
+    "header2": "rodzaj kontaktu",
+    "snackbarMessage": "Proszę użyć LinkedIn, aby się skontaktować.",
+    "items": {
+      "linkedin": {
+        "name": "LinkedIn",
+        "description": "Najłatwiej złapiesz mnie na LinkedIn.\nTo mój główny kanał kontaktu.",
+        "action": "Przejdź do LinkedIn"
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "Chcesz najpierw zobaczyć, jak pracuję?\nZajrzyj do moich repozytoriów i projektów.",
+        "action": "Otwórz GitHub"
+      }
+    }
+  },
+  "skills": {
+    "skillsList": [
+      {
+        "id": 1,
+        "name": "Tworzenie aplikacji",
+        "description": "Podstawowe umiejętności z zakresu tworzenia aplikacji są kluczowe dla tworzenia nowoczesnych i wydajnych aplikacji internetowych. Opanowanie tych technologii umożliwia budowanie responsywnych, szybkich i przyjaznych dla użytkownika aplikacji."
+      },
+      {
+        "id": 2,
+        "name": "Biblioteki i Frameworki",
+        "description": "Biblioteki i frameworki oferują potężne narzędzia i komponenty wielokrotnego użytku, które przyspieszają rozwój. Pomagają efektywnie tworzyć skalowalne i łatwe w utrzymaniu aplikacje internetowe."
+      },
+      {
+        "id": 3,
+        "name": "Narzędzia i Technologie",
+        "description": "Wykorzystanie odpowiednich narzędzi zwiększa produktywność i współpracę podczas tworzenia. Pomagają w pisaniu, testowaniu i wdrażaniu kodu efektywnie, jednocześnie utrzymując wysoką jakość."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Moje Projekty",
+    "hoverMessage": "Najedź kursorem na projekt, aby zobaczyć jego opis",
+    "see": "Szczegóły",
+    "list": [
+      {
+        "title": "Licznik Kalorii",
+        "description": "Aplikacja ta ma za zadanie ułatwić Ci wyliczenie zapotrzebowania kalorycznego, a także pozwala śledzić dzienne spożycie kalorii. Do stworzenia aplikacji użyto angulara v17, a także mniej nowoczesnego podejścia modułowego, opartego na zarządzaniu stanem głównie za pomocą serwisów i biblioteki RxJS. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platformę Firebase."
+      },
+      {
+        "title": "Licznik Progresu",
+        "description": "Dzięki tej aplikacji masz możliwość analizy swojego progresu siłowego. Pozwala ona na ustawianie indywidyalnych treningów, dodawanie ćwiczeń, a także analizę wykresów, dotyczących twoich osiągnięć. Do stworzenia aplikacji użyto angulara v17, z nowoczesnym podejściem opartym na komponentach standalone i sygnałach. Do zarządzania stanem użyto NgRx Signal Stora. Dane są zapisywane i przechowywane w chmurze dzięki API udostępnianemu przez platforeme Firebase."
+      },
+      {
+        "title": "Portfolio",
+        "description": "Strona portfolio, zawierające najważniejsze informacje, które mają wyróżnić moją osobę jako Front End Developera i zachęcić innych do współpracy ze mną. Zaprogramowana przy użyciu biblioteki React. Dane są przechowywane w storze i wykorzystywane dzięki bibliotecve Redux. Do szybkiej budowy komponentów wykorzystano bibliotekę Material UI. Aplikacja nie komunikuje się z backendem."
+      }
+    ]
+  },
+  "about.intro": "Ukończyłem dwa kierunki studiów — inżynierski oraz związany z zarządzaniem projektami. Od 2022 konsekwentnie rozwijam się w web developmencie. Łączę frontend z backendem, pracując głównie z",
+  "about.and": "oraz",
+  "about.approach": "Patrzę na aplikację jako całość — od interfejsu użytkownika, przez logikę biznesową, po integracje i przepływ danych.",
+  "about.stats.programming.title": "Programowanie",
+  "about.stats.programming.detail": "od 2022",
+  "about.stats.frontend.title": "Frontend Developer",
+  "about.stats.frontend.detail": "komercyjnie od 2024",
+  "about.stats.backend.title": "Backend Developer",
+  "about.stats.backend.detail": "Java i Spring",
+  "expertise": {
+    "title": "Od interfejsu do systemu",
+    "subtitle": "Projektuję rozwiązania od warstwy użytkownika po logikę, dane i integracje.",
+    "caption": "Lepszy kod. Większe możliwości.",
+    "items": {
+      "interfaces": {
+        "title": "Interfejsy",
+        "description": "Czytelne, responsywne i dopracowane doświadczenia użytkownika."
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Angular, TypeScript i architektura komponentów w praktyce."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Java, Spring i logika aplikacji wspierająca warstwę UI."
+      },
+      "testing": {
+        "title": "Testowanie",
+        "description": "Automatyczne testy, które dają pewność i stabilność w rozwoju aplikacji."
+      },
+      "delivery": {
+        "title": "CI/CD",
+        "description": "Automatyzuję procesy, aby szybciej i bezpieczniej dostarczać wartość."
+      },
+      "architecture": {
+        "title": "Architektura",
+        "description": "Skalowalne struktury, porządek i myślenie systemowe."
+      }
+    }
+  },
+  "achivements.label": "Doświadczenie i rozwój",
+  "achivements.caption": "Ciągły rozwój"
+}

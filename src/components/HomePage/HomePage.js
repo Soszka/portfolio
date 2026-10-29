@@ -3,20 +3,21 @@ import About from '../About/About';
 import Journey from '../Journey/Journey';
 import Contact from '../Contact/Contact';
 import Adventages from '../Adventages/Adventages';
-import Container from '../Container/Container';
 import Footer from '../Footer/Footer';
+import { memo } from 'react';
+import styles from './HomePage.module.scss';
 
-const Home = () => {
+const RemainingSections = memo(() => <>
+  <div className={styles.galaxySections}>
+    <About /><Journey /><Adventages /><Contact /><Footer />
+  </div>
+</>);
+
+const Home = ({ active = true, orbitHandoff }) => {
   return (
-    <div>
-      <Splash />
-      <Container>
-        <About />
-        <Journey />
-        <Adventages />
-        <Contact />
-      </Container>
-      <Footer />
+    <div className={styles.home}>
+      <Splash active={active} orbitHandoff={orbitHandoff} />
+      <RemainingSections />
     </div>
   );
 };

@@ -1,0 +1,141 @@
+{
+  "errors": [],
+  "results": [
+    {
+      "lang": "pl",
+      "width": 320,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 284
+    },
+    {
+      "lang": "pl",
+      "width": 390,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 354
+    },
+    {
+      "lang": "pl",
+      "width": 768,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 338
+    },
+    {
+      "lang": "pl",
+      "width": 1024,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 453
+    },
+    {
+      "lang": "pl",
+      "width": 1280,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 372
+    },
+    {
+      "lang": "pl",
+      "width": 1920,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 557
+    },
+    {
+      "lang": "pl",
+      "width": 2560,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 711
+    },
+    {
+      "lang": "pl",
+      "width": 3840,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 711
+    },
+    {
+      "lang": "en",
+      "width": 320,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 284
+    },
+    {
+      "lang": "en",
+      "width": 390,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 354
+    },
+    {
+      "lang": "en",
+      "width": 768,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 338
+    },
+    {
+      "lang": "en",
+      "width": 1024,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 453
+    },
+    {
+      "lang": "en",
+      "width": 1280,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 372
+    },
+    {
+      "lang": "en",
+      "width": 1920,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 557
+    },
+    {
+      "lang": "en",
+      "width": 2560,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 711
+    },
+    {
+      "lang": "en",
+      "width": 3840,
+      "outside": [],
+      "rawKeys": [],
+      "missingImages": [],
+      "achievementWidth": 711
+    }
+  ],
+  "tilt": {
+    "x": "9.00000068120386deg",
+    "y": "10.500000895483897deg",
+    "opacity": "0"
+  },
+  "reducedMotion": "passed",
+  "contactLinks": "passed",
+  "keyboardContactFocus": "passed"
+}

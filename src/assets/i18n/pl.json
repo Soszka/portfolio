@@ -6,40 +6,46 @@
   "navigation.link.home": "STRONA GŁÓWNA",
   "navigation.switch.language": "Switch to english",
   "navigation.download.resume": "Pobierz CV",
-
   "splash.hello.world": "Hello World",
+  "splash.availability": "OTWARTY NA WSPÓŁPRACĘ",
   "splash.my.name": "Nazywam się",
   "splash.socha": "Bartłomiej Socha",
   "splash.frontend.developer": "Software Engineer",
   "splash.description": "Tworzę skalowalne aplikacje webowe, specjalizując się głównie w Angularze i Javie. Łączę dopracowane interfejsy z solidnym backendem, dbając o jakość kodu, wydajność i niezawodność rozwiązań.",
   "splash.btn.contact": "KONTAKT",
-
+  "app.loading": "Ładowanie strony…",
   "achivements.studies.title": "Studia",
+  "achivements.studies.statLabel": "kierunki",
   "achivements.studies.description": "Dwa ukończone kierunki studiów, gdzie narodziła się moja pasja do front-endu.",
   "achivements.projects.title": "Projekty",
+  "achivements.projects.statLabel": "projektów",
   "achivements.projects.description": "Liczne projekty od małych stron po bardziej rozbudowane aplikacje.",
   "achivements.courses.title": "Kursy",
+  "achivements.courses.statLabel": "kursów",
   "achivements.courses.description": "Kursy online, które znacząco pogłębiły moją wiedzę w zakresie web developmentu.",
   "achivements.technologies.title": "Technologie",
-  "achivements.technologies.description": "Ponad dwadzieścia technologii i narzędzi, które poznałem, ciągle doskonaląc swoje umiejętności.",
+  "achivements.technologies.statLabel": "technologii",
+  "achivements.technologies.description": "Dziewiętnaście technologii i narzędzi, które poznałem, ciągle doskonaląc swoje umiejętności.",
   "achivements.internship.title": "Staż",
-  "achivements.internship.description": "Roczny staż i doświadczenie komercyjne, które pomogły mi rozwinąć się w kierunku web developmentu.",
+  "achivements.internship.statLabel": "miesięcy",
+  "achivements.internship.description": "Jedenastomiesięczny staż i doświadczenie komercyjne, które pomogły mi rozwinąć się w kierunku web developmentu.",
   "achivements.experience.title": "Doświadczenie",
-  "achivements.experience.description": "Minęły ponad dwa lata od opublikowania mojej pierwszej aplikacji, ",
-
+  "achivements.experience.statLabel": "lata",
+  "achivements.experience.description": "Minęły ponad dwa lata od opublikowania mojej pierwszej aplikacji, co pozwoliło mi zdobyć cenne doświadczenie.",
   "about.title": "O mnie",
   "about.description": "Ukończyłem dwa różne kierunki studiów, zdobywając tytuł Inżyniera i Kierownika Projektów. Moje zainteresowanie programowaniem i technologiami frontendowymi pojawiło się właśnie w tym okresie. Po ukończeniu studiów zgłębiałem wiedzę z obszaru web developmentu, realizując wiele kursów online i tworząc własne koncepcje, które możesz znaleźć w zakładce projekty. Dzięki temu poznałem różnorodne technologie frontendowe i zdobyłem umiejętności potrzebne do tworzenia nowoczesnych interfejsów użytkownika. W życiu prywatnym kładę duży nacisk na samorozwój i umiejętne zarządzanie czasem. Uważam, że efektywnie zarządzany czas i konsekwencja są kluczem do ciągłego samorozwoju.",
-
   "journey": {
     "title": "Moja Podróż",
     "items": {
       "studies": {
         "title": "Studia",
-        "description": "Podczas studiów na wydziale informatycznym stworzyłem swoją pierwszą stronę internetową, co rozbudziło moją pasję do programowania."
+        "date": "do 2021",
+        "description": "Dwa ukończone kierunki studiów dały mi solidne podstawy techniczne i szerszą perspektywę na rozwój aplikacji."
       },
       "courses": {
         "title": "Kursy",
-        "description": "Dzięki intensywnym kursom tworzyłem bardziej zaawansowane aplikacje i pogłębiłem wiedzę o nowoczesnych technologiach webowych."
+        "date": "od 2022",
+        "description": "Bootcamp i kursy online rozwijały moje umiejętności webowe. Nową wiedzę utrwalałem, tworząc własne aplikacje."
       },
       "projects": {
         "title": "Projekty",
@@ -47,7 +53,13 @@
       },
       "internship": {
         "title": "Staż",
-        "description": "Podczas rocznego stażu, zdobyłem swoje pierwsze doświadczenie komercyjne, które wprowadziło mnie do pracy zespołowej nad aplikacjami"
+        "date": "2024",
+        "description": "Podczas 11-miesięcznego stażu zdobyłem pierwsze doświadczenie komercyjne, rozwijając aplikacje i pracując w zespole."
+      },
+      "work": {
+        "title": "Praca",
+        "date": "2025 – obecnie",
+        "description": "Jako Software Engineer rozwijam realne produkty, łącząc dopracowane interfejsy z logiką aplikacji i integracjami."
       }
     },
     "button": {
@@ -57,7 +69,6 @@
       "linkedin": "LinkedIn"
     }
   },
-
   "adventages": {
     "title": "Moje Zalety",
     "items": {
@@ -90,28 +101,24 @@
       "github": "GitHub"
     }
   },
-
   "contact": {
     "title": "Skontaktuj się",
     "header1": "Wybierz",
     "header2": "rodzaj kontaktu",
     "snackbarMessage": "Proszę użyć LinkedIn, aby się skontaktować.",
     "items": {
-      "instagram": {
-        "name": "Instagram"
-      },
       "linkedin": {
-        "name": "LinkedIn"
+        "name": "LinkedIn",
+        "description": "Najłatwiej złapiesz mnie na LinkedIn.\nTo mój główny kanał kontaktu.",
+        "action": "Przejdź do LinkedIn"
       },
-      "facebook": {
-        "name": "Facebook"
-      },
-      "email": {
-        "name": "Email"
+      "github": {
+        "name": "GitHub",
+        "description": "Chcesz najpierw zobaczyć, jak pracuję?\nZajrzyj do moich repozytoriów i projektów.",
+        "action": "Otwórz GitHub"
       }
     }
   },
-
   "skills": {
     "skillsList": [
       {
@@ -131,7 +138,6 @@
       }
     ]
   },
-
   "projects": {
     "title": "Moje Projekty",
     "hoverMessage": "Najedź kursorem na projekt, aby zobaczyć jego opis",
@@ -150,5 +156,49 @@
         "description": "Strona portfolio, zawierające najważniejsze informacje, które mają wyróżnić moją osobę jako Front End Developera i zachęcić innych do współpracy ze mną. Zaprogramowana przy użyciu biblioteki React. Dane są przechowywane w storze i wykorzystywane dzięki bibliotecve Redux. Do szybkiej budowy komponentów wykorzystano bibliotekę Material UI. Aplikacja nie komunikuje się z backendem."
       }
     ]
-  }
+  },
+  "about.intro": "Ukończyłem dwa kierunki studiów — inżynierski oraz związany z zarządzaniem projektami. Od 2022 konsekwentnie rozwijam się w web developmencie. Łączę frontend z backendem, pracując głównie z",
+  "about.and": "i",
+  "about.approach": "Patrzę na aplikację jako całość — od interfejsu użytkownika, przez logikę biznesową, po integracje i przepływ danych.",
+  "about.stats.programming.title": "Programowanie",
+  "about.stats.programming.detail": "od 2022",
+  "about.stats.frontend.title": "Frontend Developer",
+  "about.stats.frontend.detail": "komercyjnie od 2024",
+  "about.stats.backend.title": "Backend Developer",
+  "about.stats.backend.detail": "komercyjnie od 2028",
+  "expertise": {
+    "title": "Od interfejsu do systemu",
+    "subtitle": "Projektuję rozwiązania od warstwy użytkownika po logikę, dane i integracje.",
+    "caption": "Lepszy kod. Większe możliwości.",
+    "items": {
+      "interfaces": {
+        "title": "Interfejsy",
+        "description": "Czytelne, responsywne i dopracowane doświadczenia użytkownika."
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Angular, TypeScript i architektura komponentów w praktyce."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Java, Spring i logika aplikacji wspierająca warstwę UI."
+      },
+      "testing": {
+        "title": "Testowanie",
+        "description": "Automatyczne testy, które dają pewność i stabilność w rozwoju aplikacji."
+      },
+      "delivery": {
+        "title": "CI/CD",
+        "description": "Automatyzuję procesy, aby szybciej i bezpieczniej dostarczać wartość."
+      },
+      "architecture": {
+        "title": "Architektura",
+        "description": "Skalowalne struktury, porządek i myślenie systemowe."
+      }
+    }
+  },
+  "achivements.label": "Doświadczenie i rozwój",
+  "about.angular": "Angularem",
+  "about.spring": "Springiem",
+  "footer.rights": "Wszystkie prawa zastrzeżone."
 }

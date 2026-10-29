@@ -1,0 +1,165 @@
+@import '../../../styles/settings.scss';
+
+.project {
+  position: relative;
+  margin: 20px;
+  width: 320px;
+  height: 400px;
+  border-radius: 10%;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0px 10px rgba(255, 255, 255, 0.7);
+
+  @include small-screens {
+    margin: 20px 0;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.1));
+    z-index: 0;
+  }
+
+  &Name {
+    text-transform: uppercase;
+    font-size: 26px;
+    letter-spacing: 1px;
+    font-weight: 800;
+    margin: 0 5px;
+    z-index: 1;
+
+    @include small-screens {
+      font-size: 24px;
+    }
+  }
+
+  &Button {
+    height: 45px;
+    margin: 10px 0 20px !important;
+    font-size: 22px !important;
+    border-radius: 70px !important;
+    color: white !important;
+    font-weight: 500 !important;
+    padding: 0 20px !important;
+    width: fit-content;
+    background: linear-gradient(
+      to bottom right,
+      darken(white, 40%),
+      darken(white, 70%)
+    ) !important;
+
+    &:hover {
+      background: linear-gradient(
+        to bottom right,
+        darken(white, 50%),
+        darken(white, 80%)
+      ) !important;
+    }
+
+    @include small-screens {
+      font-size: 20px !important;
+      height: 40px;
+    }
+  }
+}
+
+.dialogPaper {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: black !important;
+  overflow-y: auto;
+}
+
+.dialogHeader {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+}
+
+.closeButton {
+  color: white !important;
+  margin: 10px 10px 0 0 !important;
+
+  .MuiSvgIcon-root {
+    color: white;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+  }
+}
+
+.dialogContent {
+  padding: 5px 15px 10px;
+  color: white;
+
+  h2 {
+    text-transform: uppercase;
+    margin: 0 0 15px 0;
+    color: white;
+  }
+
+  p {
+    margin-top: 0;
+    color: white;
+    font-size: 17px;
+  }
+}
+
+.iconsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.iconItem {
+  width: 25%;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.iconImage {
+  max-height: 40px;
+  max-width: 100px;
+}
+
+.linkContainer {
+  text-align: center;
+
+  &Icon {
+    background: linear-gradient(
+      to bottom right,
+      $text-secondary-color,
+      darken($text-secondary-color, 25%)
+    );
+    height: 65px;
+    width: 65px;
+    margin: 12.5px auto 0 !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    color: white !important;
+
+    &:hover {
+      background: linear-gradient(
+        to bottom right,
+        darken($text-secondary-color, 5%),
+        darken($text-secondary-color, 30%)
+      );
+    }
+  }
+}

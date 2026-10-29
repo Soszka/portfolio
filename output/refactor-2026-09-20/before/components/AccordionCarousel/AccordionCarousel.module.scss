@@ -1,0 +1,95 @@
+@import '../../styles/settings.scss';
+
+.accordion {
+  margin: 40px auto 50px;
+  max-width: 800px;
+  padding: 30px 40px;
+  box-shadow: 0 0 15px $text-secondary-color;
+  border-radius: 30px;
+  @include large-screens {
+    max-width: 700px;
+  }
+  @include medium-screens {
+    max-width: 540px;
+    padding: 30px;
+  }
+  @include small-screens {
+    max-width: 95%;
+    padding: 10px;
+  }
+}
+
+.accordionSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  @include small-screens {
+    justify-content: center;
+  }
+
+  .accordionTitle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tiny-screens {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h3 {
+      font-size: 28px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      @include medium-screens {
+        font-size: 26px;
+      }
+      @include small-screens {
+        margin: 20px 0 10px 30px;
+      }
+      @include tiny-screens {
+        margin: 10px 5px 0;
+        text-align: center;
+      }
+    }
+
+    p {
+      font-size: 48px;
+      margin: 10px 30px;
+      color: white;
+      font-weight: bold;
+      transition: all 0.25s;
+      @include medium-screens {
+        font-size: 40px;
+        margin: 10px 20px;
+      }
+
+      &:hover {
+        color: $text-secondary-color;
+      }
+    }
+  }
+
+  .accordionIcon {
+    font-size: 43px;
+    margin: 0 20px;
+    font-weight: bold;
+    @include medium-screens {
+      font-size: 36px;
+      margin: 0 20px;
+    }
+    @include small-screens {
+      display: none;
+    }
+  }
+}
+
+.accordionDescription {
+  @include medium-screens {
+    font-size: 18px;
+  }
+  @include small-screens {
+    padding: 10px 15px 10px 30px;
+    margin-top: 0;
+  }
+}

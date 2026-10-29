@@ -1,0 +1,391 @@
+@import '../../styles/settings.scss';
+
+.splash { position: relative; background: #000; }
+.hero[data-portal-return] .description, .hero[data-portal-return] > nav {
+  animation: portalHomeReveal .65s ease-out both;
+}
+@keyframes portalHomeReveal {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero[data-portal-return] .description, .hero[data-portal-return] > nav,
+  .hero[data-portal-return] .orbits, .hero[data-portal-return] .magneticMist,
+  .hero[data-portal-return] .portraitHalo { animation: none; }
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: #020913 url('../../assets/HomePhotos/galaxy.webp') center bottom / cover no-repeat;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(ellipse 30% 48% at 33% 55%, transparent 15%, rgba(0, 5, 12, .30) 100%),
+      linear-gradient(to top, #000, transparent 11%);
+  }
+
+  > nav { flex-shrink: 0; width: 100%; min-height: 88px; }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: grid;
+  grid-template-columns: 57% 43%;
+  align-items: center;
+  width: 100%;
+  min-height: calc(100svh - 88px);
+  padding: 0 4.5vw 35px 0;
+  margin: 0 auto;
+}
+
+.imageStage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  width: 100%;
+  height: min(calc(100svh - 115px), 54vw);
+  min-height: 420px;
+  overflow: hidden;
+  mask-image: radial-gradient(ellipse 68% 68%, #000 70%, transparent 100%);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.personPhoto {
+  position: absolute;
+  top: 47%;
+  left: 52%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 2;
+  height: 77%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  mask-image: linear-gradient(to bottom, #000 0 82%, rgba(0, 0, 0, .92) 91%, transparent 100%);
+}
+
+.portraitHalo {
+  position: absolute;
+  z-index: 1;
+  width: 62%;
+  height: 84%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0, 157, 255, .28), rgba(48, 63, 202, .08) 48%, transparent 70%);
+}
+
+.photoGlow, .magneticMist {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.photoGlow {
+  mask-image: radial-gradient(ellipse, #000 25%, transparent 70%);
+  inset: 2%;
+  background: radial-gradient(ellipse at 49% 40%, rgba(0, 169, 255, .34), transparent 62%);
+  animation: galaxyBreathe 8s ease-in-out infinite alternate;
+}
+
+.magneticMist {
+  inset: 5%;
+  background: radial-gradient(ellipse at 25% 60%, rgba(0, 159, 255, .14), transparent 36%),
+    radial-gradient(ellipse at 68% 74%, rgba(105, 53, 255, .14), transparent 34%);
+}
+
+
+.orbits {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.starGroup {
+  animation: starTwinkle var(--twinkle-duration) ease-in-out var(--twinkle-delay) infinite;
+}
+
+@keyframes starTwinkle {
+  0%, 100% { opacity: .25; }
+  48% { opacity: .95; }
+}
+
+.techIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  pointer-events: none;
+  transform-origin: center;
+  will-change: transform;
+}
+
+.techIconCore {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: var(--tech-color);
+  padding: 12%;
+  border: 1px solid rgba(25, 134, 210, .42);
+  border-radius: 26%;
+  background: linear-gradient(145deg, rgba(8, 49, 85, .82), rgba(1, 14, 31, .92));
+  box-shadow: inset 0 1px 1px rgba(124, 208, 255, .18),
+    0 3px 0 rgba(0, 8, 22, .5), 0 0 15px rgba(0, 113, 225, .10);
+  transform: perspective(500px) rotateY(var(--icon-tilt)) rotateX(8deg);
+
+  img, svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .45));
+  }
+}
+
+.description {
+  position: relative;
+  min-width: 0;
+  padding: 35px 0 0 1vw;
+  text-align: left;
+  align-self: center;
+}
+
+.name {
+  isolation: isolate;
+  position: relative;
+  width: fit-content;
+  margin: 0 0 10px;
+  color: #dae5f3;
+  font-family: Arial, sans-serif;
+  font-size: clamp(42px, 4.05vw, 100px);
+  font-weight: 800;
+  letter-spacing: -.035em;
+  line-height: 1.08;
+  white-space: nowrap;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+
+  .surname {
+    display: inline-block;
+    margin-left: .12em;
+    color: #12a9ff;
+    background: linear-gradient(180deg, #81dcff 5%, #12afff 48%, #0081dc 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 0 9px rgba(0, 155, 255, .2));
+  }
+}
+
+.nameShine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  color: #eaffff;
+  text-shadow: 0 0 6px #a6f1ff, 0 0 18px #008cff;
+  mask-image: linear-gradient(110deg, transparent 36%, rgba(0, 0, 0, .3) 44%, #000 49% 52%, rgba(0, 0, 0, .3) 57%, transparent 65%);
+  mask-size: 280% 100%;
+  mask-repeat: no-repeat;
+  animation: nameSweep 5.4s ease-in-out infinite;
+  .surname {
+    background: none;
+    -webkit-text-fill-color: #e1f9ff;
+    filter: none;
+  }
+}
+
+.nameHalo {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  color: transparent;
+  text-shadow: 0 0 12px #16adff, 0 0 28px #087bff;
+  animation: nameRadiance 5.4s ease-in-out infinite;
+  .surname { background: none; -webkit-text-fill-color: transparent; filter: none; }
+}
+
+@keyframes nameSweep {
+  0% { mask-position: 100% 0; opacity: 0; }
+  9% { opacity: 1; }
+  82% { opacity: 1; }
+  94%, 100% { mask-position: 0% 0; opacity: 0; }
+}
+
+@keyframes nameRadiance { 0%, 100% { opacity: .12; } 48% { opacity: .6; } }
+.role {
+  margin: 0;
+  color: #e3ebf8;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(26px, 2.6vw, 64px);
+  font-weight: 300;
+  letter-spacing: -.025em;
+  line-height: 1.3;
+}
+
+.divider {
+  display: block;
+  width: clamp(140px, 11vw, 230px);
+  height: 4px;
+  margin: 32px 0;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #10c8ef, #0078ff);
+  box-shadow: 0 0 9px rgba(0, 156, 255, .55);
+}
+
+.summary {
+  max-width: 720px;
+  margin: 0;
+  color: #d3e0ef;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: clamp(16px, 1.18vw, 28px);
+  line-height: 1.72;
+  font-weight: 400;
+}
+
+.description .button, .hero > nav a[download] {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  margin-top: 0;
+  height: auto;
+  min-height: 50px;
+  padding: 8px 30px;
+  line-height: 1.35;
+  border: 1px solid #148fe2;
+  border-radius: 999px;
+  color: #fff;
+  font-family: inherit;
+  font-size: clamp(18px, 1.45vw, 25px);
+  font-weight: 600;
+  letter-spacing: .035em;
+  background: linear-gradient(115deg, #0075db, #034bb8 65%, #052f85);
+  box-shadow: 0 0 18px rgba(0, 112, 230, .24), inset 0 1px rgba(112, 195, 255, .28);
+  transition: transform .25s ease, box-shadow .25s ease;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: -30% auto -30% -55%;
+    width: 40%;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent, rgba(218, 248, 255, .45), transparent);
+    transform: translateX(0) skewX(-20deg);
+  }
+
+  &:hover, &:focus-visible {
+    transform: translateY(-3px);
+    background: linear-gradient(115deg, #087ddd, #0653be 65%, #073b96);
+    box-shadow: 0 0 24px rgba(0, 132, 245, .32);
+    &::after { animation: buttonSweep .8s ease-out; }
+  }
+}
+
+@keyframes buttonSweep { to { transform: translateX(420%) skewX(-20deg); } }
+
+.hero > nav > div:first-child a {
+  transition: color .25s ease, text-shadow .25s ease;
+  &:hover, &:focus-visible { color: #59c9ff; text-shadow: 0 0 16px rgba(0, 155, 255, .65); }
+}
+
+.contactRow { display: flex; align-items: center; margin-top: 32px; }
+
+@media (min-width: 1201px) {
+  .hero > nav {
+    padding: 14px 4.5vw;
+    margin: 0;
+    a { font-size: 15px; }
+    > div:first-child {
+      margin: 0;
+      a {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+    font-size: 22px;
+        color: #f4f8ff;
+        font-weight: 700;
+
+      }
+    }
+    ul { margin: 0; }
+    a[download] { min-width: 88px; min-height: 44px; padding: 8px 24px; font-size: 17px; }
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .content { padding-right: 3vw; grid-template-columns: 51% 49%; }
+  .name { font-size: clamp(36px, 4.4vw, 53px); }
+  .description { padding-left: 1vw; }
+}
+
+@media (max-width: 900px) {
+  .hero {
+    background-image: url('../../assets/HomePhotos/galaxy-mobile.webp');
+    background-position: 35% bottom;
+    > nav { min-height: 80px; }
+  }
+  .content {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    min-height: calc(100svh - 80px);
+    padding: 0 16px 88px;
+  }
+  .imageStage {
+    width: min(760px, 100%);
+    height: min(64svh, 108vw);
+    min-height: 330px;
+    margin: 0 auto;
+  }
+  .personPhoto { height: 76%; left: 52%; top: 47%; }
+  .description { padding: 4px 12px 0; text-align: center; }
+  .name { font-size: clamp(36px, 6.3vw, 66px); white-space: normal; margin-left: auto; margin-right: auto; }
+  .role { font-size: clamp(25px, 4.5vw, 37px); }
+  .divider { margin: 20px auto; width: 180px; }
+  .summary { font-size: 16px; max-width: 580px; margin: 0 auto; line-height: 1.65; }
+  .description .button { margin-top: 25px; min-height: 46px; padding: 8px 26px; }
+  .contactRow { justify-content: center; margin-top: 25px; }
+  .contactRow .button { margin-top: 0; }
+}
+
+@media (min-width: 901px) and (max-width: 1400px) {
+  .contactRow { margin-top: 30px; }
+}
+
+
+
+@keyframes galaxyBreathe { from { opacity: .6; } to { opacity: 1; } }
+
+.content[data-motion-paused='true'] {
+  .nameShine, .nameHalo, .starGroup, .photoGlow { animation-play-state: paused; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nameShine, .nameHalo { display: none; }
+  .starGroup, .photoGlow { animation: none; opacity: .65; }
+  .description .button::after, .hero > nav a[download]::after { display: none; }
+  .description .button, .hero > nav a[download] { transition: none; }
+}

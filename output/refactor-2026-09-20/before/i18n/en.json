@@ -1,0 +1,196 @@
+{
+  "navigation.link.skills": "SKILLS",
+  "navigation.link.projects": "PROJECTS",
+  "navigation.link.github": "GITHUB",
+  "navigation.link.resume": "RESUME",
+  "navigation.link.home": "HOME",
+  "navigation.switch.language": "Switch to Polish",
+  "navigation.download.resume": "Download resume",
+  "splash.hello.world": "Hello World",
+  "splash.availability": "OPEN TO COLLABORATION",
+  "splash.my.name": "My name is",
+  "splash.socha": "Bartlomiej Socha",
+  "splash.frontend.developer": "Software Engineer",
+  "splash.description": "I build scalable web applications, specializing primarily in Angular and Java. I combine polished interfaces with robust backend systems, with a strong focus on code quality, performance, and reliability.",
+  "splash.btn.contact": "CONTACT",
+  "app.loading": "Loading page…",
+  "achivements.studies.title": "Studies",
+  "achivements.studies.description": "Two completed fields of study where my passion for front-end development began.",
+  "achivements.projects.title": "Projects",
+  "achivements.projects.description": "Many projects, from small websites to more advanced applications.",
+  "achivements.courses.title": "Courses",
+  "achivements.courses.description": "Online courses that significantly deepened my web development knowledge.",
+  "achivements.technologies.title": "Technologies",
+  "achivements.technologies.description": "Over twenty technologies and tools I have learned, while continuously improving my skills.",
+  "achivements.internship.title": "Internship",
+  "achivements.internship.description": "A one-year internship and commercial experience that helped me grow in web development.",
+  "achivements.experience.title": "Experience",
+  "achivements.experience.description": "More than two years have passed since I published my first application, helping me gain valuable experience.",
+  "about.title": "About me",
+  "about.description": "I completed two different fields of study and earned the titles of Engineer and Project Manager. My interest in programming and frontend technologies started during that period. After graduation, I expanded my web development knowledge through many online courses and by creating my own concepts, which you can find in the projects section. This allowed me to learn a variety of frontend technologies and gain the skills required to build modern user interfaces. In private life, I strongly focus on self-development and effective time management. I believe that disciplined time management and consistency are the keys to continuous growth.",
+  "journey": {
+    "title": "My Journey",
+    "items": {
+      "studies": {
+        "title": "Studies",
+        "date": "until 2021",
+        "description": "A solid technical foundation and the beginning of my journey."
+      },
+      "courses": {
+        "title": "Courses",
+        "date": "since 2022",
+        "description": "Bootcamp, online courses and practical skills."
+      },
+      "projects": {
+        "title": "Projects",
+        "description": "Working on various projects allowed me to broaden my knowledge and apply new technologies and programming languages in practice."
+      },
+      "internship": {
+        "title": "Internship",
+        "date": "2024",
+        "description": "My first commercial experience and working in a team."
+      },
+      "work": {
+        "title": "Work",
+        "date": "2025 – present",
+        "description": "Now a Software Engineer. Building real products and growing professionally."
+      }
+    },
+    "button": {
+      "github": "GITHUB",
+      "seeSkills": "Skills",
+      "seeProjects": "Projects",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "adventages": {
+    "title": "My Strengths",
+    "items": {
+      "responsiveness": {
+        "title": "Responsiveness",
+        "description": "Websites that adapt perfectly to different devices and screen sizes."
+      },
+      "uxUi": {
+        "title": "UX/UI",
+        "description": "User-focused design that delivers intuitive interfaces."
+      },
+      "libraries": {
+        "title": "Libraries",
+        "description": "Effective use of libraries for optimized development."
+      },
+      "frameworks": {
+        "title": "Frameworks",
+        "description": "Ability to create dynamic applications using advanced frameworks."
+      },
+      "optimization": {
+        "title": "Optimization",
+        "description": "Website optimization for better performance and faster loading times."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "Creative approach to solving complex problems."
+      }
+    },
+    "button": {
+      "github": "GitHub"
+    }
+  },
+  "contact": {
+    "title": "Contact me",
+    "header1": "Choose",
+    "header2": "contact type",
+    "snackbarMessage": "Please use LinkedIn to get in touch.",
+    "items": {
+      "linkedin": {
+        "name": "LinkedIn",
+        "description": "The easiest way to reach me is on LinkedIn.\nIt is my main contact channel.",
+        "action": "Visit LinkedIn"
+      },
+      "github": {
+        "name": "GitHub",
+        "description": "Want to see how I work first?\nExplore my repositories and projects.",
+        "action": "Open GitHub"
+      }
+    }
+  },
+  "skills": {
+    "skillsList": [
+      {
+        "id": 1,
+        "name": "Application Development",
+        "description": "Core application development skills are essential for building modern and efficient web applications. Mastering these technologies enables creating responsive, fast, and user-friendly solutions."
+      },
+      {
+        "id": 2,
+        "name": "Libraries and Frameworks",
+        "description": "Libraries and frameworks offer powerful reusable tools and components that accelerate development. They help build scalable and maintainable web applications efficiently."
+      },
+      {
+        "id": 3,
+        "name": "Tools and Technologies",
+        "description": "Using the right tools increases productivity and collaboration during development. They help write, test, and deploy code effectively while maintaining high quality."
+      }
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "hoverMessage": "Hover over a project to see its description",
+    "see": "Details",
+    "list": [
+      {
+        "title": "Calories Counter",
+        "description": "This application helps you calculate your calorie needs and track your daily calorie intake. It was built with Angular v17 and a more traditional modular architecture based mainly on services and RxJS for state management. Data is stored in the cloud using the Firebase API."
+      },
+      {
+        "title": "Progress Counter",
+        "description": "This application lets you analyze your strength progress. It allows setting individual workouts, adding exercises, and analyzing charts related to your achievements. It was built with Angular v17 using a modern approach based on standalone components and signals. NgRx Signal Store is used for state management. Data is stored in the cloud using the Firebase API."
+      },
+      {
+        "title": "Portfolio",
+        "description": "A portfolio website containing key information intended to present me as a Front End Developer and encourage collaboration. It was built with React. Data is stored in Redux store and used across the app. Material UI was used to speed up component development. The application does not communicate with a backend."
+      }
+    ]
+  },
+  "about.intro": "I completed two fields of study — engineering and project management. Since 2022, I have been consistently developing my web development skills. I combine frontend and backend, working mainly with",
+  "about.and": "and",
+  "about.approach": "I see an application as a whole — from the user interface and business logic to integrations and the flow of data.",
+  "about.stats.programming.title": "Programming",
+  "about.stats.programming.detail": "since 2022",
+  "about.stats.frontend.title": "Frontend Developer",
+  "about.stats.frontend.detail": "professionally since 2024",
+  "about.stats.backend.title": "Backend Developer",
+  "about.stats.backend.detail": "Java and Spring",
+  "expertise": {
+    "title": "From interface to system",
+    "subtitle": "I design solutions from the user experience to logic, data and integrations.",
+    "caption": "Better code. More possibilities.",
+    "items": {
+      "interfaces": {
+        "title": "Interfaces",
+        "description": "Clear, responsive and carefully crafted user experiences."
+      },
+      "frontend": {
+        "title": "Frontend",
+        "description": "Angular, TypeScript and component architecture in practice."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Java, Spring and application logic supporting the UI."
+      },
+      "testing": {
+        "title": "Testing",
+        "description": "Automated tests that bring confidence and stability to development."
+      },
+      "delivery": {
+        "title": "CI/CD",
+        "description": "Automating processes to deliver value faster and more safely."
+      },
+      "architecture": {
+        "title": "Architecture",
+        "description": "Scalable structures, clear organization and systems thinking."
+      }
+    }
+  },
+  "achivements.label": "Experience and growth",
+  "achivements.caption": "Continuous growth"
+}

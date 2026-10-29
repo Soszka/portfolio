@@ -1,0 +1,38 @@
+@import '../../styles/sections.scss';
+.journey {
+  @include section-shell;
+  padding-bottom: clamp(90px, 8vw, 180px);
+  background: radial-gradient(ellipse 80% 80% at 10% 20%, #00276155, transparent 80%), #020912;
+  &::before { content: ''; position: absolute; inset: 0; z-index: -2; background: linear-gradient(#02091299, #020912e8), url('../../assets/HomePhotos/galaxy.webp') center 40% / cover; opacity: .7; }
+  &::after { content: ''; position: absolute; inset: 0; z-index: -1; @include stars; background-color: transparent; mask-image: linear-gradient(transparent, #000 30%, transparent); }
+}
+.journeyItems { @include section-width; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 1.6vw, 36px); padding-top: 26px;
+  &::before { content: ''; position: absolute; top: 0; left: 10%; right: 10%; height: 1px; background: linear-gradient(90deg, transparent, #009dff 12% 88%, transparent); box-shadow: 0 0 14px #008bff; }
+}
+.journeyItem { position: relative; min-width: 0; perspective: 1000px; }
+.journeyNode { position: absolute; width: 10px; height: 10px; border-radius: 50%; left: calc(50% - 5px); top: -31px; border: 2px solid #60d7ff; background: #e3ffff; box-shadow: 0 0 0 5px #009fff23, 0 0 20px 5px #008cff80; }
+.card { position: relative; isolation: isolate; height: clamp(360px, 28vw, 610px); border: 1px solid #008ecebd; border-radius: clamp(12px, 1vw, 22px); background: #011020; transform-style: preserve-3d; transform: rotateX(var(--rotate-x, 0deg)) rotateY(var(--rotate-y, 0deg)); transition: transform .22s ease-out, box-shadow .4s, border-color .4s; box-shadow: inset 0 0 20px #008cff30, 0 12px 30px #0007; }
+.image { position: absolute; inset: -22px; width: calc(100% + 44px); height: calc(100% + 44px); object-fit: cover; transform: translate(var(--image-x, 0px), var(--image-y, 0px)); transition: transform .22s ease-out; z-index: -3; opacity: .67; }
+.card { overflow: hidden; }
+.shade { position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, #00112565, #00102815 22%, #00102277 42%, #00101bf5 73%, #010d17); transition: opacity .5s; }
+.date { position: absolute; top: clamp(18px, 1.4vw, 32px); left: 7%; width: 86%; color: #b7d8ee; font-size: clamp(14px, 1.05vw, 23px); transform-origin: center top; transition: transform .5s, color .5s; }
+.info { position: absolute; bottom: clamp(22px, 1.7vw, 40px); left: 8%; right: 8%; transition: transform .5s;
+  h3 { display: flex; align-items: center; gap: clamp(12px, 1vw, 24px); margin: 0 0 16px; font-size: clamp(20px, 1.65vw, 35px); font-weight: 700; letter-spacing: .025em; text-transform: uppercase; }
+  p { margin: 0; min-height: 4.5em; font-size: clamp(15px, 1.13vw, 25px); line-height: 1.5; color: #aec4d7; transition: opacity .35s, transform .5s; }
+}
+.icon { display: grid; place-items: center; flex: 0 0 clamp(40px, 3vw, 64px); height: clamp(40px, 3vw, 64px); border: 1px solid #009eeaa0; border-radius: 10px; background: #00375970; color: #63d5ff; font-size: clamp(22px, 1.8vw, 36px); box-shadow: inset 0 0 14px #009fff20; }
+.glare { pointer-events: none; position: absolute; inset: 0; opacity: 0; background: radial-gradient(circle at var(--pointer-x, 50%) var(--pointer-y, 50%), #61cdff25, transparent 65%); transition: opacity .4s; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .journeyItem:hover {
+    z-index: 2;
+    .card { border-color: #3ecfff; box-shadow: 0 0 24px #0094ff60, 0 24px 48px #0009; }
+    .glare { opacity: 1; }
+    .date { text-align: center; color: #effaff; transform: translateY(8px) scale(1.35); }
+    .info { transform: translateY(5.1em); }
+    .info p { opacity: 0; transform: translateY(16px); }
+    .shade { opacity: .8; }
+  }
+}
+@media (max-width: 1000px) { .journeyItems { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 22px; } .journeyNode { display: none; } .journeyItems::before { display: none; } .card { height: 400px; } }
+@media (max-width: 600px) { .journeyItems { grid-template-columns: 1fr; padding-top: 0; gap: 22px; } .card { height: 410px; } .info p { min-height: 0; max-width: 90%; } .image { object-position: center 35%; } }
+@media (prefers-reduced-motion: reduce) { .card, .image, .date, .info, .info p, .shade, .glare { transition: none; transform: none; } }

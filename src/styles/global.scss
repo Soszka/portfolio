@@ -21,13 +21,28 @@ html {
   overflow-x: hidden;
 }
 
-@media (pointer: fine) {
-  body,
-  a,
-  button,
-  input,
-  label,
-  [role='button'] {
-    cursor: none !important;
-  }
+.page-loading {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  color: #aebfd0;
+}
+
+// Keep the home DOM, decoded portrait and star field ready across portal visits.
+.home-shell[data-covered] {
+  position: fixed; inset: 0; overflow: hidden; pointer-events: none;
+  visibility: hidden;
+}
+.home-shell[data-covered][data-ready] { visibility: visible; }
+.home-shell[data-covered] nav,
+.home-shell[data-covered] [data-chaos-field] + div { visibility: hidden; }
+
+
+[data-motion-paused='true'],
+[data-motion-paused='true']::before,
+[data-motion-paused='true']::after,
+[data-motion-paused='true'] *,
+[data-motion-paused='true'] *::before,
+[data-motion-paused='true'] *::after {
+  animation-play-state: paused !important;
 }

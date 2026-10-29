@@ -1,0 +1,9 @@
+.title {
+  position: relative; width: fit-content; max-width: 94%;
+  margin: 0 auto clamp(32px, 3.6vw, 76px); padding: 12px 0 28px;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .25em;
+  font-family: 'Roboto', sans-serif; font-size: clamp(30px, 3.35vw, 76px);
+  font-weight: 700; line-height: 1.18; letter-spacing: .035em; text-transform: uppercase; text-align: center;
+  &::after { content: ''; position: absolute; bottom: 0; left: 50%; width: clamp(90px, 13vw, 240px); height: 2px; transform: translateX(-50%); background: linear-gradient(90deg, transparent, #00c5ff, #007dcd, transparent); box-shadow: 0 4px 20px #009cff50; }
+}
+@media (max-width: 600px) { .title { font-size: clamp(27px, 6.3vw, 38px); padding-bottom: 22px; } }

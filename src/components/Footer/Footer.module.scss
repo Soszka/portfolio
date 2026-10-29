@@ -1,21 +1,17 @@
-@import '../../styles/settings.scss';
-
+@import '../../styles/sections.scss';
 .footer {
-  padding: 20px 0;
-  margin: 0;
-  text-align: center;
-  font-size: $content-font-size * 1.1;
-  position: relative;
-  @include small-screens {
-    margin-top: 10px;
-    font-size: $content-font-size * 0.9;
-  }
-
-  p {
-    margin: 0;
-  }
-
-  span {
-    color: $text-secondary-color;
-  }
+  position: relative; background: transparent;
+  padding: 0 var(--page-gutter, 1.25rem) 2rem;
+  color: #a6bed1;
 }
+.content {
+  max-width: 112rem; margin: 0 auto; padding-top: 1.75rem;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+  position: relative;
+  &::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #4c779655 20% 80%, transparent); }
+  p { margin: 0; }
+}
+.signature { font-size: 1rem; font-weight: 700; color: #cdddea; > span:first-child { color: #7bbad9; } }
+.role { display: inline-block; margin-left: 1rem; color: #91adc3; font-size: .8125rem; font-weight: 400; }
+.copyright { font-size: .8125rem; line-height: 1.6; }
+@media (max-width: 40rem) { .content { justify-content: center; text-align: center; } .role { display: block; margin: .375rem 0 0; } }

@@ -15,7 +15,8 @@ const CursorEffect = () => {
 
     if (!finePointer || reduceMotion) return undefined;
 
-    let frameId;
+    let frameId = null;
+    let cursorVisible = false;
     let targetX = window.innerWidth / 2;
     let targetY = window.innerHeight / 2;
     let ringX = targetX;
@@ -26,6 +27,8 @@ const CursorEffect = () => {
     }));
 
     const render = () => {
+      frameId = null;
+      if (document.hidden || !cursorVisible) return;
       ringX += (targetX - ringX) * 0.17;
       ringY += (targetY - ringY) * 0.17;
 
@@ -47,10 +50,18 @@ const CursorEffect = () => {
         }
       });
 
-      frameId = requestAnimationFrame(render);
+      const tail = trail[trail.length - 1];
+      if (Math.abs(targetX - tail.x) + Math.abs(targetY - tail.y) > 0.15) {
+        frameId = requestAnimationFrame(render);
+      } else {
+        ringRef.current?.setAttribute('data-idle', 'true');
+      }
     };
 
     const showCursor = () => {
+      if (cursorVisible) return;
+      cursorVisible = true;
+      document.documentElement.classList.add('custom-cursor-active');
       ringRef.current?.classList.add(styles.visible);
       dotRef.current?.classList.add(styles.visible);
       trailRefs.current.forEach((element) =>
@@ -84,8 +95,9 @@ const CursorEffect = () => {
     const handlePointerMove = (event) => {
       targetX = event.clientX;
       targetY = event.clientY;
-      updateCursorMode(document.elementFromPoint(targetX, targetY));
       showCursor();
+      ringRef.current?.setAttribute('data-idle', 'false');
+      if (frameId === null) frameId = requestAnimationFrame(render);
     };
 
     const handlePointerOver = (event) => {
@@ -100,6 +112,16 @@ const CursorEffect = () => {
       ringRef.current?.classList.remove(styles.pressed);
     };
 
+    const hideCursor = () => {
+      cursorVisible = false;
+      cancelAnimationFrame(frameId);
+      frameId = null;
+      document.documentElement.classList.remove('custom-cursor-active');
+      ringRef.current?.classList.remove(styles.visible);
+      dotRef.current?.classList.remove(styles.visible);
+      trailRefs.current.forEach((element) => element?.classList.remove(styles.visible));
+    };
+
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
     document.addEventListener('pointerover', handlePointerOver, {
       passive: true,
@@ -108,13 +130,19 @@ const CursorEffect = () => {
       passive: true,
     });
     document.addEventListener('pointerup', handlePointerUp, { passive: true });
-    frameId = requestAnimationFrame(render);
+    document.addEventListener('visibilitychange', hideCursor);
+    document.documentElement.addEventListener('pointerleave', hideCursor);
+    window.addEventListener('blur', hideCursor);
 
     return () => {
       window.removeEventListener('pointermove', handlePointerMove);
       document.removeEventListener('pointerover', handlePointerOver);
       document.removeEventListener('pointerdown', handlePointerDown);
       document.removeEventListener('pointerup', handlePointerUp);
+      document.removeEventListener('visibilitychange', hideCursor);
+      document.documentElement.removeEventListener('pointerleave', hideCursor);
+      window.removeEventListener('blur', hideCursor);
+      document.documentElement.classList.remove('custom-cursor-active');
       cancelAnimationFrame(frameId);
     };
   }, []);

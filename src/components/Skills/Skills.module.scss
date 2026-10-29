@@ -1,22 +1,94 @@
-@import '../../styles/settings.scss';
-
-.skills {
-  background-image: url('../../assets/SkillsPhotos//skillsBackground.png');
-  background-size: cover;
-  background-repeat: repeat;
-  background-position: center;
-  background-attachment: fixed;
-  position: relative;
+.journey {
+  position: relative; min-height: 620svh; background: #020813; color: #eff6ff; isolation: isolate;
+  --accent: #29c9ff; --accent-rgb: 41, 201, 255;
+  button, a { -webkit-tap-highlight-color: transparent; }
+  button { font: inherit; cursor: pointer; }
+  a { text-decoration: none; }
+  button:focus-visible, a:focus-visible { outline: 2px solid #a8edff; outline-offset: 6px; }
 }
-
-.skills:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: black;
-  opacity: 0.3;
-  z-index: 0;
+.header {
+  position: fixed; z-index: 20; top: 0; left: 0; width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 22px 4vw; background: linear-gradient(#020813b8, transparent);
 }
+.journey[data-returning='true'] { background: transparent; }
+.logo { color: #f3f8ff; font-weight: 700; font-size: clamp(16px, 1.5vw, 24px); letter-spacing: -.7px; }
+.logo:hover { color: #40ceff; }
+.controls { display: flex; align-items: center; gap: 20px; font-size: 12px; }
+.language { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid #3ca2ff38; border-radius: 50%; background: #03132980; padding: 6px; }
+.language img { width: 29px; height: 29px; object-fit: contain; border-radius: 50%; }
+.language:hover { background: #1b477677; border-color: #52cfff; }
+.back { color: #ebf8ff; padding: 10px 19px; border: 1px solid #6dcaff40; border-radius: 28px; background: #071b30bb; }
+.back:hover { border-color: #72d5ff; color: white; background: #0e3354; }
+.back span { margin-right: 5px; }
+.scene { position: fixed; inset: 0; overflow: hidden; pointer-events: none; background: #020913; }
+.homeBackdrop { position: absolute; inset: 0 0 auto; height: var(--home-height, 100%); background: #020913 url('../../assets/HomePhotos/galaxy.webp') center bottom / cover; }
+.homeBackdrop::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 30% 48% at 33% 55%, transparent 15%, rgba(0, 5, 12, .30) 100%), linear-gradient(to top, #000, transparent 11%); }
+.nebula { position: absolute; inset: -4%; background: url('../../assets/HomePhotos/galaxy.webp') center / cover; opacity: calc(.72 * var(--portal-presence, 0)); }
+.core { position: absolute; inset: 0; background: radial-gradient(circle at 50% 49%, #010510 0 15%, #001129aa 24%, #0054cc20 43%, transparent 68%); }
+.canvas, .icons { position: absolute; inset: 0; width: 100%; height: 100%; }
+.technology {
+  position: absolute; top: 0; left: 0; display: grid; place-items: center;
+  border: 1px solid color-mix(in srgb, var(--icon-color) 40%, transparent); border-radius: 25%;
+  background: linear-gradient(145deg, #14395cef, #020d1eee);
+  box-shadow: inset 0 1px 1px #bfeaff55, 0 5px 16px #0007;
+  will-change: transform, opacity; opacity: 0;
+  img, svg { width: 72%; height: 72%; object-fit: contain; color: var(--icon-color); }
+}
+.entryPortrait { position: absolute; width: auto; opacity: 0; max-width: none; mask-image: linear-gradient(to bottom, #000 0 82%, rgba(0, 0, 0, .92) 91%, transparent 100%); pointer-events: none; }
+.vignette { position: absolute; inset: 0; background: radial-gradient(ellipse 23% 21% at 50% 49%, #01091480, transparent 100%), linear-gradient(#02081330, transparent 20% 85%, #02081365); }
+.flash { position: absolute; inset: 0; background: radial-gradient(ellipse at center, #86dbff4f, transparent 67%); opacity: var(--entry-light, 0); }
+.viewport { position: fixed; inset: 0; z-index: 3; display: grid; place-items: center; pointer-events: none; padding: 90px 24px 90px; }
+.card { opacity: 0; width: min(660px, 48vw); text-align: center; pointer-events: auto; will-change: transform, opacity; transform-origin: 50% 50%; }
+.title {
+  position: relative; isolation: isolate; display: inline-block; margin: 0 0 18px;
+  font-family: 'Segoe UI', Arial, sans-serif; font-size: clamp(46px, 5.9vw, 106px);
+  line-height: 1.15; font-weight: 750; letter-spacing: -.045em; white-space: nowrap;
+  > span:first-child { background: linear-gradient(110deg, #ecf7ff 7%, #bdeaff 30%, var(--accent) 66%, var(--accent) 100%); background-clip: text; color: transparent; }
+}
+h1.title { font-size: clamp(32px, 3.8vw, 78px); text-transform: uppercase; letter-spacing: -.035em; }
+.shine {
+  position: absolute; inset: 0; pointer-events: none; color: #f1fcff;
+  text-shadow: 0 0 6px #daf7ff, 0 0 18px var(--accent);
+  mask-image: linear-gradient(110deg, transparent 36%, #0005 44%, #000 49% 52%, #0005 57%, transparent 65%);
+  mask-size: 280% 100%; mask-repeat: no-repeat; animation: titleSweep 5.4s ease-in-out infinite;
+}
+.halo { position: absolute; inset: 0; z-index: -1; pointer-events: none; color: transparent; text-shadow: 0 0 12px var(--accent), 0 0 28px var(--accent); animation: titleRadiance 5.4s ease-in-out infinite; }
+@keyframes titleSweep {
+  0% { mask-position: 100% 0; opacity: 0; } 9%, 82% { opacity: 1; }
+  94%, 100% { mask-position: 0% 0; opacity: 0; }
+}
+@keyframes titleRadiance { 0%, 100% { opacity: .12; } 48% { opacity: .6; } }
+.lead { max-width: 610px; margin: 0 auto; font-size: clamp(14px, 1.13vw, 20px); line-height: 1.8; color: #c7d9ec; text-wrap: pretty; }
+.longTitle { font-size: clamp(30px, 3.6vw, 66px); white-space: normal; }
+.core, .vignette { opacity: var(--portal-presence, 0); }
+.skip { position: fixed; top: -100px; left: 20px; z-index: 50; background: #052e50; color: white; padding: 12px; }
+.skip:focus { top: 10px; }
+.calm { min-height: 100vh; background: #020813 url('../../assets/HomePhotos/galaxy.webp') center top / 100% auto no-repeat; }
+.staticContent { max-width: 1000px; margin: auto; padding: 100px 30px 60px; }
+.staticContent section { padding: 60px 20px; border-bottom: 1px solid #70b3e326; scroll-margin-top: 90px; }
+.staticContent .lead { margin: 0; max-width: 690px; }
+.staticIcons { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.staticIcons > div { display: flex; align-items: center; gap: 12px; background: #07192acf; border: 1px solid #539bd833; border-radius: 15px; padding: 12px 16px; font-size: 12px; }
+.staticIcons img, .staticIcons svg { width: 44px; height: 44px; object-fit: contain; }
+@media (min-width: 1900px) { .card { width: min(880px, 46vw); } .lead { max-width: 690px; font-size: 23px; } }
+@media (max-width: 900px) { .card { width: 62vw; } .homeBackdrop { background-image: url('../../assets/HomePhotos/galaxy-mobile.webp'); background-position: 35% bottom; } }
+@media (max-width: 600px) {
+  .header { padding: 16px 18px; gap: 10px; }
+  .logo { font-size: 16px; }
+  .controls { gap: 10px; font-size: 10px; }
+  .language { width: 35px; height: 35px; padding: 4px; }
+  .language img { width: 26px; height: 26px; }
+  .back { padding: 7px 10px; }
+  .back span { display: none; }
+  .viewport { padding: 95px 24px; }
+  .card { width: 100%; }
+  .title { font-size: 52px; margin-bottom: 15px; }
+  h1.title { font-size: clamp(25px, 7.6vw, 43px); }
+  .lead { font-size: 12px; line-height: 1.7; max-width: 290px; }
+  .title.longTitle { font-size: 31px; }
+  .vignette { background: radial-gradient(ellipse 43% 23% at 50% 49%, #010914d9, #01091450 65%, transparent 100%); }
+  .staticContent { padding: 85px 20px 30px; }
+  .staticContent section { padding: 35px 0; }
+}
+@media (prefers-reduced-motion: reduce) { .shine, .halo { display: none; } }

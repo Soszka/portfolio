@@ -109,6 +109,11 @@
   opacity: 1;
 }
 
+.ring:not(.visible) .orbit,
+.ring[data-idle='true'] .orbit {
+  animation-play-state: paused;
+}
+
 .interactive {
   width: 82px;
   height: 82px;

@@ -1,228 +1,60 @@
+import { technologyIcons } from './technologyIcons';
 import styles from './Splash.module.scss';
+import cursorStyles from './MagneticCursor.module.scss';
 import Achivments from '../Achivments/Achivments';
-import splashPhoto from '../../assets/HomePhotos/heroPortraitExact.png';
-import angularIcon from '../../assets/ProjectsPhotos/angularIcon.png';
-import cssIcon from '../../assets/ProjectsPhotos/cssIcon.png';
-import firebaseIcon from '../../assets/ProjectsPhotos/firebaseIcon.png';
-import gitIcon from '../../assets/ProjectsPhotos/gitIcon.png';
-import htmlIcon from '../../assets/ProjectsPhotos/htmlIcon.png';
-import javaScriptIcon from '../../assets/ProjectsPhotos/javaScriptIcon.png';
-import ngrxIcon from '../../assets/ProjectsPhotos/ngrxIcon.png';
-import reactIcon from '../../assets/ProjectsPhotos/reactIcon.png';
-import rxjsIcon from '../../assets/ProjectsPhotos/rxjsIcon.png';
-import sassIcon from '../../assets/ProjectsPhotos/sassIcon.png';
-import typeScriptIcon from '../../assets/ProjectsPhotos/typeScriptIcon.png';
-import webpackIcon from '../../assets/ProjectsPhotos/webpackIcon.png';
-import javaIcon from '../../assets/TechIcons/java.png';
-import springIcon from '../../assets/TechIcons/spring.png';
-import postgresqlIcon from '../../assets/TechIcons/postgresql.png';
-import dockerIcon from '../../assets/TechIcons/docker.png';
-import kubernetesIcon from '../../assets/TechIcons/kubernetes.png';
+import splashPhoto from '../../assets/HomePhotos/heroPortraitExact.webp';
 import Navigation from '../Navigation/Navigation';
 import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBootstrap, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { useTranslation } from 'react-i18next';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import usePortalNavigation from '../Skills/usePortalNavigation';
+import { warmSkills } from '../Skills/preloadSkills';
 
-const VscodeIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path
-      fill="#22a8f2"
-      d="M72 6 31 42 12 27 3 36l22 18L3 73l10 10 19-16 40 27 25-11V17L72 6Zm2 24v43L43 51l31-21Z"
-    />
-    <path fill="#0877bd" d="M74 30 43 51l31 22V30Zm0 0 12-8v57l-12-6V30Z" />
-  </svg>
-);
-
-const PlaywrightIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path
-      fill="#2ead66"
-      d="M12 21c16 5 31 4 44-2l5 45c-4 18-15 29-31 30C16 86 9 71 10 55l2-34Z"
-    />
-    <path
-      fill="#d64b78"
-      d="M43 13c16 7 31 8 46 4l-4 40C79 73 68 82 53 83 41 73 36 60 37 45l6-32Z"
-    />
-    <path fill="#fff" d="M52 35c5-5 10-5 15 0-5 4-10 4-15 0Zm8 28c8 1 14-2 19-9-2 12-8 18-18 18-8-1-14-6-17-15 5 4 10 6 16 6Z" />
-    <circle cx="28" cy="45" r="4" fill="#fff" />
-  </svg>
-);
-
-const KafkaIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <g fill="none" stroke="#f5f7ff" strokeWidth="6">
-      <path d="M50 20v22M28 68l18-12M72 68 54 56" />
-      <circle cx="50" cy="49" r="12" />
-      <circle cx="50" cy="13" r="8" />
-      <circle cx="21" cy="73" r="8" />
-      <circle cx="79" cy="73" r="8" />
-    </g>
-  </svg>
-);
-
-const HibernateIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path fill="#bcae79" d="m19 12 20 12v52L19 88 5 79V21l14-9Zm62 0 14 9v58l-14 9-20-12V24l20-12Z" />
-    <path fill="#59666c" d="M35 24h31l-8 14H35V24Zm7 38h23v14H34l8-14Z" />
-  </svg>
-);
-
-const TerraformIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path fill="#7b42bc" d="m10 18 25 14v28L10 46V18Zm29 16 25 14v28L39 62V34Zm29-16 22 13v26L68 44V18Zm0 31 22 13v26L68 75V49Z" />
-  </svg>
-);
-
-const NginxIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path fill="#15a34a" d="M50 4 90 27v46L50 96 10 73V27L50 4Z" />
-    <path fill="#fff" d="M29 72V28h9l24 28V28h10v44h-9L39 44v28H29Z" />
-  </svg>
-);
-
-const RedisIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path fill="#a41e22" d="m50 8 43 19-43 18L7 27 50 8Zm0 28 43 18-43 19L7 54l43-18Zm0 27 43 15-43 17L7 78l43-15Z" />
-    <path fill="#ef3e36" d="m50 8 43 19-43 18L7 27 50 8Z" />
-    <path fill="#fff" d="m50 17 10 5-10 5-10-5 10-5Zm-22 8 8 4-8 4-8-4 8-4Zm44 0 8 4-8 4-8-4 8-4Z" />
-  </svg>
-);
-
-const MavenIcon = () => (
-  <svg viewBox="0 0 100 100" aria-hidden="true">
-    <path fill="none" stroke="#e34f79" strokeWidth="10" strokeLinecap="round" d="M9 76c8-43 20-60 35-50 8 6 8 33 16 37 8 4 16-13 30-49" />
-    <path fill="none" stroke="#f4a340" strokeWidth="6" strokeLinecap="round" d="M13 75c13-27 24-36 35-28 9 7 10 22 19 21 8-1 14-13 22-33" />
-  </svg>
-);
-
-const particleSpawns = [
-  [0.07, 0.09],
-  [0.18, 0.06],
-  [0.29, 0.11],
-  [0.4, 0.06],
-  [0.51, 0.1],
-  [0.62, 0.06],
-  [0.73, 0.11],
-  [0.84, 0.06],
-  [0.94, 0.11],
-  [0.07, 0.27],
-  [0.12, 0.4],
-  [0.07, 0.53],
-  [0.12, 0.66],
-  [0.07, 0.79],
-  [0.12, 0.91],
-  [0.93, 0.27],
-  [0.88, 0.4],
-  [0.93, 0.53],
-  [0.88, 0.66],
-  [0.93, 0.79],
-  [0.88, 0.91],
-  [0.22, 0.9],
-  [0.36, 0.94],
-  [0.66, 0.94],
-  [0.79, 0.9],
-  [0.5, 0.04],
-  [0.25, 0.16],
-  [0.75, 0.16],
-  [0.25, 0.85],
-  [0.5, 0.92],
-  [0.75, 0.85],
-  [0.5, 0.16],
-];
-
-const technologyIcons = [
-  { name: 'Sass', src: sassIcon, color: '#f06ca9', size: 50 },
-  { name: 'HTML5', src: htmlIcon, color: '#ff6a2f', size: 48 },
-  { name: 'Firebase', src: firebaseIcon, color: '#ffbd32', size: 45 },
-  { name: 'CSS3', src: cssIcon, color: '#4c8cff', size: 46 },
-  { name: 'Bootstrap', brandIcon: faBootstrap, color: '#8c43ff', size: 46 },
-  { name: 'RxJS', src: rxjsIcon, color: '#ed1493', size: 49 },
-  { name: 'TypeScript', src: typeScriptIcon, color: '#4c9cff', size: 49 },
-  { name: 'Angular', src: angularIcon, color: '#f628a8', size: 51 },
-  { name: 'NgRx', src: ngrxIcon, color: '#9a28c8', size: 49 },
-  { name: 'VS Code', component: VscodeIcon, color: '#21a5ef', size: 51 },
-  { name: 'React', src: reactIcon, color: '#61dafb', size: 64 },
-  { name: 'Webpack', src: webpackIcon, color: '#72c7ff', size: 49 },
-  { name: 'JavaScript', src: javaScriptIcon, color: '#ffe43b', size: 48 },
-  { name: 'Git', src: gitIcon, color: '#ff6544', size: 46 },
-  { name: 'GitHub', brandIcon: faGithub, color: '#ffffff', size: 47 },
-  { name: 'Java', src: javaIcon, color: '#ff6b2d', size: 53 },
-  { name: 'Spring', src: springIcon, color: '#78dc42', size: 51 },
-  { name: 'PostgreSQL', src: postgresqlIcon, color: '#58a9f8', size: 53 },
-  { name: 'Docker', src: dockerIcon, color: '#24c7ff', size: 55 },
-  { name: 'Kubernetes', src: kubernetesIcon, color: '#5d89ff', size: 53 },
-  { name: 'Playwright', component: PlaywrightIcon, color: '#2ead66', size: 51 },
-  { name: 'Apache Kafka', component: KafkaIcon, color: '#f5f7ff', size: 49 },
-  { name: 'Hibernate', component: HibernateIcon, color: '#bcae79', size: 49 },
-  { name: 'Terraform', component: TerraformIcon, color: '#7b42bc', size: 50 },
-  { name: 'Nginx', component: NginxIcon, color: '#15a34a', size: 49 },
-  { name: 'Redis', component: RedisIcon, color: '#ef3e36', size: 51 },
-  { name: 'Maven', component: MavenIcon, color: '#e34f79', size: 50 },
-];
-
-const Splash = () => {
+const Splash = ({ active = true, orbitHandoff }) => {
+  const { state } = useLocation();
+  const handoff = useRef(null);
+  handoff.current = orbitHandoff || state;
   const { t } = useTranslation();
+  const enterPortal = usePortalNavigation();
   const imageStageRef = useRef(null);
-  const personPhotoRef = useRef(null);
   const pointerRef = useRef({ x: 0, y: 0, active: false });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const stage = imageStageRef.current;
-    const portrait = personPhotoRef.current;
-    if (!stage || !portrait) return undefined;
+    if (!stage) return undefined;
+    if (!active) {
+      stage.dataset.motionPaused = 'true';
+      stage.parentElement.dataset.motionPaused = 'true';
+      stage.dataset.pointerActive = 'false';
+      pointerRef.current.active = false;
+      return undefined;
+    }
 
     const iconNodes = Array.from(
       stage.querySelectorAll('[data-magnetic-icon]')
     );
-    const reducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches;
-    const alphaMask = { data: null, width: 0, height: 0 };
+    const cursor = stage.querySelector('[data-field-cursor]');
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let reducedMotion = motionPreference.matches;
+    const modestDevice = (navigator.hardwareConcurrency || 8) <= 4 ||
+      (navigator.deviceMemory || 8) <= 4;
     let particles = [];
     let stageWidth = 0;
     let stageHeight = 0;
-    let frameId;
+    let frameId = null;
     let lastRenderedTime = 0;
-    let renderedFrames = 0;
+    const inherited = handoff.current;
+    let motionTime = (inherited?.orbitClock || 0) / .14 + (inherited?.orbitTime === undefined ? 0 :
+      Math.max(0, performance.now() - inherited.orbitTime) / 1000);
     let compactMotion = window.innerWidth <= 768;
     let navigationOpen = false;
     let stageVisible = true;
     let visibilityObserver;
     let navigationObserver;
+    let resizeObserver;
     const navigation = document.querySelector('nav[data-menu-open]');
-    let portraitMetrics = {
-      left: 0,
-      top: 0,
-      width: 0,
-      height: 0,
-      centerX: 0,
-      centerY: 0,
-    };
-
-    const refreshPortraitMetrics = () => {
-      const stageRect = stage.getBoundingClientRect();
-      const portraitRect = portrait.getBoundingClientRect();
-      const scaleX = stage.clientWidth ? stageRect.width / stage.clientWidth : 1;
-      const scaleY = stage.clientHeight
-        ? stageRect.height / stage.clientHeight
-        : 1;
-
-      portraitMetrics = {
-        left: (portraitRect.left - stageRect.left) / scaleX,
-        top: (portraitRect.top - stageRect.top) / scaleY,
-        width: portraitRect.width / scaleX,
-        height: portraitRect.height / scaleY,
-        centerX:
-          (portraitRect.left - stageRect.left + portraitRect.width / 2) /
-          scaleX,
-        centerY:
-          (portraitRect.top - stageRect.top + portraitRect.height / 2) /
-          scaleY,
-      };
-    };
-
     const refreshStageVisibility = () => {
       const stageRect = stage.getBoundingClientRect();
       stageVisible =
@@ -235,60 +67,59 @@ const Splash = () => {
       );
       if (!navigationOpen) refreshStageVisibility();
       lastRenderedTime = 0;
-    };
-
-    const preparePortraitMask = () => {
-      if (!portrait.complete || !portrait.naturalWidth) return;
-
-      const canvas = document.createElement('canvas');
-      canvas.width = portrait.naturalWidth;
-      canvas.height = portrait.naturalHeight;
-      const context = canvas.getContext('2d', { willReadFrequently: true });
-      context.drawImage(portrait, 0, 0);
-      alphaMask.data = context.getImageData(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      ).data;
-      alphaMask.width = canvas.width;
-      alphaMask.height = canvas.height;
-      refreshPortraitMetrics();
+      syncAnimation();
     };
 
     const setStageSize = () => {
       const nextWidth = stage.clientWidth;
       const nextHeight = stage.clientHeight;
+      if (!nextWidth || !nextHeight) return;
       compactMotion = window.innerWidth <= 768;
-      const scale = Math.min(
-        1.14,
-        Math.max(0.58, (nextWidth / 720) * 1.11)
-      );
+      // Scale with the field, including large monitors; keep the laptop proportions.
+      const scale = Math.max(0.54, Math.min(nextWidth / 720, nextHeight / 620) * 1.08);
 
       if (!particles.length) {
         particles = technologyIcons.map((icon, index) => {
-          const [spawnX, spawnY] = particleSpawns[index];
-          const angle = 0.72 + index * 2.39996;
-          const speed = 33 + (index % 6) * 3.8;
-          const radius = (icon.size * scale) / 2;
+          const lane = index % 3;
+          const phase = (Math.floor(index / 3) / 9) * Math.PI * 2 + lane * .23 - Math.PI / 2;
+          const angle = phase + motionTime * .14;
+          const depth = [0.82, 0.96, 1.12][index % 3];
+          const orbitX = 0.24 + lane * 0.095;
+          const orbitY = 0.205 + lane * 0.098;
+          const tilt = -0.12;
+          const orbitCos = Math.cos(tilt);
+          const orbitSin = Math.sin(tilt);
+          const radius = (icon.size * scale * depth) / 2;
 
           return {
-            x: spawnX * nextWidth,
-            y: spawnY * nextHeight,
-            vx: Math.cos(angle) * speed,
-            vy: Math.sin(angle) * speed,
+            x: nextWidth * (.5 + Math.cos(angle) * orbitX * orbitCos - Math.sin(angle) * orbitY * orbitSin),
+            y: nextHeight * (.49 + Math.cos(angle) * orbitX * orbitSin + Math.sin(angle) * orbitY * orbitCos),
+            phase,
+            offsetX: 0,
+            offsetY: 0,
+            velocityX: 0,
+            velocityY: 0,
+            nextBounce: 0,
+            orbitX,
+            orbitY,
+            orbitCos,
+            orbitSin,
+            lane,
+            depth,
             radius,
-            rotation: (index * 47) % 360,
-            spin: (index % 2 ? -1 : 1) * (10 + (index % 5) * 4),
+            rotation: (index % 5 - 2) * 7,
             seed: index * 1.731 + 0.4,
-            cursorHitAt: -1000,
           };
         });
       } else if (stageWidth && stageHeight) {
         particles.forEach((particle, index) => {
           particle.x = (particle.x / stageWidth) * nextWidth;
           particle.y = (particle.y / stageHeight) * nextHeight;
-          particle.radius = (technologyIcons[index].size * scale) / 2;
+          particle.offsetX *= nextWidth / stageWidth;
+          particle.offsetY *= nextHeight / stageHeight;
+          particle.velocityX *= nextWidth / stageWidth;
+          particle.velocityY *= nextHeight / stageHeight;
+          particle.radius = (technologyIcons[index].size * scale * particle.depth) / 2;
         });
       }
 
@@ -299,244 +130,131 @@ const Splash = () => {
         const diameter = particles[index].radius * 2;
         node.style.width = `${diameter}px`;
         node.style.height = `${diameter}px`;
+        node.style.opacity = particles[index].depth < 0.9 ? '0.86' : '1';
       });
 
-      refreshPortraitMetrics();
-    };
-
-    const samplePortraitAlpha = (x, y, metrics) => {
-      if (!alphaMask.data || !metrics.width || !metrics.height) return false;
-
-      const normalizedX = (x - metrics.left) / metrics.width;
-      const normalizedY = (y - metrics.top) / metrics.height;
-      if (
-        normalizedX < 0 ||
-        normalizedX > 1 ||
-        normalizedY < 0 ||
-        normalizedY > 1
-      ) {
-        return false;
-      }
-
-      const imageX = Math.min(
-        alphaMask.width - 1,
-        Math.max(0, Math.round(normalizedX * (alphaMask.width - 1)))
-      );
-      const imageY = Math.min(
-        alphaMask.height - 1,
-        Math.max(0, Math.round(normalizedY * (alphaMask.height - 1)))
-      );
-
-      return alphaMask.data[(imageY * alphaMask.width + imageX) * 4 + 3] > 38;
-    };
-
-    const touchesPortrait = (particle, metrics) => {
-      const diagonal = particle.radius * 0.72;
-      const samples = [
-        [0, 0],
-        [particle.radius, 0],
-        [-particle.radius, 0],
-        [0, particle.radius],
-        [0, -particle.radius],
-        [diagonal, diagonal],
-        [-diagonal, diagonal],
-        [diagonal, -diagonal],
-        [-diagonal, -diagonal],
-      ];
-
-      return samples.some(([offsetX, offsetY]) =>
-        samplePortraitAlpha(
-          particle.x + offsetX,
-          particle.y + offsetY,
-          metrics
-        )
-      );
-    };
-
-    const resolveParticleCollisions = () => {
-      for (let firstIndex = 0; firstIndex < particles.length; firstIndex += 1) {
-        for (
-          let secondIndex = firstIndex + 1;
-          secondIndex < particles.length;
-          secondIndex += 1
-        ) {
-          const first = particles[firstIndex];
-          const second = particles[secondIndex];
-          const deltaX = second.x - first.x;
-          const deltaY = second.y - first.y;
-          const distance = Math.max(Math.hypot(deltaX, deltaY), 0.001);
-          const minimumDistance = first.radius + second.radius + 4;
-
-          if (distance >= minimumDistance) continue;
-
-          const normalX = deltaX / distance;
-          const normalY = deltaY / distance;
-          const overlap = minimumDistance - distance;
-          first.x -= normalX * overlap * 0.5;
-          first.y -= normalY * overlap * 0.5;
-          second.x += normalX * overlap * 0.5;
-          second.y += normalY * overlap * 0.5;
-
-          const relativeVelocity =
-            (second.vx - first.vx) * normalX +
-            (second.vy - first.vy) * normalY;
-
-          if (relativeVelocity < 0) {
-            const impulse = -relativeVelocity * 0.96;
-            first.vx -= impulse * normalX;
-            first.vy -= impulse * normalY;
-            second.vx += impulse * normalX;
-            second.vy += impulse * normalY;
-            first.spin *= -0.9;
-            second.spin *= -0.9;
-          }
-        }
-      }
     };
 
     const animateField = (time) => {
-      if (navigationOpen || !stageVisible) {
-        lastRenderedTime = time;
-        frameId = window.requestAnimationFrame(animateField);
-        return;
-      }
+      frameId = null;
+      if (navigationOpen || !stageVisible || document.hidden) return;
 
-      const minimumFrameTime = compactMotion ? 1000 / 30 : 0;
+      // Follow the display on desktop. A hard 60 Hz gate discards whole frames
+      // at 75/120/144 Hz and produces an uneven cadence even with spare CPU time.
+      const minimumFrameTime = compactMotion || modestDevice ? 1000 / 30 : 0;
       if (
         minimumFrameTime &&
         lastRenderedTime &&
-        time - lastRenderedTime < minimumFrameTime
+        time - lastRenderedTime < minimumFrameTime - 1
       ) {
         frameId = window.requestAnimationFrame(animateField);
         return;
       }
 
+      // Coalesce high-frequency mouse events into one layout read per rendered frame.
+      const pointer = pointerRef.current;
+      if (pointer.dirty) {
+        const rect = stage.getBoundingClientRect();
+        pointer.x = (pointer.clientX - rect.left) * stageWidth / (rect.width || stageWidth);
+        pointer.y = (pointer.clientY - rect.top) * stageHeight / (rect.height || stageHeight);
+        if (cursor) cursor.style.transform = `translate3d(${pointer.x}px, ${pointer.y}px, 0)`;
+        pointer.dirty = false;
+      }
       const deltaTime = lastRenderedTime
-        ? Math.min((time - lastRenderedTime) / 1000, 0.04)
+        ? Math.min((time - lastRenderedTime) / 1000, 0.05)
         : 0;
       lastRenderedTime = time;
-      renderedFrames += 1;
+      if (!reducedMotion) motionTime += deltaTime;
+
+      const steps = Math.max(1, Math.ceil(deltaTime / .012));
+      const dt = deltaTime / steps;
+      const breathing = [0, 1, 2].map(lane => 1 + Math.sin(motionTime * .65 + lane) * .008);
 
       particles.forEach((particle, index) => {
-        if (!reducedMotion) {
-          particle.vx += Math.sin(time * 0.00071 + particle.seed) * 7 * deltaTime;
-          particle.vy +=
-            Math.cos(time * 0.00093 + particle.seed * 1.4) * 7 * deltaTime;
-
-          if (pointerRef.current.active) {
-            const pointer = pointerRef.current;
-            const pointerDeltaX = particle.x - pointer.x;
-            const pointerDeltaY = particle.y - pointer.y;
-            const pointerDistance = Math.max(
-              Math.hypot(pointerDeltaX, pointerDeltaY),
-              1
-            );
-            const cursorRadius = stageWidth < 576 ? 26 : 36;
-            const collisionDistance = particle.radius + cursorRadius;
-
-            if (pointerDistance < collisionDistance) {
-              const normalX = pointerDeltaX / pointerDistance;
-              const normalY = pointerDeltaY / pointerDistance;
-              const overlap = collisionDistance - pointerDistance;
-              particle.x += normalX * (overlap + 3);
-              particle.y += normalY * (overlap + 3);
-
-              if (time - particle.cursorHitAt > 115) {
-                const velocityAlongNormal =
-                  particle.vx * normalX + particle.vy * normalY;
-
-                if (velocityAlongNormal < 0) {
-                  particle.vx -= 2.15 * velocityAlongNormal * normalX;
-                  particle.vy -= 2.15 * velocityAlongNormal * normalY;
-                }
-
-                const impact = 185 + (index % 5) * 13;
-                particle.vx += normalX * impact;
-                particle.vy += normalY * impact;
-                particle.spin *= -1.35;
-                particle.cursorHitAt = time;
-              }
+        // Nine evenly spaced slots per lane share one clock: they cannot bunch up
+        // or overtake each other. Cursor offsets never alter the orbital phase.
+        const angle = particle.phase + motionTime * .14;
+        const { orbitX, orbitY, orbitCos, orbitSin } = particle;
+        const breathe = breathing[particle.lane];
+        const cos = Math.cos(angle);
+        const sin = Math.sin(angle);
+        const baseX = stageWidth * (.5 + (cos * orbitX * orbitCos - sin * orbitY * orbitSin) * breathe);
+        const baseY = stageHeight * (.49 + (cos * orbitX * orbitSin + sin * orbitY * orbitCos) * breathe);
+        if (reducedMotion) {
+          particle.offsetX = particle.offsetY = 0;
+          particle.velocityX = particle.velocityY = 0;
+        } else {
+          // Kick the actual icon, then let a damped spring return it to its moving slot.
+          // Cooldown prevents repeated impulses from accumulating on every frame.
+          if (pointer.active && motionTime >= particle.nextBounce) {
+            const dx = baseX + particle.offsetX - pointer.x;
+            const dy = baseY + particle.offsetY - pointer.y;
+            const distance = Math.hypot(dx, dy);
+            const reach = particle.radius + Math.min(stageWidth, stageHeight) * .12;
+            if (distance < reach) {
+              const nx = distance > .01 ? dx / distance : Math.cos(particle.seed);
+              const ny = distance > .01 ? dy / distance : Math.sin(particle.seed);
+              const kick = particle.radius * (14 + 14 * (1 - distance / reach));
+              const outwardSpeed = particle.velocityX * nx + particle.velocityY * ny;
+              const impulse = Math.max(0, kick - outwardSpeed);
+              particle.velocityX += nx * impulse;
+              particle.velocityY += ny * impulse;
+              particle.nextBounce = motionTime + .28;
             }
           }
-
-          const speed = Math.hypot(particle.vx, particle.vy);
-          const maximumSpeed = pointerRef.current.active ? 170 : 78;
-          const minimumSpeed = 28;
-          if (speed > maximumSpeed) {
-            particle.vx = (particle.vx / speed) * maximumSpeed;
-            particle.vy = (particle.vy / speed) * maximumSpeed;
-          } else if (speed < minimumSpeed && speed > 0) {
-            particle.vx = (particle.vx / speed) * minimumSpeed;
-            particle.vy = (particle.vy / speed) * minimumSpeed;
+          // Small integration steps keep the bounce consistent on 30 and 60 Hz devices.
+          // Most icons are on their orbit with a resting spring. Only integrate
+          // icons that have actually been displaced by the pointer or an edge.
+          for (let step = 0; step < steps &&
+            (particle.offsetX || particle.offsetY || particle.velocityX || particle.velocityY); step++) {
+            particle.velocityX += (-14 * particle.offsetX - 4.8 * particle.velocityX) * dt;
+            particle.velocityY += (-14 * particle.offsetY - 4.8 * particle.velocityY) * dt;
+            particle.offsetX += particle.velocityX * dt;
+            particle.offsetY += particle.velocityY * dt;
           }
-
-          particle.x += particle.vx * deltaTime;
-          particle.y += particle.vy * deltaTime;
-          particle.rotation += particle.spin * deltaTime;
-        }
-
-        const edge = Math.max(22, stageWidth * 0.042);
-        if (particle.x - particle.radius < edge) {
-          particle.x = particle.radius + edge;
-          particle.vx = Math.abs(particle.vx);
-          particle.spin *= -0.82;
-        } else if (particle.x + particle.radius > stageWidth - edge) {
-          particle.x = stageWidth - particle.radius - edge;
-          particle.vx = -Math.abs(particle.vx);
-          particle.spin *= -0.82;
-        }
-
-        if (particle.y - particle.radius < edge) {
-          particle.y = particle.radius + edge;
-          particle.vy = Math.abs(particle.vy);
-          particle.spin *= -0.82;
-        } else if (particle.y + particle.radius > stageHeight - edge) {
-          particle.y = stageHeight - particle.radius - edge;
-          particle.vy = -Math.abs(particle.vy);
-          particle.spin *= -0.82;
-        }
-
-        if (!reducedMotion && touchesPortrait(particle, portraitMetrics)) {
-          const awayX = particle.x - portraitMetrics.centerX;
-          const awayY = particle.y - portraitMetrics.centerY;
-          const awayLength = Math.max(Math.hypot(awayX, awayY), 1);
-          const normalX = awayX / awayLength;
-          const normalY = awayY / awayLength;
-          const velocityAlongNormal =
-            particle.vx * normalX + particle.vy * normalY;
-
-          for (
-            let pushAttempt = 0;
-            pushAttempt < 10 && touchesPortrait(particle, portraitMetrics);
-            pushAttempt += 1
-          ) {
-            particle.x += normalX * 3;
-            particle.y += normalY * 3;
+          // Keep energetic interactions inside the visible field.
+          const x = baseX + particle.offsetX;
+          const y = baseY + particle.offsetY;
+          if (x < particle.radius || x > stageWidth - particle.radius) {
+            particle.offsetX = Math.max(particle.radius, Math.min(stageWidth - particle.radius, x)) - baseX;
+            particle.velocityX *= -.55;
           }
-
-          if (velocityAlongNormal < 0) {
-            particle.vx -= 2.05 * velocityAlongNormal * normalX;
-            particle.vy -= 2.05 * velocityAlongNormal * normalY;
-          } else {
-            particle.vx += normalX * 18;
-            particle.vy += normalY * 18;
+          if (y < particle.radius || y > stageHeight - particle.radius) {
+            particle.offsetY = Math.max(particle.radius, Math.min(stageHeight - particle.radius, y)) - baseY;
+            particle.velocityY *= -.55;
           }
-          particle.spin *= -1.08;
         }
-
+        particle.x = baseX + particle.offsetX;
+        particle.y = baseY + particle.offsetY;
+        particle.rotation = (index % 3 - 1) * 5 + Math.sin(motionTime * .6 + particle.seed) * 3
+          + Math.max(-18, Math.min(18, particle.velocityX / particle.radius));
         const node = iconNodes[index];
-        node.style.transform = `translate3d(${particle.x - particle.radius}px, ${
-          particle.y - particle.radius
-        }px, 0) rotate(${particle.rotation}deg)`;
+        node.style.transform = `translate3d(${particle.x - particle.radius}px, ${particle.y - particle.radius}px, 0) rotate(${particle.rotation}deg)`;
       });
-
-      if (!reducedMotion && (!compactMotion || renderedFrames % 2 === 0)) {
-        resolveParticleCollisions();
-      }
 
       if (!reducedMotion) {
         frameId = window.requestAnimationFrame(animateField);
       }
+    };
+
+    function syncAnimation() {
+      if (document.hidden || navigationOpen || !stageVisible) {
+        pointerRef.current.active = false;
+        stage.dataset.pointerActive = 'false';
+      }
+      const running = stageVisible && !navigationOpen && !document.hidden;
+      stage.dataset.motionPaused = String(!running || reducedMotion);
+      stage.parentElement.dataset.motionPaused = stage.dataset.motionPaused;
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      frameId = null;
+      lastRenderedTime = 0;
+      // Reduced motion draws one static frame, then leaves the animation loop stopped.
+      if (running) frameId = window.requestAnimationFrame(animateField);
+    }
+
+    const handleMotionPreference = () => {
+      reducedMotion = motionPreference.matches;
+      syncAnimation();
     };
 
     const handleNavigationToggle = (event) => {
@@ -545,17 +263,24 @@ const Splash = () => {
       );
       if (!navigationOpen) refreshStageVisibility();
       lastRenderedTime = 0;
+      syncAnimation();
     };
 
     syncNavigationState();
     setStageSize();
-    preparePortraitMask();
     window.addEventListener(
       'portfolio:navigation-toggle',
       handleNavigationToggle
     );
-    portrait.addEventListener('load', preparePortraitMask);
     window.addEventListener('resize', setStageSize);
+    document.addEventListener('visibilitychange', syncAnimation);
+    motionPreference.addEventListener('change', handleMotionPreference);
+
+    resizeObserver = new ResizeObserver(() => {
+      setStageSize();
+      syncAnimation();
+    });
+    resizeObserver.observe(stage);
 
     if (navigation && 'MutationObserver' in window) {
       navigationObserver = new MutationObserver(syncNavigationState);
@@ -570,36 +295,44 @@ const Splash = () => {
         ([entry]) => {
           stageVisible = entry.isIntersecting;
           lastRenderedTime = 0;
+          syncAnimation();
         },
-        { rootMargin: '100px' }
+        { rootMargin: '0px' }
       );
       visibilityObserver.observe(stage);
     }
 
-    frameId = window.requestAnimationFrame(animateField);
+    // Paint the inherited orbital phase before the browser presents the new route.
+    if (frameId !== null) window.cancelAnimationFrame(frameId);
+    animateField(performance.now());
+    syncAnimation();
 
     return () => {
       window.cancelAnimationFrame(frameId);
       visibilityObserver?.disconnect();
       navigationObserver?.disconnect();
+      resizeObserver?.disconnect();
+      document.removeEventListener('visibilitychange', syncAnimation);
+      motionPreference.removeEventListener('change', handleMotionPreference);
       window.removeEventListener(
         'portfolio:navigation-toggle',
         handleNavigationToggle
       );
-      portrait.removeEventListener('load', preparePortraitMask);
       window.removeEventListener('resize', setStageSize);
     };
-  }, []);
+  }, [active]);
 
   const handlePointerMove = (event) => {
     const stage = imageStageRef.current;
     if (!stage) return;
 
-    const rect = stage.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-
-    pointerRef.current = { x, y, active: true };
+    if (event.pointerType && event.pointerType !== 'mouse') return;
+    const pointer = pointerRef.current;
+    pointer.clientX = event.clientX;
+    pointer.clientY = event.clientY;
+    pointer.active = true;
+    if (stage.dataset.pointerActive !== 'true') stage.dataset.pointerActive = 'true';
+    pointer.dirty = true;
   };
 
   const resetPointerPosition = () => {
@@ -607,71 +340,122 @@ const Splash = () => {
     if (!stage) return;
 
     pointerRef.current.active = false;
+    stage.dataset.pointerActive = 'false';
   };
 
   return (
     <div className={styles.splash}>
-      <Navigation />
-      <div className={styles.content} data-aos="zoom-out">
-        <div
-          ref={imageStageRef}
-          className={styles.imageStage}
-          data-chaos-field
-          onPointerMove={handlePointerMove}
-          onPointerLeave={resetPointerPosition}
-        >
-          <span className={styles.photoGlow} aria-hidden="true" />
-          <span className={styles.magneticMist} aria-hidden="true" />
-          <span className={styles.cosmicCloud} aria-hidden="true" />
+      <section className={styles.hero} data-portal-return={state?.portalReturn || undefined} aria-label={t('splash.socha')}>
+        <Navigation />
+        <div className={styles.content}>
+          <div
+            ref={imageStageRef}
+            className={styles.imageStage + ' ' + cursorStyles.field}
+            data-chaos-field
+            onPointerMove={handlePointerMove}
+            onPointerLeave={resetPointerPosition}
+          >
+            <span className={cursorStyles.cursor} data-field-cursor aria-hidden="true"><i /><i /></span>
+            <span className={styles.photoGlow} aria-hidden="true" />
+            <span className={styles.magneticMist} aria-hidden="true" />
+            <svg className={styles.orbits} viewBox="0 0 800 800" aria-hidden="true">
+              <defs>
+                <radialGradient id="splash-star-light">
+                  <stop stopColor="#fff" />
+                  <stop offset=".15" stopColor="#b9ecff" />
+                  <stop offset=".35" stopColor="#189fff" stopOpacity=".7" />
+                  <stop offset="1" stopColor="#008cff" stopOpacity="0" />
+                </radialGradient>
+                {[0, 1, 2, 3, 4].map(index => (
+                  <linearGradient key={index} id={`splash-orbit-light-${index}`} x1="0" y1="0" x2="1" y2="1" gradientTransform={`rotate(${index * 67} .5 .5)`}>
+                    <stop stopColor="#1384e9" stopOpacity=".04" />
+                    <stop offset=".19" stopColor="#168fe9" stopOpacity=".22" />
+                    <stop offset=".38" stopColor="#48baff" stopOpacity=".52" />
+                    <stop offset=".54" stopColor="#0874d3" stopOpacity=".05" />
+                    <stop offset=".73" stopColor="#0874d3" stopOpacity=".02" />
+                    <stop offset=".89" stopColor="#22a2fa" stopOpacity=".32" />
+                    <stop offset="1" stopColor="#1384e9" stopOpacity=".08" />
+                  </linearGradient>
+                ))}
+              </defs>
+              <g fill="none">
+                {[143, 207, 268, 326, 392].map((radius, index) => (
+                  <circle key={radius} cx="400" cy="400" r={radius} stroke={`url(#splash-orbit-light-${index})`} strokeWidth={index % 2 ? '.85' : '.65'} />
+                ))}
+              </g>
+              <g fill="#b8edff">
+                {[0, 1, 2, 3, 4].map(group => (
+                  <g key={group} className={styles.starGroup} style={{ '--twinkle-duration': `${4.8 + group * .7}s`, '--twinkle-delay': `${group * -1.7}s` }}>
+                    {Array.from({ length: 13 }, (_, item) => {
+                      const index = item * 5 + group;
+                      const radius = 95 + Math.sqrt(((index * 37) % 67) / 67) * 295;
+                      const x = 400 + radius * Math.cos(index * 2.39996);
+                      const y = 400 + radius * Math.sin(index * 2.39996);
+                      return <g key={index}>
+                        <circle cx={x} cy={y} r={index % 4 === 0 ? 11 : 6} fill="url(#splash-star-light)" />
+                        <circle cx={x} cy={y} r={index % 4 === 0 ? 1.5 : .75} />
+                      </g>;
+                    })}
+                  </g>
+                ))}
+              </g>
+            </svg>
 
-          {technologyIcons.map((icon, index) => {
-            const IconComponent = icon.component;
+            {technologyIcons.map((icon, index) => {
+              const IconComponent = icon.component;
 
-            return (
-              <span
-                key={icon.name}
-                className={styles.techIcon}
-                data-magnetic-icon
-                title={icon.name}
-                style={{
-                  '--tech-color': icon.color,
-                  '--particle-delay': `${index * -0.13}s`,
-                }}
-              >
-                <span className={styles.techIconCore}>
-                  {icon.src && <img src={icon.src} alt="" />}
-                  {icon.brandIcon && (
-                    <FontAwesomeIcon icon={icon.brandIcon} aria-hidden="true" />
-                  )}
-                  {IconComponent && <IconComponent />}
+              return (
+                <span
+                  key={icon.name}
+                  className={styles.techIcon}
+                  data-magnetic-icon
+                  data-technology={icon.name}
+                  title={icon.name}
+                  style={{
+                    '--tech-color': icon.color,
+                    '--icon-tilt': `${index % 2 ? -10 : 10}deg`,
+                  }}
+                >
+                  <span className={styles.techIconCore}>
+                    {icon.src && <img src={icon.src} alt="" />}
+                    {icon.brandIcon && (
+                      <FontAwesomeIcon icon={icon.brandIcon} aria-hidden="true" />
+                    )}
+                    {IconComponent && <IconComponent />}
+                  </span>
                 </span>
-              </span>
-            );
-          })}
+              );
+            })}
 
-          <div className={styles.image}>
-            <span className={styles.portraitHalo} aria-hidden="true" />
-            <img
-              ref={personPhotoRef}
-              className={styles.personPhoto}
-              alt={t('splash.socha')}
-              src={splashPhoto}
-            />
+            <div className={styles.image}>
+              <span className={styles.portraitHalo} aria-hidden="true" />
+              <img
+                className={styles.personPhoto}
+                alt={t('splash.socha')}
+                src={splashPhoto}
+                width="861"
+                height="1000"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+
           </div>
-
+          <div className={styles.description}>
+            <h1 className={styles.name}>
+              {t('splash.socha').split(' ')[0]} <span className={styles.surname}>Socha</span>
+              <span className={styles.nameHalo} aria-hidden="true">{t('splash.socha').split(' ')[0]} <span className={styles.surname}>Socha</span></span>
+              <span className={styles.nameShine} aria-hidden="true">{t('splash.socha').split(' ')[0]} <span className={styles.surname}>Socha</span></span>
+            </h1>
+            <p className={styles.role}>{t('splash.frontend.developer')}</p>
+            <span className={styles.divider} aria-hidden="true" />
+            <p className={styles.summary}>{t('splash.description')}</p>
+            <div className={styles.contactRow}><Button component={Link} to="/skills" onPointerEnter={warmSkills} onFocus={warmSkills} onClick={enterPortal} className={styles.button}>
+              {t('navigation.link.skills')}
+            </Button></div>
+          </div>
         </div>
-        <div className={styles.description}>
-          <p>
-            <span>{t('splash.hello.world')}</span>! {t('splash.my.name')}{' '}
-          </p>
-          <p>{t('splash.socha')}</p>
-          <p>{t('splash.frontend.developer')}</p>
-          <p>{t('splash.description')}</p>
-          <Button href="#contact" className={styles.button}>
-            {t('splash.btn.contact')}
-          </Button>
-        </div>
-      </div>
+      </section>
       <Achivments />
     </div>
   );

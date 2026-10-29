@@ -1,408 +1,48 @@
-@import '../../styles/settings.scss';
-
-.contact {
-  position: relative;
-  overflow: hidden;
-  isolation: isolate;
-  max-width: 1200px;
-  margin: 34px auto 50px;
-  padding: 22px 22px 34px;
-  border-radius: 36px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background:
-    radial-gradient(circle at 12% 16%, rgba(0, 120, 201, 0.22), transparent 32%),
-    radial-gradient(circle at 88% 82%, rgba(0, 74, 130, 0.18), transparent 38%),
-    linear-gradient(155deg, rgba(5, 10, 20, 0.96), rgba(0, 0, 0, 0.92));
-  box-shadow: 0 26px 54px rgba(0, 0, 0, 0.32);
-
-  @include medium-screens {
-    margin: 24px 12px 50px;
-    padding: 18px 14px 26px;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.18;
-    z-index: 0;
-    pointer-events: none;
-    animation: contactGlowFloat 10s ease-in-out infinite;
-  }
-
-  &::before {
-    width: 260px;
-    height: 260px;
-    top: -110px;
-    left: -90px;
-    background: rgba(0, 120, 201, 0.9);
-  }
-
-  &::after {
-    width: 300px;
-    height: 300px;
-    right: -120px;
-    bottom: -150px;
-    background: rgba(18, 92, 148, 0.82);
-    animation-delay: 1.4s;
-  }
-
-  > h1 {
-    position: relative;
-    z-index: 1;
-  }
+@import '../../styles/sections.scss';
+.contact { @include section-shell; background: transparent; }
+.cards { @include section-width; container: contact-cards / inline-size; max-width: 80rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--card-gap); }
+.card {
+  display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto 1fr auto;
+  column-gap: 1.25rem; padding: var(--card-padding); min-width: 0;
+  color: #edf4fd; text-decoration: none; border: 1px solid #4872898c; border-radius: 1.25rem;
+  background: linear-gradient(125deg, #0b2031ed, #061420f2);
+  box-shadow: 0 16px 40px #0003;
+  transition: transform .35s, border-color .35s, box-shadow .35s;
+  h3 { grid-column: 1; grid-row: 1; font-size: clamp(1.375rem, 1.15rem + .5vw, 1.75rem); margin: 0 0 .75rem; font-weight: 700; line-height: 1.3; }
+  p { grid-column: 1; grid-row: 2; font-size: var(--body-size); margin: 0 0 1.75rem; color: #c2d5e4; line-height: 1.65; white-space: pre-line; max-width: 40ch; }
+  &:focus-visible { outline: 2px solid #90eaff; outline-offset: 5px; }
 }
-
-.contactTypes {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  margin: 28px 20px 0;
-
-  @include extra-large-screens {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  @include medium-screens {
-    grid-template-columns: 1fr;
-    margin: 12px 6px 0;
-  }
+.linkedin { border-color: #286995; background: radial-gradient(ellipse at 100% 0, #164c763b, transparent 70%), linear-gradient(125deg, #0a2338ef, #061420f2); }
+.icon {
+  grid-column: 2; grid-row: 1 / 3; align-self: center; margin-bottom: 1.5rem;
+  display: grid; place-items: center; width: clamp(3.5rem, 5vw, 5rem); height: clamp(3.5rem, 5vw, 5rem);
+  border: 1px solid #52718b73; border-radius: 1rem; font-size: clamp(2rem, 3vw, 2.75rem);
+  background: linear-gradient(135deg, #20384c, #0a1c2a); color: #c4d9e9;
+  transition: transform .4s, box-shadow .4s;
 }
-
-.contactTypeCard {
-  position: relative;
-  min-height: 230px;
-  border-radius: 28px;
-  overflow: hidden;
-  isolation: isolate;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: linear-gradient(
-    150deg,
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.04)
-  );
-  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.26);
-  transition:
-    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-    border-color 0.4s ease,
-    box-shadow 0.4s ease;
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(circle at 86% 16%, rgba(111, 201, 255, 0.16), transparent 34%),
-      linear-gradient(
-        140deg,
-        rgba(255, 255, 255, 0.05),
-        transparent 42%,
-        rgba(0, 120, 201, 0.08) 100%
-      );
-    opacity: 0.9;
-    z-index: 0;
-    pointer-events: none;
-    transition: opacity 0.4s ease;
-  }
-
-  &[data-available='true'] {
-    border-color: rgba(111, 201, 255, 0.28);
-    box-shadow:
-      0 16px 34px rgba(0, 120, 201, 0.16),
-      0 16px 34px rgba(0, 0, 0, 0.24);
-  }
-
-  &:hover {
-    transform: translateY(-10px);
-    border-color: rgba(255, 255, 255, 0.22);
-    box-shadow:
-      0 24px 42px rgba(0, 0, 0, 0.32),
-      0 0 0 1px rgba(255, 255, 255, 0.06);
-
-    .contactTypesButtonGlow {
-      opacity: 1;
-      transform: translate3d(12px, -12px, 0) scale(1.12);
-    }
-
-    .contactTypesIconWrap {
-      transform: translateY(-4px) scale(1.04);
-      box-shadow: 0 18px 30px rgba(0, 120, 201, 0.24);
-    }
-
-    .contactTypesIconWrap::before {
-      transform: rotate(20deg) scale(1.08);
-      border-color: rgba(255, 255, 255, 0.28);
-    }
-
-    .contactTypesIconWrap::after {
-      opacity: 1;
-    }
-
-    .contactTypesIcon {
-      transform: translateY(-2px) rotate(6deg) scale(1.05);
-    }
-
-    .contactTypesLabel {
-      color: lighten($text-secondary-color, 24%);
-    }
-  }
-
-  @include small-screens {
-    min-height: 210px;
-  }
+.linkedin .icon { background: linear-gradient(135deg, #163f64, #0b223e); border-color: #33739d; color: #9ac9e8; box-shadow: inset 0 1px #7bcaff1a; }
+.action {
+  grid-column: 1 / -1; grid-row: 3; width: 100%; margin-top: auto; min-height: 2.875rem;
+  padding: .75rem 1rem; display: flex; align-items: center; justify-content: space-between; gap: .875rem;
+  border: 1px solid #3a576a8c; border-radius: .625rem;
+  font-size: .875rem; font-weight: 700; line-height: 1.5; letter-spacing: .045em; text-transform: uppercase;
+  background: linear-gradient(110deg, #142d40, #0a1b2a);
+  svg { transition: transform .35s; flex-shrink: 0; }
+  > span { min-width: 0; }
 }
-
-.contactTypesButton {
-  width: 100%;
-  height: 100%;
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 22px;
-  text-align: left;
-  color: $text-color;
-  position: relative;
-  z-index: 1;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-  text-decoration: none;
-  font: inherit;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 2px solid rgba(111, 201, 255, 0.55);
-    outline-offset: -2px;
-    border-radius: 24px;
-  }
-
-  @include small-screens {
-    padding: 20px;
-  }
+.linkedin .action { border-color: #2e648d; background: linear-gradient(110deg, #12446d, #122e54); }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { color: #fff; transform: translateY(-4px); border-color: #67aecd; box-shadow: 0 12px 36px #008bff20; .icon { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 20px #2686bb25; } .action svg { transform: translateX(4px); } }
 }
-
-.contactTypesTopRow {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  position: relative;
-  z-index: 1;
+@media (max-width: 48rem) { .cards { grid-template-columns: minmax(0, 1fr); max-width: 38rem; } }
+@media (max-width: 25rem) { .card { column-gap: .75rem; } .icon { width: 3rem; height: 3rem; font-size: 1.75rem; } }
+@container contact-cards (max-width: 22rem) {
+  .icon { grid-row: 1; margin-bottom: 1rem; }
+  .card p { grid-column: 1 / -1; }
 }
-
-.contactTypesButtonGlow {
-  position: absolute;
-  top: -46px;
-  left: -18px;
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background: radial-gradient(
-    circle,
-    rgba(111, 201, 255, 0.22) 0%,
-    rgba(0, 120, 201, 0.08) 44%,
-    transparent 72%
-  );
-  filter: blur(12px);
-  opacity: 0.68;
-  transform: translate3d(0, 0, 0) scale(1);
-  transition:
-    transform 0.5s ease,
-    opacity 0.5s ease;
-  animation: contactCardAura 7.2s ease-in-out infinite;
-  animation-delay: calc(var(--contact-index, 0) * 0.4s);
-  pointer-events: none;
-  z-index: 0;
+@container contact-cards (max-width: 14rem) {
+  .card { display: flex; flex-direction: column; }
+  .icon { align-self: flex-end; }
+  .action { padding-inline: .5rem; gap: .5rem; }
 }
-
-.contactTypesIconWrap {
-  width: 72px;
-  height: 72px;
-  border-radius: 22px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(
-    145deg,
-    rgba(0, 120, 201, 0.92),
-    rgba(0, 74, 130, 0.96)
-  );
-  box-shadow: 0 14px 24px rgba(0, 120, 201, 0.24);
-  transition:
-    transform 0.4s ease,
-    box-shadow 0.4s ease;
-
-  &::before {
-    content: '';
-    position: absolute;
-    inset: -6px;
-    border-radius: 27px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    transition:
-      transform 0.45s ease,
-      border-color 0.45s ease;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    inset: -20px;
-    border-radius: 34px;
-    background: radial-gradient(
-      circle,
-      rgba(111, 201, 255, 0.22) 0%,
-      transparent 68%
-    );
-    opacity: 0;
-    transition: opacity 0.45s ease;
-    z-index: -1;
-  }
-}
-
-.contactTypeCard[data-available='false'] .contactTypesIconWrap {
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.16),
-    rgba(255, 255, 255, 0.08)
-  );
-  box-shadow: 0 14px 24px rgba(0, 0, 0, 0.18);
-}
-
-.contactTypesIcon {
-  font-size: 28px;
-  color: #f6fbff;
-  position: relative;
-  z-index: 1;
-  transition: transform 0.4s ease;
-}
-
-.contactTypesIconAnimated {
-  animation: contactIconSpin 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.contactTypesStatus {
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-family: $header-font;
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  white-space: nowrap;
-  color: rgba(255, 255, 255, 0.86);
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.contactTypeCard[data-available='true'] .contactTypesStatus {
-  background: rgba(0, 120, 201, 0.16);
-  border-color: rgba(111, 201, 255, 0.3);
-  color: lighten($text-secondary-color, 24%);
-}
-
-.contactTypesContent {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-
-.contactTypesLabel {
-  display: block;
-  font-family: $header-font;
-  font-size: 29px;
-  line-height: 1.08;
-  letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.98);
-  transition: color 0.35s ease;
-
-  @include small-screens {
-    font-size: 24px;
-  }
-}
-
-.contactTypesNote {
-  display: block;
-  color: rgba(255, 255, 255, 0.76);
-  font-size: 16px;
-  line-height: 1.45;
-}
-
-@keyframes contactGlowFloat {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-16px) scale(1.05);
-  }
-  100% {
-    transform: translateY(0px) scale(1);
-  }
-}
-
-@keyframes contactCardAura {
-  0% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.62;
-  }
-  50% {
-    transform: translate3d(8px, -10px, 0) scale(1.06);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translate3d(0, 0, 0) scale(1);
-    opacity: 0.62;
-  }
-}
-
-@keyframes contactIconSpin {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  45% {
-    transform: rotate(220deg) scale(1.1);
-  }
-  75% {
-    transform: rotate(520deg) scale(0.96);
-  }
-  100% {
-    transform: rotate(720deg) scale(1);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .contact::before,
-  .contact::after,
-  .contactTypesButtonGlow {
-    animation: none;
-  }
-
-  .contactTypeCard,
-  .contactTypesButtonGlow,
-  .contactTypesIconWrap,
-  .contactTypesIconWrap::before,
-  .contactTypesIconWrap::after,
-  .contactTypesIcon,
-  .contactTypesLabel {
-    transition: none;
-  }
-
-  .contactTypesIconAnimated,
-  .contactTypeCard:hover {
-    animation: none;
-  }
-
-  .contactTypeCard:hover {
-    transform: none;
-  }
-}
+@media (prefers-reduced-motion: reduce) { .card, .icon, .action svg { transition: none; } .card:hover, .card:hover .icon, .card:hover .action svg { transform: none; } }

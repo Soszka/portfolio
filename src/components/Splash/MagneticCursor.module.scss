@@ -1,0 +1,59 @@
+.cursor { display: none; }
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .field[data-pointer-active='true'], .field[data-pointer-active='true'] * { cursor: none; }
+  .cursor {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      left: -2.5px;
+      top: -2.5px;
+      border-radius: 50%;
+      background: #d8f8ff;
+      box-shadow: 0 0 9px #00bbff;
+    }
+    i {
+      position: absolute;
+      left: -25px;
+      top: -25px;
+      width: 50px;
+      height: 50px;
+      border: 1px solid rgba(36, 191, 255, .32);
+      border-top: 2px solid #a4edff;
+      border-bottom: 2px solid #138bff;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #008bff33, inset 0 0 8px #008bff22;
+      animation: cursorOrbit 2.4s linear infinite;
+      animation-play-state: paused;
+      &::after { content: ''; position: absolute; width: 5px; height: 5px; top: 3px; right: 4px; border-radius: 50%; background: #adf3ff; box-shadow: 0 0 7px #00b7ff; }
+      &:last-child {
+        left: -17px;
+        top: -17px;
+        width: 34px;
+        height: 34px;
+        border-top-color: #0baaff;
+        border-bottom-color: #b1f3ff;
+        animation-direction: reverse;
+        animation-duration: 1.6s;
+      }
+    }
+  }
+  .field[data-pointer-active='true'] .cursor { opacity: 1; i { animation-play-state: running; } }
+}
+
+@keyframes cursorOrbit { to { transform: rotate(360deg); } }
+
+
+.cursor.fixed { position: fixed; z-index: 40; }

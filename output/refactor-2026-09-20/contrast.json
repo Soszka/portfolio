@@ -1,0 +1,137 @@
+[
+  {
+    "selector": "[class*=\"Splash_summary__\"]",
+    "text": "Tworzę skalowalne aplikacje webowe, specjalizując się g",
+    "minimumRatio": 7.26
+  },
+  {
+    "selector": "[class*=\"Achivments_achivment__\"] p",
+    "text": "Dwa ukończone kierunki studiów, gdzie narodziła się moj",
+    "minimumRatio": 14.16
+  },
+  {
+    "selector": "[class*=\"Achivments_achivment__\"] p",
+    "text": "Liczne projekty od małych stron po bardziej rozbudowane",
+    "minimumRatio": 14.22
+  },
+  {
+    "selector": "[class*=\"Achivments_achivment__\"] p",
+    "text": "Kursy online, które znacząco pogłębiły moją wiedzę w za",
+    "minimumRatio": 13.67
+  },
+  {
+    "selector": "[class*=\"Achivments_achivment__\"] p",
+    "text": "Ponad dwadzieścia technologii i narzędzi, które poznałe",
+    "minimumRatio": 13.48
+  },
+  {
+    "selector": "[class*=\"Achivments_achivment__\"] p",
+    "text": "Roczny staż i doświadczenie komercyjne, które pomogły m",
+    "minimumRatio": 13.48
+  },
+  {
+    "selector": "[class*=\"Achivments_achivment__\"] p",
+    "text": "Minęły ponad dwa lata od opublikowania mojej pierwszej ",
+    "minimumRatio": 10.85
+  },
+  {
+    "selector": "[class*=\"About_paragraphs__\"] p",
+    "text": "Ukończyłem dwa kierunki studiów — inżynierski oraz zwią",
+    "minimumRatio": 11.8
+  },
+  {
+    "selector": "[class*=\"About_paragraphs__\"] p",
+    "text": "Patrzę na aplikację jako całość — od interfejsu użytkow",
+    "minimumRatio": 12.08
+  },
+  {
+    "selector": "[class*=\"About_stat__\"] p",
+    "text": "od 2022",
+    "minimumRatio": 10.22
+  },
+  {
+    "selector": "[class*=\"About_stat__\"] p",
+    "text": "komercyjnie od 2024",
+    "minimumRatio": 10.22
+  },
+  {
+    "selector": "[class*=\"About_stat__\"] p",
+    "text": "komercyjnie od 2028",
+    "minimumRatio": 10.31
+  },
+  {
+    "selector": "[class*=\"Journey_date__\"]",
+    "text": "do 2021",
+    "minimumRatio": 10.28
+  },
+  {
+    "selector": "[class*=\"Journey_date__\"]",
+    "text": "od 2022",
+    "minimumRatio": 10.13
+  },
+  {
+    "selector": "[class*=\"Journey_date__\"]",
+    "text": "2024",
+    "minimumRatio": 10.02
+  },
+  {
+    "selector": "[class*=\"Journey_date__\"]",
+    "text": "2025 – obecnie",
+    "minimumRatio": 10.55
+  },
+  {
+    "selector": "[class*=\"Adventages_content__\"] p",
+    "text": "Czytelne, responsywne i dopracowane doświadczenia użytk",
+    "minimumRatio": 14.43
+  },
+  {
+    "selector": "[class*=\"Adventages_content__\"] p",
+    "text": "Angular, TypeScript i architektura komponentów w prakty",
+    "minimumRatio": 14.23
+  },
+  {
+    "selector": "[class*=\"Adventages_content__\"] p",
+    "text": "Java, Spring i logika aplikacji wspierająca warstwę UI.",
+    "minimumRatio": 14.35
+  },
+  {
+    "selector": "[class*=\"Adventages_content__\"] p",
+    "text": "Automatyczne testy, które dają pewność i stabilność w r",
+    "minimumRatio": 14.43
+  },
+  {
+    "selector": "[class*=\"Adventages_content__\"] p",
+    "text": "Automatyzuję procesy, aby szybciej i bezpieczniej dosta",
+    "minimumRatio": 14.32
+  },
+  {
+    "selector": "[class*=\"Adventages_content__\"] p",
+    "text": "Skalowalne struktury, porządek i myślenie systemowe.",
+    "minimumRatio": 14.35
+  },
+  {
+    "selector": "#contact p",
+    "text": "Najłatwiej złapiesz mnie na LinkedIn.\nTo mój główny kan",
+    "minimumRatio": 10.73
+  },
+  {
+    "selector": "#contact p",
+    "text": "Chcesz najpierw zobaczyć, jak pracuję?\nZajrzyj do moich",
+    "minimumRatio": 11.25
+  },
+  {
+    "selector": "[class*=\"Contact_action__\"] > span",
+    "text": "Przejdź do LinkedIn",
+    "minimumRatio": 9.27
+  },
+  {
+    "selector": "[class*=\"Contact_action__\"] > span",
+    "text": "Otwórz GitHub",
+    "minimumRatio": 12.82
+  },
+  {
+    "selector": "[class*=\"Footer_copyright__\"]",
+    "text": "© 2026 · Wszystkie prawa zastrzeżone.",
+    "minimumRatio": 9.94
+  }
+]

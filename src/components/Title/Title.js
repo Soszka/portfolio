@@ -1,19 +1,10 @@
 import styles from './Title.module.scss';
-
-const Title = (props) => {
-  const titleText = String(props.children ?? '').trim();
-  const words = titleText.split(/\s+/);
-  const firstWord = words[0] ?? '';
-  const secondPart = words.slice(1).join(' ');
-
-  return (
-    <h1 className={styles.title} data-aos="zoom-in">
-      <span className={styles.titleWord}>{firstWord}</span>
-      {secondPart ? (
-        <span className={styles.secondTitleWord}>{secondPart}</span>
-      ) : null}
-    </h1>
-  );
+import ShimmerText from '../ShimmerText/ShimmerText';
+const Title = ({ children, accentWords }) => {
+  const words = String(children ?? '').trim().split(/\s+/);
+  return <h2 className={styles.title}>
+    {words.map((word, index) => <ShimmerText key={`${word}-${index}`}
+      accent={accentWords ? accentWords.includes(index) : index > 0}>{word}</ShimmerText>)}
+  </h2>;
 };
-
 export default Title;

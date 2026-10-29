@@ -1,0 +1,17 @@
+// Shared fluid proportions, capped for ultrawide displays.
+@mixin section-shell { position: relative; isolation: isolate; padding: clamp(64px, 6vw, 144px) 0; }
+@mixin section-width {
+  width: min(90%, 2200px); margin-inline: auto;
+  @media (max-width: 600px) { width: calc(100% - 36px); }
+}
+@mixin stars {
+  background-image: radial-gradient(circle at 18% 24%, #5bcaff 0 1px, transparent 1.8px), radial-gradient(circle at 73% 64%, #258dcc 0 1px, transparent 1.7px), radial-gradient(circle at 44% 87%, #2374a9 0 .7px, transparent 1.5px);
+  background-size: 317px 229px, 463px 337px, 193px 281px;
+}
+@mixin section-caption {
+  display: flex; align-items: center; justify-content: center;
+  gap: clamp(16px, 2vw, 40px); margin: clamp(36px, 4vw, 88px) auto 0;
+  color: #87aac6; font-size: clamp(10px, .85vw, 16px); letter-spacing: .28em; text-align: center; text-transform: uppercase;
+  &::before, &::after { content: ''; width: clamp(28px, 6vw, 100px); height: 1px; background: linear-gradient(90deg, transparent, #00c7ff); }
+  &::after { transform: rotate(180deg); }
+}

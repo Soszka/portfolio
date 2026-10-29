@@ -1,0 +1,22 @@
+[
+  {
+    "name": "journey-courses-v3",
+    "prompt": "Use case: photorealistic-natural. A portrait 4:5 editorial photograph for a learning journey card. Top-down view of a real study table in warm natural afternoon light: an open programming textbook with abstract diagrams, handwritten notes, colorful bookmarks, pencil and a small tablet with an online course interface. NO laptop, NO desktop monitor, NO coffee, NO office room. Warm muted ivory, tan and honey tones with a restrained petrol accent. Main recognizable objects in top 65%, lower 35% transitions naturally into very dark navy shadow so an HTML paragraph remains readable. Elegant premium realistic photography, not a space scene. No headings, logos, watermarks or card border."
+  },
+  {
+    "name": "journey-internship-v3",
+    "prompt": "Use case: photorealistic-natural. Portrait 4:5 cinematic candid office photograph for an internship career card: three adult colleagues standing in a bright modern collaboration area discussing a large glass whiteboard covered in abstract software architecture diagrams and a few muted colored sticky notes. People shown from side and behind at medium distance, avoid close-up faces. No laptop, no computer desk, no coffee. Cool neutral daylight, desaturated sage green plants and warm natural skin tones. Top 65% shows people and board; bottom 35% falls naturally into deep dark navy foreground shadow for HTML paragraph. Professional editorial photography, not a space scene. No text overlays, no logos, no card border."
+  },
+  {
+    "name": "journey-work-v3",
+    "prompt": "Use case: photorealistic-natural. Portrait 4:5 editorial photograph for a software engineer career card: an adult software engineer seen from behind standing in a spacious modern engineering operations room, a large wall display showing abstract application architecture and performance charts, server equipment at the side. No laptop, no coffee cup, no small home office desk. Elegant charcoal, muted violet and amber accent lighting, human real world environment. Top 65% contains scene, lower 35% is a natural deep navy shadow foreground for overlay paragraph. Realistic professional photography, no space planets, no added headings, no watermarks or card frame."
+  },
+  {
+    "name": "expertise-testing-v2",
+    "prompt": "Use case: stylized-concept. Asset: portrait 4:5 illustration for the RIGHT visual column of a dark software engineer portfolio card. One premium dark glass testing dashboard, almost front facing with very slight perspective, large readable turquoise green check marks and clean rows. Exact heading: 'All tests passed'. Three clear rows: 'Frontend tests 18 / 18', 'Backend tests 24 / 24', 'Integration tests 12 / 12'. Below: 'Code coverage', a complete mint green progress bar, '100%'. Similar to a clean elegant mockup product render, emerald/teal edge glow against near-black navy #020b16, sparse circuit lines, NO planets, NO mountains, NO rocks. The panel is large and occupies 85% of frame, fully visible with safe margins. No card border, no extra heading or paragraph outside dashboard, no watermark."
+  },
+  {
+    "name": "expertise-delivery-v2",
+    "prompt": "Use case: stylized-concept. Asset: landscape 4:3 illustration for the RIGHT visual column of a software engineer portfolio card. Three elegant dark translucent glass workflow blocks rising left-to-right on a sleek dark platform, interconnected with fine luminous lines. First is green with a gear symbol and the exact small label 'Build'; second is soft amber with a check mark and exact label 'Test'; third is violet with a blue-violet rocket and exact label 'Deploy'. Clear distinct green / amber / violet accents, unified premium deep navy environment. All three blocks clearly visible, occupy most of frame, no empty text area needed. Cinematic refined 3D software product illustration. No space planets, no rocky terrain, no surrounding title, no card frame, no watermark."
+  }
+]

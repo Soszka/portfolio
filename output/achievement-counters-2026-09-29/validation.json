@@ -1,0 +1,267 @@
+{
+  "mid": [
+    "0",
+    "3",
+    "2",
+    "5",
+    "0",
+    "0+"
+  ],
+  "final": [
+    "2",
+    "12",
+    "7",
+    "19",
+    "1",
+    "2+"
+  ],
+  "layouts": [
+    {
+      "width": 320,
+      "cards": [
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "cards": [
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "cards": [
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        }
+      ]
+    },
+    {
+      "width": 1024,
+      "cards": [
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "cards": [
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        }
+      ]
+    },
+    {
+      "width": 2560,
+      "cards": [
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        },
+        {
+          "inViewport": true,
+          "fits": true,
+          "textFits": true,
+          "separate": true
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

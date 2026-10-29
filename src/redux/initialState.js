@@ -10,12 +10,12 @@ import {
   faEnvelope,
   faLayerGroup,
 } from '@fortawesome/free-solid-svg-icons';
-import AdventagesPhoto1 from '../../src/assets/HomePhotos/adventagesPhoto1.png';
-import AdventagesPhoto2 from '../../src/assets/HomePhotos/adventagesPhoto2.jpg';
-import AdventagesPhoto3 from '../../src/assets/HomePhotos/advenatgesPhoto3.png';
-import AdventagesPhoto4 from '../../src/assets/HomePhotos/adventagesPhoto4.jpg';
-import AdventagesPhoto5 from '../../src/assets/HomePhotos/adventagesPhoto5.jpg';
-import AdventagesPhoto6 from '../../src/assets/HomePhotos/adventagesPhoto6.jpg';
+import AdventagesPhoto1 from '../../src/assets/HomePhotos/adventagesPhoto1.webp';
+import AdventagesPhoto2 from '../../src/assets/HomePhotos/adventagesPhoto2.webp';
+import AdventagesPhoto3 from '../../src/assets/HomePhotos/advenatgesPhoto3.webp';
+import AdventagesPhoto4 from '../../src/assets/HomePhotos/adventagesPhoto4.webp';
+import AdventagesPhoto5 from '../../src/assets/HomePhotos/adventagesPhoto5.webp';
+import AdventagesPhoto6 from '../../src/assets/HomePhotos/adventagesPhoto6.webp';
 import CoreWebPhoto1 from '../../src/assets/SkillsPhotos/CoreWebPhoto1.png';
 import CoreWebPhoto2 from '../../src/assets/SkillsPhotos/CoreWebPhoto2.png';
 import CoreWebPhoto3 from '../../src/assets/SkillsPhotos/CoreWebPhoto3.png';

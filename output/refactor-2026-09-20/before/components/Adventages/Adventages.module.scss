@@ -1,0 +1,30 @@
+@import '../../styles/sections.scss';
+.section { @include section-shell; background: radial-gradient(ellipse at 95% 95%, #002c6370, transparent 50%), radial-gradient(ellipse at 5% 0, #002c6350, transparent 50%), #010710;
+  &::before { content: ''; position: absolute; inset: 0; z-index: -1; @include stars; opacity: .45; }
+  &::after { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(28deg, transparent 49.9%, #006bba40 50%, transparent 50.1%), linear-gradient(115deg, transparent 49.9%, #006bba25 50%, transparent 50.1%); background-size: 500px 380px, 410px 470px; mask-image: linear-gradient(#000, transparent 35% 65%, #000); }
+}
+.subtitle { width: 88%; margin: clamp(-48px, -2.3vw, -20px) auto clamp(28px, 2vw, 44px); text-align: center; font-size: clamp(16px, 1.18vw, 26px); color: #dae6ef; line-height: 1.55; }
+.cards { @include section-width; width: min(95%, 2320px); display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(16px, 1.15vw, 28px); }
+.card { position: relative; isolation: isolate; overflow: hidden; min-width: 0; width: 100%; min-height: 290px; aspect-ratio: 1.6; border: 1px solid #009cdb9c; border-radius: clamp(18px, 1.3vw, 30px); background: #020b16; box-shadow: inset 0 1px 2px #88dfff22; transition: transform .5s, box-shadow .5s, border-color .5s;
+  &::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(90deg, #01091455 0 30%, #010914a0 43%, transparent 65%); }
+  &::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 25%, #81dfff16 48%, transparent 68%); transform: translateX(-120%); transition: transform .8s ease; }
+}
+.image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform .8s cubic-bezier(.2, .7, .3, 1), filter .8s; }
+.content { position: relative; width: 53%; padding: clamp(32px, 4.4vw, 100px) 0 45px clamp(22px, 1.7vw, 40px); text-shadow: 0 2px 10px #000;
+  h3 { margin: 0 0 clamp(10px, .8vw, 20px); color: #f4f6ff; font-size: clamp(20px, 1.6vw, 35px); font-weight: 700; line-height: 1.2; text-transform: uppercase; }
+  p { margin: 0; color: #e4edf5; font-size: clamp(15px, 1.04vw, 24px); line-height: 1.48; }
+}
+.accent { position: absolute; bottom: 19%; left: clamp(22px, 1.7vw, 40px); height: 1px; width: 10%; background: linear-gradient(90deg, #00e7ff, #005cba); transition: width .5s; }
+.frontend { border-color: #5431c599; }
+.testing { border-color: #008b9299; }
+.caption { @include section-caption; }
+@media (hover: hover) and (pointer: fine) {
+  .card:hover { transform: translateY(-6px); border-color: #3cdeff; box-shadow: 0 10px 40px #007eea30;
+    .image { transform: scale(1.07); filter: brightness(1.16); }
+    .accent { width: 24%; }
+    &::after { transform: translateX(120%); }
+  }
+}
+@media (max-width: 1100px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); width: 90%; } .content { padding-top: 48px; } }
+@media (max-width: 600px) { .cards { grid-template-columns: 1fr; width: calc(100% - 36px); } .card { min-height: 275px; } .content { width: 55%; padding: 42px 0 50px 22px; } .content p { font-size: 15px; } .content h3 { font-size: 20px; } .subtitle { margin-top: -12px; } }
+@media (prefers-reduced-motion: reduce) { .card, .card::after, .image, .accent { transition: none; } .card:hover, .card:hover .image { transform: none; } }

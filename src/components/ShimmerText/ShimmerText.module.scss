@@ -1,0 +1,13 @@
+.text { position: relative; display: inline-block; isolation: isolate; color: #eff5ff; }
+.accent { color: #08b9f8; background: linear-gradient(180deg, #8bdaff, #00bdff 50%, #159cdf); background-clip: text; -webkit-text-fill-color: transparent; }
+.shine, .halo { position: absolute; inset: 0; pointer-events: none; }
+.shine {
+  color: #eaffff; -webkit-text-fill-color: #eaffff;
+  text-shadow: 0 0 3px #a6f1ff70, 0 0 10px #008cff60;
+  mask-image: linear-gradient(110deg, transparent 36%, #0005 44%, #000 49% 52%, #0005 57%, transparent 65%);
+  mask-size: 280% 100%; mask-repeat: no-repeat; animation: sweep 5.4s ease-in-out infinite;
+}
+.halo { z-index: -1; color: transparent; -webkit-text-fill-color: transparent; text-shadow: 0 0 8px #16adff90, 0 0 16px #087bff60; animation: radiance 5.4s ease-in-out infinite; }
+@keyframes sweep { 0% { mask-position: 100% 0; opacity: 0; } 9%, 82% { opacity: 1; } 94%, 100% { mask-position: 0% 0; opacity: 0; } }
+@keyframes radiance { 0%, 100% { opacity: .12; } 48% { opacity: .6; } }
+@media (prefers-reduced-motion: reduce) { .shine, .halo { display: none; } }
