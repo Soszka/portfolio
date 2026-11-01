@@ -173,7 +173,6 @@
     filter: drop-shadow(0 2px 2px rgba(0, 0, 0, .45));
   }
 }
-
 .description {
   position: relative;
   min-width: 0;
@@ -257,9 +256,9 @@
 
 .divider {
   display: block;
-  width: clamp(140px, 11vw, 230px);
-  height: 4px;
-  margin: 32px 0;
+  width: clamp(110px, 9vw, 180px);
+  height: 2px;
+  margin: 20px 0 22px;
   border-radius: 8px;
   background: linear-gradient(90deg, #10c8ef, #0078ff);
   box-shadow: 0 0 9px rgba(0, 156, 255, .55);
@@ -285,15 +284,16 @@
   min-height: 50px;
   padding: 8px 30px;
   line-height: 1.35;
-  border: 1px solid #3a80ab;
+  border: 1.5px solid #1bb7d5;
   border-radius: 999px;
   color: #fff;
   font-family: inherit;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: .035em;
-  background: linear-gradient(115deg, #154c79, #12365e 65%, #102c4e);
-  box-shadow: 0 0 18px rgba(0, 112, 230, .24), inset 0 1px rgba(112, 195, 255, .28);
+  background: linear-gradient(115deg, #123a5d66, #06152d66 65%, #0b254a80);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 16px #00a6ef26, inset 0 0 18px #00aaff0a;
   transition: transform .25s ease, box-shadow .25s ease;
 
   &::after {
@@ -308,8 +308,8 @@
 
   &:hover, &:focus-visible {
     transform: translateY(-3px);
-    background: linear-gradient(115deg, #1c5d8b, #194975 65%, #13355b);
-    box-shadow: 0 0 24px rgba(0, 132, 245, .32);
+    background: linear-gradient(115deg, #16456c88, #0a244888 65%, #11376499);
+    box-shadow: 0 0 8px #51dfff66, 0 0 24px #008cff59;
     &::after { animation: buttonSweep .8s ease-out; }
   }
 }
@@ -354,13 +354,15 @@
 @media (max-width: 900px) {
   .hero {
     background: transparent;
+    min-height: 0;
     > nav { min-height: 80px; }
   }
   .content {
     grid-template-columns: minmax(0, 1fr);
-    align-content: center;
-    min-height: calc(100svh - 80px);
-    padding: 0 16px 88px;
+    flex: 0 0 auto;
+    align-content: start;
+    min-height: 0;
+    padding: 0 16px 28px;
   }
   .imageStage {
     width: min(760px, 100%);
@@ -372,7 +374,7 @@
   .description { padding: 4px 12px 0; text-align: center; }
   .name { font-size: clamp(2.125rem, 1.25rem + 3vw, 3.75rem); white-space: normal; margin-left: auto; margin-right: auto; }
   .role { font-size: clamp(1.5rem, 1rem + 2vw, 2.25rem); }
-  .divider { margin: 20px auto; width: 180px; }
+  .divider { margin: 14px auto 16px; width: 130px; }
   .summary { font-size: var(--body-size, 1rem); max-width: 580px; margin: 0 auto; line-height: 1.65; }
   .description .button { margin-top: 25px; min-height: 46px; padding: 8px 26px; }
   .contactRow { justify-content: center; margin-top: 25px; }

@@ -1,48 +1,194 @@
 @import '../../styles/sections.scss';
-.section { @include section-shell; background: transparent; }
-.cards { @include section-width; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--card-gap); }
-.card {
-  --card-accent: #409fc9;
-  position: relative; isolation: isolate; overflow: hidden;
+@property --expertise-border-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+
+.section {
+  @include section-shell;
+  --section-title-size: clamp(1.75rem, 2.5vw, 3rem);
+  background: transparent;
+  scroll-margin-top: 1.5rem;
+
+}
+
+.titleReveal { opacity: 0; transform: scale(.96); }
+.titleReveal[data-revealed='true'] {
+  opacity: 1; transform: none;
+  animation: expertiseTitleReveal .75s ease-out var(--reveal-delay, 0ms) backwards;
+}
+@keyframes expertiseTitleReveal { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+
+.cards {
+  @include section-width(100rem);
   display: grid;
-  min-width: 0; min-height: 20rem; border: 1px solid color-mix(in srgb, var(--card-accent) 55%, transparent);
-  border-radius: 1.25rem; background: #030e1b;
-  box-shadow: inset 0 1px 2px #88dfff16;
-  transition: transform .45s, box-shadow .45s, border-color .45s;
-  &::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(105deg, transparent 25%, #b0dfff0e 48%, transparent 68%); transform: translateX(-120%); transition: transform .8s ease; }
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
 }
+
+// Animate an outer layer so the entrance never competes with the card's hover.
+.cardReveal {
+  --hover-accent: #55d8ff;
+  --entry-x: -64px; --entry-turn: 20deg; --entry-roll: -3deg;
+  min-width: 0; opacity: 0; transform-origin: center bottom;
+  transform: perspective(1000px) translate3d(var(--entry-x), 72px, -180px) rotateY(var(--entry-turn)) rotateX(18deg) rotateZ(var(--entry-roll)) scale(.8);
+}
+.cardReveal:nth-child(even) { --hover-accent: #ffc481; --entry-x: 64px; --entry-turn: -20deg; --entry-roll: 3deg; }
+.cardReveal[data-revealed='true'] {
+  opacity: 1; transform: none;
+  animation: expertiseDepthReveal 1.4s cubic-bezier(.2,.7,.25,1) var(--reveal-delay, 0ms) backwards;
+}
+@keyframes expertiseDepthReveal {
+  0% { opacity: 0; filter: blur(8px); transform: perspective(1000px) translate3d(var(--entry-x), 72px, -180px) rotateY(var(--entry-turn)) rotateX(18deg) rotateZ(var(--entry-roll)) scale(.8); }
+  60% { opacity: 1; filter: none; }
+  82% { opacity: 1; filter: none; transform: perspective(1000px) translate3d(0, -7px, 0) rotateY(0) rotateX(0) rotateZ(0) scale(1.025); }
+  100% { opacity: 1; filter: none; transform: perspective(1000px) translate3d(0, 0, 0) rotateY(0) rotateX(0) rotateZ(0) scale(1); }
+}
+
+.card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-width: 0;
+  width: 100%;
+  min-height: 12rem;
+  aspect-ratio: 2 / 1;
+  border: 1.5px solid #15a9ffcc;
+  border-radius: 1.1rem;
+  background: #031123;
+  box-shadow: inset 0 1px 1px #90dcff30, 0 0 14px #008dff38;
+  transition: transform .4s ease, box-shadow .4s ease, border-color .4s ease;
+}
+.borderGlow {
+  position: absolute;
+  inset: -1px;
+  z-index: 3;
+  padding: 2px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: conic-gradient(from var(--expertise-border-angle), transparent 0deg 245deg,
+    color-mix(in srgb, var(--hover-accent) 40%, transparent) 285deg,
+    var(--hover-accent) 318deg, #f6ffff 336deg, var(--hover-accent) 344deg, transparent 358deg);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: opacity .25s ease;
+}
+
 .media {
-  position: absolute; inset: 0; min-width: 0; overflow: hidden;
-  // A local scrim keeps the text readable without fading the image into a
-  // separate, empty left column. The scenery continues underneath the copy.
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+
+  // The scene spans the card; this local scrim only protects the copy.
   &::after {
-    content: ''; position: absolute; inset: 0; pointer-events: none;
-    background:
-      radial-gradient(ellipse 90% 110% at 0 0, #020914e6 0%, #020914b8 32%, #02091466 58%, transparent 85%),
-      linear-gradient(180deg, #02091426, transparent 65%, #02091433);
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse 100% 140% at 0 0,
+      #010713fc 0%, #010713f0 34%, #010713c9 54%, #01071338 80%, transparent 100%);
   }
 }
-.image { position: absolute; inset: 0; width: 100%; max-width: none; height: 100%; object-fit: cover; object-position: center; transition: transform .7s; }
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .8s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+}
+.imageGlow {
+  position: absolute;
+  inset: -10%;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(.78);
+  background:
+    radial-gradient(ellipse 42% 65% at 78% 65%,
+      color-mix(in srgb, var(--hover-accent) 28%, transparent), transparent 66%),
+    radial-gradient(ellipse 74% 95% at 78% 65%,
+      color-mix(in srgb, var(--hover-accent) 10%, transparent), transparent 70%);
+  transition: opacity .7s ease, transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
 .content {
-  position: relative; z-index: 1; min-width: 0; align-self: start;
-  display: flex; flex-direction: column; align-items: flex-start;
-  padding: clamp(1.25rem, 1rem + .5vw, 1.75rem);
-  text-shadow: 0 2px 8px #000c;
-  h3 { margin: 0 0 .875rem; color: #f0f4fa; font-size: var(--card-title-size); font-weight: 700; line-height: 1.3; text-transform: uppercase; overflow-wrap: anywhere; }
-  p { width: 65%; max-width: 28ch; margin: 0; color: #e1eaf3; font-size: var(--body-size); line-height: 1.6; overflow-wrap: anywhere; }
-}
-.frontend { --card-accent: #9375d6; .image { filter: hue-rotate(8deg); } }
-.backend { --card-accent: #468c94; }
-.testing { --card-accent: #35b69f; }
-.delivery { --card-accent: #9c8ec3; }
-.architecture { --card-accent: #667fca; .image { filter: hue-rotate(13deg); } }
-@media (hover: hover) and (pointer: fine) {
-  .card:hover { transform: translateY(-5px); border-color: var(--card-accent); box-shadow: 0 12px 35px color-mix(in srgb, var(--card-accent) 15%, transparent);
-    .image { transform: scale(1.045); }
-    &::after { transform: translateX(120%); }
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding: clamp(1.125rem, 1.4vw, 1.625rem);
+  text-shadow: 0 1px 4px #000, 0 2px 12px #0009;
+  transition: transform .45s cubic-bezier(.2,.7,.2,1);
+
+  h3 {
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 0 .75rem;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: clamp(1.125rem, 1.25vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  p {
+    width: 46%;
+    max-width: 26ch;
+    margin: 0;
+    color: #f3f6fc;
+    font-size: clamp(1rem, .92rem + .12vw, 1.0625rem);
+    line-height: 1.5;
   }
 }
-@media (max-width: 85rem) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 48rem) { .cards { grid-template-columns: minmax(0, 1fr); max-width: 38rem; } .card { min-height: 18rem; } }
-@media (max-width: 23rem) { .content h3 { font-size: 1.0625rem; } .content p { width: 78%; } }
-@media (prefers-reduced-motion: reduce) { .card, .card::after, .image { transition: none; } .card:hover, .card:hover .image { transform: none; } }
+
+@media (min-width: 53rem) and (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: var(--hover-accent);
+    box-shadow: inset 0 0 0 1px #90dcff26,
+      0 12px 32px color-mix(in srgb, var(--hover-accent) 23%, transparent);
+    .image { transform: scale(1.075) translateX(-1.2%); filter: brightness(.83) saturate(1.08); }
+    .imageGlow { opacity: .85; transform: scale(1); }
+    .content { transform: translateY(-3px); }
+    .borderGlow { opacity: 1; animation: expertiseBorderGlow 2.8s linear infinite; }
+  }
+}
+@keyframes expertiseBorderGlow { to { --expertise-border-angle: 360deg; } }
+
+@media (max-width: 80rem) {
+  .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cardReveal:nth-child(3) { order: 4; }
+  .cardReveal:nth-child(4) { order: 3; }
+  .cardReveal:nth-child(5) { order: 5; }
+  .cardReveal:nth-child(6) { order: 6; }
+}
+@media (max-width: 44rem) {
+  .cards { grid-template-columns: minmax(0, 1fr); max-width: 38rem; }
+  .cardReveal:nth-child(n) { order: 0; }
+  .cardReveal { --entry-x: -24px; --entry-turn: 9deg; --entry-roll: -1deg; transform: perspective(700px) translate3d(var(--entry-x), 40px, -70px) rotateY(var(--entry-turn)) rotateX(14deg) scale(.88); }
+  .cardReveal:nth-child(even) { --entry-x: 24px; --entry-turn: -9deg; --entry-roll: 1deg; }
+  .cardReveal[data-revealed='true'] { animation-name: expertiseDepthRevealCompact; animation-duration: 1s; }
+  .card { aspect-ratio: 1.65 / 1; min-height: 14rem; border-radius: 1rem; }
+  .image { object-position: right center; }
+  .media::after {
+    background: radial-gradient(ellipse 100% 160% at 0 0,
+      #010713fe 0%, #010713f5 35%, #010713bf 58%, #01071330 82%, transparent 100%);
+  }
+  .content {
+    padding: 1.125rem;
+    h3 { margin-bottom: .625rem; font-size: 1.125rem; }
+    p { width: 49%; font-size: 1rem; }
+  }
+}
+@keyframes expertiseDepthRevealCompact {
+  0% { opacity: 0; transform: perspective(700px) translate3d(var(--entry-x), 40px, -70px) rotateY(var(--entry-turn)) rotateX(14deg) scale(.88); }
+  78% { opacity: 1; transform: perspective(700px) translate3d(0, -4px, 0) rotateY(0) rotateX(0) scale(1.015); }
+  100% { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .titleReveal, .titleReveal[data-revealed='true'], .cardReveal, .cardReveal[data-revealed='true'] { opacity: 1; filter: none; transform: none; animation: none; }
+  .card, .image, .imageGlow, .content, .borderGlow { transition: none; }
+  .card:hover, .card:hover .image, .card:hover .content { transform: none; }
+  .card:hover .imageGlow { transform: none; }
+  .card:hover .borderGlow { animation: none; --expertise-border-angle: 40deg; }
+}

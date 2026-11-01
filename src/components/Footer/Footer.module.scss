@@ -1,17 +1,17 @@
 @import '../../styles/sections.scss';
 .footer {
   position: relative; background: transparent;
-  padding: 0 var(--page-gutter, 1.25rem) 2rem;
-  color: #a6bed1;
+  padding: calc(var(--section-gap, 0px) / 2) var(--page-gutter, 1.25rem) 1.5rem;
+  color: #9bb1c4;
 }
 .content {
-  max-width: 112rem; margin: 0 auto; padding-top: 1.75rem;
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem;
+  max-width: 112rem; margin: 0 auto; padding-top: 1.25rem; text-align: center;
   position: relative;
-  &::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #4c779655 20% 80%, transparent); }
+  &::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, #4c779633 20% 80%, transparent); }
   p { margin: 0; }
 }
-.signature { font-size: 1rem; font-weight: 700; color: #cdddea; > span:first-child { color: #7bbad9; } }
-.role { display: inline-block; margin-left: 1rem; color: #91adc3; font-size: .8125rem; font-weight: 400; }
-.copyright { font-size: .8125rem; line-height: 1.6; }
-@media (max-width: 40rem) { .content { justify-content: center; text-align: center; } .role { display: block; margin: .375rem 0 0; } }
+.copyright {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: .25rem .5rem; font-size: .8125rem; line-height: 1.7; font-weight: 400;
+  > span { font: inherit; }
+}

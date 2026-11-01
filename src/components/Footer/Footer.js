@@ -4,8 +4,12 @@ const Footer = () => {
   const { t } = useTranslation();
   return <footer className={styles.footer}>
     <div className={styles.content}>
-      <p className={styles.signature}>Bartłomiej <span>Socha</span><span className={styles.role}>Software Engineer</span></p>
-      <p className={styles.copyright}>© {new Date().getFullYear()} · {t('footer.rights')}</p>
+      <p className={styles.copyright}>
+        <span>Bartłomiej Socha</span>
+        <span>© {new Date().getFullYear()}</span>
+        <span aria-hidden="true">·</span>
+        <span>{t('footer.rights')}</span>
+      </p>
     </div>
   </footer>;
 };

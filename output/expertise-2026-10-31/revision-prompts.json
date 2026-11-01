@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-31",
+  "mode": "Built-in image_gen; two user-requested revisions",
+  "assets": [
+    {
+      "key": "backend",
+      "source": "C:\\Users\\bsoch\\.codex\\generated_images\\01a1892d-e7bc-7da3-91a9-830121d8cac4\\exec-57d7635b-c2ed-41b9-a099-04ee3c50b5c6.png",
+      "destination": "src/assets/HomePhotos/expertise-v4/backend.webp"
+    },
+    {
+      "key": "architecture",
+      "source": "C:\\Users\\bsoch\\.codex\\generated_images\\01a1892d-e7bc-7da3-91a9-830121d8cac4\\exec-bb7e7931-5533-4eb4-91fe-a399448e15a1.png",
+      "destination": "src/assets/HomePhotos/expertise-v4/architecture.webp"
+    }
+  ],
+  "prompts": [
+    {
+      "key": "backend",
+      "references": [
+        "C:/Users/bsoch/Documents/PROGRAMOWANIE/PROJEKTY/portfolio/src/assets/HomePhotos/expertise-v3/backend.webp",
+        "C:/Users/bsoch/Documents/PROGRAMOWANIE/PROJEKTY/portfolio/src/assets/TechIcons/java.webp",
+        "C:/Users/bsoch/Documents/PROGRAMOWANIE/PROJEKTY/portfolio/src/assets/TechIcons/spring.webp"
+      ],
+      "prompt": "Use case: precise-object-edit. Edit target: first image, a 2:1 full-bleed backend card background. Supporting brand references: image 2 is the standard Java coffee-cup logo (orange/red steam and blue cup); image 3 is the green Spring leaf logo. Revise the first image while preserving the overall 3D server-rack composition, right-biased placement, rocky alien ground and cinematic detail.\nMain requested changes: replace the all-cyan stylized Java symbol with a faithful LARGE recognizable standard Java logo matching image 2, with clearly orange-red steam and blue coffee cup, NOT a monochrome neon-cyan icon. Make BOTH the Java and Spring logo tiles roughly 60% larger than the existing ones so each symbol remains clear when the image is displayed as a 520x260 card. Java tile around x62%, y36%, Spring tile around x82%, y65%, spaced so both symbols remain fully visible. Use dark neutral glass tiles and mostly neutral white rim light, strong natural orange-red/blue Java colors and vivid standard Spring green. Make the Spring leaf faithful to image 3.\nReduce the excessive electric blue across the scene. Server racks should be graphite/black metal with green status lights, restrained warm amber accents and white edge highlights. Keep a subdued midnight-navy space environment but remove bright saturated blue nebula behind the subjects. Green and warm Java-orange reflections on the rocky floor. The upper-left 40% must be naturally quite dark with subdued smoky texture for HTML copy, fading organically into the full scene; keep rocky details across lower-left, no abrupt black half-panel. No circular orbit rings, no orbit dots or sweeping luminous loops, no arrows, no decorative UI controls, no large text/headings, no card border, no watermark. Keep the entire image edge-to-edge. Landscape 2:1, 1536x768."
+    },
+    {
+      "key": "architecture",
+      "references": [
+        "C:/Users/bsoch/Documents/PROGRAMOWANIE/PROJEKTY/portfolio/src/assets/HomePhotos/expertise-v3/architecture.webp"
+      ],
+      "prompt": "Use case: style-transfer / precise-object-edit. Edit target: the supplied architecture card background. Create a revised landscape 2:1 full-bleed image, 1536x768, maintaining the stacked application-module composition mainly in the right 60%, rocky stepped platform, cinematic perspective and highly detailed 3D materials. The current blue-on-blue scene blends together; change its color direction decisively.\nReplace the all-blue glass cubes with a coherent GRAPHITE, WARM WHITE and AMBER/COPPER architecture: sophisticated smoke-gray glass / dark titanium blocks with warm amber glass edges, soft white symbols and delicate copper interconnections. A UI/window module on top, API/code module below, Services/gear, Database/cylinder and Infrastructure/cloud modules at the base. Each module is clearly separate and readable. A few restrained lavender reflections may add depth, but primary colors are charcoal, champagne white and warm amber/copper, NOT blue. Small accurate in-object labels UI, API, SERVICES, DATABASE, INFRASTRUCTURE are allowed. Avoid rainbow colors and avoid green/orange/purple CI/CD pipeline styling: this is an architectural stack, not a delivery conveyor.\nBackground is dim desaturated deep-space charcoal with faint stars and a subtle warm dusty nebula; no intense electric-blue nebula, no big blue planet, no blue beams. Warm-lit craggy rocks continue across the full foreground. Upper-left 40% is naturally very dark and low detail for HTML copy, smoothly integrated with the full scene, not a blank hard-edged black left half. High material contrast, refined cinematic realism. No orbital rings, no orbital dots, no arrow buttons, no headings or portfolio descriptions, no numbering, no card border, no watermark."
+    }
+  ]
+}
+

@@ -1,4 +1,4 @@
-import { IconButton } from '@material-ui/core';
+import IconButton from '@mui/material/IconButton';
 import { useTranslation } from 'react-i18next';
 import PolishFlag from '../../assets/HomePhotos/polishFlagPhoto.png';
 import EnglishFlag from '../../assets/HomePhotos/englishFlagPhoto.png';

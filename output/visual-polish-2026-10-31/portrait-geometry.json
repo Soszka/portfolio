@@ -1,0 +1,276 @@
+{
+  "duringAndAfter": [
+    {
+      "clip": "inset(-128px 38.4012%)",
+      "haloBottom": 821.4375625,
+      "haloTop": 258.8905625,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "84.3125px",
+      "portrait": {
+        "bottom": 824.15625,
+        "height": 567.984375,
+        "left": 80.87547302246094,
+        "right": 772.4223480224609,
+        "top": 256.171875,
+        "width": 691.546875,
+        "x": 80.87547302246094,
+        "y": 256.171875
+      },
+      "ringHeight": 490.547,
+      "stage": {
+        "bottom": 739.84375,
+        "height": 399.359375,
+        "left": 90.64109802246094,
+        "right": 762.6410980224609,
+        "top": 340.484375,
+        "width": 672,
+        "x": 90.64109802246094,
+        "y": 340.484375
+      },
+      "width": 768
+    },
+    {
+      "clip": "none",
+      "haloBottom": 821.4375625,
+      "haloTop": 258.8905625,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "84.3125px",
+      "portrait": {
+        "bottom": 824.15625,
+        "height": 567.984375,
+        "left": 30.71875,
+        "right": 722.265625,
+        "top": 256.171875,
+        "width": 691.546875,
+        "x": 30.71875,
+        "y": 256.171875
+      },
+      "ringHeight": 490.547,
+      "stage": {
+        "bottom": 739.84375,
+        "height": 399.359375,
+        "left": 40.484375,
+        "right": 712.484375,
+        "top": 340.484375,
+        "width": 672,
+        "x": 40.484375,
+        "y": 340.484375
+      },
+      "width": 768
+    },
+    {
+      "clip": "inset(-128px 35.4278%)",
+      "haloBottom": 527.539125,
+      "haloTop": 210.992125,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "22.2656px",
+      "portrait": {
+        "bottom": 527.53125,
+        "height": 316.53125,
+        "left": 66.27301025390625,
+        "right": 401.27301025390625,
+        "top": 211,
+        "width": 335,
+        "x": 66.27301025390625,
+        "y": 211
+      },
+      "ringHeight": 244.547,
+      "stage": {
+        "bottom": 505.265625,
+        "height": 272,
+        "left": 66.27301025390625,
+        "right": 401.27301025390625,
+        "top": 233.265625,
+        "width": 335,
+        "x": 66.27301025390625,
+        "y": 233.265625
+      },
+      "width": 390
+    },
+    {
+      "clip": "none",
+      "haloBottom": 527.539125,
+      "haloTop": 210.992125,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "22.2656px",
+      "portrait": {
+        "bottom": 527.53125,
+        "height": 316.53125,
+        "left": 20,
+        "right": 355,
+        "top": 211,
+        "width": 335,
+        "x": 20,
+        "y": 211
+      },
+      "ringHeight": 244.547,
+      "stage": {
+        "bottom": 505.265625,
+        "height": 272,
+        "left": 20,
+        "right": 355,
+        "top": 233.265625,
+        "width": 335,
+        "x": 20,
+        "y": 233.265625
+      },
+      "width": 390
+    }
+  ],
+  "viewports": [
+    {
+      "clip": "none",
+      "haloBottom": -2880.296625,
+      "haloTop": -3145.734625,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "0px",
+      "portrait": {
+        "bottom": -2877.015625,
+        "height": 272,
+        "left": 20,
+        "right": 285,
+        "top": -3149.015625,
+        "width": 265,
+        "x": 20,
+        "y": -3149.015625
+      },
+      "ringHeight": 193.438,
+      "stage": {
+        "bottom": -2877.015625,
+        "height": 272,
+        "left": 20,
+        "right": 285,
+        "top": -3149.015625,
+        "width": 265,
+        "x": 20,
+        "y": -3149.015625
+      },
+      "width": 320
+    },
+    {
+      "clip": "none",
+      "haloBottom": -2916.460875,
+      "haloTop": -3233.007875,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "22.2656px",
+      "portrait": {
+        "bottom": -2916.46875,
+        "height": 316.53125,
+        "left": 20,
+        "right": 355,
+        "top": -3233,
+        "width": 335,
+        "x": 20,
+        "y": -3233
+      },
+      "ringHeight": 244.547,
+      "stage": {
+        "bottom": -2938.734375,
+        "height": 272,
+        "left": 20,
+        "right": 355,
+        "top": -3210.734375,
+        "width": 335,
+        "x": 20,
+        "y": -3210.734375
+      },
+      "width": 390
+    },
+    {
+      "clip": "none",
+      "haloBottom": -1091.5624375,
+      "haloTop": -1654.1094375,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "84.3125px",
+      "portrait": {
+        "bottom": -1088.84375,
+        "height": 567.984375,
+        "left": 30.71875,
+        "right": 722.265625,
+        "top": -1656.828125,
+        "width": 691.546875,
+        "x": 30.71875,
+        "y": -1656.828125
+      },
+      "ringHeight": 490.547,
+      "stage": {
+        "bottom": -1173.15625,
+        "height": 399.359375,
+        "left": 40.484375,
+        "right": 712.484375,
+        "top": -1572.515625,
+        "width": 672,
+        "x": 40.484375,
+        "y": -1572.515625
+      },
+      "width": 768
+    },
+    {
+      "clip": "none",
+      "haloBottom": -1172.773375,
+      "haloTop": -1735.320375,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "44px",
+      "portrait": {
+        "bottom": -1170.046875,
+        "height": 568,
+        "left": 88.5,
+        "right": 920.5,
+        "top": -1738.046875,
+        "width": 832,
+        "x": 88.5,
+        "y": -1738.046875
+      },
+      "ringHeight": 490.547,
+      "stage": {
+        "bottom": -1214.046875,
+        "height": 480,
+        "left": 168.5,
+        "right": 840.5,
+        "top": -1694.046875,
+        "width": 672,
+        "x": 168.5,
+        "y": -1694.046875
+      },
+      "width": 1024
+    },
+    {
+      "clip": "none",
+      "haloBottom": -923.5,
+      "haloTop": -1491.5,
+      "overflow": false,
+      "overlay": 0,
+      "padding": "4px",
+      "portrait": {
+        "bottom": -923.5,
+        "height": 568,
+        "left": 1027.59375,
+        "right": 1828.171875,
+        "top": -1491.5,
+        "width": 800.578125,
+        "x": 1027.59375,
+        "y": -1491.5
+      },
+      "ringHeight": 496,
+      "stage": {
+        "bottom": -927.5,
+        "height": 560,
+        "left": 1027.59375,
+        "right": 1828.171875,
+        "top": -1487.5,
+        "width": 800.578125,
+        "x": 1027.59375,
+        "y": -1487.5
+      },
+      "width": 1920
+    }
+  ]
+}

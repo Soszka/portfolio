@@ -36,7 +36,6 @@ const About = () => {
             <div><h3>{t(`about.stats.${key}.title`)}</h3><p>{t(`about.stats.${key}.detail`)}</p></div>
           </div></div>)}</div>
         <span className={styles.cardOrbit} aria-hidden="true" />
-        <span className={styles.cardCorners} aria-hidden="true" />
       </div>
       <div className={styles.portraitReveal} ref={element => { revealRefs.current[2] = element; }}
         data-reveal-part="portrait" data-revealed={revealStates[2].visible} style={{ '--reveal-delay': `${revealStates[2].delay}ms` }}>

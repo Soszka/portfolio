@@ -1,7 +1,9 @@
 @import '../../styles/sections.scss';
+@property --journey-border-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 
 .journey {
   @include section-shell;
+  --section-title-size: clamp(1.75rem, 2.5vw, 3rem);
   background: transparent;
 
   // Fade this richer nebula into the shared galaxy instead of creating a section seam.
@@ -14,6 +16,7 @@
 }
 
 .titleReveal { opacity: 0; transform: translateY(26px); }
+.titleReveal > h2 { margin-bottom: calc(var(--section-heading-gap) - 1rem); }
 .titleReveal[data-revealed='true'] { opacity: 1; transform: none; animation: journeyTitleReveal 1.1s ease-out var(--reveal-delay, 0ms) backwards; }
 @keyframes journeyTitleReveal { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
 .journeyReveal { min-width: 0; opacity: 0; transform: translateY(76px) rotate(var(--reveal-angle)) scale(.9); }
@@ -28,9 +31,9 @@
 }
 
 .journeyItems {
-  @include section-width;
+  @include section-width(100rem);
   position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--card-gap); padding-top: 2.75rem;
+  gap: 1rem; padding-top: 2.75rem;
   &::before {
     content: ''; position: absolute; top: 1rem; left: 12%; right: 12%; height: 1px;
     background: linear-gradient(90deg, #2190c266, #58d2ff 20% 80%, #2190c266);
@@ -43,7 +46,6 @@
 
 .journeyItem {
   position: relative; min-width: 0; perspective: 1000px;
-  filter: drop-shadow(0 0 7px #008cff26);
 }
 
 .journeyNode {
@@ -61,15 +63,14 @@
 
 .card {
   position: relative; isolation: isolate; display: block; overflow: hidden;
-  width: 100%; min-width: 0; min-height: 22rem; aspect-ratio: 1 / 1.06;
-  padding: 0; border: 0; border-radius: 0;
-  clip-path: polygon(5% 0, 45% 0, 50% 5%, 55% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0 5%);
+  width: 100%; min-width: 0; min-height: 15.5rem; aspect-ratio: 1.4 / 1;
+  padding: 0; border: 1px solid #7290a44d; border-radius: 1.25rem;
   color: #ecf5ff; font: inherit; text-align: left; background: #031329;
   transform: rotateX(0deg) rotateY(0deg);
-  transition: transform .22s ease-out;
+  box-shadow: 0 8px 24px #0004;
+  transition: transform .22s ease-out, border-color .35s, box-shadow .35s;
   &:focus-visible {
-    outline: none;
-    .frameOutline { stroke: #effcff; stroke-width: 3px; }
+    outline: 2px solid #effcff; outline-offset: 4px;
   }
 }
 
@@ -88,14 +89,21 @@
 
 .descriptionShade {
   position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity .45s;
-  background: linear-gradient(180deg, #020f2430, transparent 25%, #020f241a 40%, #000000d6 65%, #000 100%);
+  background: linear-gradient(180deg, #020f2430, transparent 20%, #02091555 38%, #000000ed 60%, #000 83%);
 }
 
 .date {
   position: absolute; top: 1.25rem; left: 7%; width: 86%;
-  color: #ecf5ff; font-size: clamp(1.0625rem, 1rem + .1vw, 1.125rem); line-height: 1.5;
+  color: #f3fbff; font-size: clamp(1.0625rem, 1rem + .1vw, 1.125rem); font-weight: 700; line-height: 1;
   text-shadow: 0 1px 6px #000; transform-origin: center top;
   transition: transform .45s, color .45s;
+}
+.dateText {
+  display: inline-block; vertical-align: top; padding: .25rem .5rem;
+  line-height: 1.25; border-radius: .5rem;
+  background: #020b1dd9;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 2px 10px #0005;
 }
 
 .label {
@@ -107,7 +115,7 @@
 
 .description {
   position: absolute; bottom: 1.375rem; left: 8%; right: 8%;
-  color: #eef6ff; font-size: var(--lead-size); line-height: 1.6;
+  color: #eef6ff; font-size: var(--body-size); line-height: 1.5;
   opacity: 0; visibility: hidden; transform: translateY(1rem);
   transition: opacity .4s, transform .4s, visibility .4s;
 }
@@ -119,27 +127,19 @@
   transition: opacity .4s;
 }
 
+.borderGlow {
+  position: absolute; inset: -1px; z-index: 3; padding: 2px;
+  border-radius: inherit; pointer-events: none; opacity: 0;
+  background: conic-gradient(from var(--journey-border-angle), transparent 0deg 235deg,
+    #008cff55 275deg, #25cfff 310deg, #fff 332deg, #91efff 344deg, transparent 358deg);
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  transition: opacity .25s;
+}
+@keyframes journeyBorderGlow { to { --journey-border-angle: 360deg; } }
+
 @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
   .card, .image, .glare { will-change: transform; }
-}
-
-.frame {
-  position: absolute; inset: 0; width: 100%; height: 100%; fill: none;
-  pointer-events: none; overflow: visible;
-}
-.frameOutline { stroke: #29b7f4b8; stroke-width: 1.2px; transition: stroke .35s; }
-.frameAccents {
-  stroke: #eefcff; stroke-width: 1.8px;
-  filter: drop-shadow(0 0 2px #52d2ff) drop-shadow(0 0 6px #008cff) drop-shadow(0 0 10px #008cff);
-}
-.frameAccentsRest, .frameAccentsExpanded { transition: opacity .4s; will-change: opacity; }
-.frameAccentsRest { opacity: 1; }
-.frameAccentsExpanded {
-  opacity: 0;
-  .frameAccents {
-    stroke: #fff; stroke-width: 3.2px;
-    filter: drop-shadow(0 0 4px #c2f3ff) drop-shadow(0 0 12px #008cff) drop-shadow(0 0 22px #008cff);
-  }
 }
 
 .journeyItem[data-expanded='true'] {
@@ -148,9 +148,12 @@
     background: #f4fcff;
     box-shadow: 0 0 0 4px #168eff80, 0 0 23px 5px #159cffc2;
   }
-  .frameOutline { stroke: #6cddff; }
-  .frameAccentsRest { opacity: 0; }
-  .frameAccentsExpanded { opacity: 1; }
+  .card {
+    border-color: #c5f8ff;
+    box-shadow: 0 0 0 1px #38cfff, 0 0 9px #5cddffe6,
+      0 0 24px #008cffa6, 0 0 50px #006eff66, 0 14px 36px #0006;
+  }
+  .borderGlow { opacity: 1; animation: journeyBorderGlow 2.6s linear infinite; }
   .glare, .descriptionShade { opacity: 1; }
   .date { text-align: center; transform: translateY(.5rem) scale(1.25); }
   .label { opacity: 0; transform: translateY(-.75rem); }
@@ -158,27 +161,28 @@
 }
 
 @media (max-width: 68rem) {
-  .journeyItems { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4rem var(--card-gap); max-width: 52rem; }
+  .journeyItems { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 4rem; }
   .journeyItems::before { display: none; }
   .journeyItem::before {
     content: ''; position: absolute; top: -1.75rem; left: 0; right: 0; height: 1px;
     background: linear-gradient(90deg, transparent, #3db7ec80, transparent);
   }
-  .card { min-height: 24rem; }
+  .card { min-height: 14rem; aspect-ratio: 2 / 1; }
 }
 
-@media (max-width: 38rem) {
-  .journeyItems { grid-template-columns: minmax(0, 1fr); max-width: 28rem; }
-  .card { min-height: 23rem; }
+@media (max-width: 44rem) {
+  .journeyItems { grid-template-columns: minmax(0, 1fr); max-width: 38rem; }
+  .card { min-height: 16rem; aspect-ratio: 1.65 / 1; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .titleReveal, .titleReveal[data-revealed='true'], .journeyReveal, .journeyReveal[data-revealed='true'],
   .journeyItems[data-revealed='true']::before { opacity: 1; transform: none; animation: none; }
-  .card, .image, .date, .label, .description, .glare, .descriptionShade, .journeyNode, .frameOutline, .frameAccentsRest, .frameAccentsExpanded {
+  .card, .image, .date, .label, .description, .glare, .descriptionShade, .journeyNode, .borderGlow {
     transition: none; transform: none;
   }
   .journeyItem[data-expanded='true'] .date, .journeyItem[data-expanded='true'] .label { transform: none; }
   .glare { transform: scale(.5); }
+  .journeyItem[data-expanded='true'] .borderGlow { animation: none; --journey-border-angle: 40deg; }
   .journeyItem[data-expanded='true'] .date { font-size: clamp(1.328125rem, 1.25rem + .125vw, 1.40625rem); }
 }

@@ -4,7 +4,7 @@ import cursorStyles from './MagneticCursor.module.scss';
 import Achivments from '../Achivments/Achivments';
 import splashPhoto from '../../assets/HomePhotos/heroPortraitExact.webp';
 import Navigation from '../Navigation/Navigation';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useTranslation } from 'react-i18next';
 import { useLayoutEffect, useRef } from 'react';
@@ -83,7 +83,7 @@ const Splash = ({ active = true, orbitHandoff }) => {
           const lane = index % 3;
           const phase = (Math.floor(index / 3) / 9) * Math.PI * 2 + lane * .23 - Math.PI / 2;
           const angle = phase + motionTime * .14;
-          const depth = [0.82, 0.96, 1.12][index % 3];
+          const depth = [0.82, 0.96, 1.12][lane];
           const orbitX = 0.24 + lane * 0.095;
           const orbitY = 0.205 + lane * 0.098;
           const tilt = -0.12;
@@ -435,7 +435,7 @@ const Splash = ({ active = true, orbitHandoff }) => {
                 src={splashPhoto}
                 width="861"
                 height="1000"
-                fetchpriority="high"
+                fetchPriority="high"
                 decoding="async"
               />
             </div>

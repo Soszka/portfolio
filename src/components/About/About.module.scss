@@ -9,7 +9,12 @@
 
 .titleReveal { opacity: 0; transform: translateY(26px); }
 .titleReveal[data-revealed='true'] { opacity: 1; transform: none; animation: aboutTitleReveal 1.1s ease-out var(--reveal-delay, 0ms) backwards; }
-.portraitReveal { min-width: 0; opacity: 0; transform: translateX(64px); }
+.portraitReveal {
+  --portrait-stage-height: clamp(24rem, 30vw, 35rem);
+  min-width: 0; opacity: 0; transform: translateX(64px);
+  // Reserve the ring's radius + 36px halo, without resizing the face/canvas.
+  padding-block: max(0px, calc(min(36.5%, 15.5rem) + 2.25rem - var(--portrait-stage-height) / 2));
+}
 .portraitReveal[data-revealed='true'] { opacity: 1; transform: none; animation: aboutPortraitReveal 1.85s cubic-bezier(.22,.45,.35,1) var(--reveal-delay, 0ms) backwards; }
 .statReveal { min-width: 0; opacity: 0; transform: translateY(32px) scale(.88); }
 .statReveal[data-revealed='true'] { opacity: 1; transform: none; animation: aboutStatReveal 1.3s cubic-bezier(.22,.45,.35,1) var(--reveal-delay, 0ms) backwards; }
@@ -23,8 +28,11 @@
   to { opacity: 1; transform: none; }
 }
 @keyframes aboutPortraitReveal {
-  from { opacity: 0; transform: translateX(64px); clip-path: inset(0 49% 0 49%); }
-  to { opacity: 1; transform: none; clip-path: inset(0); }
+  // The ring and its halo extend above/below the short portrait stage on tablets.
+  // Only crop horizontally: the same vertical bleed at both ends avoids a pop
+  // when the animation releases clip-path back to none.
+  from { opacity: 0; transform: translateX(64px); clip-path: inset(-8rem 49% -8rem 49%); }
+  to { opacity: 1; transform: none; clip-path: inset(-8rem 0); }
 }
 @keyframes aboutStatReveal {
   0% { opacity: 0; transform: translateY(32px) scale(.88); }
@@ -100,33 +108,6 @@
 
 .about[data-motion-paused='true'] .cardOrbit::before { animation-play-state: paused; }
 
-.cardCorners {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-
-  &::before, &::after {
-    content: '';
-    position: absolute;
-    width: 2.5rem;
-    height: 2.5rem;
-    filter: drop-shadow(0 0 7px #20b6ff99);
-  }
-  &::before {
-    top: .6rem; left: .6rem;
-    border-top: 2px solid #79d8ff;
-    border-left: 2px solid #79d8ff;
-    border-top-left-radius: .75rem;
-  }
-  &::after {
-    right: .6rem; bottom: .6rem;
-    border-right: 2px solid #79d8ff;
-    border-bottom: 2px solid #79d8ff;
-    border-bottom-right-radius: .75rem;
-  }
-}
-
 .paragraphs {
   position: relative;
   display: grid;
@@ -194,10 +175,12 @@
 
 @media (max-width: 72rem) {
   .content { grid-template-columns: minmax(0, 1fr); max-width: 52rem; }
+  .portraitReveal { --portrait-stage-height: clamp(21rem, 52vw, 30rem); }
 }
 
 @media (max-width: 38rem) {
   .stats { grid-template-columns: minmax(0, 1fr); }
+  .portraitReveal { --portrait-stage-height: clamp(17rem, 65vw, 22rem); }
 }
 
 @media (prefers-reduced-motion: reduce) {

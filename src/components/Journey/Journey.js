@@ -57,24 +57,13 @@ const JourneyCard = ({ item }) => {
       <img className={styles.image} data-tilt-image src={item.image} alt="" loading="lazy" decoding="async" />
       <span className={styles.shade} aria-hidden="true" />
       <span className={styles.descriptionShade} aria-hidden="true" />
-      <span className={styles.date}>{date}</span>
+      <span className={styles.date}><span className={styles.dateText}>{date}</span></span>
       <span className={styles.label} aria-hidden="true">{title}</span>
       <span id={descriptionId} className={styles.description} aria-hidden={!expanded}>
         {t(`journey.items.${item.key}.description`)}
       </span>
       <span className={styles.glare} data-tilt-glare aria-hidden="true" />
-      <svg className={styles.frame} viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path className={styles.frameOutline} vectorEffect="non-scaling-stroke"
-          d="M50 3H450L500 53L550 3H950L997 50V950L950 997H50L3 950V50Z" />
-      </svg>
-      <svg className={`${styles.frame} ${styles.frameAccentsRest}`} viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path className={styles.frameAccents} vectorEffect="non-scaling-stroke"
-          d="M3 65V50L50 3H70 M930 3H950L997 50V65 M997 935V950L950 997H930 M70 997H50L3 950V935 M480 33L500 53L520 33 M465 997H535" />
-      </svg>
-      <svg className={`${styles.frame} ${styles.frameAccentsExpanded}`} viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true" focusable="false">
-        <path className={styles.frameAccents} vectorEffect="non-scaling-stroke"
-          d="M3 105V50L50 3H115 M885 3H950L997 50V105 M997 895V950L950 997H885 M115 997H50L3 950V895 M470 23L500 53L530 23 M445 997H555" />
-      </svg>
+      <span className={styles.borderGlow} aria-hidden="true" />
     </div>
   </article>;
 };

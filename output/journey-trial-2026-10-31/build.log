@@ -1,0 +1,30 @@
+
+> portfolio-app@0.1.0 build
+> react-scripts build
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  231.95 kB (-360 B)  build\static\js\main.e07b0d4e.js
+  17.42 kB            build\static\js\92.039c972e.chunk.js
+  15.44 kB (-179 B)   build\static\css\main.7d6d2fc5.css
+  8.4 kB              build\static\js\814.82df31bb.chunk.js
+  2.71 kB             build\static\css\814.e58d59cf.chunk.css
+  2.57 kB             build\static\js\130.daa54acd.chunk.js
+  2.32 kB             build\static\css\130.854b48b1.chunk.css
+
+The project was built assuming it is hosted at /.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+You may serve it with a static server:
+
+  npm install -g serve
+  serve -s build
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+

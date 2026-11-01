@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   min-width: 0;
-  height: clamp(24rem, 30vw, 35rem);
+  height: var(--portrait-stage-height, clamp(24rem, 30vw, 35rem));
   margin-inline: auto;
 
   &::before {
@@ -50,10 +50,10 @@
 }
 
 @media (max-width: 72rem) {
-  .animationContainer { width: min(100%, 42rem); height: clamp(21rem, 52vw, 30rem); }
+  .animationContainer { width: min(100%, 42rem); height: var(--portrait-stage-height, clamp(21rem, 52vw, 30rem)); }
 }
 
 @media (max-width: 38rem) {
-  .animationContainer { height: clamp(17rem, 65vw, 22rem); }
+  .animationContainer { height: var(--portrait-stage-height, clamp(17rem, 65vw, 22rem)); }
   .animationContainer img { width: min(72%, 19rem); }
 }

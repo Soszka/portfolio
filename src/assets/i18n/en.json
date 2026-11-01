@@ -1,5 +1,6 @@
 {
   "navigation.link.skills": "SKILLS",
+  "navigation.link.contact": "CONTACT",
   "navigation.link.projects": "PROJECTS",
   "navigation.link.github": "GITHUB",
   "navigation.link.resume": "RESUME",
@@ -109,12 +110,14 @@
     "items": {
       "linkedin": {
         "name": "LinkedIn",
-        "description": "The easiest way to reach me is on LinkedIn.\nIt is my main contact channel.",
+        "badge": "Main contact channel",
+        "description": "The easiest way to reach me is on LinkedIn. It is my main contact channel. Get in touch to talk about working together or an interesting project.",
         "action": "Visit LinkedIn"
       },
       "github": {
         "name": "GitHub",
-        "description": "Want to see how I work first?\nExplore my repositories and projects.",
+        "badge": "Projects and code",
+        "description": "Want to see how I work first? Explore my repositories and projects. You'll find my code and the solutions I develop in practice.",
         "action": "Open GitHub"
       }
     }

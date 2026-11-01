@@ -77,7 +77,7 @@ const Achivments = () => {
     };
   }, [revealed, revealStates]);
 
-  return <section className={styles.achivments} ref={sectionRef} data-revealed={revealed} aria-label={t('achivements.label')}>
+  return <section id="achievements" className={styles.achivments} ref={sectionRef} data-revealed={revealed} aria-label={t('achivements.label')}>
     <div className={styles.container}>
       {achivments.map((item, index) => <div className={styles.achievementSlot} key={item.id}
         ref={element => { cardRefs.current[index] = element; }} data-revealed={revealStates[index].visible}

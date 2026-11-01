@@ -1,0 +1,23 @@
+{
+  "mode": "Built-in image_gen; user-requested amber interfaces revision",
+  "source": "C:\\Users\\bsoch\\.codex\\generated_images\\01a1892d-e7bc-7da3-91a9-830121d8cac4\\exec-ad4b28cd-1572-43da-a624-a6f8c3e0af95.png",
+  "destination": "src/assets/HomePhotos/expertise-v4/interfaces.webp",
+  "prompt": "Use case: precise-object-edit / color direction revision. Edit target is IMAGE 1: the responsive interfaces scene with desktop monitor, laptop, coding tablet and phone. IMAGES 2 AND 3 are color/style references ONLY: the approved graphite/amber backend and architecture images.\nPreserve image 1's exact subject concept and composition: four clearly distinct devices in the right 60%, large desktop upper-right, laptop lower-middle, coding tablet and phone at far-right, mountain landscapes on the screens, rocky reflective alien ground across the full width. Keep cinematic realistic 3D detail, edge-to-edge landscape 2:1 composition, 1536x768.\nChange the image from electric-blue to a coherent WARM AMBER / GRAPHITE / CHAMPAGNE-WHITE palette matching the approved references. Device frames are charcoal/silver with soft warm white/amber rim light. Mountain interfaces display warm golden-hour mountain ridges, amber reflections and neutral charcoal UI; the coding tablet can retain small multicolored syntax accents on near-black. The cosmic backdrop has muted warm copper nebula, faint stars and graphite asteroid silhouettes, NOT saturated blue. Reflect warm amber light in the rocky water/ground. No strong blue light, no blue planet, no blue beams. The upper-left 40% stays naturally very dark and low-detail, allowing HTML title and description to be legible; smoothly fade into the illustration without a vertical split or blank hard-edged black half-panel. Keep scene texture continuing across the full bottom-left.\nDo not borrow servers, logos or architecture cubes from the supporting images. No text heading, no Polish descriptions, no numbers, no arrow button, no border, no orbit rings or decorative orbit dots, no watermark. Only revise the interfaces illustration; preserve its device identities, proportions and overall arrangement.",
+  "desktopOrder": [
+    "frontend",
+    "interfaces",
+    "testing",
+    "backend",
+    "delivery",
+    "architecture"
+  ],
+  "colorOrder": [
+    "blue",
+    "amber",
+    "blue",
+    "amber",
+    "blue",
+    "amber"
+  ]
+}
+

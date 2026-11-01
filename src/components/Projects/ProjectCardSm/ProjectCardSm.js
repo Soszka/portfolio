@@ -1,13 +1,13 @@
 import styles from './ProjectCardSm.module.scss';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 import { useTranslation } from 'react-i18next';
 import { useState, forwardRef } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import IconButton from '@material-ui/core/IconButton';
-import CloseIcon from '@material-ui/icons/Close';
-import LinkIcon from '@material-ui/icons/Link';
+import Dialog from '@mui/material/Dialog';
+import IconButton from '@mui/material/IconButton';
+import CloseIcon from '@mui/icons-material/Close';
+import LinkIcon from '@mui/icons-material/Link';
 import React from 'react';
-import Fade from '@material-ui/core/Fade';
+import Fade from '@mui/material/Fade';
 
 const Transition = forwardRef(function Transition(props, ref) {
   return <Fade ref={ref} {...props} timeout={750} />;
@@ -19,11 +19,9 @@ const ProjectsCardSm = ({ project }) => {
 
   const handleOpenDialog = () => {
     setOpenDialog(true);
-    document.body.style.overflow = 'hidden';
   };
   const handleCloseDialog = () => {
     setOpenDialog(false);
-    document.body.style.overflow = 'auto';
   };
 
   return (
@@ -39,8 +37,9 @@ const ProjectsCardSm = ({ project }) => {
         open={openDialog}
         onClose={handleCloseDialog}
         fullScreen
-        PaperProps={{ className: styles.dialogPaper }}
-        TransitionComponent={Transition}
+        slots={{ transition: Transition }}
+        slotProps={{ paper: { className: styles.dialogPaper } }}
+        aria-labelledby={`project-title-${project.id}`}
       >
         <div className={styles.dialogHeader}>
           <IconButton
@@ -52,7 +51,7 @@ const ProjectsCardSm = ({ project }) => {
           </IconButton>
         </div>
         <div className={styles.dialogContent}>
-          <h2>{t(project.titleKey)}</h2>
+          <h2 id={`project-title-${project.id}`}>{t(project.titleKey)}</h2>
           <p>{t(project.descriptionKey)}</p>
           <div className={styles.iconsContainer}>
             {[...project.icons, ...project.iconsSm].map((icon, index) => (

@@ -1,5 +1,5 @@
 import styles from './Carousel.module.scss';
-import { useState } from 'react';
+import { createRef, useMemo, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faChevronLeft,
@@ -10,6 +10,7 @@ import { useSwipeable } from 'react-swipeable'; // Import useSwipeable
 
 const Carousel = ({ carouselSlides }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const slideRefs = useMemo(() => carouselSlides.map(() => createRef()), [carouselSlides]);
 
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
@@ -32,7 +33,7 @@ const Carousel = ({ carouselSlides }) => {
   const handlers = useSwipeable({
     onSwipedLeft: () => goToNext(),
     onSwipedRight: () => goToPrevious(),
-    preventDefaultTouchmoveEvent: true,
+    preventScrollOnSwipe: true,
   });
 
   return (
@@ -48,6 +49,7 @@ const Carousel = ({ carouselSlides }) => {
           <TransitionGroup>
             <CSSTransition
               key={currentIndex}
+              nodeRef={slideRefs[currentIndex]}
               timeout={500}
               classNames={{
                 enter: styles.fadeEnter,
@@ -57,6 +59,7 @@ const Carousel = ({ carouselSlides }) => {
               }}
             >
               <img
+                ref={slideRefs[currentIndex]}
                 alt={carouselSlides[currentIndex].title}
                 src={carouselSlides[currentIndex].url}
                 className={styles.carouselImage}

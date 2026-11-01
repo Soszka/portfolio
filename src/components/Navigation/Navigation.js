@@ -3,21 +3,20 @@ import styles from './Navigation.module.scss';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import clsx from 'clsx';
-import { Button } from '@material-ui/core';
-import Tooltip from '@material-ui/core/Tooltip';
-import { withStyles } from '@material-ui/core/styles';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
 import { useTranslation } from 'react-i18next';
 import usePortalNavigation from '../Skills/usePortalNavigation';
 import { warmSkills } from '../Skills/preloadSkills';
 
-const HtmlTooltip = withStyles(() => ({
-  tooltip: {
+const HtmlTooltip = props => <Tooltip {...props} slotProps={{
+  tooltip: { sx: {
     backgroundColor: '#f5f5f9',
     color: 'rgba(0, 0, 0, 0.87)',
     fontSize: '13px',
     border: '1px solid #dadde9',
-  },
-}))(Tooltip);
+  } },
+}} />;
 
 const Navigation = ({ cinematic = false }) => {
   const enterPortal = usePortalNavigation();
@@ -75,6 +74,11 @@ const Navigation = ({ cinematic = false }) => {
       isNavLink: true,
     },
     {
+      translationKey: 'navigation.link.contact',
+      to: '/#contact',
+      isSectionLink: true,
+    },
+    {
       translationKey: 'navigation.link.github',
       href: 'https://github.com/Soszka',
       isNavLink: false,
@@ -91,8 +95,7 @@ const Navigation = ({ cinematic = false }) => {
       data-menu-open={!menuClosed}
       className={clsx(
         menuClosed ? styles.closed : styles.open,
-        (location.pathname === '/projects' ||
-          location.pathname === '/skills') &&
+        location.pathname === '/skills' &&
           styles.activeProjects
       )}
     >
@@ -121,7 +124,11 @@ const Navigation = ({ cinematic = false }) => {
       </button>
       <ul className={clsx(styles.links, menuClosed && styles.closed)}>
         {navItems.map((item, index) => {
-          if (item.isButton) {
+          if (item.isSectionLink) {
+            return <li key={index}><Link to={item.to} onClick={() => {
+              if (window.innerWidth <= 1200) setMenuClosed(true);
+            }}>{t(item.translationKey)}</Link></li>;
+          } else if (item.isButton) {
             return (
               <li key={index}>
                 <HtmlTooltip title={t('navigation.download.resume')}>

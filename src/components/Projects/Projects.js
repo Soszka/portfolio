@@ -8,32 +8,21 @@ import Navigation from '../../components/Navigation/Navigation';
 import Footer from '../Footer/Footer';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import { makeStyles } from '@material-ui/core/styles';
-import Fade from '@material-ui/core/Fade';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
+import Fade from '@mui/material/Fade';
 import initialState from '../../redux/initialState';
 
-const useStyles = makeStyles((theme) => ({
-  tabsRoot: {
-    flexGrow: 1,
-    backgroundColor: 'transparent',
+const tabSx = {
+  fontSize: '20px',
+  '&:hover': {
+    backgroundColor: 'rgba(255, 255, 255, 0.1)',
   },
-  indicator: {
-    backgroundColor: 'rgb(0, 120, 201)',
-  },
-  tabRoot: {
-    fontSize: '20px',
-    '&:hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-    },
-  },
-}));
+};
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const { t } = useTranslation();
-  const classes = useStyles();
   const [tabValue, setTabValue] = useState(0);
 
   const projects = initialState.projects;
@@ -61,29 +50,24 @@ const Projects = () => {
               value={tabValue}
               onChange={handleTabChange}
               variant="fullWidth"
-              classes={{ indicator: classes.indicator }}
+              textColor="inherit"
+              slotProps={{ indicator: { sx: { backgroundColor: 'rgb(0, 120, 201)' } } }}
               aria-label="Projects Tabs"
               data-aos="flip-up"
             >
               <Tab
                 label="Angular"
-                classes={{
-                  root: classes.tabRoot,
-                  selected: classes.tabSelected,
-                }}
+                sx={tabSx}
               />
               <Tab
                 label="React"
-                classes={{
-                  root: classes.tabRoot,
-                  selected: classes.tabSelected,
-                }}
+                sx={tabSx}
               />
             </Tabs>
 
-            <div className={classes.fadeContainer}>
+            <div>
               <Fade in={tabValue === 0} timeout={1000} unmountOnExit>
-                <div className={classes.fadeContent}>
+                <div>
                   {tabValue === 0 && (
                     <div className={styles.projectsSmCards}>
                       {projects
@@ -96,7 +80,7 @@ const Projects = () => {
                 </div>
               </Fade>
               <Fade in={tabValue === 1} timeout={1000} unmountOnExit>
-                <div className={classes.fadeContent}>
+                <div>
                   {tabValue === 1 && (
                     <div className={styles.projectsSmCards}>
                       {projects

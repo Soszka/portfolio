@@ -1,0 +1,309 @@
+[
+  {
+    "copy": [
+      {
+        "height": 248,
+        "label": "Studia, do 2021",
+        "minGap": 37.5
+      },
+      {
+        "height": 248,
+        "label": "Kursy, od 2022",
+        "minGap": 37.5
+      },
+      {
+        "height": 248,
+        "label": "Staż, 2024",
+        "minGap": 11.5
+      },
+      {
+        "height": 248,
+        "label": "Praca, 2025 – obecnie",
+        "minGap": 37.5
+      }
+    ],
+    "expertiseRevealed": [
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "gaps": {
+      "aboutJourney": 66,
+      "expertiseContact": 66,
+      "journeyExpertise": 66,
+      "statsAbout": 66
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 1100
+  },
+  {
+    "language": "en",
+    "copy": [
+      {
+        "height": 248,
+        "label": "Studies, until 2021",
+        "minGap": 37.5
+      },
+      {
+        "height": 248,
+        "label": "Courses, since 2022",
+        "minGap": 37.5
+      },
+      {
+        "height": 248,
+        "label": "Internship, 2024",
+        "minGap": 11.5
+      },
+      {
+        "height": 248,
+        "label": "Work, 2025 – present",
+        "minGap": 37.5
+      }
+    ],
+    "expertiseRevealed": [
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "gaps": {
+      "aboutJourney": 66,
+      "expertiseContact": 66,
+      "journeyExpertise": 66,
+      "statsAbout": 66
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 1100
+  },
+  {
+    "language": "en",
+    "copy": [
+      {
+        "height": 224,
+        "label": "Studies, until 2021",
+        "minGap": 65.5
+      },
+      {
+        "height": 224,
+        "label": "Courses, since 2022",
+        "minGap": 41.5
+      },
+      {
+        "height": 224,
+        "label": "Internship, 2024",
+        "minGap": 41.5
+      },
+      {
+        "height": 224,
+        "label": "Work, 2025 – present",
+        "minGap": 41.5
+      }
+    ],
+    "expertiseRevealed": [
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "gaps": {
+      "aboutJourney": 48,
+      "expertiseContact": 48,
+      "journeyExpertise": 48,
+      "statsAbout": 48
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 768
+  },
+  {
+    "language": "en",
+    "copy": [
+      {
+        "height": 256,
+        "label": "Studies, until 2021",
+        "minGap": 99.5
+      },
+      {
+        "height": 256,
+        "label": "Courses, since 2022",
+        "minGap": 75.5
+      },
+      {
+        "height": 256,
+        "label": "Internship, 2024",
+        "minGap": 75.5
+      },
+      {
+        "height": 256,
+        "label": "Work, 2025 – present",
+        "minGap": 75.5
+      }
+    ],
+    "expertiseRevealed": [
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "gaps": {
+      "aboutJourney": 48,
+      "expertiseContact": 48,
+      "journeyExpertise": 48,
+      "statsAbout": 48
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 390
+  },
+  {
+    "language": "en",
+    "copy": [
+      {
+        "height": 256,
+        "label": "Studies, until 2021",
+        "minGap": 75.5
+      },
+      {
+        "height": 256,
+        "label": "Courses, since 2022",
+        "minGap": 75.5
+      },
+      {
+        "height": 256,
+        "label": "Internship, 2024",
+        "minGap": 51.5
+      },
+      {
+        "height": 256,
+        "label": "Work, 2025 – present",
+        "minGap": 51.5
+      }
+    ],
+    "expertiseRevealed": [
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "gaps": {
+      "aboutJourney": 48,
+      "expertiseContact": 48,
+      "journeyExpertise": 48,
+      "statsAbout": 48
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 320
+  },
+  {
+    "language": "pl",
+    "copy": [
+      {
+        "height": 256,
+        "label": "Studia, do 2021",
+        "minGap": 51.5
+      },
+      {
+        "height": 256,
+        "label": "Kursy, od 2022",
+        "minGap": 51.5
+      },
+      {
+        "height": 256,
+        "label": "Staż, 2024",
+        "minGap": 51.5
+      },
+      {
+        "height": 256,
+        "label": "Praca, 2025 – obecnie",
+        "minGap": 75.5
+      }
+    ],
+    "expertiseRevealed": [
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false",
+      "false"
+    ],
+    "gaps": {
+      "aboutJourney": 48,
+      "expertiseContact": 48,
+      "journeyExpertise": 48,
+      "statsAbout": 48
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 320
+  },
+  {
+    "language": "pl",
+    "copy": [
+      {
+        "height": 277,
+        "label": "Studia, do 2021",
+        "minGap": 110.25
+      },
+      {
+        "height": 277,
+        "label": "Kursy, od 2022",
+        "minGap": 110.25
+      },
+      {
+        "height": 277,
+        "label": "Staż, 2024",
+        "minGap": 83.25
+      },
+      {
+        "height": 277,
+        "label": "Praca, 2025 – obecnie",
+        "minGap": 110.25
+      }
+    ],
+    "expertiseRevealed": [
+      "true",
+      "true",
+      "true",
+      "true",
+      "true",
+      "true",
+      "true"
+    ],
+    "gaps": {
+      "aboutJourney": 112,
+      "expertiseContact": 112,
+      "journeyExpertise": 112,
+      "statsAbout": 112
+    },
+    "leftDifference": 0,
+    "overflow": false,
+    "rightDifference": 0,
+    "width": 1920
+  }
+]
